@@ -99,3 +99,24 @@ y escala fija (saturación visual en |h|=0.1). No son spikes biológicos.
 Verificados continuidad de tableros, legalidad de acciones, estados de actividad,
 transiciones de reproducción y carga del control WebMCP; sin errores en el
 registro del navegador. Entrenamiento no modificado por esta corrección.
+
+## Escena realista e investigación de entrenamiento
+
+Se reemplazaron muebles Kenney por Metal Office Desk y Modern Arm Chair 01 de
+Poly Haven, con texturas 2K, HDRI de estudio y sombras. Monitor, teclado, mouse
+y torre son Omie's Office Set CC0; archivos compartidos evitan duplicar texturas.
+Fuentes y hashes: `scene/dist/assets/realistic/`. La mosca Flybody se conserva.
+Buscaminas clásico tanto en el monitor como en el panel: biseles grises, colores
+por número, carita y contadores. El reloj es tiempo de reproducción; no rendimiento
+del entrenamiento. Apertura central segura explicada en la página.
+
+`scene/dist/leg-ik.js` articula la pata delantera derecha original con CCD,
+sin estirar segmentos; cursor, mouse y pata comparten recorrido interpolado.
+`node scene/test-leg-ik.mjs` verifica 101 posiciones, error máximo <0.001 unidades
+de escena. Sintaxis y referencias de texturas/buffers verificadas; visor HTTP 200,
+control WebMCP registrado y sin errores de navegador en la comprobación de carga.
+No se afirma validación biomecánica ni aprendizaje motor.
+
+`research/METODOS_ENTRENAMIENTO.md` compara FlyGM (imitación+PPO), FLYNN (DAgger),
+Flybody, DOOMFLY y Minecraft con fuentes primarias. Propone imitación del solver
+visible, DAgger y después RL, como nueva corrida futura; no altera el currículo activo.

@@ -48,3 +48,8 @@ No debe mostrarse actividad ficticia como telemetría, ni etiquetar el modelo de
 Se renderizó el GLB convertido con un visor ortográfico de triángulos independiente (`render_asset.py`), y se inspeccionó `flybody/flybody.qa.png`: la anatomía completa se ensambla correctamente en la pose base. `flybody/flybody.fold.qa.png` muestra un ensayo de articulación de las alas a yaw=1.5 (Z), roll=0.7 (X), pitch=-1 (Y), aplicadas en ese orden local sobre el quaternion base; quedan recogidas hacia atrás y arriba. Es animación, no simulación física ni validación biomecánica. Las imágenes de QA no sustituyen verificación del render web, transparencia y clipping final.
 
 Los GLB Kenney usan Y arriba, y escritorio/silla/monitor miran hacia +Z. La silla tiene el respaldo hacia -Z, asiento hacia +Z. El escritorio tiene cajón hacia +Z. Para que silla y monitor se enfrenten, rotar la silla 180 grados en Y. El asiento está por encima de Y=.19 (esta es la raíz del nodo articulado chair, no la superficie de asiento); usar bounds de vértices y comprobación visual para colocar la mosca. `inspect_glb.py` calcula bounds mundiales leyendo buffers y transformaciones reales de los GLB.
+
+
+## Reemplazo de mobiliario
+
+Kenney es histórico; el visor ahora utiliza [mobiliario realista Poly Haven y Omie](./realistic/SOURCES.md).
