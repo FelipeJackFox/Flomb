@@ -29,12 +29,12 @@ No hay mejora demostrada en victorias. Una muestra tan pequeña no establece tam
 una degradación estadísticamente concluyente. Cambiaron 165,163 ganancias internas;
 parámetros y gradientes finitos. Eso verifica entrenamiento, no aprendizaje del juego.
 
-## Continuación iniciada
+## Continuación del piloto completada
 
-Se lanzó inmediatamente una continuación de 2,048 episodios desde `checkpoint-000128.npz`.
-Objetivo total: 2,176 episodios. El proceso termina al completar esa cantidad y evaluar.
-Estimación inicial aproximada: 15–20 minutos; puede variar con longitud de partidas.
-Este documento es una instantánea de lanzamiento, no prueba de que el proceso siga vivo.
+La continuación de 2,048 episodios terminó: 2,176 en total, checkpoint final
+`checkpoint-002176.npz`. Duró 841.29 segundos y ganó 9/32 partidas de evaluación
+(28.125%), frente a 2/32 de la red inicial. Son resultados preliminares con una
+semilla y muestra pequeña; todavía no establecen una ventaja del conectoma.
 
 - PID y comando: `runs/pilot-001/process.json`.
 - Salida: `runs/pilot-001-continuation.log`.
@@ -48,9 +48,41 @@ enviar SIGTERM a ese proceso. Se conserva el último checkpoint de cada 32 episo
 Para reanudar, usar el comando de README. No iniciar otro entrenamiento simultáneo
 sin comprobar antes si terminó la continuación.
 
+## Nuevo currículo autorizado
+
+El usuario pidió tableros variados y grandes, mezcla de fáciles/difíciles con decay
+hasta solo grandes, y más tiempo y partidas. Se lanzó `runs/curriculum-001` con
+50,000 partidas nuevas, partiendo del checkpoint final anterior, que no se sobrescribe.
+
+- Inicio: 60% pequeños (5×5/7×7), 30% medianos (9×9/12×12), 10% grandes (16×16).
+- Decay lineal de pequeños/medianos a cero durante las primeras 35,000 partidas.
+- Últimas 15,000: solamente 16×16, variando entre 31 y 56 minas.
+- Lienzo máximo 16×16 con máscara de acciones y padding distinto de casillas tapadas.
+- Migración conserva ganancias internas y comportamiento 5×5 inicial dentro de
+  tolerancia numérica; entradas adicionales solo fuera del 5×5 y salidas nuevas.
+- Se reinicia Adam; recompensa normalizada por cantidad de casillas seguras y gamma=1.
+- Se recomputan activaciones para limitar RAM. Checkpoints atómicos cada 256 episodios.
+- Evaluación final: 192 tableros nuevos distribuidos en seis estratos; políticas final,
+  inicial migrada y aleatoria, con tasas reportadas separadamente por dificultad.
+- Fuente: `train_curriculum.py`, `curriculum.py`, extensión compatible de `brain.py`.
+- Once tests pasan. Prueba completa del conectoma en `runs/curriculum-smoke-001`;
+  completó 32 partidas en dos invocaciones, restauró el currículo y verificó fase final
+  solo grande: 28.95 s de entrenamiento, 150 clics, ~0.56 GB RAM. Su evaluación de dos
+  tableros por estrato solo verifica ejecución, no rendimiento.
+
+Corrida larga lanzada con PID inicial 89204 (verificar que siga correspondiendo al
+comando), registro `runs/curriculum-001-process.json`, log `runs/curriculum-001.log`.
+Estimación extrapolada de la prueba: 12–15 horas; depende de la duración futura de
+partidas. Se creó el seguimiento `avisar-al-terminar-buscaminas`, cada 15 minutos,
+silencioso mientras avance y con aviso al finalizar o fallar. No inicia corridas nuevas.
+
+Consultar `runs/curriculum-001/progress.json`, `state.json` y `live-process.json` para
+avance real. `completed.json` certifica fin de corrida y evaluación; no inferirlo
+solo de un PID ausente. Los comandos para iniciar/reanudar están en README.
+
 ## Pendiente
 
-Evaluar la continuación, ampliar evaluación con nuevas semillas, probar cerebro
+Evaluar el currículo, ampliar evaluación con nuevas semillas, probar cerebro
 congelado y modelos de control antes de afirmar ventaja del conectoma. El diseño visual
 está en `DISENO.md`; la visualización 3D no está construida. La actividad del modelo
 actual son tasas artificiales, no spikes ni una reproducción fisiológica completa.

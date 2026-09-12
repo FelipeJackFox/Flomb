@@ -15,6 +15,8 @@ class BrainPolicy:
         rng = np.random.default_rng(seed)
         self.input_index = rng.integers(inputs, size=(n, 4), dtype=np.int32)
         self.input_sign = rng.choice(np.array([-1., 1.], np.float32), size=(n, 4))
+        self.extra_input_index = np.empty((n, 0), np.int32)
+        self.extra_input_sign = np.empty((n, 0), np.float32)
         eligible = np.flatnonzero(np.diff(graph.indptr) > 0)
         self.output_index = rng.choice(eligible, min(readouts, len(eligible)), replace=False)
         self.log_gain = np.zeros(n, np.float32)
@@ -30,7 +32,10 @@ class BrainPolicy:
 
     def forward(self, observation, legal_mask, cache=False):
         gain = np.exp(self.log_gain)
-        h = np.tanh((observation[self.input_index] * self.input_sign).sum(axis=1))
+        drive = (observation[self.input_index] * self.input_sign).sum(axis=1)
+        if self.extra_input_index.shape[1]:
+            drive += (observation[self.extra_input_index] * self.extra_input_sign).sum(axis=1)
+        h = np.tanh(drive)
         states = [h]
         for _ in range(self.cycles):
             h = np.tanh(self.graph @ (gain * h))
@@ -78,6 +83,7 @@ class BrainPolicy:
         np.savez_compressed(path, log_gain=self.log_gain, readout=self.readout, bias=self.bias,
                             input_index=self.input_index, input_sign=self.input_sign,
                             output_index=self.output_index, cycles=self.cycles,
+                            extra_input_index=self.extra_input_index, extra_input_sign=self.extra_input_sign,
                             feature_scale=self.feature_scale, updates=self.updates,
                             **{f'm{i}': m for i, m in enumerate(self.m)},
                             **{f'v{i}': v for i, v in enumerate(self.v)})
@@ -87,6 +93,35 @@ class BrainPolicy:
             for key in ('log_gain', 'readout', 'bias', 'input_index', 'input_sign', 'output_index'):
                 setattr(self, key, z[key].copy())
             self.cycles, self.feature_scale = int(z['cycles']), float(z['feature_scale'])
+            self.extra_input_index = z['extra_input_index'].copy() if 'extra_input_index' in z else np.empty((len(self.log_gain), 0), np.int32)
+            self.extra_input_sign = z['extra_input_sign'].copy() if 'extra_input_sign' in z else np.empty((len(self.log_gain), 0), np.float32)
             self.updates = int(z['updates'])
             self.m = [z[f'm{i}'].copy() for i in range(3)]
             self.v = [z[f'v{i}'].copy() for i in range(3)]
+
+    def expand_canvas(self, old_size=5, size=16, seed=901):
+        """Embed old I/O in upper-left corner, add inputs only outside it.
+
+        A padded old board has exactly the original neural drive and action logits.
+        Optimizer moments restart for the new curriculum; original checkpoint is untouched.
+        """
+        if self.bias.size != old_size ** 2 or size <= old_size or self.extra_input_index.size:
+            raise ValueError('Expected unexpanded square policy')
+        cell, channel = self.input_index // 10, self.input_index % 10
+        self.input_index = ((cell // old_size * size + cell % old_size) * 10 + channel).astype(np.int32)
+        rng = np.random.default_rng(seed)
+        cells = np.arange(size * size)
+        extra_cells = cells[(cells // size >= old_size) | (cells % size >= old_size)]
+        shape = (len(self.log_gain), 8)
+        self.extra_input_index = (rng.choice(extra_cells, size=shape) * 10 + rng.integers(10, size=shape)).astype(np.int32)
+        self.extra_input_sign = rng.choice(np.array([-.5, .5], np.float32), size=shape)
+        old_columns = np.arange(old_size ** 2)
+        columns = old_columns // old_size * size + old_columns % old_size
+        # Neutral new locations; original logits remain unchanged on the old board.
+        weights = rng.normal(0, .05, (len(self.output_index), size ** 2)).astype(np.float32)
+        bias = np.zeros(size ** 2, np.float32)
+        weights[:, columns], bias[columns] = self.readout, self.bias
+        self.readout, self.bias = weights, bias
+        self.m = [np.zeros_like(p) for p in self.parameters()]
+        self.v = [np.zeros_like(p) for p in self.parameters()]
+        self.updates = 0

@@ -1,5 +1,58 @@
 # Mosca Fruta: MaleCNS y Buscaminas
 
+## Currículo de 50,000 partidas
+
+La corrida nueva `runs/curriculum-001` parte de las ganancias y salida del checkpoint
+de 2,176 partidas. El original se conserva intacto. La entrada/salida pasa a un
+lienzo de 16×16: el antiguo 5×5 ocupa la esquina superior izquierda y la nueva
+entrada solo añade señales de las celdas exteriores. Con un tablero 5×5, antes de
+seguir entrenando, las probabilidades originales se conservan dentro de tolerancia numérica.
+La región fuera del tablero es todo ceros y no admite acciones; una celda tapada
+real tiene su propio canal one-hot. Se reinician los momentos de Adam al migrar.
+
+| Grupo | Tamaños | Densidad aproximada de minas | Mezcla inicial |
+|---|---|---|---:|
+| Pequeños | 5×5, 7×7 | 8–16% | 60% |
+| Medianos | 9×9, 12×12 | 10–19% | 30% |
+| Grandes | 16×16 | 12–22% (31–56 minas) | 10% |
+
+Las probabilidades de pequeños y medianos decaen linealmente a cero durante las
+primeras 35,000 partidas. Las últimas 15,000 son exclusivamente 16×16, con densidad
+variable. El progreso del currículo se restaura del checkpoint, sin reiniciar el decay.
+
+Se modifica también la recompensa: −1 por mina, +1 por victoria y un bono total
+máximo de 0.25 por revelar casillas seguras; descuento gamma=1. Así los tableros
+grandes no reciben más recompensa simplemente por abrir muchas casillas. Cada
+grupo mantiene su propio baseline. Se recomputan las activaciones para el backward,
+evitando guardar todo el cerebro por cada clic de una partida larga.
+
+```sh
+OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 .venv/bin/python train_curriculum.py --run runs/curriculum-001 --total-episodes 50000 --chunk-episodes 50000 --eval-per-stratum 32
+```
+
+Reanudar, después de verificar que no haya otro proceso activo:
+
+```sh
+OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 .venv/bin/python train_curriculum.py --run runs/curriculum-001 --resume --total-episodes 50000 --chunk-episodes 50000 --eval-per-stratum 32
+```
+
+`--total-episodes` es el presupuesto fijo del currículo; `--chunk-episodes` limita
+esa ejecución y se recorta al total. Hay bloqueo de escritura concurrente y
+checkpoints atómicos cada 256 partidas. Los logs de invocaciones interrumpidas se
+conservan por separado. `progress.json` es el avance más reciente; `state.json`
+identifica el último checkpoint completo. `completed.json` solo aparece tras guardar
+el checkpoint final **y** terminar la evaluación.
+
+Se evalúan seis estratos: 5×5/3, 7×7/7, 9×9/10, 12×12/24, 16×16/40 y 16×16/56.
+La evaluación final usa 32 tableros nuevos por estrato (192 total), separados tanto
+de entrenamiento como de la evaluación inicial, y compara la política final,
+la inicial migrada y una aleatoria en esos mismos tableros. No seleccionar resultados
+solo por el promedio: revisar cada tamaño y dificultad, y las victorias automáticas.
+
+```sh
+.venv/bin/python -m unittest -v test_core test_curriculum
+```
+
 Primer experimento local de aprendizaje por refuerzo sobre el grafo neuronal
 MaleCNS v1.0. El diseño visual acordado —mosca sentada frente a una computadora,
 tablero y actividad cerebral 3D— queda para una etapa posterior. Aún no está implementado.
