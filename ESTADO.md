@@ -156,3 +156,10 @@ reanudación de otros dos con uno coinciden exactamente con cuatro continuos, in
 replay, Adam, pérdidas y RNG. El backend nuevo predetermina cuatro hilos con particiones
 CSR compartidas: prueba B16 1.593→0.877 s forward/backward, igualdad exacta. Tiempos de
 los primeros pilotos son de un hilo. No se lanzaron las tres corridas largas de 50,000.
+
+## Corrida híbrida principal iniciada · 12 septiembre 2026
+
+- `runs/hybrid-001`: híbrido DAgger + QR-DQN,50,000 episodios, horizonte50,000, batch16,4workers, semilla20260916. PID y comando en launch.json.
+- Inicialización común initial-expanded.npz; no es cerebro virgen ni continuación del piloto híbrido. Maestro decae hasta0 en30,000episodios; pérdida de imitación conserva peso mínimo0.1. Evaluación autónoma192tableros cada1,000partidas; métricas en todos los episodios.
+- Proceso confirmado produciendo métricas y actualizaciones reales. Currículo manual habilitado entre episodios, sin solicitud manual inicial.
+- Selector del dashboard: Corridas principales / Pilotos cortos / Pruebas técnicas. Corrida antigua sigue activa; no se modificó. Seguimiento horario cubre ambas y avisa de finalización o fallo.

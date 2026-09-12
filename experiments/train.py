@@ -218,5 +218,5 @@ def main():
         return
     (run/'paused.json').unlink(missing_ok=True)
     atomic_json(run/'evaluation-final.json',latest_evaluation['results'] if latest_evaluation and latest_evaluation['episode']==ep else evaluate(brain,head,args.eval_per_stratum))
-    atomic_json(run/'completed.json',{'episodes':ep,'updates':updates,'checkpoint':'checkpoint.pkl','evaluation':'evaluation-final.json','kind':'bounded pilot; not evidence of superiority','time':time.time()})
+    atomic_json(run/'completed.json',{'episodes':ep,'updates':updates,'checkpoint':'checkpoint.pkl','evaluation':'evaluation-final.json','kind':'training run; held-out evaluation required for quality claims','time':time.time()})
 if __name__=='__main__':main()
