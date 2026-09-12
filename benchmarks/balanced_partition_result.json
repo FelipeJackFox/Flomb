@@ -1,0 +1,35 @@
+{
+  "measurements": [
+    {
+      "mode": "rows",
+      "seconds": 1.0664343750104308,
+      "exact_equal": true
+    },
+    {
+      "mode": "balanced",
+      "seconds": 0.7358080410049297,
+      "exact_equal": true
+    },
+    {
+      "mode": "balanced",
+      "seconds": 0.6094269590103067,
+      "exact_equal": true
+    },
+    {
+      "mode": "rows",
+      "seconds": 0.9924889579997398,
+      "exact_equal": true
+    },
+    {
+      "mode": "rows",
+      "seconds": 0.9989385830122046,
+      "exact_equal": true
+    },
+    {
+      "mode": "balanced",
+      "seconds": 0.6663610840332694,
+      "exact_equal": true
+    }
+  ],
+  "median_speedup": 1.4990950206244795
+}

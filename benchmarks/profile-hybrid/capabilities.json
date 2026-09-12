@@ -1,0 +1,7 @@
+{
+  "runtime_curriculum": true,
+  "game_metrics": true,
+  "metrics_every": 1,
+  "eval_every": 1000,
+  "invocation_id": "1789256529849559000"
+}

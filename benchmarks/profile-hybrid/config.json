@@ -1,0 +1,19 @@
+{
+  "mode": "hybrid",
+  "episodes": 50000,
+  "curriculum_horizon": 50000,
+  "batch": 16,
+  "capacity": 8192,
+  "warmup": 32,
+  "train_every": 4,
+  "target_every": 100,
+  "n_step": 3,
+  "gamma": 0.99,
+  "quantiles": 16,
+  "eval_per_stratum": 32,
+  "seed": 20260916,
+  "init": "runs/curriculum-001/initial-expanded.npz",
+  "initial_sha256": "7c31247758994b7d00a86d07a5293db699623e28797f239ac639e21730da7b21",
+  "public_context": "board size and total mine density; no hidden locations",
+  "algorithm": "DAgger / dueling Double QR-DQN with PER and n-step / hybrid; not full Rainbow (no NoisyNet)"
+}

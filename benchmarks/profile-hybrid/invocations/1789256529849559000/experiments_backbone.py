@@ -11,10 +11,7 @@ class Backbone:
         if workers>1:
             self.pool=ThreadPoolExecutor(workers)
             for name,matrix in [("forward",self.graph),("backward",self.transpose)]:
-                # Balance actual sparse work, rather than neuron count. Each row is
-                # still evaluated whole, preserving its accumulation order exactly.
-                edges=np.searchsorted(matrix.indptr,np.linspace(0,matrix.nnz,min(workers,matrix.shape[0])+1))
-                edges[0]=0;edges[-1]=matrix.shape[0];parts=[]
+                edges=np.linspace(0,matrix.shape[0],min(workers,matrix.shape[0])+1,dtype=int);parts=[]
                 for a,b in zip(edges[:-1],edges[1:]):
                     lo,hi=matrix.indptr[a],matrix.indptr[b]
                     parts.append(sparse.csr_matrix((matrix.data[lo:hi],matrix.indices[lo:hi],matrix.indptr[a:b+1]-lo),shape=(b-a,matrix.shape[1]),copy=False))

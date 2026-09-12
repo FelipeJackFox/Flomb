@@ -1,0 +1,18 @@
+{
+  "workers": 4,
+  "batch": 16,
+  "metrics_every": 1,
+  "eval_every": 1000,
+  "source_directory": "benchmarks/profile-hybrid/invocations/1789256529849559000",
+  "source_sha256": {
+    "experiments/train.py": "77147004087cd0434f8acdc52ccba5b46be38604860ccea126bd5e439cfa24f6",
+    "experiments/backbone.py": "5014a9a74285c371bcaf352b7bb5c32ded09b9de36121e17d33258a489e46489",
+    "experiments/qr_core.py": "05928bd97c987af50d02320c2a7b117260e349d1d8c95eb29a4615d259d3053a",
+    "experiments/game_metrics.py": "8d253798a49fed9c6ca5b03cf9366af0d3301db03dd315c96d149be4633d1e5f",
+    "experiments/curriculum_control.py": "04362b5a525bf9281c23bb8e1fab9e3fe7e5590414a9c5f1806e8eb1b170d7c4",
+    "curriculum.py": "f535825e7c1fa325186e850128f14e934caa6fc7c43ed10b4f99e30b66a2fd40",
+    "minesweeper.py": "31125d66d33048e440a6a540edcc6d5d60d8856ba57c24670886a65a510f3b8e",
+    "solver.py": "b4f54b9ab7a09dbcf7ce01ebb7d9c66a81866c89658b9385b156a704cc901a52",
+    "train_curriculum.py": "90c4fec06d7d89268a6d74718c54d098a0fcd1f92483ed891b60089baa1813e2"
+  }
+}
