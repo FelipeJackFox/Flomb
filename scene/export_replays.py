@@ -48,7 +48,9 @@ brain={'source':'MaleCNS v1.0, original soma locations and retained connections'
        'neurons':[{'id':int(ids[k]),'index':int(k),'position':pos.round(5).tolist(),'group':group} for (k,_,group),pos in zip(selected,positions)],'edges':edges}
 (out/'brain.json').write_text(json.dumps(brain,separators=(',',':')))
 replays=[]
-for size,mines,seed in [(5,3,2000000008),(9,10,2000200003),(16,40,2000400008)]:
+# Fixed seeds, interleaved sizes. Keep all outcomes; never select for wins.
+schedule=[(size,mines,2001000000+group*1000+j) for j in range(6) for group,(size,mines) in enumerate([(5,3),(9,10),(16,40)])]
+for size,mines,seed in schedule:
  env=Minesweeper(seed,size,mines)
  acts=np.random.default_rng(seed+10000)
  frames=[]
@@ -59,17 +61,21 @@ for size,mines,seed in [(5,3,2000000008),(9,10,2000200003),(16,40,2000400008)]:
   action=decode(chosen_action,size)
   h=cache[0][-1][indices]
   frame={'visible':env.visible.tolist(),'action':action,'probability':float(probs[chosen_action]),
-         'activity':h.astype(float).round(6).tolist()}
+         'activity':h.astype(float).round(6).tolist(),
+         'activity_steps':[x[indices].astype(float).round(6).tolist() for x in cache[0][1:]]}
   env.step(action)
   frame['after']=env.visible.tolist()
   frame['outcome']='win' if env.won else ('mine' if env.done else 'continue')
   frames.append(frame)
  if not frames:continue
- replays.append({'id':f'{size}x{size}','size':size,'mines':mines,'seed':seed,'won':bool(env.won),'frames':frames})
+ replays.append({'id':f'{size}x{size}-{seed}','size':size,'mines':mines,'seed':seed,'won':bool(env.won),'frames':frames})
  print(size,len(frames),'won',env.won,flush=True)
 metadata={'checkpoint':checkpoint.name,'episode':state['episode'],'sha256':hashlib.sha256(checkpoint.read_bytes()).hexdigest(),
           'mode':'Recorded evaluation; not live training actions','activity_kind':'signed tanh rate activity; not spikes',
-          'selection':'Three predetermined seeds, not selected for winning','replays':replays}
-(out/'replays.json').write_text(json.dumps(metadata,separators=(',',':')))
+          'selection':'18 fixed seeds interleaved by size; all nonautomatic games retained, no selection for wins',
+          'activity_scale':0.1,'replays':replays}
+temp=out/'replays.tmp.json'
+temp.write_text(json.dumps(metadata,separators=(',',':')))
+temp.replace(out/'replays.json')
 (out/'status-snapshot.json').write_text((run/'progress.json').read_text())
 print('Exported',len(indices),'neurons',len(edges),'edges',checkpoint.name,flush=True)

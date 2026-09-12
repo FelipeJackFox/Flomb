@@ -3,6 +3,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 const $=id=>document.getElementById(id), loader=new GLTFLoader();
 const state={playing:true,speed:1,index:0,replay:0,phase:0,last:performance.now(),ready:false};
+let lastBrainStep=-1;
 let dataset,brainData,fly,mouse,screenTexture,brainPoints,brainEdges,stageView,brainView;
 const screenCanvas=document.createElement('canvas');screenCanvas.width=1024;screenCanvas.height=640;
 const screen=screenCanvas.getContext('2d');
@@ -50,21 +51,25 @@ async function setupStage(){
 function setupBrain(){
  brainView=makeView('brain',[3.7,1.2,4.0],[0,0,0]);brainView.controls.minDistance=1.7;
  const pos=new Float32Array(brainData.neurons.flatMap(n=>n.position));
- const geo=new THREE.BufferGeometry();geo.setAttribute('position',new THREE.BufferAttribute(pos,3));geo.setAttribute('color',new THREE.BufferAttribute(new Float32Array(pos.length).fill(.2),3));
- brainPoints=new THREE.Points(geo,new THREE.PointsMaterial({size:.021,vertexColors:true,transparent:true,opacity:.95,sizeAttenuation:true}));brainView.scene.add(brainPoints);
+ const geo=new THREE.BufferGeometry();geo.setAttribute('position',new THREE.BufferAttribute(pos,3));geo.setAttribute('color',new THREE.BufferAttribute(new Float32Array(pos.length).fill(.2),3));geo.setAttribute('strength',new THREE.BufferAttribute(new Float32Array(pos.length/3),1));
+ brainPoints=new THREE.Points(geo,new THREE.ShaderMaterial({transparent:true,depthWrite:false,blending:THREE.AdditiveBlending,vertexColors:true,uniforms:{pixelRatio:{value:Math.min(devicePixelRatio,1.7)}},vertexShader:`attribute float strength; varying vec3 tint; varying float intensity; uniform float pixelRatio; void main(){tint=color;intensity=strength;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);gl_PointSize=(3.0+23.0*sqrt(strength))*pixelRatio;}`,fragmentShader:`varying vec3 tint; varying float intensity; void main(){float d=length(gl_PointCoord-vec2(0.5))*2.0;if(d>1.0)discard;float halo=exp(-5.0*d*d);float core=1.0-smoothstep(0.08,0.32,d);gl_FragColor=vec4(mix(tint,vec3(1.0),core*0.65),max(0.08,intensity)*(halo*0.5+core*0.8));}`}));brainView.scene.add(brainPoints);
  const edgePositions=[];for(const [from,to] of brainData.edges){edgePositions.push(...brainData.neurons[from].position,...brainData.neurons[to].position)}
  const eg=new THREE.BufferGeometry();eg.setAttribute('position',new THREE.Float32BufferAttribute(edgePositions,3));eg.setAttribute('color',new THREE.Float32BufferAttribute(new Float32Array(edgePositions.length).fill(.1),3));
- brainEdges=new THREE.LineSegments(eg,new THREE.LineBasicMaterial({vertexColors:true,transparent:true,opacity:.21,depthWrite:false}));brainView.scene.add(brainEdges);
+ brainEdges=new THREE.LineSegments(eg,new THREE.LineBasicMaterial({vertexColors:true,transparent:true,opacity:.12,depthWrite:false}));brainView.scene.add(brainEdges);
  $('brain-note').textContent=`${fmt(brainData.sample_count)} de ${fmt(brainData.total_neurons)} neuronas · ${fmt(brainData.edges.length)} conexiones visibles`;
 }
 const replay=()=>dataset.replays[state.replay], frame=()=>replay().frames[state.index];
 function refreshBrain(){
  if(!brainPoints)return;
- const h=frame().activity,scale=Math.max(.002,...h.map(Math.abs)),colors=brainPoints.geometry.attributes.color;
- const neg=new THREE.Color('#aa85ff'),pos=new THREE.Color('#7bf8de'),dim=new THREE.Color('#252c45');
- h.forEach((a,i)=>{const c=dim.clone().lerp(a<0?neg:pos,Math.pow(Math.abs(a)/scale,.55));colors.setXYZ(i,c.r,c.g,c.b)});colors.needsUpdate=true;
+ const steps=frame().activity_steps||[frame().activity];
+ const step=Math.min(steps.length-1,Math.floor(state.phase/.64*steps.length));lastBrainStep=step;
+ const h=steps[step],scale=dataset.activity_scale||1,colors=brainPoints.geometry.attributes.color, strengths=brainPoints.geometry.attributes.strength;
+ const neg=new THREE.Color('#c089ff'),pos=new THREE.Color('#58ffe0'),dim=new THREE.Color('#11192b');
+ let peak=0;
+ h.forEach((a,i)=>{peak=Math.max(peak,Math.abs(a));const strength=Math.min(1,Math.abs(a)/scale);const c=dim.clone().lerp(a<0?neg:pos,Math.sqrt(strength));colors.setXYZ(i,c.r,c.g,c.b);strengths.setX(i,strength)});colors.needsUpdate=true;strengths.needsUpdate=true;
  const ec=brainEdges.geometry.attributes.color;
- brainData.edges.forEach(([from,to,weight],i)=>{const strength=Math.pow(Math.abs(h[from])/scale,.6);const color=dim.clone().lerp(weight<0?neg:pos,strength);ec.setXYZ(i*2,color.r,color.g,color.b);ec.setXYZ(i*2+1,color.r,color.g,color.b)});ec.needsUpdate=true;
+ brainData.edges.forEach(([from,to,weight],i)=>{const strength=Math.sqrt(Math.min(1,Math.abs(h[from])/scale));const color=dim.clone().lerp(weight<0?neg:pos,strength);ec.setXYZ(i*2,color.r,color.g,color.b);ec.setXYZ(i*2+1,color.r,color.g,color.b)});ec.needsUpdate=true;
+ $('neural-step').textContent=`Cálculo ${step+1} / ${steps.length} · pico |actividad| ${peak.toFixed(3)}`;
 }
 function updateBoard(){
  const r=replay(),f=frame(),revealed=state.phase>=.64,visible=revealed?f.after:f.visible;
@@ -73,6 +78,7 @@ function updateBoard(){
  $('decision').textContent=`Clic: fila ${Math.floor(f.action/r.size)+1}, columna ${f.action%r.size+1}`;
  $('probability').textContent=`P(acción) ${(f.probability*100).toFixed(1)}%`;
  $('outcome').textContent=revealed&&f.outcome==='mine'?'Encontró una mina':revealed&&f.outcome==='win'?'Tablero resuelto':'Observando el tablero';
+ $('game-label').textContent=`Partida ${state.replay+1} de ${dataset.replays.length} · semilla ${r.seed}`;
  $('step-label').textContent=`${state.index+1} / ${r.frames.length}`;$('seek').max=r.frames.length-1;$('seek').value=state.index;
 }
 function paintScreen(){
@@ -87,13 +93,19 @@ function paintScreen(){
  screen.beginPath();screen.moveTo(cx,cy);screen.lineTo(cx+7,cy+26);screen.lineTo(cx+13,cy+18);screen.lineTo(cx+25,cy+19);screen.closePath();screen.fillStyle='#fff';screen.fill();screen.strokeStyle='#181326';screen.lineWidth=2;screen.stroke();
  if(screenTexture)screenTexture.needsUpdate=true;
 }
-function advance(){state.index=(state.index+1)%replay().frames.length;state.phase=0;refreshBrain();updateBoard()}
+function advance(){
+ if(state.index+1<replay().frames.length)state.index++;
+ else if(state.replay+1<dataset.replays.length){state.replay++;state.index=0;$('replay-select').value=state.replay;}
+ else{state.playing=false;state.phase=1.3;$('play').textContent='Volver al inicio';$('outcome').textContent='Fin de las partidas grabadas';return;}
+ state.phase=0;refreshBrain();updateBoard();
+}
 function animate(now){
  requestAnimationFrame(animate);const delta=Math.min(.1,(now-state.last)/1000);state.last=now;
  if(state.ready){
   const prev=state.phase>=.64;
-  if(state.playing){state.phase+=delta*state.speed/2.5;if(state.phase>=1.3)advance()}
-  if(prev!==(state.phase>=.64))updateBoard();paintScreen();
+  if(state.playing){state.phase+=delta*state.speed/4;if(state.phase>=1.3)advance()}
+  if(prev!==(state.phase>=.64))updateBoard();
+  const count=frame().activity_steps?.length||1;if(Math.min(count-1,Math.floor(state.phase/.64*count))!==lastBrainStep)refreshBrain();paintScreen();
   if(mouse){const r=replay(),a=frame().action;mouse.position.x=.43+((a%r.size)/(r.size-1)-.5)*.10;mouse.position.z=.51+(Math.floor(a/r.size)/(r.size-1)-.5)*.08;mouse.rotation.x=state.phase>.6&&state.phase<.72?-.06:0;}
   if(fly){const joint=fly.getObjectByName('coxa_T1_right');if(joint){if(!joint.userData.home)joint.userData.home=joint.quaternion.clone();joint.quaternion.copy(joint.userData.home).multiply(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1,0,0),.15*Math.sin(state.phase*Math.PI)));}}
  }
@@ -104,8 +116,8 @@ async function refreshStatus(){
  try{const r=await fetch('./api/status',{cache:'no-store'});if(!r.ok)throw Error();data=await r.json();live=true}catch{data=await (await fetch('./data/status-snapshot.json')).json()}
  $('episodes').textContent=fmt(data.episode);$('progress').value=data.episode;$('percentage').textContent=(data.episode/data.target*100).toFixed(1)+'%';$('mix').textContent=data.mixture.map(x=>Math.round(x*100)+'%').join(' / ');$('memory').textContent=(data.peak_rss_bytes_macos/1e9).toFixed(2)+' GB';$('live-label').textContent=live?'Estado del entrenamiento local':'Estado guardado · reproducción web';
 }
-$('play').onclick=()=>{state.playing=!state.playing;$('play').textContent=state.playing?'Pausar':'Reproducir'};
-$('next').onclick=()=>{advance();state.phase=.66;updateBoard()};$('speed').onchange=e=>state.speed=Number(e.target.value);
+$('play').onclick=()=>{if(state.replay===dataset.replays.length-1&&state.index===replay().frames.length-1&&state.phase>=1.3){state.replay=0;state.index=0;state.phase=0;$('replay-select').value=0;refreshBrain();updateBoard();}state.playing=!state.playing;$('play').textContent=state.playing?'Pausar':'Reproducir'};
+$('next').onclick=()=>{advance()};$('speed').onchange=e=>state.speed=Number(e.target.value);
 $('seek').oninput=e=>{state.index=Number(e.target.value);state.phase=0;refreshBrain();updateBoard()};
 $('replay-select').onchange=e=>{state.replay=Number(e.target.value);state.index=0;state.phase=0;refreshBrain();updateBoard()};
 $('edges').onchange=e=>{if(brainEdges)brainEdges.visible=e.target.checked};$('brain-home').onclick=()=>brainView.controls.reset();
@@ -113,8 +125,9 @@ $('credits-button').onclick=()=>$('credits').showModal();$('close-credits').oncl
 requestAnimationFrame(animate);
 try{
  [dataset,brainData]=await Promise.all(['replays','brain'].map(async x=>{const r=await fetch(`./data/${x}.json`);if(!r.ok)throw Error('No se pudo cargar '+x);return r.json()}));
- $('replay-select').replaceChildren(...dataset.replays.map((r,i)=>{const o=document.createElement('option');o.value=i;o.textContent=`${r.size}×${r.size} · ${r.mines} minas`;return o}));
+ $('replay-select').replaceChildren(...dataset.replays.map((r,i)=>{const o=document.createElement('option');o.value=i;o.textContent=`${i+1}. ${r.size}×${r.size} · ${r.frames.length} clics`;return o}));
  $('checkpoint').textContent=`Checkpoint ${fmt(dataset.episode)} · decisiones y actividad grabadas`;
+ $('replay-note').textContent=`${dataset.replays.length} partidas de semillas prefijadas, sin elegir victorias. Se reproducen una sola vez. No es juego en vivo.`;
  setupBrain();await setupStage();state.ready=true;refreshBrain();updateBoard();await refreshStatus();
  setInterval(()=>{if(!document.hidden)refreshStatus().catch(()=>{})},30000);
  const tools=document.modelContext;if(tools?.registerTool){tools.registerTool({name:'set_replay',description:'Selecciona una reproducción real y una decisión; no altera el entrenamiento.',inputSchema:{type:'object',properties:{replay:{type:'integer',minimum:0},step:{type:'integer',minimum:0}},required:['replay','step'],additionalProperties:false},execute:({replay:r,step})=>{if(!Number.isInteger(r)||!Number.isInteger(step)||!dataset.replays[r]?.frames[step])throw Error('Reproducción o decisión inválida');state.replay=r;state.index=step;state.phase=0;$('replay-select').value=r;refreshBrain();updateBoard();return {replay:r,step,checkpoint:dataset.checkpoint}},annotations:{readOnlyHint:false}})}

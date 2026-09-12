@@ -84,5 +84,18 @@ solo de un PID ausente. Los comandos para iniciar/reanudar están en README.
 
 Evaluar el currículo, ampliar evaluación con nuevas semillas, probar cerebro
 congelado y modelos de control antes de afirmar ventaja del conectoma. El diseño visual
-está en `DISENO.md`; la visualización 3D no está construida. La actividad del modelo
+está en `DISENO.md`; la visualización 3D local ya está disponible en `scene/`. La actividad del modelo
 actual son tasas artificiales, no spikes ni una reproducción fisiológica completa.
+
+## Corrección del visor: activaciones y partidas
+
+El visor local `http://127.0.0.1:8765/` muestra ahora 18 partidas de semillas
+prefijadas del checkpoint 22,528. Conserva todos los resultados: 1/6 victorias
+5×5, 0/6 9×9 y 0/6 16×16; muestra ilustrativa pequeña, no evaluación final.
+Se corrigió el bucle que repetía una misma derrota: avanza entre tableros y
+se detiene al terminar la lista. Cada clic incluye los tres estados internos
+reales del cálculo de tasas, con magnitud representada por tamaño y brillo
+y escala fija (saturación visual en |h|=0.1). No son spikes biológicos.
+Verificados continuidad de tableros, legalidad de acciones, estados de actividad,
+transiciones de reproducción y carga del control WebMCP; sin errores en el
+registro del navegador. Entrenamiento no modificado por esta corrección.
