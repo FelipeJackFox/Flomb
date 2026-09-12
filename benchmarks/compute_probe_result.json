@@ -1,0 +1,13 @@
+{
+  "checkpoint": "checkpoint-015872.npz",
+  "note": "Measured alongside ongoing training; not an end-to-end training speed guarantee.",
+  "sparse_serial_ms": 18.311437510419637,
+  "sparse_2_workers_ms": 11.800833482993767,
+  "sparse_2_workers_speedup": 1.5517071346535252,
+  "sparse_4_workers_ms": 8.804895478533581,
+  "sparse_4_workers_speedup": 2.079688231968579,
+  "cached_forward_backward_ms": 113.68160400888883,
+  "recomputed_forward_backward_ms": 173.33945803693496,
+  "cache_speedup": 1.5247801924344897,
+  "cache_bytes_per_click": 3338096
+}
