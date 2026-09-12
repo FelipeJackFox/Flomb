@@ -1,0 +1,20 @@
+[
+  {
+    "batch": 16,
+    "seconds": 1.4142437920090742,
+    "seconds_per_sample": 0.08839023700056714,
+    "peak_rss_bytes_macos": 574078976
+  },
+  {
+    "batch": 32,
+    "seconds": 4.09013937501004,
+    "seconds_per_sample": 0.12781685546906374,
+    "peak_rss_bytes_macos": 708608000
+  },
+  {
+    "batch": 64,
+    "seconds": 7.739300209039357,
+    "seconds_per_sample": 0.12092656576623995,
+    "peak_rss_bytes_macos": 952598528
+  }
+]

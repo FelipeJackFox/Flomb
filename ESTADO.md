@@ -120,3 +120,39 @@ No se afirma validación biomecánica ni aprendizaje motor.
 `research/METODOS_ENTRENAMIENTO.md` compara FlyGM (imitación+PPO), FLYNN (DAgger),
 Flybody, DOOMFLY y Minecraft con fuentes primarias. Propone imitación del solver
 visible, DAgger y después RL, como nueva corrida futura; no altera el currículo activo.
+
+## Implementación de DAgger, QR-DQN y combinado
+
+Entrenadores independientes en `experiments/train.py`; no se modificaron `brain.py`
+ni `train_curriculum.py`. Los tres actualizan ganancias del conectoma completo y
+una cabeza dueling de cuantiles. DAgger usa etiquetas de jugadas equivalentes;
+QR-DQN utiliza Double, PER con corrección de importancia, n-step y red objetivo;
+el híbrido suma imitación y TD con señales separadas. No es Rainbow exacto: no NoisyNet.
+
+Entradas públicas adicionales en la cabeza: tamaño y densidad total de minas,
+sin mapa oculto. Estado/replay compacto, grafo compartido, batch16, sin render.
+Checkpoints atómicos con pesos/Adam/target/replay/RNG; límite por invocación
+`--stop-after` y `--resume` mantienen calendarios. Siete pruebas de gradientes,
+máscaras y replay pasan. Smoke real de hybrid hizo cuatro updates; smoke DAgger
+reanudado 2+2 coincide exactamente con cuatro episodios continuos (versión inicial,
+antecedente al contexto público añadido; registros preservados).
+
+Pilotos `runs/method-pilot-001/{dagger,qrdqn,hybrid}`: 64 episodios por método,
+ocho evaluaciones por estrato, sin maestro ni exploración, semillas 2,000,000,000.
+Supervisor secuencial: `experiments/run_suite.py`; no confundir estos pilotos con
+entrenamientos largos ni con aprendizaje demostrado. Consultar `suite-state.json`
+y `comparison.json` para el resultado real. Configuración y copias de fuentes por corrida.
+
+Investigación y mediciones: `research/OPTIMIZACIONES_ENTRENAMIENTO.md` y `benchmarks/`.
+Backbone batch16 forward+backward medido 1.41× frente a serial; B32/B64 fueron peores
+por muestra. No sumar este factor al 3.07× previo ni extrapolarlo al algoritmo completo.
+
+Los tres pilotos method-pilot-001 finalizaron con checkpoints y evaluación completa.
+Updates DAgger/QR-DQN/híbrido: 69/55/88; clics 307/248/381. Evaluación 48 tableros
+por método: 1/48, 1/48 y 0/48 respectivamente, sin victorias automáticas. No permite
+ordenar métodos: entrenamiento y muestra muy pequeños. Informe `experiments/PILOTOS.md`.
+26 tests pasan. Verificación del híbrido actual: dos episodios con cuatro hilos y
+reanudación de otros dos con uno coinciden exactamente con cuatro continuos, incluido
+replay, Adam, pérdidas y RNG. El backend nuevo predetermina cuatro hilos con particiones
+CSR compartidas: prueba B16 1.593→0.877 s forward/backward, igualdad exacta. Tiempos de
+los primeros pilotos son de un hilo. No se lanzaron las tres corridas largas de 50,000.

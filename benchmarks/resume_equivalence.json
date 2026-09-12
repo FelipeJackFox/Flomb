@@ -1,0 +1,7 @@
+{
+  "test": "Hybrid 2 episodes 4 workers then resume 2 episodes 1 worker vs continuous 4 episodes 1 worker",
+  "exact_equal": true,
+  "fields": "weights, Adam, target networks, replay, RNGs, updates, loss",
+  "episodes": 4,
+  "updates": 4
+}

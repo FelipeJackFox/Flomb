@@ -1,0 +1,20 @@
+[
+  {
+    "workers": 1,
+    "seconds": 1.5931042089941911,
+    "batch": 16,
+    "exact_equal": true
+  },
+  {
+    "workers": 2,
+    "seconds": 1.1067321250448003,
+    "batch": 16,
+    "exact_equal": true
+  },
+  {
+    "workers": 4,
+    "seconds": 0.8770037080394104,
+    "batch": 16,
+    "exact_equal": true
+  }
+]

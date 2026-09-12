@@ -1,0 +1,9 @@
+{
+  "batch": 16,
+  "forward_backward_batch_seconds": 1.606517625041306,
+  "forward_backward_serial_seconds": 2.265163708012551,
+  "speedup": 1.4099837267296151,
+  "max_feature_difference": 0.0,
+  "max_gradient_difference": 5.960464477539063e-08,
+  "scope": "Full backbone forward/backward only; same trainable gains, no frozen cache. Shared host with other training. Not overall trainer speedup."
+}
