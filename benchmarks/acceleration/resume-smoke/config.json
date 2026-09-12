@@ -1,0 +1,66 @@
+{
+  "run": "runs/curriculum-001",
+  "initial": "runs/pilot-001/checkpoint-002176.npz",
+  "total_episodes": 50000,
+  "chunk_episodes": 50000,
+  "eval_per_stratum": 32,
+  "seed": 20260913,
+  "resume": false,
+  "initial_sha256": "b94de6d819a8ff80dca5bf5149a9448dd702ff3c08394c683a30206ae1e8af8a",
+  "source_hashes": {
+    "brain.py": "9b3f294cbefc81b14672b7a9702cf21cb85e44689fe650aeb638b90a7cbca0ab",
+    "minesweeper.py": "31125d66d33048e440a6a540edcc6d5d60d8856ba57c24670886a65a510f3b8e",
+    "curriculum.py": "f535825e7c1fa325186e850128f14e934caa6fc7c43ed10b4f99e30b66a2fd40",
+    "train_curriculum.py": "3087cea6a13435e61b8847b9781d8a02e6a12381413026dbb28949f1d778d154",
+    "requirements.txt": "9bdcbe24bc38dd74b2a3bc8566e36dcd69b9e817fa17d129a3dc30f1feca5431"
+  },
+  "canvas": 16,
+  "initial_probabilities": [
+    0.6,
+    0.3,
+    0.1
+  ],
+  "pure_large_at_fraction": 0.7,
+  "groups": {
+    "small": "5/7, density .08-.16",
+    "medium": "9/12, density .10-.19",
+    "large": "16, density .12-.22"
+  },
+  "reward": "mine -1, win +1, +.25 * newly revealed / total safe; gamma=1",
+  "baseline": "separate moving baseline for each size group",
+  "migration": "old input/output embedded exactly; extra inputs only outside original 5x5; Adam moments reset",
+  "dynamics": "full retained MaleCNS sparse rate graph, three rounds, internal gains and readout trainable",
+  "train_seed_range": [
+    0,
+    1000000000
+  ],
+  "validation_seed_start": 1500000000,
+  "final_seed_start": 2000000000,
+  "evaluation_strata": [
+    [
+      5,
+      3
+    ],
+    [
+      7,
+      7
+    ],
+    [
+      9,
+      10
+    ],
+    [
+      12,
+      24
+    ],
+    [
+      16,
+      40
+    ],
+    [
+      16,
+      56
+    ]
+  ],
+  "graph_provenance_sha256": "14c0cdb3fe2e2f58e25532e5746bd8ca57e9175cbf2df4379847f5febb176ac7"
+}

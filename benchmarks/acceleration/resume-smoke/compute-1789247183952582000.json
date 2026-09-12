@@ -1,0 +1,10 @@
+{
+  "sparse_workers": 4,
+  "activation_cache_mb": 1024.0,
+  "resumed_from_episode": 16128,
+  "pid": 22234,
+  "source_hashes": {
+    "brain.py": "20a0539818d7b8f7c633428a8202cd2409cec8f16eccc99ad753922d9adfe8c1",
+    "train_curriculum.py": "90c4fec06d7d89268a6d74718c54d098a0fcd1f92483ed891b60089baa1813e2"
+  }
+}

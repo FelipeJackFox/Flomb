@@ -1,0 +1,26 @@
+{
+  "episode": 16128,
+  "target": 50000,
+  "checkpoint": "checkpoint-016128.npz",
+  "rng": {
+    "bit_generator": "PCG64",
+    "state": {
+      "state": 184653120716004920901506732498992764620,
+      "inc": 36925695699716470960505498616114602631
+    },
+    "has_uint32": 0,
+    "uinteger": 1443684650
+  },
+  "baseline": {
+    "small": -0.7102222493809918,
+    "medium": -0.9277422830846838,
+    "large": -0.9503647545030924
+  },
+  "group_counts": {
+    "small": 7486,
+    "medium": 3732,
+    "large": 4910
+  },
+  "clicks": 68652,
+  "training_wall_seconds": 11645.397486416041
+}

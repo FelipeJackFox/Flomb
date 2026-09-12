@@ -3,13 +3,17 @@
 One learned positive gain per presynaptic neuron scales its outgoing edges.
 No claim of spiking physiology, individual-synapse learning, or biological I/O.
 """
+from concurrent.futures import ThreadPoolExecutor
 import numpy as np
+from scipy import sparse
 
 
 class BrainPolicy:
-    def __init__(self, graph, seed=17, inputs=250, actions=25, readouts=1024, cycles=3):
+    def __init__(self, graph, seed=17, inputs=250, actions=25, readouts=1024, cycles=3, sparse_workers=1):
         self.graph = graph
         self.transpose = graph.T.tocsr()
+        self._pool = None
+        self.configure_compute(sparse_workers)
         self.cycles = cycles
         n = graph.shape[0]
         rng = np.random.default_rng(seed)
@@ -27,6 +31,43 @@ class BrainPolicy:
         self.v = [np.zeros_like(p) for p in self.parameters()]
         self.updates = 0
 
+    def configure_compute(self, sparse_workers=1):
+        """Change execution only; sparse rows retain their summation order."""
+        if not isinstance(sparse_workers, int) or sparse_workers < 1:
+            raise ValueError('sparse_workers must be a positive integer')
+        self.close()
+        self.sparse_workers = sparse_workers
+        self._parts = {}
+        if sparse_workers > 1:
+            for name, matrix in [('forward', self.graph), ('backward', self.transpose)]:
+                edges = np.linspace(0, matrix.shape[0], min(sparse_workers, matrix.shape[0])+1, dtype=int)
+                parts = []
+                for first, last in zip(edges[:-1], edges[1:]):
+                    lo, hi = matrix.indptr[first], matrix.indptr[last]
+                    # Share data/indices; only the small rebased row pointer is allocated.
+                    part = sparse.csr_matrix((matrix.data[lo:hi], matrix.indices[lo:hi],
+                                              matrix.indptr[first:last+1]-lo),
+                                             shape=(last-first, matrix.shape[1]), copy=False)
+                    parts.append(part)
+                self._parts[name] = parts
+            self._pool = ThreadPoolExecutor(max_workers=sparse_workers)
+
+    def close(self):
+        if self._pool is not None:
+            self._pool.shutdown(wait=True)
+            self._pool = None
+
+    def _matvec(self, vector, backward=False):
+        if self._pool is None:
+            return (self.transpose if backward else self.graph) @ vector
+        parts = self._parts['backward' if backward else 'forward']
+        return np.concatenate(list(self._pool.map(lambda part: part @ vector, parts)))
+
+    def activation_cache_bytes(self):
+        """Array payload upper bound for one cached decision (including probabilities)."""
+        return ((self.cycles+2)*self.log_gain.nbytes
+                + len(self.output_index)*self.log_gain.dtype.itemsize + self.bias.nbytes)
+
     def parameters(self):
         return [self.log_gain, self.readout, self.bias]
 
@@ -38,7 +79,7 @@ class BrainPolicy:
         h = np.tanh(drive)
         states = [h]
         for _ in range(self.cycles):
-            h = np.tanh(self.graph @ (gain * h))
+            h = np.tanh(self._matvec(gain * h))
             states.append(h)
         features = h[self.output_index] * self.feature_scale
         logits = features @ self.readout + self.bias
@@ -57,7 +98,7 @@ class BrainPolicy:
         dg = np.zeros_like(self.log_gain)
         for k in range(self.cycles, 0, -1):
             dz = dh * (1 - states[k] ** 2)
-            routed = self.transpose @ dz
+            routed = self._matvec(dz, backward=True)
             dg += routed * states[k - 1] * gain
             dh = routed * gain
         return [dg, dw, dlogits.copy()]

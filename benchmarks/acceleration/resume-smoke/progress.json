@@ -1,0 +1,33 @@
+{
+  "episode": 16130,
+  "target": 50000,
+  "group": "large",
+  "size": 16,
+  "mines": 50,
+  "seed": 691406424,
+  "mixture": [
+    0.3234973270893989,
+    0.16174866354469944,
+    0.5147540093659017
+  ],
+  "won": false,
+  "automatic_win": false,
+  "return": -0.995145631067961,
+  "safe_fraction": 0.024271844660194174,
+  "steps": 5,
+  "total_clicks": 68663,
+  "gradient_norm": 0.2410929055927842,
+  "internal_gain_l2_change": 65.9847640991211,
+  "group_counts": {
+    "small": 7486,
+    "medium": 3733,
+    "large": 4911
+  },
+  "training_wall_seconds": 11647.199571041041,
+  "compute": {
+    "cached_steps": 5,
+    "recomputed_steps": 0,
+    "activation_cache_bytes": 16695600
+  },
+  "peak_rss_bytes_macos": 947208192
+}

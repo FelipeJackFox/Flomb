@@ -56,20 +56,33 @@ def evaluate(policy, count=32, seed_start=1_500_000_000):
     return result
 
 
-def train_episode(policy, env, rng, baseline):
-    """Store observations, recompute neural activations backward to bound RAM."""
+def train_episode(policy, env, rng, baseline, activation_cache_mb=0):
+    """Cache a bounded prefix; recompute the rest without changing update order.
+
+    The cap covers additional activation/probability array payload, not total RSS.
+    Zero preserves the original recompute-only execution.
+    """
+    if not np.isfinite(activation_cache_mb) or activation_cache_mb < 0:
+        raise ValueError('activation_cache_mb must be finite and nonnegative')
+    budget = int(activation_cache_mb * 1024**2)
+    per_click = policy.activation_cache_bytes()
+    used = cached_steps = 0
     trajectory = []
     while not env.done:
         obs, legal = encode(env)
-        probs, _ = policy.forward(obs, legal)
+        keep_cache = used + per_click <= budget
+        probs, cache = policy.forward(obs, legal, cache=keep_cache)
+        if keep_cache:
+            used += per_click
+            cached_steps += 1
         action = int(rng.choice(len(probs), p=probs))
         reward = reward_step(env, decode(action, env.size))
-        trajectory.append((obs, legal, action, reward))
+        trajectory.append((obs, legal, action, reward, (probs, cache) if keep_cache else None))
     gradients = [np.zeros_like(p) for p in policy.parameters()]
     ret = 0.
-    for obs, legal, action, reward in reversed(trajectory):
+    for obs, legal, action, reward, stored in reversed(trajectory):
         ret += reward  # gamma=1: total shaping cannot outweigh a mine on larger boards.
-        probs, cache = policy.forward(obs, legal, cache=True)
+        probs, cache = stored if stored is not None else policy.forward(obs, legal, cache=True)
         score = -probs.copy()
         score[action] += 1.
         logp = np.log(np.maximum(probs, 1e-30))
@@ -78,10 +91,16 @@ def train_episode(policy, env, rng, baseline):
         for g, new in zip(gradients, policy.backward(cache, dlogits)):
             g += new
     norm = policy.apply(gradients) if trajectory else 0.
+    policy.last_episode_compute = {
+        "cached_steps": cached_steps, "recomputed_steps": len(trajectory)-cached_steps,
+        "activation_cache_bytes": used,
+    }
     return ret, norm, len(trajectory)
 
 
 def run(args):
+    if args.sparse_workers < 1 or not np.isfinite(args.activation_cache_mb) or args.activation_cache_mb < 0:
+        raise ValueError("Invalid compute configuration")
     out = Path(args.run)
     if args.total_episodes < 2 or args.chunk_episodes < 1 or args.eval_per_stratum < 1:
         raise ValueError('Invalid episode budget')
@@ -95,7 +114,7 @@ def run(args):
     atomic_json(out/'live-process.json', {'pid': os.getpid(), 'started_at': time.time()})
     started = time.perf_counter()
     graph = sparse.load_npz('data/processed/graph.npz')
-    policy = BrainPolicy(graph)
+    policy = BrainPolicy(graph, sparse_workers=args.sparse_workers)
     rng = np.random.default_rng(args.seed)
     baseline = {g: 0. for g in GROUPS}
     counts, clicks, start, prior_seconds = Counter(), 0, 0, 0.
@@ -140,6 +159,14 @@ def run(args):
         before = {'random': evaluate(None, args.eval_per_stratum),
                   'initial': evaluate(policy, args.eval_per_stratum)}
         atomic_json(out/'evaluation-before.json', before)
+    # Record per-invocation execution settings separately from immutable curriculum config.
+    invocation = out / f'compute-{time.time_ns()}.json'
+    atomic_json(invocation, {
+        'sparse_workers': args.sparse_workers, 'activation_cache_mb': args.activation_cache_mb,
+        'resumed_from_episode': start, 'pid': os.getpid(),
+        'source_hashes': {name: hashlib.sha256(Path(name).read_bytes()).hexdigest()
+                          for name in ('brain.py', 'train_curriculum.py')},
+    })
     reference_gain = np.load(out/'initial-expanded.npz')['log_gain']
     stop = min(args.total_episodes, start+args.chunk_episodes)
     if start > stop:
@@ -165,7 +192,7 @@ def run(args):
         seed = int(rng.integers(0, 1_000_000_000))
         env = Minesweeper(seed, size, mines)
         automatic_win = bool(env.won)
-        ret, norm, steps = train_episode(policy, env, rng, baseline[group])
+        ret, norm, steps = train_episode(policy, env, rng, baseline[group], args.activation_cache_mb)
         if steps:
             baseline[group] = .98*baseline[group]+.02*ret
         counts[group] += 1
@@ -178,6 +205,7 @@ def run(args):
                'internal_gain_l2_change': float(np.linalg.norm(policy.log_gain-reference_gain)),
                'group_counts': dict(counts),
                'training_wall_seconds': prior_seconds+time.perf_counter()-training_started,
+               'compute': policy.last_episode_compute,
                'peak_rss_bytes_macos': resource.getrusage(resource.RUSAGE_SELF).ru_maxrss}
         with log_path.open('a') as f:
             f.write(json.dumps(row)+'\n')
@@ -199,6 +227,7 @@ def run(args):
         print('COMPLETED', args.run, flush=True)
     else:
         print('CHUNK_COMPLETED', stop, 'of', args.total_episodes, flush=True)
+    policy.close()
     print('INVOCATION_SECONDS', time.perf_counter()-started, flush=True)
 
 
@@ -210,6 +239,9 @@ def main():
     p.add_argument('--chunk-episodes', type=int, default=50000)
     p.add_argument('--eval-per-stratum', type=int, default=32)
     p.add_argument('--seed', type=int, default=20260913)
+    p.add_argument('--sparse-workers', type=int, default=1)
+    p.add_argument('--activation-cache-mb', type=float, default=0,
+                   help='Maximum additional cached activation array MiB per episode; overflow recomputes')
     p.add_argument('--resume', action='store_true')
     args = p.parse_args()
     run(args)

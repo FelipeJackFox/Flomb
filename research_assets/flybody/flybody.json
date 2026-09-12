@@ -1,0 +1,446 @@
+{
+  "file": "/tmp/mosca-fruta-assets/flybody.glb",
+  "bytes": 22987712,
+  "nodes": 153,
+  "meshes": 85,
+  "triangles": 272550,
+  "bounds_min": [
+    -0.19267856196434183,
+    -0.3058127164840698,
+    -0.13187505282875692
+  ],
+  "bounds_max": [
+    0.10853552170864297,
+    0.3058134615421295,
+    0.053692068576812746
+  ],
+  "axes": "MJCF: Z up, X forward; Three root rotateX(-pi/2) for Y up",
+  "preservation": "OBJ vertices/triangles and MJCF hierarchy preserved; OBJ scale .1 from MJCF applied; geometric qpos=0 only; no dynamics",
+  "parts": [
+    {
+      "mesh": "thorax",
+      "vertices": 54936,
+      "triangles": 18312
+    },
+    {
+      "mesh": "thorax_black",
+      "vertices": 73974,
+      "triangles": 24658
+    },
+    {
+      "mesh": "head",
+      "vertices": 35880,
+      "triangles": 11960
+    },
+    {
+      "mesh": "head_red",
+      "vertices": 177912,
+      "triangles": 59304
+    },
+    {
+      "mesh": "head_ocelli",
+      "vertices": 35712,
+      "triangles": 11904
+    },
+    {
+      "mesh": "head_black",
+      "vertices": 71940,
+      "triangles": 23980
+    },
+    {
+      "mesh": "rostrum",
+      "vertices": 12684,
+      "triangles": 4228
+    },
+    {
+      "mesh": "rostrum_bristle-brown",
+      "vertices": 9240,
+      "triangles": 3080
+    },
+    {
+      "mesh": "haustellum",
+      "vertices": 10992,
+      "triangles": 3664
+    },
+    {
+      "mesh": "haustellum_black",
+      "vertices": 7920,
+      "triangles": 2640
+    },
+    {
+      "mesh": "labrum_left_lower",
+      "vertices": 2880,
+      "triangles": 960
+    },
+    {
+      "mesh": "labrum_right_lower",
+      "vertices": 2880,
+      "triangles": 960
+    },
+    {
+      "mesh": "antenna_left",
+      "vertices": 12384,
+      "triangles": 4128
+    },
+    {
+      "mesh": "antenna_left_black",
+      "vertices": 5160,
+      "triangles": 1720
+    },
+    {
+      "mesh": "antenna_right",
+      "vertices": 12384,
+      "triangles": 4128
+    },
+    {
+      "mesh": "antenna_right_black",
+      "vertices": 5160,
+      "triangles": 1720
+    },
+    {
+      "mesh": "wing_left_brown",
+      "vertices": 18684,
+      "triangles": 6228
+    },
+    {
+      "mesh": "wing_left_membrane",
+      "vertices": 1500,
+      "triangles": 500
+    },
+    {
+      "mesh": "wing_right_brown",
+      "vertices": 18684,
+      "triangles": 6228
+    },
+    {
+      "mesh": "wing_right_membrane",
+      "vertices": 1500,
+      "triangles": 500
+    },
+    {
+      "mesh": "abdomen_1",
+      "vertices": 4374,
+      "triangles": 1458
+    },
+    {
+      "mesh": "abdomen_1_lower",
+      "vertices": 1440,
+      "triangles": 480
+    },
+    {
+      "mesh": "abdomen_2",
+      "vertices": 1860,
+      "triangles": 620
+    },
+    {
+      "mesh": "abdomen_2_lower",
+      "vertices": 1536,
+      "triangles": 512
+    },
+    {
+      "mesh": "abdomen_3",
+      "vertices": 2244,
+      "triangles": 748
+    },
+    {
+      "mesh": "abdomen_3_lower",
+      "vertices": 1824,
+      "triangles": 608
+    },
+    {
+      "mesh": "abdomen_4",
+      "vertices": 2244,
+      "triangles": 748
+    },
+    {
+      "mesh": "abdomen_4_lower",
+      "vertices": 1824,
+      "triangles": 608
+    },
+    {
+      "mesh": "abdomen_5",
+      "vertices": 2196,
+      "triangles": 732
+    },
+    {
+      "mesh": "abdomen_5_lower",
+      "vertices": 1968,
+      "triangles": 656
+    },
+    {
+      "mesh": "abdomen_6",
+      "vertices": 2244,
+      "triangles": 748
+    },
+    {
+      "mesh": "abdomen_6_lower",
+      "vertices": 1824,
+      "triangles": 608
+    },
+    {
+      "mesh": "abdomen_8",
+      "vertices": 5058,
+      "triangles": 1686
+    },
+    {
+      "mesh": "abdomen_7",
+      "vertices": 2244,
+      "triangles": 748
+    },
+    {
+      "mesh": "abdomen_7_lower",
+      "vertices": 1824,
+      "triangles": 608
+    },
+    {
+      "mesh": "haltere_left",
+      "vertices": 3744,
+      "triangles": 1248
+    },
+    {
+      "mesh": "haltere_right",
+      "vertices": 3744,
+      "triangles": 1248
+    },
+    {
+      "mesh": "coxa_T1_left",
+      "vertices": 6696,
+      "triangles": 2232
+    },
+    {
+      "mesh": "femur_T1_left",
+      "vertices": 6444,
+      "triangles": 2148
+    },
+    {
+      "mesh": "tibia_T1_left",
+      "vertices": 2970,
+      "triangles": 990
+    },
+    {
+      "mesh": "tarsus_T1_1_left",
+      "vertices": 1968,
+      "triangles": 656
+    },
+    {
+      "mesh": "tarsus_T1_2_left",
+      "vertices": 1776,
+      "triangles": 592
+    },
+    {
+      "mesh": "tarsus_T1_3_left",
+      "vertices": 1776,
+      "triangles": 592
+    },
+    {
+      "mesh": "tarsus_T1_4_left",
+      "vertices": 1776,
+      "triangles": 592
+    },
+    {
+      "mesh": "tarsal_claw_T1_left_brown",
+      "vertices": 4728,
+      "triangles": 1576
+    },
+    {
+      "mesh": "coxa_T1_right",
+      "vertices": 6696,
+      "triangles": 2232
+    },
+    {
+      "mesh": "femur_T1_right",
+      "vertices": 6444,
+      "triangles": 2148
+    },
+    {
+      "mesh": "tibia_T1_right",
+      "vertices": 2970,
+      "triangles": 990
+    },
+    {
+      "mesh": "tarsus_T1_1_right",
+      "vertices": 1968,
+      "triangles": 656
+    },
+    {
+      "mesh": "tarsus_T1_2_right",
+      "vertices": 1776,
+      "triangles": 592
+    },
+    {
+      "mesh": "tarsus_T1_3_right",
+      "vertices": 1776,
+      "triangles": 592
+    },
+    {
+      "mesh": "tarsus_T1_4_right",
+      "vertices": 1776,
+      "triangles": 592
+    },
+    {
+      "mesh": "tarsal_claw_T1_right_brown",
+      "vertices": 4728,
+      "triangles": 1576
+    },
+    {
+      "mesh": "coxa_T2_left",
+      "vertices": 7644,
+      "triangles": 2548
+    },
+    {
+      "mesh": "femur_T2_left",
+      "vertices": 8928,
+      "triangles": 2976
+    },
+    {
+      "mesh": "tibia_T2_left",
+      "vertices": 3750,
+      "triangles": 1250
+    },
+    {
+      "mesh": "tarsus_T2_1_left",
+      "vertices": 3360,
+      "triangles": 1120
+    },
+    {
+      "mesh": "tarsus_T2_2_left",
+      "vertices": 2352,
+      "triangles": 784
+    },
+    {
+      "mesh": "tarsus_T2_3_left",
+      "vertices": 1968,
+      "triangles": 656
+    },
+    {
+      "mesh": "tarsus_T2_4_left",
+      "vertices": 1776,
+      "triangles": 592
+    },
+    {
+      "mesh": "tarsal_claw_T2_left_brown",
+      "vertices": 4968,
+      "triangles": 1656
+    },
+    {
+      "mesh": "coxa_T2_right",
+      "vertices": 7644,
+      "triangles": 2548
+    },
+    {
+      "mesh": "femur_T2_right",
+      "vertices": 8928,
+      "triangles": 2976
+    },
+    {
+      "mesh": "tibia_T2_right",
+      "vertices": 3750,
+      "triangles": 1250
+    },
+    {
+      "mesh": "tarsus_T2_1_right",
+      "vertices": 3360,
+      "triangles": 1120
+    },
+    {
+      "mesh": "tarsus_T2_2_right",
+      "vertices": 2352,
+      "triangles": 784
+    },
+    {
+      "mesh": "tarsus_T2_3_right",
+      "vertices": 1968,
+      "triangles": 656
+    },
+    {
+      "mesh": "tarsus_T2_4_right",
+      "vertices": 1776,
+      "triangles": 592
+    },
+    {
+      "mesh": "tarsal_claw_T2_right_brown",
+      "vertices": 4968,
+      "triangles": 1656
+    },
+    {
+      "mesh": "coxa_T3_left",
+      "vertices": 5796,
+      "triangles": 1932
+    },
+    {
+      "mesh": "femur_T3_left",
+      "vertices": 9216,
+      "triangles": 3072
+    },
+    {
+      "mesh": "tibia_T3_left",
+      "vertices": 6774,
+      "triangles": 2258
+    },
+    {
+      "mesh": "tarsus_T3_1_left",
+      "vertices": 4740,
+      "triangles": 1580
+    },
+    {
+      "mesh": "tarsus_T3_2_left",
+      "vertices": 2736,
+      "triangles": 912
+    },
+    {
+      "mesh": "tarsus_T3_3_left",
+      "vertices": 1968,
+      "triangles": 656
+    },
+    {
+      "mesh": "tarsus_T3_4_left",
+      "vertices": 1968,
+      "triangles": 656
+    },
+    {
+      "mesh": "tarsal_claw_T3_left_brown",
+      "vertices": 5448,
+      "triangles": 1816
+    },
+    {
+      "mesh": "coxa_T3_right",
+      "vertices": 5796,
+      "triangles": 1932
+    },
+    {
+      "mesh": "femur_T3_right",
+      "vertices": 9216,
+      "triangles": 3072
+    },
+    {
+      "mesh": "tibia_T3_right",
+      "vertices": 6774,
+      "triangles": 2258
+    },
+    {
+      "mesh": "tarsus_T3_1_right",
+      "vertices": 4740,
+      "triangles": 1580
+    },
+    {
+      "mesh": "tarsus_T3_2_right",
+      "vertices": 2736,
+      "triangles": 912
+    },
+    {
+      "mesh": "tarsus_T3_3_right",
+      "vertices": 1968,
+      "triangles": 656
+    },
+    {
+      "mesh": "tarsus_T3_4_right",
+      "vertices": 1968,
+      "triangles": 656
+    },
+    {
+      "mesh": "tarsal_claw_T3_right_brown",
+      "vertices": 5448,
+      "triangles": 1816
+    }
+  ]
+}
