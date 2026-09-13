@@ -95,3 +95,4 @@ FINISHED encoder_only 20260924 855
 {"phase": "training", "variant": "internal_only", "seed": 20260924, "updates": 200, "target": 3000, "loss": 1.96994948387146, "gradient_norm": 2.04746413230896, "training_seconds": 62.92181024997262}
 {"phase": "training", "variant": "internal_only", "seed": 20260924, "updates": 300, "target": 3000, "loss": 1.715991497039795, "gradient_norm": 2.2164268493652344, "training_seconds": 94.2789648330072}
 {"phase": "training", "variant": "internal_only", "seed": 20260924, "updates": 400, "target": 3000, "loss": 2.380084276199341, "gradient_norm": 2.1013317108154297, "training_seconds": 125.69465641700663}
+{"phase": "training", "variant": "internal_only", "seed": 20260924, "updates": 500, "target": 3000, "loss": 1.856205701828003, "gradient_norm": 1.7291548252105713, "training_seconds": 157.56309795798734}
