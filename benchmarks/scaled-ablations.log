@@ -138,3 +138,18 @@ FINISHED internal_only 20260924 806
 {"phase": "training", "variant": "both", "seed": 20260924, "updates": 1400, "target": 3000, "loss": 2.036527633666992, "gradient_norm": 1.8293166160583496, "training_seconds": 652.5652069170028}
 {"phase": "training", "variant": "both", "seed": 20260924, "updates": 1500, "target": 3000, "loss": 1.3525121212005615, "gradient_norm": 1.6120933294296265, "training_seconds": 688.5877634999924}
 {"phase": "training", "variant": "both", "seed": 20260924, "updates": 1600, "target": 3000, "loss": 1.8862991333007812, "gradient_norm": 1.6936835050582886, "training_seconds": 727.0019575420301}
+{"phase": "training", "variant": "both", "seed": 20260924, "updates": 1700, "target": 3000, "loss": 1.9726040363311768, "gradient_norm": 1.727170705795288, "training_seconds": 771.3545865840279}
+{"phase": "training", "variant": "both", "seed": 20260924, "updates": 1800, "target": 3000, "loss": 1.7483203411102295, "gradient_norm": 1.709177017211914, "training_seconds": 815.5615688750404}
+{"phase": "training", "variant": "both", "seed": 20260924, "updates": 1900, "target": 3000, "loss": 2.1602234840393066, "gradient_norm": 1.5172874927520752, "training_seconds": 858.6923420840176}
+{"phase": "training", "variant": "both", "seed": 20260924, "updates": 2000, "target": 3000, "loss": 1.817134976387024, "gradient_norm": 2.494814157485962, "training_seconds": 902.4600255420082}
+{"phase": "training", "variant": "both", "seed": 20260924, "updates": 2100, "target": 3000, "loss": 2.068256378173828, "gradient_norm": 2.6623005867004395, "training_seconds": 939.0433955000481}
+{"phase": "training", "variant": "both", "seed": 20260924, "updates": 2200, "target": 3000, "loss": 1.8024988174438477, "gradient_norm": 1.5335925817489624, "training_seconds": 974.1283819170203}
+{"phase": "training", "variant": "both", "seed": 20260924, "updates": 2300, "target": 3000, "loss": 1.8981494903564453, "gradient_norm": 1.9194825887680054, "training_seconds": 1009.1994832089986}
+{"phase": "training", "variant": "both", "seed": 20260924, "updates": 2400, "target": 3000, "loss": 1.8803032636642456, "gradient_norm": 1.9233343601226807, "training_seconds": 1060.9498261249973}
+{"phase": "training", "variant": "both", "seed": 20260924, "updates": 2500, "target": 3000, "loss": 1.543965220451355, "gradient_norm": 2.197352647781372, "training_seconds": 1096.973963833996}
+{"phase": "training", "variant": "both", "seed": 20260924, "updates": 2600, "target": 3000, "loss": 1.8912100791931152, "gradient_norm": 2.5479559898376465, "training_seconds": 1133.8420788749936}
+{"phase": "training", "variant": "both", "seed": 20260924, "updates": 2700, "target": 3000, "loss": 1.7372002601623535, "gradient_norm": 1.6475969552993774, "training_seconds": 1168.8351324170362}
+{"phase": "training", "variant": "both", "seed": 20260924, "updates": 2800, "target": 3000, "loss": 1.6633076667785645, "gradient_norm": 2.0144364833831787, "training_seconds": 1204.0406861670199}
+{"phase": "training", "variant": "both", "seed": 20260924, "updates": 2900, "target": 3000, "loss": 1.813114881515503, "gradient_norm": 1.8905818462371826, "training_seconds": 1239.1583678339957}
+{"phase": "training", "variant": "both", "seed": 20260924, "updates": 3000, "target": 3000, "loss": 1.641695499420166, "gradient_norm": 2.2225382328033447, "training_seconds": 1274.2635764590232}
+FINISHED both 20260924 828
