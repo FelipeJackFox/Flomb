@@ -23,11 +23,14 @@ class SparseMessage(torch.autograd.Function):
 
 
 class ConnectomePolicy(nn.Module):
-    def __init__(self, operator, expressive=False, channels=2):
+    def __init__(self, operator, expressive=False, channels=2,
+                 learned_encoder=None, internal_dynamics=None):
         super().__init__()
         self.operator = operator
         self.expressive = expressive
-        self.channels = channels if expressive else 1
+        self.learned_encoder = expressive if learned_encoder is None else learned_encoder
+        self.internal_dynamics = expressive if internal_dynamics is None else internal_dynamics
+        self.channels = channels if self.learned_encoder or self.internal_dynamics else 1
         n = len(operator.log_gain)
         self.register_buffer('indices', torch.from_numpy(np.concatenate(
             [operator.input_index, operator.extra_input_index], axis=1)).long())
@@ -35,9 +38,10 @@ class ConnectomePolicy(nn.Module):
             [operator.input_sign, operator.extra_input_sign], axis=1)))
         self.register_buffer('outputs', torch.from_numpy(operator.output_index).long())
         self.log_gain = nn.Parameter(torch.zeros(n, self.channels))
-        if expressive:
+        if self.learned_encoder:
             self.encoder = nn.Sequential(nn.Conv2d(10, 16, 3, padding=1), nn.Tanh(),
                                          nn.Conv2d(16, 10*self.channels, 3, padding=1))
+        if self.internal_dynamics:
             self.bias = nn.Parameter(torch.zeros(n, self.channels))
             self.mix = nn.Parameter(torch.eye(self.channels))
             self.retention = nn.Parameter(torch.full((self.channels,), -2.0))
@@ -47,14 +51,14 @@ class ConnectomePolicy(nn.Module):
 
     def features(self, x):
         batch = len(x)
-        if self.expressive:
+        if self.learned_encoder:
             grid = x.reshape(batch, 16, 16, 10).permute(0, 3, 1, 2)
             valid = (grid.sum(1, keepdim=True) != 0)
             encoded = self.encoder(grid).reshape(batch, self.channels, 10, 16, 16)
             encoded = (encoded + grid[:, None]) * valid[:, None]
             encoded = encoded.permute(0, 3, 4, 2, 1).reshape(batch, 2560, self.channels)
         else:
-            encoded = x[..., None]
+            encoded = x[..., None].expand(-1, -1, self.channels)
         # Chunk by projection slot to avoid a [batch, neurons, slots, channels] tensor.
         drive = encoded.new_zeros(len(self.log_gain), batch, self.channels)
         for slot in range(self.indices.shape[1]):
@@ -63,7 +67,7 @@ class ConnectomePolicy(nn.Module):
         gain = self.log_gain.clamp(-1, 1).exp()[:, None]
         for _ in range(self.operator.cycles):
             message = SparseMessage.apply((gain*h).reshape(len(h), -1), self.operator).reshape_as(h)
-            if self.expressive:
+            if self.internal_dynamics:
                 candidate = torch.tanh(message @ self.mix + self.bias[:, None] + .1*drive)
                 retention = self.retention.sigmoid()
                 h = retention*h + (1-retention)*candidate
