@@ -263,7 +263,16 @@ def _aggregate(files, file_cache=None):
     size_series = {f'{size}x{size}': [_point(rows, size=size, bucket_end=(bucket + 1) * bucket_size)
                                     for bucket, rows in sorted(buckets.items())]
                    for size, buckets in sorted(sizes.items())}
-    return {'series': series, 'size_series': size_series, 'overall_series': [_point(rows, bucket_end=(bucket + 1) * bucket_size) for bucket, rows in sorted(overall.items())],
+    # Sum original episode counters inside each exact stratum before ratios.
+    by_exact={}
+    for row in records:
+        if type(row.get('size')) is int and type(row.get('mines')) is int:
+            by_exact.setdefault((row['size'],row['mines']),[]).append(row)
+    smoothed={}
+    for (size,mines),rows in by_exact.items():
+        indices=sorted(set(range(0,len(rows),max(1,math.ceil(len(rows)/100))))|{len(rows)-1})
+        smoothed[f'{size}x{size}-{mines}']=[_point(rows[max(0,i-199):i+1],size,mines,rows[i]['episode']) for i in indices]
+    return {'smoothed_series':smoothed,'smoothing_window':200,'series': series, 'size_series': size_series, 'overall_series': [_point(rows, bucket_end=(bucket + 1) * bucket_size) for bucket, rows in sorted(overall.items())],
             'bucket_size': bucket_size, 'metric_episodes': len(records)}
 
 

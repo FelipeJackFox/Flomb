@@ -11,6 +11,7 @@ from curriculum import draw_board,decode,reward_step
 from solver import analyze
 from train_curriculum import STRATA,atomic_json
 from experiments.backbone import Backbone,encode_visible
+from experiments.behavior_schedule import load_schedule,probabilities
 from experiments.game_metrics import analyze_move,summarize_moves
 from experiments.curriculum_control import sample_board,applied_control
 from experiments.qr_core import DuelingQuantileHead,PrioritizedReplay,quantile_huber
@@ -107,11 +108,11 @@ def main():
         if args.resume:raise FileNotFoundError('No checkpoint to resume')
         atomic_json(run/'config.json',config)
         source=run/'source';source.mkdir(exist_ok=True)
-        sources=['experiments/train.py','experiments/backbone.py','experiments/qr_core.py','experiments/game_metrics.py','experiments/curriculum_control.py','curriculum.py','minesweeper.py','solver.py']
+        sources=['experiments/train.py','experiments/backbone.py','experiments/qr_core.py','experiments/game_metrics.py','experiments/curriculum_control.py','experiments/behavior_schedule.py','curriculum.py','minesweeper.py','solver.py']
         for name in sources:(source/name.replace('/','_')).write_bytes(Path(name).read_bytes())
         atomic_json(run/'source-sha256.json',{name:hashlib.sha256(Path(name).read_bytes()).hexdigest() for name in sources})
     invocation=str(time.time_ns());source=run/'invocations'/invocation;source.mkdir(parents=True)
-    files=['experiments/train.py','experiments/backbone.py','experiments/qr_core.py','experiments/game_metrics.py','experiments/curriculum_control.py','curriculum.py','minesweeper.py','solver.py','train_curriculum.py']
+    files=['experiments/train.py','experiments/backbone.py','experiments/qr_core.py','experiments/game_metrics.py','experiments/curriculum_control.py','experiments/behavior_schedule.py','curriculum.py','minesweeper.py','solver.py','train_curriculum.py']
     for name in files:(source/name.replace('/','_')).write_bytes(Path(name).read_bytes())
     atomic_json(run/f'compute-{invocation}.json',{'workers':args.workers,'batch':args.batch,'metrics_every':args.metrics_every,'eval_every':args.eval_every,'source_directory':str(source),'source_sha256':{name:hashlib.sha256(Path(name).read_bytes()).hexdigest() for name in files}})
     atomic_json(run/'capabilities.json',{'runtime_curriculum':True,'game_metrics':True,'metrics_every':args.metrics_every,'eval_every':args.eval_every,'invocation_id':invocation})
@@ -127,6 +128,10 @@ def main():
         for obj,key in [(brain,'brain'),(target_brain,'target_brain'),(head,'head'),(target_head,'target_head'),(replay,'replay')]:obj.load_state_dict(s[key])
         ep,steps,updates,train_seconds=s['episode'],s['steps'],s['updates'],s['train_seconds']
         last_loss=s.get('last_loss',{});last_gradient=s.get('last_gradient');board_rng.bit_generator.state=s['board_rng'];action_rng.bit_generator.state=s['action_rng']
+    behavior_schedule=load_schedule(run)
+    if behavior_schedule is not None:
+        atomic_json(source/'behavior-schedule.json',behavior_schedule)
+        atomic_json(run/'behavior-applied.json',{'invocation_id':invocation,'start_episode':ep+1,'schedule':behavior_schedule})
     start=time.monotonic();atomic_json(run/'live-process.json',{'pid':os.getpid(),'mode':args.mode,'started_at':time.time(),'invocation_id':invocation})
     def checkpoint():
         data={'brain':brain.state_dict(),'target_brain':target_brain.state_dict(),'head':head.state_dict(),'target_head':target_head.state_dict(),'replay':replay.state_dict(),'episode':ep,'steps':steps,'updates':updates,'train_seconds':train_seconds+time.monotonic()-start,'last_loss':last_loss,'last_gradient':last_gradient,'board_rng':board_rng.bit_generator.state,'action_rng':action_rng.bit_generator.state}
@@ -177,8 +182,7 @@ def main():
         applied_control(run,control,ep+1)
         env=Minesweeper(int(board_rng.integers(0,1_000_000_000)),size,mines)
         automatic=env.won;episode_steps=0;teacher_actions=0;episode_return=0.;metrics_seconds=0.;moves=[];controllers={k:[] for k in ('teacher','random','policy')};controller_counts={k:0 for k in controllers};measured=ep%args.metrics_every==0
-        beta=max(0.,1-ep/(.6*args.episodes)) if args.mode!='qrdqn' else 0.
-        epsilon=max(.05,1-ep/(.5*args.episodes))
+        beta,epsilon=probabilities(behavior_schedule,ep,args.episodes,args.mode)
         while not env.done:
             before=visible(env);labels=np.zeros(256,bool);confidence=0.
             info=None
@@ -205,7 +209,7 @@ def main():
         game_metrics=metric_summary(moves,env.won,automatic,measured)
         controller_metrics={k:metric_summary(v,env.won,automatic,measured and len(v)==episode_steps) for k,v in controllers.items() if controller_counts[k]}
         metrics_seconds+=time.monotonic()-metric_start
-        progress={'invocation_id':invocation,'return':float(episode_return),'safe_fraction':float(np.sum(env.visible>=0)/(size*size-mines)),'game_metrics':game_metrics,'metrics_measured':measured,'controller_metrics':controller_metrics,'controller_actions':controller_counts,'gradient_norm':last_gradient['combined'] if last_gradient else None,'gradient_norms':last_gradient,'timing':{'metrics_seconds':metrics_seconds},'timing_metrics_seconds':metrics_seconds,'curriculum_mode':control['mode'],'curriculum_revision':control['revision'],'curriculum_control':control,'mixture':mix.tolist(),'group':group,'mode':args.mode,'workers':args.workers,'episode':ep,'target':args.episodes,'curriculum_horizon':args.curriculum_horizon,'steps':steps,'updates':updates,'size':size,'mines':mines,'won':env.won,'automatic_win':automatic,'episode_steps':episode_steps,'teacher_actions':teacher_actions,'teacher_beta':beta,'epsilon':epsilon if args.mode!='dagger' else 0.,'loss':last_loss,'training_seconds':train_seconds+time.monotonic()-start,'peak_rss_bytes_macos':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss}
+        progress={'behavior_schedule_version':behavior_schedule['version'] if behavior_schedule else 0,'behavior_schedule_start':behavior_schedule.get('start_episode') if behavior_schedule else None,'invocation_id':invocation,'return':float(episode_return),'safe_fraction':float(np.sum(env.visible>=0)/(size*size-mines)),'game_metrics':game_metrics,'metrics_measured':measured,'controller_metrics':controller_metrics,'controller_actions':controller_counts,'gradient_norm':last_gradient['combined'] if last_gradient else None,'gradient_norms':last_gradient,'timing':{'metrics_seconds':metrics_seconds},'timing_metrics_seconds':metrics_seconds,'curriculum_mode':control['mode'],'curriculum_revision':control['revision'],'curriculum_control':control,'mixture':mix.tolist(),'group':group,'mode':args.mode,'workers':args.workers,'episode':ep,'target':args.episodes,'curriculum_horizon':args.curriculum_horizon,'steps':steps,'updates':updates,'size':size,'mines':mines,'won':env.won,'automatic_win':automatic,'episode_steps':episode_steps,'teacher_actions':teacher_actions,'teacher_beta':beta,'epsilon':epsilon if args.mode!='dagger' else 0.,'loss':last_loss,'training_seconds':train_seconds+time.monotonic()-start,'peak_rss_bytes_macos':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss}
         atomic_json(run/'progress.json',progress)
         with (run/'metrics.jsonl').open('a') as f:f.write(json.dumps(progress)+'\n')
         if ep%16==0 or ep==stop or ep%args.eval_every==0:checkpoint();print(json.dumps(progress),flush=True)
