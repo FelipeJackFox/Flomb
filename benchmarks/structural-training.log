@@ -76,3 +76,23 @@ FINISHED retina_fixed 789
 {"phase": "training", "variant": "retina_plastic", "seed": 20260926, "updates": 1400, "target": 3000, "loss": 2.182335376739502, "gradient_norm": 0.6107325553894043, "training_seconds": 1181.9515528749907}
 {"phase": "training", "variant": "retina_plastic", "seed": 20260926, "updates": 1500, "target": 3000, "loss": 2.1712841987609863, "gradient_norm": 0.496663361787796, "training_seconds": 1266.0812605409883}
 {"phase": "training", "variant": "retina_plastic", "seed": 20260926, "updates": 1600, "target": 3000, "loss": 2.105276584625244, "gradient_norm": 0.9073344469070435, "training_seconds": 1350.6887627499527}
+{"phase": "training", "variant": "retina_plastic", "seed": 20260926, "updates": 1700, "target": 3000, "loss": 2.2063543796539307, "gradient_norm": 0.9454002380371094, "training_seconds": 1436.3437147499644}
+{"phase": "training", "variant": "retina_plastic", "seed": 20260926, "updates": 1800, "target": 3000, "loss": 2.29164719581604, "gradient_norm": 0.501657247543335, "training_seconds": 1520.9163619159954}
+{"phase": "training", "variant": "retina_plastic", "seed": 20260926, "updates": 1900, "target": 3000, "loss": 2.173443078994751, "gradient_norm": 1.1392875909805298, "training_seconds": 1605.5034945829539}
+{"phase": "training", "variant": "retina_plastic", "seed": 20260926, "updates": 2000, "target": 3000, "loss": 1.9342725276947021, "gradient_norm": 0.6346474885940552, "training_seconds": 1689.7461968749994}
+{"phase": "training", "variant": "retina_plastic", "seed": 20260926, "updates": 2100, "target": 3000, "loss": 1.7746498584747314, "gradient_norm": 0.6664720177650452, "training_seconds": 1774.5482849580003}
+{"phase": "training", "variant": "retina_plastic", "seed": 20260926, "updates": 2200, "target": 3000, "loss": 2.213925838470459, "gradient_norm": 0.6504954695701599, "training_seconds": 1859.0884892909671}
+{"phase": "training", "variant": "retina_plastic", "seed": 20260926, "updates": 2300, "target": 3000, "loss": 1.9184150695800781, "gradient_norm": 0.9975214004516602, "training_seconds": 1944.1099314159947}
+{"phase": "training", "variant": "retina_plastic", "seed": 20260926, "updates": 2400, "target": 3000, "loss": 1.9691104888916016, "gradient_norm": 0.6277118921279907, "training_seconds": 2028.4639852909604}
+{"phase": "training", "variant": "retina_plastic", "seed": 20260926, "updates": 2500, "target": 3000, "loss": 2.126897096633911, "gradient_norm": 0.43882590532302856, "training_seconds": 2113.034317124984}
+{"phase": "training", "variant": "retina_plastic", "seed": 20260926, "updates": 2600, "target": 3000, "loss": 2.1212246417999268, "gradient_norm": 0.8077119588851929, "training_seconds": 2197.911014374986}
+{"phase": "training", "variant": "retina_plastic", "seed": 20260926, "updates": 2700, "target": 3000, "loss": 2.1545844078063965, "gradient_norm": 1.0264363288879395, "training_seconds": 2282.2063862080104}
+{"phase": "training", "variant": "retina_plastic", "seed": 20260926, "updates": 2800, "target": 3000, "loss": 1.8695588111877441, "gradient_norm": 1.0213104486465454, "training_seconds": 2367.077940749994}
+{"phase": "training", "variant": "retina_plastic", "seed": 20260926, "updates": 2900, "target": 3000, "loss": 2.2740583419799805, "gradient_norm": 0.8889851570129395, "training_seconds": 2451.6190042079543}
+{"phase": "training", "variant": "retina_plastic", "seed": 20260926, "updates": 3000, "target": 3000, "loss": 2.1179919242858887, "gradient_norm": 0.6423012018203735, "training_seconds": 2536.3945501659764}
+FINISHED retina_plastic 780
+{"phase": "training", "variant": "rewired_plastic", "seed": 20260926, "updates": 100, "target": 3000, "loss": 2.4628140926361084, "gradient_norm": 0.08122829347848892, "training_seconds": 92.24495424999623}
+{"phase": "training", "variant": "rewired_plastic", "seed": 20260926, "updates": 200, "target": 3000, "loss": 2.4010071754455566, "gradient_norm": 0.15169090032577515, "training_seconds": 185.1882350409869}
+{"phase": "training", "variant": "rewired_plastic", "seed": 20260926, "updates": 300, "target": 3000, "loss": 2.2601051330566406, "gradient_norm": 0.3639381229877472, "training_seconds": 277.69207433296833}
+{"phase": "training", "variant": "rewired_plastic", "seed": 20260926, "updates": 400, "target": 3000, "loss": 2.4251911640167236, "gradient_norm": 0.3214499354362488, "training_seconds": 370.3220415409887}
+{"phase": "training", "variant": "rewired_plastic", "seed": 20260926, "updates": 500, "target": 3000, "loss": 2.4649481773376465, "gradient_norm": 0.6994161009788513, "training_seconds": 462.37427566596307}
