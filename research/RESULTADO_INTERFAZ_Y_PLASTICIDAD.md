@@ -7,19 +7,29 @@ Se reutilizan entrenamiento/validación de la fase ampliada. Las partidas finale
 | Modelo | Aciertos reservados antes → después | 5×5 victorias sin apertura automática | 7×7 victorias | Tiempo de entrenamiento |
 |---|---:|---:|---:|---:|
 | cnn | 391 → 970/1000 | 159/228 (69.7%; IC95% 63.5%–75.3%) | 109/250 (43.6%; IC95% 37.6%–49.8%) | 0.31 min |
-
-En curso. Estado al generar el informe: {'phase': 'training', 'variant': 'retina_fixed', 'seed': 20260926, 'updates': 200, 'target': 3000, 'loss': 2.327831506729126, 'gradient_norm': 0.4682052433490753, 'training_seconds': 164.7006565000047}.
+| retina_fixed | 324 → 789/1000 | 73/228 (32.0%; IC95% 26.3%–38.3%) | 9/250 (3.6%; IC95% 1.9%–6.7%) | 38.47 min |
+| retina_plastic | 324 → 780/1000 | 68/228 (29.8%; IC95% 24.3%–36.1%) | 11/250 (4.4%; IC95% 2.5%–7.7%) | 42.28 min |
+| rewired_plastic | 377 → 826/1000 | 90/228 (39.5%; IC95% 33.4%–45.9%) | 17/250 (6.8%; IC95% 4.3%–10.6%) | 46.21 min |
 
 ## Uso de decisiones seguras y plasticidad
 
 | Modelo | Elecciones seguras / oportunidades | Muertes con opción segura | Ganancias de conexiones modificadas | Ganancias neuronales modificadas |
 |---|---:|---:|---:|---:|
 | cnn | 2719/2870 | 77 | — | — |
+| retina_fixed | 979/1315 | 221 | 0 | 55464 |
+| retina_plastic | 1098/1441 | 223 | 2106242 | 55464 |
+| rewired_plastic | 1355/1661 | 216 | 8682974 | 108923 |
 
 ## Intervenciones sin reentrenar
 
 | Modelo | Intervención | Aciertos reservados | 5×5 victorias | 7×7 victorias |
 |---|---|---:|---:|---:|
+| retina_fixed | zero | 388/1000 | 5/228 (2.2%; IC95% 0.9%–5.0%) | 0/250 (0.0%; IC95% 0.0%–1.5%) |
+| retina_fixed | shuffle | 396/1000 | 11/228 (4.8%; IC95% 2.7%–8.4%) | 0/250 (0.0%; IC95% 0.0%–1.5%) |
+| retina_plastic | zero | 388/1000 | 5/228 (2.2%; IC95% 0.9%–5.0%) | 0/250 (0.0%; IC95% 0.0%–1.5%) |
+| retina_plastic | shuffle | 415/1000 | 11/228 (4.8%; IC95% 2.7%–8.4%) | 1/250 (0.4%; IC95% 0.1%–2.2%) |
+| rewired_plastic | zero | 388/1000 | 5/228 (2.2%; IC95% 0.9%–5.0%) | 0/250 (0.0%; IC95% 0.0%–1.5%) |
+| rewired_plastic | shuffle | 396/1000 | 8/228 (3.5%; IC95% 1.8%–6.8%) | 0/250 (0.0%; IC95% 0.0%–1.5%) |
 
 ## Qué prueba y qué no prueba
 
