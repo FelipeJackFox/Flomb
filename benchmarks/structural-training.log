@@ -55,3 +55,24 @@ FINISHED cnn 970
 {"phase": "training", "variant": "retina_fixed", "seed": 20260926, "updates": 2400, "target": 3000, "loss": 2.0058579444885254, "gradient_norm": 0.9115679264068604, "training_seconds": 1872.0599595829844}
 {"phase": "training", "variant": "retina_fixed", "seed": 20260926, "updates": 2500, "target": 3000, "loss": 2.1568868160247803, "gradient_norm": 0.544713020324707, "training_seconds": 1944.7014996249927}
 {"phase": "training", "variant": "retina_fixed", "seed": 20260926, "updates": 2600, "target": 3000, "loss": 2.178342819213867, "gradient_norm": 0.750338613986969, "training_seconds": 2017.7301552080316}
+{"phase": "training", "variant": "retina_fixed", "seed": 20260926, "updates": 2700, "target": 3000, "loss": 2.1950011253356934, "gradient_norm": 1.1451871395111084, "training_seconds": 2090.838995583006}
+{"phase": "training", "variant": "retina_fixed", "seed": 20260926, "updates": 2800, "target": 3000, "loss": 1.8965458869934082, "gradient_norm": 0.8856501579284668, "training_seconds": 2163.223298790981}
+{"phase": "training", "variant": "retina_fixed", "seed": 20260926, "updates": 2900, "target": 3000, "loss": 2.3199362754821777, "gradient_norm": 1.050579309463501, "training_seconds": 2235.671498749987}
+{"phase": "training", "variant": "retina_fixed", "seed": 20260926, "updates": 3000, "target": 3000, "loss": 2.2276437282562256, "gradient_norm": 0.8420867919921875, "training_seconds": 2308.2940284999786}
+FINISHED retina_fixed 789
+{"phase": "training", "variant": "retina_plastic", "seed": 20260926, "updates": 100, "target": 3000, "loss": 2.3099253177642822, "gradient_norm": 0.37565916776657104, "training_seconds": 84.21459320798749}
+{"phase": "training", "variant": "retina_plastic", "seed": 20260926, "updates": 200, "target": 3000, "loss": 2.309194803237915, "gradient_norm": 0.49043551087379456, "training_seconds": 168.6081825409783}
+{"phase": "training", "variant": "retina_plastic", "seed": 20260926, "updates": 300, "target": 3000, "loss": 2.2018704414367676, "gradient_norm": 0.6472991108894348, "training_seconds": 253.31961587496335}
+{"phase": "training", "variant": "retina_plastic", "seed": 20260926, "updates": 400, "target": 3000, "loss": 2.4340012073516846, "gradient_norm": 0.23583601415157318, "training_seconds": 337.6192832500092}
+{"phase": "training", "variant": "retina_plastic", "seed": 20260926, "updates": 500, "target": 3000, "loss": 2.4820852279663086, "gradient_norm": 0.8890816569328308, "training_seconds": 421.92181516595883}
+{"phase": "training", "variant": "retina_plastic", "seed": 20260926, "updates": 600, "target": 3000, "loss": 2.3422012329101562, "gradient_norm": 0.3082968592643738, "training_seconds": 506.4512449160102}
+{"phase": "training", "variant": "retina_plastic", "seed": 20260926, "updates": 700, "target": 3000, "loss": 2.274162769317627, "gradient_norm": 0.3911682367324829, "training_seconds": 590.5442081249785}
+{"phase": "training", "variant": "retina_plastic", "seed": 20260926, "updates": 800, "target": 3000, "loss": 2.093703031539917, "gradient_norm": 0.7039053440093994, "training_seconds": 675.5992424580036}
+{"phase": "training", "variant": "retina_plastic", "seed": 20260926, "updates": 900, "target": 3000, "loss": 2.345231056213379, "gradient_norm": 0.52948397397995, "training_seconds": 759.6769536249922}
+{"phase": "training", "variant": "retina_plastic", "seed": 20260926, "updates": 1000, "target": 3000, "loss": 2.4013473987579346, "gradient_norm": 0.5441562533378601, "training_seconds": 843.8051134159905}
+{"phase": "training", "variant": "retina_plastic", "seed": 20260926, "updates": 1100, "target": 3000, "loss": 2.2226154804229736, "gradient_norm": 0.5231583714485168, "training_seconds": 928.3685292080045}
+{"phase": "training", "variant": "retina_plastic", "seed": 20260926, "updates": 1200, "target": 3000, "loss": 2.1958093643188477, "gradient_norm": 0.43954360485076904, "training_seconds": 1013.1284495829605}
+{"phase": "training", "variant": "retina_plastic", "seed": 20260926, "updates": 1300, "target": 3000, "loss": 2.362210988998413, "gradient_norm": 1.0069849491119385, "training_seconds": 1097.8881489579799}
+{"phase": "training", "variant": "retina_plastic", "seed": 20260926, "updates": 1400, "target": 3000, "loss": 2.182335376739502, "gradient_norm": 0.6107325553894043, "training_seconds": 1181.9515528749907}
+{"phase": "training", "variant": "retina_plastic", "seed": 20260926, "updates": 1500, "target": 3000, "loss": 2.1712841987609863, "gradient_norm": 0.496663361787796, "training_seconds": 1266.0812605409883}
+{"phase": "training", "variant": "retina_plastic", "seed": 20260926, "updates": 1600, "target": 3000, "loss": 2.105276584625244, "gradient_norm": 0.9073344469070435, "training_seconds": 1350.6887627499527}
