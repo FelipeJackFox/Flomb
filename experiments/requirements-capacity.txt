@@ -1,0 +1,2 @@
+# Optional diagnostic dependency; original NumPy trainers remain usable without it.
+torch==2.14.0
