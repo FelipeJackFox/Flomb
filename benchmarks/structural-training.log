@@ -54,3 +54,4 @@ FINISHED cnn 970
 {"phase": "training", "variant": "retina_fixed", "seed": 20260926, "updates": 2300, "target": 3000, "loss": 1.9678672552108765, "gradient_norm": 0.8619807958602905, "training_seconds": 1799.7612668750226}
 {"phase": "training", "variant": "retina_fixed", "seed": 20260926, "updates": 2400, "target": 3000, "loss": 2.0058579444885254, "gradient_norm": 0.9115679264068604, "training_seconds": 1872.0599595829844}
 {"phase": "training", "variant": "retina_fixed", "seed": 20260926, "updates": 2500, "target": 3000, "loss": 2.1568868160247803, "gradient_norm": 0.544713020324707, "training_seconds": 1944.7014996249927}
+{"phase": "training", "variant": "retina_fixed", "seed": 20260926, "updates": 2600, "target": 3000, "loss": 2.178342819213867, "gradient_norm": 0.750338613986969, "training_seconds": 2017.7301552080316}
