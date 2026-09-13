@@ -27,14 +27,20 @@ Las 500 partidas finales no aparecen en los conjuntos de los dos pilotos de arqu
 | Modelo / semilla | Posiciones antes → después | 5×5 victorias* | IC 95% | 7×7 victorias* | IC 95% | Entrenamiento |
 |---|---:|---:|---:|---:|---:|---:|
 | cnn / 20260924 | 351 → 977/1000 | 160/244 (65.6%) | 59.4%–71.3% | 111/250 (44.4%) | 38.4%–50.6% | 17.8 s |
-
-En curso; último estado guardado al generar este informe: {'phase': 'evaluation', 'variant': 'cnn', 'seed': 20260924, 'updates': 3000}.
+| current / 20260924 | 367 → 767/1000 | 101/244 (41.4%) | 35.4%–47.7% | 4/250 (1.6%) | 0.6%–4.0% | 750.2 s |
+| encoder_only / 20260924 | 392 → 855/1000 | 112/244 (45.9%) | 39.8%–52.2% | 8/250 (3.2%) | 1.6%–6.2% | 859.8 s |
+| internal_only / 20260924 | 474 → 806/1000 | 91/244 (37.3%) | 31.5%–43.5% | 8/250 (3.2%) | 1.6%–6.2% | 1129.6 s |
+| both / 20260924 | 496 → 828/1000 | 103/244 (42.2%) | 36.2%–48.5% | 15/250 (6.0%) | 3.7%–9.7% | 1274.3 s |
 
 *Se excluyen aperturas que ganaron automáticamente; IC de Wilson sobre partidas. Las semillas reutilizan las mismas partidas y no se suman como tableros nuevos.
 
 | Modelo / semilla | Jugadas seguras elegidas / oportunidades | Muertes con jugada segura disponible | Muertes tras elegir riesgo mínimo exacto 50% |
 |---|---:|---:|---:|
 | cnn / 20260924 | 2506/2635 | 67 | 18 |
+| current / 20260924 | 1102/1420 | 206 | 11 |
+| encoder_only / 20260924 | 1413/1730 | 204 | 16 |
+| internal_only / 20260924 | 1126/1499 | 239 | 11 |
+| both / 20260924 | 1397/1743 | 215 | 9 |
 
 ## Interpretación y límites
 
