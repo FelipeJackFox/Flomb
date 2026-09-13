@@ -1,0 +1,20 @@
+{"seed": 20260920, "variant": "raw", "updates": 50, "loss": 2.2150069177150726, "seconds": 11.40338758402504}
+{"seed": 20260920, "variant": "raw", "updates": 100, "loss": 2.2027793526649475, "seconds": 22.738147708994802}
+{"seed": 20260920, "variant": "raw", "updates": 150, "loss": 2.162535723298788, "seconds": 37.21253675001208}
+{"seed": 20260920, "variant": "raw", "updates": 200, "loss": 2.0065415278077126, "seconds": 52.17429420899134}
+FINISHED raw 20260920 66
+{"seed": 20260920, "variant": "local", "updates": 50, "loss": 2.2142424657940865, "seconds": 11.457118249963969}
+{"seed": 20260920, "variant": "local", "updates": 100, "loss": 2.2222119607031345, "seconds": 22.938370708958246}
+{"seed": 20260920, "variant": "local", "updates": 150, "loss": 2.203981637954712, "seconds": 34.32689799997024}
+{"seed": 20260920, "variant": "local", "updates": 200, "loss": 2.0496401228010654, "seconds": 45.69447724998463}
+FINISHED local 20260920 67
+{"seed": 20260921, "variant": "local", "updates": 50, "loss": 2.444470837712288, "seconds": 11.374328042031266}
+{"seed": 20260921, "variant": "local", "updates": 100, "loss": 2.255142081528902, "seconds": 22.832793209003285}
+{"seed": 20260921, "variant": "local", "updates": 150, "loss": 2.072001487016678, "seconds": 44.40102237503743}
+{"seed": 20260921, "variant": "local", "updates": 200, "loss": 1.7318914160132408, "seconds": 68.3277568340418}
+FINISHED local 20260921 61
+{"seed": 20260921, "variant": "raw", "updates": 50, "loss": 2.4404437616467476, "seconds": 18.128722291032318}
+{"seed": 20260921, "variant": "raw", "updates": 100, "loss": 2.2273673713207245, "seconds": 35.817530625034124}
+{"seed": 20260921, "variant": "raw", "updates": 150, "loss": 2.0384938195347786, "seconds": 49.70080158300698}
+{"seed": 20260921, "variant": "raw", "updates": 200, "loss": 1.676900578662753, "seconds": 63.71562466601608}
+FINISHED raw 20260921 59

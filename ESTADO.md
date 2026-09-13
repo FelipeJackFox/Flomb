@@ -189,3 +189,7 @@ Usuario aprobó pausa y pruebas separadas. Checkpoint íntegro respaldado en run
 ## Diagnóstico completado
 
 Memorización100posiciones:83→99aciertos;100posiciones nuevas78→79.250updates/149.6s con cerebro completo. DAgger256episodios:5x5victorias1/31→5/31;7x7y mayores0/32. No se cumple criterio para ampliar dificultad ni reanudar50k. Híbrido permanece pausado en14,384, checkpoint sin cambios confirmado porSHA256. Seguimiento PAUSED. Informe research/DIAGNOSTICO_APRENDIZAJE.md.
+
+## Comparación espacial completada
+
+runs/spatial-diagnostic-001:2semillas×2entradas×200updates, cerebro completo desde ganancias cero y cabezas nuevas emparejadas.256posiciones entrenamiento,128reservadas,128tableros de juego; distribuciones de minas disjuntas. Codificador local3x3 FIJO, energía de entrada igualada, sin parámetros extra. Reservadas:actual66/128y59/128;local67/128y61/128. Victorias5x5 actual13/62y12/62;local10/62y11/62.7x7 actual0/64y1/64;local0/64en ambas. No mejora clara; no adoptar ni reanudar50k. Híbrido sigue pausado en14,384, SHA256 comprobado intacto. Informe research/RESULTADO_ENTRADA_ESPACIAL.md.
