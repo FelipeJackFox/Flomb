@@ -1,0 +1,2 @@
+{'model': 'brian2_shiu_equations', 'seed': 0, 'cut_both': False, 'dnp01_spikes': 37, 'first_spike_ms': 42.4, 'seconds': 2.8001731249969453, 'version': '2.10.1'}
+{'model': 'brian2_shiu_equations', 'seed': 0, 'cut_both': True, 'dnp01_spikes': 0, 'first_spike_ms': None, 'seconds': 2.5439035419840366, 'version': '2.10.1'}

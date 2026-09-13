@@ -1,0 +1,21 @@
+{'model': 'lif_reference', 'condition': 'looming', 'silenced': [], 'seed': 0, 'dnp01_spikes': 44, 'first_spike_ms': 41.900000000000006, 'active_neurons': 1466, 'input_spikes': 1006, 'peak_hz': 400.0, 'seconds': 0.773518041940406}
+{'model': 'lif_reference', 'condition': 'looming', 'silenced': [], 'seed': 1, 'dnp01_spikes': 39, 'first_spike_ms': 54.6, 'active_neurons': 1422, 'input_spikes': 1013, 'peak_hz': 400.0, 'seconds': 0.764911541948095}
+{'model': 'lif_reference', 'condition': 'looming', 'silenced': [], 'seed': 2, 'dnp01_spikes': 42, 'first_spike_ms': 38.1, 'active_neurons': 1429, 'input_spikes': 980, 'peak_hz': 400.0, 'seconds': 0.7737970829475671}
+{'model': 'lif_reference', 'condition': 'static', 'silenced': [], 'seed': 0, 'dnp01_spikes': 0, 'first_spike_ms': None, 'active_neurons': 0, 'input_spikes': 0, 'peak_hz': 0.0, 'seconds': 0.3089032080024481}
+{'model': 'lif_reference', 'condition': 'static', 'silenced': [], 'seed': 1, 'dnp01_spikes': 0, 'first_spike_ms': None, 'active_neurons': 0, 'input_spikes': 0, 'peak_hz': 0.0, 'seconds': 0.30854166694916785}
+{'model': 'lif_reference', 'condition': 'static', 'silenced': [], 'seed': 2, 'dnp01_spikes': 0, 'first_spike_ms': None, 'active_neurons': 0, 'input_spikes': 0, 'peak_hz': 0.0, 'seconds': 0.3087563749868423}
+{'model': 'lif_reference', 'condition': 'receding', 'silenced': [], 'seed': 0, 'dnp01_spikes': 0, 'first_spike_ms': None, 'active_neurons': 0, 'input_spikes': 0, 'peak_hz': 0.0, 'seconds': 0.3177933329716325}
+{'model': 'lif_reference', 'condition': 'receding', 'silenced': [], 'seed': 1, 'dnp01_spikes': 0, 'first_spike_ms': None, 'active_neurons': 0, 'input_spikes': 0, 'peak_hz': 0.0, 'seconds': 0.3210864160209894}
+{'model': 'lif_reference', 'condition': 'receding', 'silenced': [], 'seed': 2, 'dnp01_spikes': 0, 'first_spike_ms': None, 'active_neurons': 0, 'input_spikes': 0, 'peak_hz': 0.0, 'seconds': 0.3158115840051323}
+{'model': 'lif_reference', 'condition': 'looming', 'silenced': ['LC4'], 'seed': 0, 'dnp01_spikes': 35, 'first_spike_ms': 42.900000000000006, 'active_neurons': 900, 'input_spikes': 1006, 'peak_hz': 300.0, 'seconds': 0.7304607919650152}
+{'model': 'lif_reference', 'condition': 'looming', 'silenced': ['LC4'], 'seed': 1, 'dnp01_spikes': 33, 'first_spike_ms': 52.2, 'active_neurons': 845, 'input_spikes': 1013, 'peak_hz': 400.0, 'seconds': 0.7726591670652851}
+{'model': 'lif_reference', 'condition': 'looming', 'silenced': ['LC4'], 'seed': 2, 'dnp01_spikes': 33, 'first_spike_ms': 38.800000000000004, 'active_neurons': 758, 'input_spikes': 980, 'peak_hz': 300.0, 'seconds': 0.720100500038825}
+{'model': 'lif_reference', 'condition': 'looming', 'silenced': ['LPLC2'], 'seed': 0, 'dnp01_spikes': 26, 'first_spike_ms': 134.9, 'active_neurons': 1212, 'input_spikes': 1006, 'peak_hz': 300.0, 'seconds': 0.6900569159770384}
+{'model': 'lif_reference', 'condition': 'looming', 'silenced': ['LPLC2'], 'seed': 1, 'dnp01_spikes': 25, 'first_spike_ms': 62.400000000000006, 'active_neurons': 764, 'input_spikes': 1013, 'peak_hz': 300.0, 'seconds': 0.6775471249129623}
+{'model': 'lif_reference', 'condition': 'looming', 'silenced': ['LPLC2'], 'seed': 2, 'dnp01_spikes': 27, 'first_spike_ms': 82.60000000000001, 'active_neurons': 1165, 'input_spikes': 980, 'peak_hz': 300.0, 'seconds': 0.7367247500224039}
+{'model': 'lif_reference', 'condition': 'looming', 'silenced': ['LC4', 'LPLC2'], 'seed': 0, 'dnp01_spikes': 0, 'first_spike_ms': None, 'active_neurons': 205, 'input_spikes': 1006, 'peak_hz': 0.0, 'seconds': 0.3156972919823602}
+{'model': 'lif_reference', 'condition': 'looming', 'silenced': ['LC4', 'LPLC2'], 'seed': 1, 'dnp01_spikes': 0, 'first_spike_ms': None, 'active_neurons': 211, 'input_spikes': 1013, 'peak_hz': 0.0, 'seconds': 0.31440874992404133}
+{'model': 'lif_reference', 'condition': 'looming', 'silenced': ['LC4', 'LPLC2'], 'seed': 2, 'dnp01_spikes': 0, 'first_spike_ms': None, 'active_neurons': 203, 'input_spikes': 980, 'peak_hz': 0.0, 'seconds': 0.3139118340332061}
+lif_normalized 0 0
+lif_normalized 1 0
+lif_normalized 2 0

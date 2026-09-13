@@ -1,0 +1,35 @@
+{
+  "commit": "26672e06427c12c61536ce1bd93dae7442944681",
+  "files": [
+    {
+      "path": "web/data/meta.json",
+      "url": "https://raw.githubusercontent.com/vaibhavkedarisetti/fruit-fly-lab/26672e06427c12c61536ce1bd93dae7442944681/web/data/meta.json",
+      "bytes": 703414,
+      "sha256": "0125797a27e4f682a0cf2115248e855c74c83b1c68b34e93426b251dc7ccb1e6"
+    },
+    {
+      "path": "web/data/connectome.bin",
+      "url": "https://raw.githubusercontent.com/vaibhavkedarisetti/fruit-fly-lab/26672e06427c12c61536ce1bd93dae7442944681/web/data/connectome.bin",
+      "bytes": 22951784,
+      "sha256": "778138556a1fb0c78c76bd46861f582fb5598c63465940c4ff8b6f5f31cd531e"
+    },
+    {
+      "path": "web/data/neurons.bin",
+      "url": "https://raw.githubusercontent.com/vaibhavkedarisetti/fruit-fly-lab/26672e06427c12c61536ce1bd93dae7442944681/web/data/neurons.bin",
+      "bytes": 3481375,
+      "sha256": "ec7c654f9119f4df62bc7ac7fbbbae1abcb8e70afa838ada1e0acffb17275dbd"
+    },
+    {
+      "path": "brain/neuron_models/lif.py",
+      "url": "https://raw.githubusercontent.com/vaibhavkedarisetti/fruit-fly-lab/26672e06427c12c61536ce1bd93dae7442944681/brain/neuron_models/lif.py",
+      "bytes": 4080,
+      "sha256": "9fb28bc0ba41545b4c18485a9d73543339a763b320783b78612d610bc625c189"
+    },
+    {
+      "path": "simulation/engine/lif_engine.py",
+      "url": "https://raw.githubusercontent.com/vaibhavkedarisetti/fruit-fly-lab/26672e06427c12c61536ce1bd93dae7442944681/simulation/engine/lif_engine.py",
+      "bytes": 10003,
+      "sha256": "926a2efa7f2bd6baa6ea06caff38d77f83c5c60fd68c7f8757331956dd31ae13"
+    }
+  ]
+}
