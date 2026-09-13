@@ -1,0 +1,23 @@
+{'phase': 'training_head', 'variant': 'pointwise', 'step': 100, 'loss': 2.030156373977661, 'validation_loss': 1.995735725402832, 'seconds': 4.056640750030056}
+{'phase': 'training_head', 'variant': 'pointwise', 'step': 200, 'loss': 2.081233501434326, 'validation_loss': 1.9882021617889405, 'seconds': 8.114956374978647}
+{'phase': 'training_head', 'variant': 'pointwise', 'step': 300, 'loss': 2.0205304622650146, 'validation_loss': 1.9838691635131835, 'seconds': 12.079263666993938}
+{'phase': 'training_head', 'variant': 'pointwise', 'step': 400, 'loss': 2.0558996200561523, 'validation_loss': 1.9822551975250244, 'seconds': 16.094612583052367}
+{'phase': 'training_head', 'variant': 'pointwise', 'step': 500, 'loss': 2.1952900886535645, 'validation_loss': 1.9870078353881835, 'seconds': 20.112685750005767}
+{'phase': 'training_head', 'variant': 'pointwise', 'step': 600, 'loss': 2.222465753555298, 'validation_loss': 1.9829519519805907, 'seconds': 24.10293441696558}
+{'phase': 'training_head', 'variant': 'pointwise', 'step': 700, 'loss': 1.998185157775879, 'validation_loss': 1.9837111358642578, 'seconds': 27.976786750019528}
+{'phase': 'training_head', 'variant': 'pointwise', 'step': 800, 'loss': 2.3028554916381836, 'validation_loss': 1.9849954452514649, 'seconds': 31.896054500015453}
+{'phase': 'training_head', 'variant': 'pointwise', 'step': 900, 'loss': 2.2174856662750244, 'validation_loss': 1.977694465637207, 'seconds': 35.69834170804825}
+{'phase': 'training_head', 'variant': 'pointwise', 'step': 1000, 'loss': 2.0022478103637695, 'validation_loss': 1.9794829216003418, 'seconds': 39.46993912500329}
+{'phase': 'training_head', 'variant': 'spatial', 'step': 100, 'loss': 2.038522720336914, 'validation_loss': 1.9840407905578614, 'seconds': 1.6836673750076443}
+{'phase': 'training_head', 'variant': 'spatial', 'step': 200, 'loss': 2.0399506092071533, 'validation_loss': 1.9523685665130615, 'seconds': 3.3589840829372406}
+{'phase': 'training_head', 'variant': 'spatial', 'step': 300, 'loss': 1.9892208576202393, 'validation_loss': 1.9347422714233398, 'seconds': 5.08011387498118}
+{'phase': 'training_head', 'variant': 'spatial', 'step': 400, 'loss': 1.9846794605255127, 'validation_loss': 1.9304924850463867, 'seconds': 6.767572041018866}
+{'phase': 'training_head', 'variant': 'spatial', 'step': 500, 'loss': 2.137695789337158, 'validation_loss': 1.9273087501525878, 'seconds': 8.565871999948286}
+{'phase': 'training_head', 'variant': 'spatial', 'step': 600, 'loss': 2.1472315788269043, 'validation_loss': 1.9181243076324463, 'seconds': 10.733321457984857}
+{'phase': 'training_head', 'variant': 'spatial', 'step': 700, 'loss': 1.9417251348495483, 'validation_loss': 1.9158586215972901, 'seconds': 12.835571500007063}
+{'phase': 'training_head', 'variant': 'spatial', 'step': 800, 'loss': 2.2222890853881836, 'validation_loss': 1.9159349155426026, 'seconds': 15.016885832999833}
+{'phase': 'training_head', 'variant': 'spatial', 'step': 900, 'loss': 2.122777223587036, 'validation_loss': 1.9096635494232177, 'seconds': 17.078793207998388}
+{'phase': 'training_head', 'variant': 'spatial', 'step': 1000, 'loss': 1.9220553636550903, 'validation_loss': 1.8953465118408204, 'seconds': 19.04637754103169}
+original evaluation done
+pointwise evaluation done
+spatial evaluation done
