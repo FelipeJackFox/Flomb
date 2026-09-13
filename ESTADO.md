@@ -281,3 +281,14 @@ Benchmark reservado antes de entrenar: 500 layouts7×7/7 minas inéditos, único
 Memoización de inferencia verificada contra forward original y reordenado, con observación/contexto como clave y sin compartir acciones.13,232 hits/5,437 misses (~70.9% reutilización), no equivalente automáticamente al mismo porcentaje de speedup. Prueba unitaria comprueba distinción de observación/contexto, duplicados y aislamiento frente a mutación. Hashes de cachés/dataset/checkpoints preservados al finalizar. Informe research/RESULTADO_CONSISTENCIA_ESPACIAL.md, figura research/spatial-consistency-results.png, fuentes/pesos/resultados por partida/verificaciones en corrida.
 
 Conclusión: conservar el lector espacial como candidato para siguientes experimentos. No se sustituyó agente servido ni se lanzó ampliación posterior automáticamente. Mantener este benchmark cerrado a selección de hiperparámetros; para próximas evaluaciones reservar layouts nuevos7×7 y otras dificultades. El universo5×5 inédito sigue agotado.
+
+
+## Ampliación del decoder espacial · terminado 13 septiembre 2026
+
+Autorizado ampliar entrenamiento del lector con el cerebro congelado. `runs/spatial-extended-001`: tres semillas 20261002/20261003/20261004, mismo encoder/grafo/mapa, head espacial de 12,769 parámetros, cachés train 10,000 / valid 1,000. Máximo 5,000 updates totales, batch 64, Adam lr 0.001; selección solo por validación y parada por estancamiento. Checkpoints elegidos en 3,500 / 3,250 / 4,500; entrenamiento detenido en 5,000 / 4,750 / 5,000. Tiempo total de entrenamiento ~237 s, incluida reconstrucción de las primeras 1,000 actualizaciones; evaluación aparte.
+
+Los antiguos heads carecían de Adam. Se reconstruyeron las primeras 1,000 actualizaciones y se exigió igualdad bit a bit con cada head antiguo antes de continuar: pasan las tres semillas. Nuevos mejores/últimos checkpoints guardan Adam y RNG; verificados pesos/estado finitos. Hashes originales preservados.
+
+500 layouts inéditos 7×7/7 minas reservados antes del entrenamiento, sin solapamiento con datasets/benchmarks anteriores, compartidos entre los seis modelos. Sin maestro ni victorias automáticas. Comparación emparejada 1,000 updates → ampliado: 45→61, 46→68 y 45→65 victorias sobre 500. Media 9.07%→12.93%, +3.87 pp. IC95% bootstrap por tablero condicionado a estos tres lectores: [+1.73,+6.07] pp. Son 500 tableros, no 1,500 independientes; un único cerebro congelado, no tres entrenamientos cerebrales. Mejora consistente en las tres semillas, nivel absoluto todavía bajo; no demuestra ventaja anatómica ni generalización a otros tamaños.
+
+Informe research/RESULTADO_ESPACIAL_AMPLIADO.md y figura research/spatial-extended-results.png, inspeccionada visualmente. Fuentes, hashes, checkpoints, historias y resultados por partida conservados. No se sustituyó agente servido ni se lanzó fase posterior. Híbrido original sigue preservado; benchmark final cerrado a selección posterior.
