@@ -1,0 +1,2 @@
+{"batch": 8, "step_seconds": [1.1264429159928113, 0.8797887079999782, 0.8923574580112472], "seconds_per_example": 0.11075913537570159, "changed_edges": 867219, "changed_nodes": 43041}
+{"batch": 16, "step_seconds": [0.8941886249813251, 0.8815733329975046, 0.9127418750431389], "seconds_per_example": 0.05607235025127011, "changed_edges": 1086117, "changed_nodes": 45248}
