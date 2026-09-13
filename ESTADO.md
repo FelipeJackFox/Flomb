@@ -292,3 +292,20 @@ Los antiguos heads carecían de Adam. Se reconstruyeron las primeras 1,000 actua
 500 layouts inéditos 7×7/7 minas reservados antes del entrenamiento, sin solapamiento con datasets/benchmarks anteriores, compartidos entre los seis modelos. Sin maestro ni victorias automáticas. Comparación emparejada 1,000 updates → ampliado: 45→61, 46→68 y 45→65 victorias sobre 500. Media 9.07%→12.93%, +3.87 pp. IC95% bootstrap por tablero condicionado a estos tres lectores: [+1.73,+6.07] pp. Son 500 tableros, no 1,500 independientes; un único cerebro congelado, no tres entrenamientos cerebrales. Mejora consistente en las tres semillas, nivel absoluto todavía bajo; no demuestra ventaja anatómica ni generalización a otros tamaños.
 
 Informe research/RESULTADO_ESPACIAL_AMPLIADO.md y figura research/spatial-extended-results.png, inspeccionada visualmente. Fuentes, hashes, checkpoints, historias y resultados por partida conservados. No se sustituyó agente servido ni se lanzó fase posterior. Híbrido original sigue preservado; benchmark final cerrado a selección posterior.
+
+## DAgger espacial · piloto en curso
+
+Autorizado tras ampliar el lector. `runs/spatial-dagger-001`: semilla 20261002 predeterminada, cerebro congelado, continúa best-20261002 del ampliado con Adam. Tres rondas de 300 partidas 7×7/7 minas y 750 updates; DAgger beta=0 mezcla 32 posiciones antiguas equilibradas y 32 acumuladas nuevas por minibatch. Maestro solo etiqueta acciones certificadas seguras, nunca ejecuta clics ni rescata partidas. Control con 2,250 updates adicionales exclusivamente de datos antiguos y baseline sin cambios. Selección mínima pérdida en validación antigua, incluyendo baseline.
+
+500 layouts finales y 900 de colección reservados antes de entrenamiento, disjuntos de todos los datasets/benchmarks anteriores. Cinco pruebas de colector/memo/lector pasan; el colector coincide con trayectorias independientes incluso en errores. Log benchmarks/spatial-dagger.log. No sustituir agente servido; resultados de colección no equivalen a comparación emparejada. Protocolo research/PROTOCOLO_DAGGER_ESPACIAL.md. Al terminar verificar hashes, etiquetas públicas y replays de checkpoints, generar informe con experiments.report_spatial_dagger.
+
+
+## DAgger espacial · terminado 13 septiembre 2026
+
+Piloto completado en `runs/spatial-dagger-001`. Se recogieron 4,495 posiciones públicas con alguna jugada certificada segura en 900 partidas autónomas: 1,331 / 1,500 / 1,664 por ronda. Ningún clic ejecutado por el maestro. Tres rondas de 750 updates tanto para DAgger como control; seleccionados por validación update adicional 2,250 DAgger y 1,250 control. Cerebro congelado y una sola semilla de lector 20261002.
+
+Benchmark final idéntico de 500 layouts nuevos 7×7/7 minas: baseline 53/500 (10.6%), control de más entrenamiento con datos antiguos 66/500 (13.2%), DAgger 80/500 (16.0%). Sin victorias automáticas. Diferencia emparejada DAgger−baseline +5.4 pp, IC95% bootstrap [+2.2,+8.8]; DAgger−control +2.8 pp, IC95% [−0.6,+6.2]. Mejora respecto al inicio, pero todavía NO evidencia concluyente de beneficio específico de DAgger frente a igual presupuesto; intervalo incluye cero y solo una semilla.
+
+Oportunidades seguras aprovechadas baseline 1,800/2,238, control 1,843/2,268, DAgger 2,126/2,507. Minas conocidas elegidas 203/200/181; muertes con alternativa segura 268/260/241. Las trayectorias y denominadores difieren. Pérdida de validación DAgger 1.839→1.807. No ajustar victorias ficticias por 50/50; contadores separados disponibles en summary.json.
+
+Cinco pruebas pasan. Verificación independiente de todas las 4,495 etiquetas públicas y separación de layouts, hashes originales intactos y cuatro pares de restauraciones de checkpoints con siguiente actualización exactamente igual. Pesos, Adam/RNG, datasets, fuentes/hashes e informes conservados. Informe research/RESULTADO_DAGGER_ESPACIAL.md, gráfica research/spatial-dagger-results.png inspeccionada. No se sustituyó agente servido ni se lanzó otra fase. Próximo paso recomendado: repetición con las otras dos semillas y benchmark reservado nuevo para confirmar ventaja frente al control de presupuesto.
