@@ -1,0 +1,47 @@
+{'phase': 'head_training', 'variant': 'pointwise', 'seed': 20261003, 'step': 100, 'validation_loss': 1.9986006298065186, 'seconds': 3.776366416946985}
+{'phase': 'head_training', 'variant': 'pointwise', 'seed': 20261003, 'step': 200, 'validation_loss': 1.9899289627075196, 'seconds': 7.508957208949141}
+{'phase': 'head_training', 'variant': 'pointwise', 'seed': 20261003, 'step': 300, 'validation_loss': 1.988439365386963, 'seconds': 11.302925124997273}
+{'phase': 'head_training', 'variant': 'pointwise', 'seed': 20261003, 'step': 400, 'validation_loss': 1.984659185409546, 'seconds': 15.187326084007509}
+{'phase': 'head_training', 'variant': 'pointwise', 'seed': 20261003, 'step': 500, 'validation_loss': 1.9864748554229736, 'seconds': 19.316452709026635}
+{'phase': 'head_training', 'variant': 'pointwise', 'seed': 20261003, 'step': 600, 'validation_loss': 1.9809930973052978, 'seconds': 23.203152959002182}
+{'phase': 'head_training', 'variant': 'pointwise', 'seed': 20261003, 'step': 700, 'validation_loss': 1.982682258605957, 'seconds': 27.04825116705615}
+{'phase': 'head_training', 'variant': 'pointwise', 'seed': 20261003, 'step': 800, 'validation_loss': 1.988456792831421, 'seconds': 30.912906124955043}
+{'phase': 'head_training', 'variant': 'pointwise', 'seed': 20261003, 'step': 900, 'validation_loss': 1.9869517860412598, 'seconds': 34.79728575004265}
+{'phase': 'head_training', 'variant': 'pointwise', 'seed': 20261003, 'step': 1000, 'validation_loss': 1.979226354598999, 'seconds': 38.77171304204967}
+{'phase': 'head_training', 'variant': 'spatial', 'seed': 20261003, 'step': 100, 'validation_loss': 1.9719138889312744, 'seconds': 1.7282704580575228}
+{'phase': 'head_training', 'variant': 'spatial', 'seed': 20261003, 'step': 200, 'validation_loss': 1.9442147617340089, 'seconds': 3.4500652080168948}
+{'phase': 'head_training', 'variant': 'spatial', 'seed': 20261003, 'step': 300, 'validation_loss': 1.9479028053283691, 'seconds': 5.194066249998286}
+{'phase': 'head_training', 'variant': 'spatial', 'seed': 20261003, 'step': 400, 'validation_loss': 1.9330040855407715, 'seconds': 6.9249694580212235}
+{'phase': 'head_training', 'variant': 'spatial', 'seed': 20261003, 'step': 500, 'validation_loss': 1.9274536571502685, 'seconds': 8.69040458300151}
+{'phase': 'head_training', 'variant': 'spatial', 'seed': 20261003, 'step': 600, 'validation_loss': 1.9200121803283692, 'seconds': 10.44983341707848}
+{'phase': 'head_training', 'variant': 'spatial', 'seed': 20261003, 'step': 700, 'validation_loss': 1.9138549270629883, 'seconds': 12.249241332989186}
+{'phase': 'head_training', 'variant': 'spatial', 'seed': 20261003, 'step': 800, 'validation_loss': 1.9216225166320802, 'seconds': 14.02966370806098}
+{'phase': 'head_training', 'variant': 'spatial', 'seed': 20261003, 'step': 900, 'validation_loss': 1.9119169330596923, 'seconds': 15.79069904203061}
+{'phase': 'head_training', 'variant': 'spatial', 'seed': 20261003, 'step': 1000, 'validation_loss': 1.9064737148284912, 'seconds': 17.545078375027515}
+{'phase': 'head_training', 'variant': 'pointwise', 'seed': 20261004, 'step': 100, 'validation_loss': 1.9888674621582032, 'seconds': 3.8150531250284985}
+{'phase': 'head_training', 'variant': 'pointwise', 'seed': 20261004, 'step': 200, 'validation_loss': 1.9909407291412353, 'seconds': 7.588248250074685}
+{'phase': 'head_training', 'variant': 'pointwise', 'seed': 20261004, 'step': 300, 'validation_loss': 1.9898239860534668, 'seconds': 11.366216958034784}
+{'phase': 'head_training', 'variant': 'pointwise', 'seed': 20261004, 'step': 400, 'validation_loss': 1.9888758029937743, 'seconds': 15.164550625020638}
+{'phase': 'head_training', 'variant': 'pointwise', 'seed': 20261004, 'step': 500, 'validation_loss': 1.9965035839080811, 'seconds': 18.91379537503235}
+{'phase': 'head_training', 'variant': 'pointwise', 'seed': 20261004, 'step': 600, 'validation_loss': 1.98449658203125, 'seconds': 22.681241250014864}
+{'phase': 'head_training', 'variant': 'pointwise', 'seed': 20261004, 'step': 700, 'validation_loss': 1.9750962467193605, 'seconds': 26.43790808308404}
+{'phase': 'head_training', 'variant': 'pointwise', 'seed': 20261004, 'step': 800, 'validation_loss': 1.9817402381896974, 'seconds': 30.1872463329928}
+{'phase': 'head_training', 'variant': 'pointwise', 'seed': 20261004, 'step': 900, 'validation_loss': 1.9845090885162353, 'seconds': 33.944251624983735}
+{'phase': 'head_training', 'variant': 'pointwise', 'seed': 20261004, 'step': 1000, 'validation_loss': 1.9782510166168212, 'seconds': 37.76599833299406}
+{'phase': 'head_training', 'variant': 'spatial', 'seed': 20261004, 'step': 100, 'validation_loss': 1.9641802425384522, 'seconds': 1.7027712089475244}
+{'phase': 'head_training', 'variant': 'spatial', 'seed': 20261004, 'step': 200, 'validation_loss': 1.9486973609924316, 'seconds': 3.380963584058918}
+{'phase': 'head_training', 'variant': 'spatial', 'seed': 20261004, 'step': 300, 'validation_loss': 1.9383193950653077, 'seconds': 5.086593291955069}
+{'phase': 'head_training', 'variant': 'spatial', 'seed': 20261004, 'step': 400, 'validation_loss': 1.9325308494567872, 'seconds': 6.771985500003211}
+{'phase': 'head_training', 'variant': 'spatial', 'seed': 20261004, 'step': 500, 'validation_loss': 1.9360478744506835, 'seconds': 8.433561334037222}
+{'phase': 'head_training', 'variant': 'spatial', 'seed': 20261004, 'step': 600, 'validation_loss': 1.928996997833252, 'seconds': 10.117660333984531}
+{'phase': 'head_training', 'variant': 'spatial', 'seed': 20261004, 'step': 700, 'validation_loss': 1.9254411067962647, 'seconds': 11.790006084018387}
+{'phase': 'head_training', 'variant': 'spatial', 'seed': 20261004, 'step': 800, 'validation_loss': 1.9199672355651856, 'seconds': 13.461861083982512}
+{'phase': 'head_training', 'variant': 'spatial', 'seed': 20261004, 'step': 900, 'validation_loss': 1.909078649520874, 'seconds': 15.162464209017344}
+{'phase': 'head_training', 'variant': 'spatial', 'seed': 20261004, 'step': 1000, 'validation_loss': 1.9045378665924073, 'seconds': 16.852876542019658}
+original {'wins': 25, 'n': 500, 'seconds': 46.0189835409401, 'memo_hits': 708, 'memo_misses': 1833}
+pointwise-20261002 {'wins': 20, 'n': 500, 'seconds': 34.34482537501026, 'memo_hits': 2764, 'memo_misses': 2311}
+spatial-20261002 {'wins': 38, 'n': 500, 'seconds': 48.92281016591005, 'memo_hits': 4181, 'memo_misses': 3752}
+pointwise-20261003 {'wins': 20, 'n': 500, 'seconds': 21.011376124923117, 'memo_hits': 6505, 'memo_misses': 3941}
+spatial-20261003 {'wins': 38, 'n': 500, 'seconds': 39.898206250043586, 'memo_hits': 8446, 'memo_misses': 4847}
+pointwise-20261004 {'wins': 20, 'n': 500, 'seconds': 7.144915041979402, 'memo_hits': 10911, 'memo_misses': 4889}
+spatial-20261004 {'wins': 39, 'n': 500, 'seconds': 34.70025408291258, 'memo_hits': 13232, 'memo_misses': 5437}

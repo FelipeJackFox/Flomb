@@ -1,0 +1,103 @@
+{
+  "totals": {
+    "original": {
+      "wins": 25,
+      "n": 500,
+      "rate": 0.05
+    },
+    "pointwise-20261002": {
+      "wins": 20,
+      "n": 500,
+      "rate": 0.04
+    },
+    "spatial-20261002": {
+      "wins": 38,
+      "n": 500,
+      "rate": 0.076
+    },
+    "pointwise-20261003": {
+      "wins": 20,
+      "n": 500,
+      "rate": 0.04
+    },
+    "spatial-20261003": {
+      "wins": 38,
+      "n": 500,
+      "rate": 0.076
+    },
+    "pointwise-20261004": {
+      "wins": 20,
+      "n": 500,
+      "rate": 0.04
+    },
+    "spatial-20261004": {
+      "wins": 39,
+      "n": 500,
+      "rate": 0.078
+    }
+  },
+  "comparisons": {
+    "original": {
+      "pairs": [
+        {
+          "seed": 20261002,
+          "spatial_only": 23,
+          "control_only": 10,
+          "difference_pp": 2.6,
+          "mcnemar_exact_p": 0.03508203336969018
+        },
+        {
+          "seed": 20261003,
+          "spatial_only": 24,
+          "control_only": 11,
+          "difference_pp": 2.6,
+          "mcnemar_exact_p": 0.040959591511636986
+        },
+        {
+          "seed": 20261004,
+          "spatial_only": 25,
+          "control_only": 11,
+          "difference_pp": 2.8000000000000003,
+          "mcnemar_exact_p": 0.028816719655878845
+        }
+      ],
+      "mean_difference_pp": 2.6666666666666665,
+      "conditional_board_bootstrap_95_pp": [
+        0.6666666666666667,
+        4.666666666666666
+      ]
+    },
+    "pointwise": {
+      "pairs": [
+        {
+          "seed": 20261002,
+          "spatial_only": 28,
+          "control_only": 10,
+          "difference_pp": 3.5999999999999996,
+          "mcnemar_exact_p": 0.0050976432976312935
+        },
+        {
+          "seed": 20261003,
+          "spatial_only": 27,
+          "control_only": 9,
+          "difference_pp": 3.5999999999999996,
+          "mcnemar_exact_p": 0.00393317302223295
+        },
+        {
+          "seed": 20261004,
+          "spatial_only": 29,
+          "control_only": 10,
+          "difference_pp": 3.8,
+          "mcnemar_exact_p": 0.0033778479119064286
+        }
+      ],
+      "mean_difference_pp": 3.6666666666666674,
+      "conditional_board_bootstrap_95_pp": [
+        1.7333333333333332,
+        5.666666666666666
+      ]
+    }
+  },
+  "spatial_mean": 0.07666666666666666,
+  "pointwise_mean": 0.04
+}
