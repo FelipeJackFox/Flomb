@@ -12,3 +12,6 @@
 {'phase': 'training', 'arm': 'auxiliary', 'step': 1000, 'validation_loss': 1.7875018939971923, 'auxiliary_holdout_loss': 0.34006673097610474, 'certified_correct': 7698, 'certified_n': 8781, 'chosen': 0}
 {'phase': 'training', 'arm': 'auxiliary', 'step': 1250, 'validation_loss': 1.787555450439453, 'auxiliary_holdout_loss': 0.32318392395973206, 'certified_correct': 7744, 'certified_n': 8781, 'chosen': 0}
 {'phase': 'training', 'arm': 'auxiliary', 'step': 1500, 'validation_loss': 1.790170093536377, 'auxiliary_holdout_loss': 0.3101448118686676, 'certified_correct': 7816, 'certified_n': 8781, 'chosen': 0}
+baseline {'wins': 117, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 146, 'safe_choices': 2501, 'safe_opportunities': 2852}
+control {'wins': 117, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 146, 'safe_choices': 2501, 'safe_opportunities': 2852}
+auxiliary {'wins': 117, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 146, 'safe_choices': 2501, 'safe_opportunities': 2852}
