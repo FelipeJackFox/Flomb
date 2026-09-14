@@ -353,3 +353,4 @@ joint {'step': 2000, 'validation_loss': 1.8402434101104737, 'chosen': 750, 'seco
 {'phase': 'training', 'arm': 'joint', 'step': 2025, 'target': 3000, 'seconds': 1210.7299169170437}
 {'phase': 'training', 'arm': 'joint', 'step': 2050, 'target': 3000, 'seconds': 1230.3662353339605}
 {'phase': 'training', 'arm': 'joint', 'step': 2075, 'target': 3000, 'seconds': 1249.8460030000424}
+{'phase': 'training', 'arm': 'joint', 'step': 2100, 'target': 3000, 'seconds': 1270.2912864170503}
