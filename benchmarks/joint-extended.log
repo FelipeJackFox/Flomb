@@ -149,3 +149,22 @@ joint {'step': 1750, 'validation_loss': 1.8282351093292237, 'chosen': 1500, 'sec
 {'phase': 'training', 'arm': 'joint', 'step': 1900, 'target': 3000, 'seconds': 1258.385309083038}
 {'phase': 'training', 'arm': 'joint', 'step': 1925, 'target': 3000, 'seconds': 1288.2156655410072}
 {'phase': 'training', 'arm': 'joint', 'step': 1950, 'target': 3000, 'seconds': 1320.6060877080308}
+{'phase': 'training', 'arm': 'joint', 'step': 1975, 'target': 3000, 'seconds': 1353.7310348750325}
+{'phase': 'training', 'arm': 'joint', 'step': 2000, 'target': 3000, 'seconds': 1387.1049245829927}
+joint {'step': 2000, 'validation_loss': 1.8191492881774902, 'chosen': 2000, 'seconds': 1397.6401792910183}
+{'phase': 'training', 'arm': 'joint', 'step': 2025, 'target': 3000, 'seconds': 1428.9601153329713}
+{'phase': 'training', 'arm': 'joint', 'step': 2050, 'target': 3000, 'seconds': 1457.323864707956}
+{'phase': 'training', 'arm': 'joint', 'step': 2075, 'target': 3000, 'seconds': 1513.5864314159844}
+{'phase': 'training', 'arm': 'joint', 'step': 2100, 'target': 3000, 'seconds': 1593.9261049160268}
+{'phase': 'training', 'arm': 'joint', 'step': 2125, 'target': 3000, 'seconds': 1667.2176764160395}
+{'phase': 'training', 'arm': 'joint', 'step': 2150, 'target': 3000, 'seconds': 1696.2217244580388}
+{'phase': 'training', 'arm': 'joint', 'step': 2175, 'target': 3000, 'seconds': 1762.3332453749608}
+{'phase': 'training', 'arm': 'joint', 'step': 2200, 'target': 3000, 'seconds': 1785.1859801659593}
+{'phase': 'training', 'arm': 'joint', 'step': 2225, 'target': 3000, 'seconds': 1805.3536345829489}
+{'phase': 'training', 'arm': 'joint', 'step': 2250, 'target': 3000, 'seconds': 1825.5901487499941}
+joint {'step': 2250, 'validation_loss': 1.821871904373169, 'chosen': 2000, 'seconds': 1832.620717874961}
+{'phase': 'training', 'arm': 'joint', 'step': 2275, 'target': 3000, 'seconds': 1852.8016895829933}
+{'phase': 'training', 'arm': 'joint', 'step': 2300, 'target': 3000, 'seconds': 1873.4662119159475}
+{'phase': 'training', 'arm': 'joint', 'step': 2325, 'target': 3000, 'seconds': 1894.7018545409665}
+{'phase': 'training', 'arm': 'joint', 'step': 2350, 'target': 3000, 'seconds': 1915.695999333053}
+{'phase': 'training', 'arm': 'joint', 'step': 2375, 'target': 3000, 'seconds': 1941.1326925000176}
