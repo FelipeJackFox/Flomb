@@ -478,3 +478,13 @@ Dosnuevas control18.6%→DAgger23.3%,+4.7pp IC95%pareado[+2.2,+7.1];03:102→112
 Siguientepaso autorizado: `experiments/compare_dagger_interfaces.py`, `runs/dagger-interface-comparison-001`. Tresnoadaptadosnuevos desdecontrolprevio conigualpresupuesto vsadaptadosDAggerpreservados;DAgger3x300partidas+750updates,misma colección900 decontraparte porsemilla,final500nuevo. Comparapipelines,NOencoderaislado;selección previa difiere pero presupuestosnominalesigualados. Principaladaptado−noadaptado,pareado3semillas/500/uncerebro. Protocolo `research/PROTOCOLO_COMPARACION_INTERFACES_DAGGER.md`.
 
 Seguimiento actualizado a comparacióninterfacesDAgger;reportero/auditoría `experiments/report_dagger_interfaces.py` preparados. Primera semilla noadaptada02 iniciada. Esperar cierre/figura/reportar antes de decidir nuevaintervención;no repetir aviso consistencia anterior. Originales protegidos y seguimiento continuo local.
+
+## Comparación interfaces DAgger · terminado14sept21:44UTC
+
+Trespares:sinadaptar87/82/84→adaptados125/104/100 sobre500nuevoscompartidos. Media16.8667%→21.9333%,+5.0667pp IC95%pareado[+2.8667,+7.2].0auto. Colección900porparejaidéntica,DAggerpresupuestosiguales,etapapreviaigualpresupuestonominal;compara pipelinesincluyendoencoder/lector/optimizaciónprevia,noencoderaislado. Un cerebro500compartidos. Auditoríapasa(layoutsfinales/colección/selección/encoderfijo/teacheracciones0/hashes/sello/conteos). Figura dagger-interface-comparison-results.pnginspeccionada;informe RESULTADO_COMPARACION_INTERFACES_DAGGER.md. Originales/servido intactos.
+
+## Lector ampliado RF5→RF9 · en curso14sept2026
+
+Siguientefase autorizadacontinua `experiments/train_wide_reader.py`, `runs/wide-reader-001`. Trespares local/wide desdeDAggeradaptado. Únicocambioarquitectura dilation/padding segunda conv1→3; mismos12,769param,pesos/Adam/RNG/batches,1500updatesextras,50%original+50%DAggerheredadofijo;brain/encodercongelados. Campo9×9 vs5×5 verificado porgradiente,pruebapasa. Nuevo500finalcompartido,selloantesdeevaluarbaseline/local/wide. Protocolo `research/PROTOCOLO_LECTOR_AMPLIADO.md`. No asumirqueRF9ve todo7×7desdecadaesquina ni quecerebrocarezcarecurrencianolocal.
+
+Seguimiento actualizado a `runs/wide-reader-001`;reportero `experiments/report_wide_reader.py` preparado. Primera semilla en cacheexperienciaheredada. Test de campo/parametrización pasa. Al cerrar auditar/inspeccionar figura/reportar y continuar según evidencia sin otrodale. No repetir cierre comparacióninterfacesprevio.
