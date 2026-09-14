@@ -1,0 +1,26 @@
+validation 20261002-baseline {'candidate': '20261002-baseline', 'rows_file': 'validation-20261002-baseline.json', 'wins': 102, 'n': 500, 'automatic_excluded': 0}
+validation 20261002-control-best {'candidate': '20261002-control-best', 'rows_file': 'validation-20261002-control-best.json', 'wins': 97, 'n': 500, 'automatic_excluded': 0}
+validation 20261002-control-latest {'candidate': '20261002-control-latest', 'rows_file': 'validation-20261002-control-latest.json', 'wins': 107, 'n': 500, 'automatic_excluded': 0}
+validation 20261002-priority-best {'candidate': '20261002-priority-best', 'rows_file': 'validation-20261002-priority-best.json', 'wins': 103, 'n': 500, 'automatic_excluded': 0}
+validation 20261002-priority-latest {'candidate': '20261002-priority-latest', 'rows_file': 'validation-20261002-priority-latest.json', 'wins': 105, 'n': 500, 'automatic_excluded': 0}
+validation 20261003-baseline {'candidate': '20261003-baseline', 'rows_file': 'validation-20261003-baseline.json', 'wins': 103, 'n': 500, 'automatic_excluded': 0}
+validation 20261003-control-best {'candidate': '20261003-control-best', 'rows_file': 'validation-20261003-control-best.json', 'wins': 98, 'n': 500, 'automatic_excluded': 0}
+validation 20261003-control-latest {'candidate': '20261003-control-latest', 'rows_file': 'validation-20261003-control-latest.json', 'wins': 91, 'n': 500, 'automatic_excluded': 0}
+validation 20261003-priority-best {'candidate': '20261003-priority-best', 'rows_file': 'validation-20261003-priority-best.json', 'wins': 96, 'n': 500, 'automatic_excluded': 0}
+validation 20261003-priority-latest {'candidate': '20261003-priority-latest', 'rows_file': 'validation-20261003-priority-latest.json', 'wins': 100, 'n': 500, 'automatic_excluded': 0}
+validation 20261004-baseline {'candidate': '20261004-baseline', 'rows_file': 'validation-20261004-baseline.json', 'wins': 90, 'n': 500, 'automatic_excluded': 0}
+validation 20261004-control-best {'candidate': '20261004-control-best', 'rows_file': 'validation-20261004-control-best.json', 'wins': 92, 'n': 500, 'automatic_excluded': 0}
+validation 20261004-control-latest {'candidate': '20261004-control-latest', 'rows_file': 'validation-20261004-control-latest.json', 'wins': 92, 'n': 500, 'automatic_excluded': 0}
+validation 20261004-priority-latest {'candidate': '20261004-priority-latest', 'rows_file': 'validation-20261004-priority-latest.json', 'wins': 91, 'n': 500, 'automatic_excluded': 0}
+SELECTED {'20261002-control': {'loss': '20261002-control-best', 'games': '20261002-control-latest', 'baseline': '20261002-baseline'}, '20261002-priority': {'loss': '20261002-priority-best', 'games': '20261002-priority-latest', 'baseline': '20261002-baseline'}, '20261003-control': {'loss': '20261003-control-best', 'games': '20261003-baseline', 'baseline': '20261003-baseline'}, '20261003-priority': {'loss': '20261003-priority-best', 'games': '20261003-baseline', 'baseline': '20261003-baseline'}, '20261004-control': {'loss': '20261004-control-best', 'games': '20261004-control-best', 'baseline': '20261004-baseline'}, '20261004-priority': {'loss': '20261004-priority-best', 'games': '20261004-priority-latest', 'baseline': '20261004-baseline'}}
+test 20261002-control-best {'candidate': '20261002-control-best', 'rows_file': 'test-20261002-control-best.json', 'wins': 103, 'n': 500, 'automatic_excluded': 0}
+test 20261002-control-latest {'candidate': '20261002-control-latest', 'rows_file': 'test-20261002-control-latest.json', 'wins': 105, 'n': 500, 'automatic_excluded': 0}
+test 20261002-baseline {'candidate': '20261002-baseline', 'rows_file': 'test-20261002-baseline.json', 'wins': 92, 'n': 500, 'automatic_excluded': 0}
+test 20261002-priority-best {'candidate': '20261002-priority-best', 'rows_file': 'test-20261002-priority-best.json', 'wins': 112, 'n': 500, 'automatic_excluded': 0}
+test 20261002-priority-latest {'candidate': '20261002-priority-latest', 'rows_file': 'test-20261002-priority-latest.json', 'wins': 107, 'n': 500, 'automatic_excluded': 0}
+test 20261003-control-best {'candidate': '20261003-control-best', 'rows_file': 'test-20261003-control-best.json', 'wins': 97, 'n': 500, 'automatic_excluded': 0}
+test 20261003-baseline {'candidate': '20261003-baseline', 'rows_file': 'test-20261003-baseline.json', 'wins': 88, 'n': 500, 'automatic_excluded': 0}
+test 20261003-priority-best {'candidate': '20261003-priority-best', 'rows_file': 'test-20261003-priority-best.json', 'wins': 92, 'n': 500, 'automatic_excluded': 0}
+test 20261004-control-best {'candidate': '20261004-control-best', 'rows_file': 'test-20261004-control-best.json', 'wins': 90, 'n': 500, 'automatic_excluded': 0}
+test 20261004-baseline {'candidate': '20261004-baseline', 'rows_file': 'test-20261004-baseline.json', 'wins': 82, 'n': 500, 'automatic_excluded': 0}
+test 20261004-priority-latest {'candidate': '20261004-priority-latest', 'rows_file': 'test-20261004-priority-latest.json', 'wins': 89, 'n': 500, 'automatic_excluded': 0}
