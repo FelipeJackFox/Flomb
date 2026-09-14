@@ -63,7 +63,7 @@ def collect(memo,head,games):
  _,l,c,y=arrays(rows)
  return rows,(torch.stack(maps),l,c,y),stats
 
-def main(out=OUT,seed=SEED,splits=None):
+def main(out=OUT,seed=SEED,splits=None,train_only=False):
  OUT=Path(out);SEED=seed
  torch.set_num_threads(1);OUT.mkdir(exist_ok=True)
  if (OUT/'manifest.json').exists():raise SystemExit('Preserve existing run')
@@ -114,6 +114,10 @@ def main(out=OUT,seed=SEED,splits=None):
    torch.save(selected[name],OUT/f'best-{name}.pt')
   write_json(OUT/'history.json',history)
  write_json(OUT/'selection.json',{name:dict(step=s['step'],validation_loss=s['validation_loss'],sha256=digest(OUT/f'best-{name}.pt')) for name,s in selected.items()});seal=digest(OUT/'selection.json');write_json(OUT/'selection-seal.json',dict(sha256=seal))
+ if train_only:
+  assert tensor_hash(brain.state_dict())==frozen and all(digest(p)==sha for p,sha in hashes.items())
+  write_json(OUT/'training-verification.json',dict(original_hashes_unchanged=True,adapted_brain_frozen=True,selection_sealed=True,teacher_actions=0))
+  write_json(OUT/'training-completed.json',dict(completed=True));write_json(OUT/'progress.json',dict(phase='awaiting_shared_evaluation'));op.close();return
  results={}
  for name,h in heads.items():
   if name!='baseline':h.load_state_dict(selected[name]['head'])

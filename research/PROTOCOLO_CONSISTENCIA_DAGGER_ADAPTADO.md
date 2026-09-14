@@ -1,0 +1,5 @@
+# Repetición DAgger con interfaz adaptada
+
+Autorización continua. Dos nuevas semillas20261003/4, cada una desde su encoder+lector adaptado elegido en joint-extended-SEED. Mismo protocolo piloto: congelar encoder y cerebro, conservar Adamlector/RNG,3rondas300partidas nuevas+750updates porbrazo,DAgger50%original50%experiencia vs control100%original. Maestrosoloetiqueta,acciones0. Colección900layouts nueva compartida por ambas repeticiones, trayectorias pueden variar. Prueba500layouts nueva separada de colección y de todaslaslistas/datasets anteriores. Reutilizar piloto20261002 sin reentrenar, reevaluarlo en prueba compartida.
+
+Coordinador `runs/adapted-dagger-consistency-001`, hijos`runs/adapted-dagger-20261003/4`;runner `experiments/repeat_adapted_dagger.py`. Selecciónholdoutcada250incluyendoinicial; sellar todosloscandidatos antesdeprueba. Principal mediaDAgger−control de DOS nuevas; secundario tressemillas. Bootstrap pareadopor tablero,500compartidos y un cerebro, no1500independientes. No afirmar sinergia causalfrente alDAggerdeinterfazvieja: aún requiere comparación cruzada. No cambiar agentes servidos ni originales.

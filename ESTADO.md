@@ -458,3 +458,13 @@ Auditoríaindependiente pasa(reconstrucción500,solapamiento0,restauración/hist
 Siguienteexperimento autorizado continuo: `experiments/adapted_dagger.py`, `runs/adapted-dagger-001`. Piloto20261002 parte de conjuntoadaptado2750;encoder+cerebro congelados,lector aprende.3rondas300partidasautónomas+750updates,controlsolo originales vs mezcla50%original+50%DAgger;teacheracciones0. Cache adaptada recomputada,Adamlector/RNG heredados,máscaras solo legales.900colección/500test nuevos disjuntos,selecciónsellada. Test unpaso demuestra igualdadexacta al filtrar Adam para congelarencoder. Protocolo `research/PROTOCOLO_DAGGER_INTERFAZ_ADAPTADA.md`.
 
 Seguimiento actualizado a `runs/adapted-dagger-001` / `benchmarks/adapted-dagger.log`. Al completar ejecutar/auditar `experiments.report_adapted_dagger`,inspeccionar figura y reportar;continuar con repetición si mejora prometedora o siguiente hipótesis justificada si no. Extensiónya comunicada,no repetir. Cache adaptada en construcción al inicio;ningún resultado del piloto todavía.
+
+## DAgger interfaz adaptada · terminado14sept20:31UTC
+
+Piloto20261002 completado:control/baseline72/500(14.4%),DAgger108/500(21.6%),+7.2pp IC95%pareado[+4,+10.4] frente ambos.0aperturasautomáticas.4788posicionesnuevas,900partidascolección,teacheracciones0;lector2250updates,seleccionó2250;control0. Minasdeducibles146→136,eleccionesseguras1943/2341→2337/2668. Una semilla/un cerebro,prometedor pendienteconsistencia. Auditoríareconstruye1400layouts,solapamiento0,selección/conteos/hash/sello/encodercongelado verificados. Figuraadapted-dagger-results.pnginspeccionada,reporteresearch/RESULTADO_DAGGER_INTERFAZ_ADAPTADA.md. Originales/agenteservido intactos.
+
+## Consistencia DAgger adaptado · en curso14sept2026
+
+Se repite mismoprotocolo en20261003/4; piloto02 preservado y reevaluado sobre500nuevos compartidos. Nueva colección900layoutscompartida por lasdosreplicas con trayectorias propias. Principal dosnuevas,secundario tressemillas. Runner `experiments/repeat_adapted_dagger.py`,coordinador `runs/adapted-dagger-consistency-001`,hijos`runs/adapted-dagger-20261003/4`. Sellar todosloscandidatosantesdetest. Protocolo `research/PROTOCOLO_CONSISTENCIA_DAGGER_ADAPTADO.md`.
+
+Seguimiento actualizado a consistenciaDAggeradaptado;informe/auditoría preparados `experiments/report_adapted_dagger_consistency.py`,pendientes de resultados. Primera repetición03 iniciada,cache adaptada en construcción. Al terminar informar dosnuevas/principal y tres/secundario y continuar con siguienteexperimento justificado. No volver a informar piloto como resultado nuevo.
