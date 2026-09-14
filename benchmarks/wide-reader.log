@@ -8,3 +8,41 @@
 {'phase': 'training', 'seed': 20261002, 'arm': 'wide', 'step': 0, 'validation_loss': 4.60421800994873, 'chosen': 0, 'seconds': 0.12705970800016075}
 {'phase': 'training', 'seed': 20261002, 'arm': 'wide', 'step': 250, 'validation_loss': 1.9240683174133302, 'chosen': 250, 'seconds': 4.546566249919124}
 {'phase': 'training', 'seed': 20261002, 'arm': 'wide', 'step': 500, 'validation_loss': 1.87048699760437, 'chosen': 500, 'seconds': 8.970010499935597}
+{'phase': 'training', 'seed': 20261002, 'arm': 'wide', 'step': 750, 'validation_loss': 1.8545950679779053, 'chosen': 750, 'seconds': 13.408317790948786}
+{'phase': 'training', 'seed': 20261002, 'arm': 'wide', 'step': 1000, 'validation_loss': 1.842142999649048, 'chosen': 1000, 'seconds': 17.86973962490447}
+{'phase': 'training', 'seed': 20261002, 'arm': 'wide', 'step': 1250, 'validation_loss': 1.8344822635650635, 'chosen': 1250, 'seconds': 22.174315790995024}
+{'phase': 'training', 'seed': 20261002, 'arm': 'wide', 'step': 1500, 'validation_loss': 1.83383589553833, 'chosen': 1500, 'seconds': 26.57591966597829}
+{'phase': 'training', 'seed': 20261003, 'arm': 'local', 'step': 0, 'validation_loss': 1.8065447578430176, 'chosen': 0, 'seconds': 0.10051404091063887}
+{'phase': 'training', 'seed': 20261003, 'arm': 'local', 'step': 250, 'validation_loss': 1.8071562595367432, 'chosen': 0, 'seconds': 4.078670915914699}
+{'phase': 'training', 'seed': 20261003, 'arm': 'local', 'step': 500, 'validation_loss': 1.808380512237549, 'chosen': 0, 'seconds': 8.0398371249903}
+{'phase': 'training', 'seed': 20261003, 'arm': 'local', 'step': 750, 'validation_loss': 1.8057148838043213, 'chosen': 750, 'seconds': 12.024701915914193}
+{'phase': 'training', 'seed': 20261003, 'arm': 'local', 'step': 1000, 'validation_loss': 1.8082033576965333, 'chosen': 750, 'seconds': 16.012961208005436}
+{'phase': 'training', 'seed': 20261003, 'arm': 'local', 'step': 1250, 'validation_loss': 1.809575391769409, 'chosen': 750, 'seconds': 20.014042416005395}
+{'phase': 'training', 'seed': 20261003, 'arm': 'local', 'step': 1500, 'validation_loss': 1.8122923355102538, 'chosen': 750, 'seconds': 24.251531124929897}
+{'phase': 'training', 'seed': 20261003, 'arm': 'wide', 'step': 0, 'validation_loss': 4.925770378112793, 'chosen': 0, 'seconds': 0.13201937498524785}
+{'phase': 'training', 'seed': 20261003, 'arm': 'wide', 'step': 250, 'validation_loss': 1.9459593086242675, 'chosen': 250, 'seconds': 4.523051667027175}
+{'phase': 'training', 'seed': 20261003, 'arm': 'wide', 'step': 500, 'validation_loss': 1.8894552726745606, 'chosen': 500, 'seconds': 8.970315625076182}
+{'phase': 'training', 'seed': 20261003, 'arm': 'wide', 'step': 750, 'validation_loss': 1.8611821975708007, 'chosen': 750, 'seconds': 13.362821500049904}
+{'phase': 'training', 'seed': 20261003, 'arm': 'wide', 'step': 1000, 'validation_loss': 1.8533310432434082, 'chosen': 1000, 'seconds': 17.73910979204811}
+{'phase': 'training', 'seed': 20261003, 'arm': 'wide', 'step': 1250, 'validation_loss': 1.8415228157043457, 'chosen': 1250, 'seconds': 22.1029373339843}
+{'phase': 'training', 'seed': 20261003, 'arm': 'wide', 'step': 1500, 'validation_loss': 1.8342636051177978, 'chosen': 1500, 'seconds': 26.45123775000684}
+{'phase': 'training', 'seed': 20261004, 'arm': 'local', 'step': 0, 'validation_loss': 1.7953315753936767, 'chosen': 0, 'seconds': 0.10011745907831937}
+{'phase': 'training', 'seed': 20261004, 'arm': 'local', 'step': 250, 'validation_loss': 1.7887609176635741, 'chosen': 250, 'seconds': 4.0765783340903}
+{'phase': 'training', 'seed': 20261004, 'arm': 'local', 'step': 500, 'validation_loss': 1.7909857826232911, 'chosen': 250, 'seconds': 8.047018749988638}
+{'phase': 'training', 'seed': 20261004, 'arm': 'local', 'step': 750, 'validation_loss': 1.7874881649017333, 'chosen': 750, 'seconds': 12.02239191706758}
+{'phase': 'training', 'seed': 20261004, 'arm': 'local', 'step': 1000, 'validation_loss': 1.7919046382904054, 'chosen': 750, 'seconds': 15.97092979203444}
+{'phase': 'training', 'seed': 20261004, 'arm': 'local', 'step': 1250, 'validation_loss': 1.7871232929229737, 'chosen': 1250, 'seconds': 19.94281612499617}
+{'phase': 'training', 'seed': 20261004, 'arm': 'local', 'step': 1500, 'validation_loss': 1.7939228591918945, 'chosen': 1250, 'seconds': 23.970908834016882}
+{'phase': 'training', 'seed': 20261004, 'arm': 'wide', 'step': 0, 'validation_loss': 5.737014915466308, 'chosen': 0, 'seconds': 0.1264963330468163}
+{'phase': 'training', 'seed': 20261004, 'arm': 'wide', 'step': 250, 'validation_loss': 1.9496722278594971, 'chosen': 250, 'seconds': 4.488875624956563}
+{'phase': 'training', 'seed': 20261004, 'arm': 'wide', 'step': 500, 'validation_loss': 1.8858136348724366, 'chosen': 500, 'seconds': 8.822594875004143}
+{'phase': 'training', 'seed': 20261004, 'arm': 'wide', 'step': 750, 'validation_loss': 1.8595991897583009, 'chosen': 750, 'seconds': 13.175264541059732}
+{'phase': 'training', 'seed': 20261004, 'arm': 'wide', 'step': 1000, 'validation_loss': 1.8550347747802733, 'chosen': 1000, 'seconds': 17.52144791604951}
+{'phase': 'training', 'seed': 20261004, 'arm': 'wide', 'step': 1250, 'validation_loss': 1.8428431568145751, 'chosen': 1250, 'seconds': 21.869251666008495}
+{'phase': 'training', 'seed': 20261004, 'arm': 'wide', 'step': 1500, 'validation_loss': 1.8362498359680175, 'chosen': 1500, 'seconds': 26.25438091601245}
+20261002-baseline {'wins': 108, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 139, 'safe_choices': 2331, 'safe_opportunities': 2652}
+20261002-local {'wins': 113, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 140, 'safe_choices': 2445, 'safe_opportunities': 2791}
+20261002-wide {'wins': 96, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 171, 'safe_choices': 2335, 'safe_opportunities': 2725}
+20261003-baseline {'wins': 108, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 147, 'safe_choices': 2477, 'safe_opportunities': 2813}
+20261003-local {'wins': 115, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 153, 'safe_choices': 2475, 'safe_opportunities': 2846}
+20261003-wide {'wins': 83, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 138, 'safe_choices': 2051, 'safe_opportunities': 2377}
