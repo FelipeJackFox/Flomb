@@ -446,3 +446,15 @@ Seguimiento reactivado `resultado-consistencia-interfaz-mosca` cada10min bajo in
 Hito comunicado14sept18:46UTC: primer par20261002 terminó3000updates;conjunto eligió2750,pérdida1.81405 frente a1.83009 en750;control conserva0. Verificaciones de entrenamiento pasan. Segunda semilla20261003 iniciada. Aún sin evaluar partidas finales; mejora de pérdida no es mejora de winrate.
 
 Hito comunicado14sept19:28UTC: segundo par20261003 completó3000;conjunto eligió2750,pérdida1.83473 vs1.83750 en750,control conserva0;verificaciones pasan. Tercera semilla20261004 observada1325/3000. Dos de tres entrenamientos conjuntos terminados;partidas finales aún pendientes.
+
+## Extensión interfaz750→3000 · terminado14sept20:09UTC
+
+Trespares completados y auditados;500layouts nuevos compartidos,sin aperturasautomáticas. Principal conjunto750→ampliado15.533%→16.667%,+1.133pp,IC95%condicional[-.6,+2.802]: ganancia adicional no concluyente. Secundario controlampliado11.6%→16.667%,+5.067pp,IC[+3,+7.133]. Porsemilla conjunto750→ampliado81→83,76→88,76→79/500; controles56,59,59. Mejores conjuntos2750/2750/2000,controles0. Un cerebro,500tableros compartidos. No evidencia para seguir ampliando presupuesto solo por pérdida.
+
+Auditoríaindependiente pasa(reconstrucción500,solapamiento0,restauración/historial/selección/pares/duplicados/conteos/hashes/sello). Figura `research/joint-extended-results.png` inspeccionada;informe `research/RESULTADO_EXTENSION_INTERFAZ.md`. Originales intactos y agente servido sin cambio.
+
+## DAgger sobre interfaz adaptada · en curso14sept2026
+
+Siguienteexperimento autorizado continuo: `experiments/adapted_dagger.py`, `runs/adapted-dagger-001`. Piloto20261002 parte de conjuntoadaptado2750;encoder+cerebro congelados,lector aprende.3rondas300partidasautónomas+750updates,controlsolo originales vs mezcla50%original+50%DAgger;teacheracciones0. Cache adaptada recomputada,Adamlector/RNG heredados,máscaras solo legales.900colección/500test nuevos disjuntos,selecciónsellada. Test unpaso demuestra igualdadexacta al filtrar Adam para congelarencoder. Protocolo `research/PROTOCOLO_DAGGER_INTERFAZ_ADAPTADA.md`.
+
+Seguimiento actualizado a `runs/adapted-dagger-001` / `benchmarks/adapted-dagger.log`. Al completar ejecutar/auditar `experiments.report_adapted_dagger`,inspeccionar figura y reportar;continuar con repetición si mejora prometedora o siguiente hipótesis justificada si no. Extensiónya comunicada,no repetir. Cache adaptada en construcción al inicio;ningún resultado del piloto todavía.
