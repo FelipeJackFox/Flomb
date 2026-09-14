@@ -1,0 +1,9 @@
+# Piloto de encoder y lector conjuntos
+
+Autorizado 14 septiembre2026, `runs/joint-interface-001`. Una semilla piloto20261002. Punto de partida: `runs/input-representation-001/best-brain-20261002.pt` (lector elegido en3500updates), mismo cerebro previamente entrenado. Control continúa solo lector; conjunto adapta también encoder. Grafo, signos, pesos, ganancias neuronales, mapeo, pooling y dinámica permanecen fijos.
+
+750 actualizaciones adicionales por brazo, batch64 idéntico por hash, Adam del lector y RNG heredados. Lector lr0.001 en ambos; encoder lr0.0001 nuevo grupo Adam. Clip5 del lector en ambos; encoder separado clip5. Conjunto acumula cuatro microbatches16 para limitar memoria. Datos originales10000/holdout1000, sin nuevos datos DAgger. Validación0/250/500/750 por mínima pérdida, empate más temprano, incluye punto inicial. Cache solo en control; conjunto recomputa actividad al cambiar encoder. Se reserva prueba500 layouts nuevos7×7/7minas, se sella selección antes de evaluar baseline/control/conjunto. Se excluyen aperturas ganadoras automáticas.
+
+Optimización: pesos y CSR/transpuesta se fijan una vez; autograd calcula solo el gradiente de entrada, sin gradientes para25.6millones de aristas. Test con grafo pequeño compara gradientes del encoder con operación densa; en grafo real se comprueba forward contra ruta existente y acumulación contra minibatch completo. Verificar encoder de control intacto, encoder conjunto modificado, resto del cerebro intacto y originales por hash.
+
+Presupuesto igual en actualizaciones/ejemplos, no en tiempo ni número de parámetros entrenables; esa es la intervención. Piloto de una semilla y un cerebro, no resultado de consistencia. Holdout histórico reutilizado; prueba final nueva independiente. Sin filtro del maestro en decisiones, sin reemplazar agente servido. Guardar mejores/últimos con Adam/RNG. No comparar directamente con modelos DAgger de otros benchmarks.

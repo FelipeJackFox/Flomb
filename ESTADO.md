@@ -406,3 +406,17 @@ Interpretación: coste claro de la representación cerebral actual para este lec
 Test codificación/inferencia pasa. Auditoría independiente reconstruye500 layouts,solapamiento previo0,recalcula selección,conteos,sello y hashes. Igualdad metadatos de caché y16 mapas recomputados contra checkpoint pasan. Informe `research/RESULTADO_COMPARACION_ENTRADAS.md`, figura `research/input-representation-results.png` inspeccionada, summary y verification guardados. Checkpoints mejores/últimos con Adam/RNG conservados. Ningún modelo anterior alterado ni agente servido sustituido. No fase posterior iniciada.
 
 Siguiente propuesta: adaptar conjuntamente encoder de entrada y lector espacial manteniendo conectoma fijo, frente a control congelado; requiere nuevo protocolo/benchmark. Es hipótesis de mejora, no solución demostrada.
+
+## Interfaz conjunta · en curso 14 septiembre2026
+
+Autorizado piloto encoder+lector frente a control congelado, `experiments/train_joint_interface.py`, `runs/joint-interface-001`. Parte del lector cerebral3500 de semilla20261002; conserva Adam/RNG para ambos.750updates,batch64(4micro16 conjunto),lrhead.001/lrencoder.0001, conexiones y ganancias fijas. Selección holdout0/250/500/750, prueba500layouts nuevos baseline/control/conjunto sellada. Test autograd disperso frente a gradiente denso pasa. Pruebas grafo real y hashes dentro del runner. Protocolo `research/PROTOCOLO_INTERFAZ_CONJUNTA.md`. No agente servido cambiado.
+
+## Interfaz conjunta · terminado 14 septiembre2026
+
+`runs/joint-interface-001` completado: piloto semilla20261002,750updates por brazo,headAdam/RNG heredados desde3500,mismos minibatches64 por hash. Conjunto aprende encoder lr.0001 y lector lr.001; control sololector. Conexiones,ganancias,mapeo,pooling,dinámica fijos. Control eligiópaso0(loss1.8386083);conjunto750(loss1.8300947). Curva conjunto0/250/500/750:1.8386083/1.8482665/1.8313025/1.8300947. Tiempo conjunto~662segundos incluyendo validaciones,control~12s; no afirmar igual tiempo de cómputo.
+
+Final500 nuevos7×7/7minas,0 aperturas ganadoras automáticas:baseline56/500,control56/500,conjunto74/500.11.2%→14.8%,+3.6pp,IC95% bootstrap pareado condicional[+1.0,+6.2].Una semilla/un cerebro; mejora piloto,pendiente consistencia.No comparar con DAgger~20% en otros tableros. Minas deducibles elegidas177→154; elecciones seguras1817/2224→1834/2205,denominadores por trayectorias distintos.
+
+Encoder control cambioL2=0;encoder conjuntoL2=.35840355. Pesos mejores/últimos,Adam,RNG preservados. Test disperso vsdenso pasa;grafo real forward/acumulación equivalentes,gradiente encoderL1=32.964 no nulo;resto cerebro intacto,validación online/caché inicial igual,memo vsforward restaurado igual. Auditoría independiente reconstruye500layouts,solapamiento0,selección/conteos/hashes/sello correctos.Figura `research/joint-interface-results.png` inspeccionada.Informe `research/RESULTADO_INTERFAZ_CONJUNTA.md`. Ningún modelo servido cambiado ni fase posterior iniciada.
+
+Siguiente propuesta: repetir mismo protocolo en las otras dos semillas y evaluar en benchmark nuevo compartido para comprobar consistencia,antes de ampliar presupuesto o sustituir agentes.
