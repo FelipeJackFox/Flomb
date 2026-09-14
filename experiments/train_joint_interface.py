@@ -34,14 +34,18 @@ def validation(model,rows):
   x,l,c,y=arrays(rows[i:i+16]);total+=float(equivalent_loss(model(x,c),l,y))*len(x)
  return total/len(rows)
 
-def main(seed=20261002,output=None,games_path=None,train_only=False):
- global OUT,PARENT
+def main(seed=20261002,output=None,games_path=None,train_only=False,updates=750,resume_from=None):
+ global OUT,PARENT,UPDATES
+ UPDATES=updates
  if output is not None:OUT=Path(output)
  PARENT=Path(f'runs/input-representation-001/best-brain-{seed}.pt')
  torch.set_num_threads(1);OUT.mkdir(exist_ok=False)
  paths=[PARENT,BASE/'dataset.pkl',BASE/'mapping.pkl',BASE/'training/retina_plastic-20260926.pt',CACHE/'train.pt',CACHE/'holdout.pt',Path('runs/hybrid-001/checkpoint.pkl')]
+ if resume_from:
+  resume_from=Path(resume_from)
+  paths.extend(resume_from/f'{kind}-{arm}.pt' for kind in ('best','latest') for arm in ('control','joint'))
  hashes={str(p):digest(p) for p in paths}
- write_json(OUT/'manifest.json',dict(seed=seed,updates=UPDATES,batch=64,microbatch=16,head_lr=.001,encoder_lr=.0001,parent=str(PARENT),selection='minimum original holdout loss at0/250/500/750; earliest tie',scope='one paired pilot, pretrained brain and selected head; no new DAgger',hashes=hashes))
+ write_json(OUT/'manifest.json',dict(seed=seed,updates=UPDATES,batch=64,microbatch=16,head_lr=.001,encoder_lr=.0001,parent=str(PARENT),resume_from=str(resume_from) if resume_from else None,selection='minimum original holdout loss every250 including inherited best; earliest tie',scope='paired adaptation, pretrained brain and selected head; no new DAgger',hashes=hashes))
  src=OUT/'source';src.mkdir()
  for p in [Path(__file__),*[Path('experiments')/n for n in ('joint_interface.py','test_joint_interface.py','retina_policy.py','plastic_sparse.py','spatial_decoder.py','expressive_models.py','capacity_probe.py','scaled_train.py','validate_spatial_decoder.py')],Path('solver.py'),Path('minesweeper.py')]:shutil.copy2(p,src/p.name)
  games=reserve() if games_path is None else json.loads(Path(games_path).read_text());write_json(OUT/'games.json',games)
@@ -77,7 +81,22 @@ def main(seed=20261002,output=None,games_path=None,train_only=False):
   if arm=='joint':opt.add_param_group(dict(params=list(brain.encoder.parameters()),lr=.0001))
   rng=np.random.default_rng();rng.bit_generator.state=copy.deepcopy(old['rng']);draws=hashlib.sha256()
   best=float('inf');history=[];started=time.monotonic()
-  for step in range(UPDATES+1):
+  start=0
+  if resume_from:
+   last=torch.load(resume_from/f'latest-{arm}.pt',weights_only=False);prior=torch.load(resume_from/f'best-{arm}.pt',weights_only=False)
+   head.load_state_dict(last['head']);brain.encoder.load_state_dict(last['encoder']);opt.load_state_dict(last['optimizer']);rng.bit_generator.state=copy.deepcopy(last['rng'])
+   assert tensor_hash(head.state_dict())==tensor_hash(last['head']) and tensor_hash(brain.encoder.state_dict())==tensor_hash(last['encoder'])
+   for param_id,state in last['optimizer']['state'].items():
+    for name,value in state.items():
+     restored=opt.state_dict()['state'][param_id][name]
+     if torch.is_tensor(value):torch.testing.assert_close(value,restored,rtol=0,atol=0)
+     else:assert value==restored
+   assert rng.bit_generator.state==last['rng'] and last['parent_step']==old['step']
+   start=last['step']+1;assert start<=UPDATES
+   best=prior['validation_loss'];chosen=prior['step'];history=json.loads((resume_from/f'history-{arm}.json').read_text())
+   save(OUT/f'best-{arm}.pt',prior);save(OUT/f'latest-{arm}.pt',last)
+   write_json(OUT/f'resume-{arm}.json',dict(source_step=last['step'],weights_optimizer_rng_exact=True,inherited_best_step=chosen))
+  for step in range(start,UPDATES+1):
    if step:
     ix=np.array([int(rng.choice(groups[((old['step']+step)*64+j)%len(groups)])) for j in range(64)],np.int64);draws.update(ix.tobytes());opt.zero_grad();model.zero_grad()
     if arm=='control':

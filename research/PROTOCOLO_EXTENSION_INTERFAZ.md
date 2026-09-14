@@ -1,0 +1,5 @@
+# Extensión de interfaz750→3000
+
+Autorizada14septiembre2026: usuario pide reportar y continuar. Tres semillas20261002/3/4; reanudar ambos brazos desde últimos750 con pesos/Adam/RNG exactos; conservar mejores previos como candidatos.2,250updates adicionales,3,000totales de interfaz, batch64 micro16, mismas tasas/clipping/datos/regla holdout cada250. Conectoma y ganancias fijos. No nueva experiencia DAgger.
+
+Coordinador `runs/joint-extended-001`; entrenamiento `runs/joint-extended-SEED`; fuente `experiments/extend_joint_interface.py`. Proteger originales y750. Reservar500layouts nuevos7×7/7minas compartidos. Sellar todos los checkpoints antes de prueba final. Evaluar inicial/control ampliado/conjunto ampliado/conjunto previo750. Principal: diferencia pareada conjunto ampliado−conjunto750 media sobre tres semillas. Secundario: conjunto ampliado−control ampliado. Bootstrap por tablero,500 compartidos/un cerebro; excluir aperturas automáticas. No sustituir modelo servido ni gastar cómputo externo. Preservar checkpoints y registrar cierre antes de elegir siguiente intervención.
