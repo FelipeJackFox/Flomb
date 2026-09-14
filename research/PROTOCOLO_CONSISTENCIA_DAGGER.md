@@ -1,0 +1,9 @@
+# Repetición de DAgger espacial
+
+Semillas 20261002, 20261003 y 20261004 del lector espacial sobre un único cerebro congelado. La primera conserva los tres modelos del piloto sin reentrenamiento; las otras dos parten de sus propios checkpoints ampliados, con Adam, y repiten exactamente tres rondas de 300 partidas de colección / 750 updates. DAgger beta=0: 50% posiciones originales equilibradas y 50% posiciones acumuladas nuevas; etiquetas de jugadas certificadas seguras, nunca acciones del maestro. Control con igual número de actualizaciones y batch 64 usando exclusivamente posiciones originales. Selección mínima pérdida en el holdout original, incluyendo modelo inicial.
+
+Reutilización intencional de los mismos 900 layouts de colección del piloto para controlar variación de tableros entre semillas. Las posiciones visitadas dependen del lector. Se reservan antes del entrenamiento 500 layouts 7×7/7 minas nuevos, excluyendo todos los datasets, benchmarks y layouts de colección previos (incluso los que no produjeron etiquetas). Los nueve modelos se evalúan en esos mismos 500 juegos al terminar su entrenamiento, sin usar resultados finales para selección.
+
+Conservar por semilla baseline/control/DAgger, diferencias emparejadas y métricas específicas de juego. Intervalo bootstrap por tablero de la diferencia media entre lectores, condicionado a estas tres semillas, sin tratar 1,500 resultados como tableros independientes. Reportar también las dos semillas nuevas por separado: la primera ya motivó esta repetición y no es una confirmación independiente. No hay tres cerebros entrenados ni prueba de ventaja biológica.
+
+Mantener pesos, Adam, RNG, etiquetas, fuentes y hashes de originales. Cinco pruebas de colector/memo/lector antes de iniciar. Informe y verificación independiente al terminar. No reemplazar agente servido en esta fase.

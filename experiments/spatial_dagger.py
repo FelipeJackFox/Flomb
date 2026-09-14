@@ -63,7 +63,8 @@ def collect(memo,head,games):
  _,l,c,y=arrays(rows)
  return rows,(torch.stack(maps),l,c,y),stats
 
-def main():
+def main(out=OUT,seed=SEED,splits=None):
+ OUT=Path(out);SEED=seed
  torch.set_num_threads(1);OUT.mkdir(exist_ok=True)
  if (OUT/'manifest.json').exists():raise SystemExit('Preserve existing run')
  paths=[Path('runs/spatial-extended-001')/f'best-{SEED}.pt',BASE/'training/retina_plastic-20260926.pt',BASE/'dataset.pkl',CACHE/'train.pt',CACHE/'holdout.pt',Path('runs/hybrid-001/checkpoint.pkl')]
@@ -71,7 +72,7 @@ def main():
  write_json(OUT/'manifest.json',dict(seed=SEED,rounds=3,games_per_round=300,updates_per_round=750,batch=64,new_fraction=.5,teacher_actions=0,labels='certified safe only',selection='old holdout minimum loss including baseline',hashes=hashes))
  (OUT/'source').mkdir()
  for p in [Path(__file__),Path('experiments/validate_spatial_decoder.py'),Path('experiments/scaled_train.py'),Path('solver.py'),Path('minesweeper.py')]:shutil.copy2(p,OUT/'source'/p.name)
- splits=reserve();write_json(OUT/'games.json',splits['games']);write_json(OUT/'collection-games.json',splits['collection']);write_json(OUT/'split_verification.json',dict(unique=1400,prior_overlap=0,train_test_overlap=0))
+ splits=reserve() if splits is None else splits;write_json(OUT/'games.json',splits['games']);write_json(OUT/'collection-games.json',splits['collection']);write_json(OUT/'split_verification.json',dict(unique=len({r['layout_hash'] for rows in splits.values() for r in rows}),train_test_overlap=len({r['layout_hash'] for r in splits['games']} & {r['layout_hash'] for r in splits['collection']}),collection_provenance='See parent protocol when supplied externally'))
  old=torch.load(paths[0],weights_only=False);cache=torch.load(CACHE/'train.pt',weights_only=False);valid=torch.load(CACHE/'holdout.pt',weights_only=False)
  data=pickle.loads((BASE/'dataset.pkl').read_bytes());groups={}
  for i,r in enumerate(data['train']):groups.setdefault((r['size'],r['category']),[]).append(i)
