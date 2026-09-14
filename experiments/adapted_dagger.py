@@ -42,15 +42,15 @@ def reserve():
 def collect(memo,head,games):
  rows=[];maps=[];stats=dict(games=len(games),wins=0,clicks=0,safe_opportunities=0,safe_choices=0,teacher_actions=0)
  for start in range(0,len(games),16):
-  active=[(Minesweeper(g['seed'],7,7),g) for g in games[start:start+16]]
+  active=[(Minesweeper(g['seed'],g['size'],g['mines']),g) for g in games[start:start+16]]
   while active:
    active=[(e,g) for e,g in active if not e.done]
    if not active:break
-   x,legal=encode_visible([visible(e) for e,g in active]);c=torch.tensor(np.array([public_context(7,7) for _ in active]));a=memo.get(torch.from_numpy(x),c)
+   x,legal=encode_visible([visible(e) for e,g in active]);c=torch.tensor(np.array([public_context(e.size,e.mine_count) for e,g in active]));a=memo.get(torch.from_numpy(x),c)
    actions=head(a,c).masked_fill(~torch.from_numpy(legal),-1e9).argmax(1).tolist()
    for i,((env,g),action) in enumerate(zip(active,actions)):
-    info=analyze(env.observation(),env.legal_mask(),7,7)
-    native=(action//16)*7+action%16
+    info=analyze(env.observation(),env.legal_mask(),env.size,env.mine_count)
+    native=(action//16)*env.size+action%16
     if info.safe:
      labels,_=teacher(env,info)
      assert labels.any() and np.all(~labels | legal[i])
@@ -63,12 +63,13 @@ def collect(memo,head,games):
  _,l,c,y=arrays(rows)
  return rows,(torch.stack(maps),l,c,y),stats
 
-def main(out=OUT,seed=SEED,splits=None,train_only=False,parent_path=None):
+def main(out=OUT,seed=SEED,splits=None,train_only=False,parent_path=None,mapping_path=None):
  OUT=Path(out);SEED=seed
  torch.set_num_threads(1);OUT.mkdir(exist_ok=True)
  if (OUT/'manifest.json').exists():raise SystemExit('Preserve existing run')
  paths=[Path(f'runs/joint-extended-{SEED}')/'best-joint.pt',BASE/'training/retina_plastic-20260926.pt',BASE/'dataset.pkl',CACHE/'train.pt',CACHE/'holdout.pt',Path('runs/hybrid-001/checkpoint.pkl')]
  if parent_path is not None:paths[0]=Path(parent_path)
+ if mapping_path is not None:paths.append(Path(mapping_path))
  hashes={str(p):digest(p) for p in paths}
  write_json(OUT/'manifest.json',dict(seed=SEED,rounds=3,games_per_round=300,updates_per_round=750,batch=64,new_fraction=.5,teacher_actions=0,labels='certified safe only',selection='old holdout minimum loss including baseline',hashes=hashes))
  (OUT/'source').mkdir()
@@ -80,6 +81,13 @@ def main(out=OUT,seed=SEED,splits=None,train_only=False,parent_path=None):
  groups=[np.array(groups[k]) for k in sorted(groups)]
  op=PlasticOperator(sparse.load_npz('data/processed/graph.npz'),workers=4);brain=RetinaPolicy(op,pickle.loads((BASE/'mapping.pkl').read_bytes()),True)
  brain.load_state_dict(torch.load(paths[1],weights_only=False)['model']);brain.encoder.load_state_dict(old['encoder']);brain.requires_grad_(False);brain.eval();memo=ActivityMemo(brain)
+ if mapping_path is not None:
+  mapping=pickle.loads(Path(mapping_path).read_bytes())
+  for size,(ix,wt) in mapping['outputs'].items():
+   if hasattr(brain,f'out_{size}'):
+    assert torch.equal(getattr(brain,f'out_{size}'),torch.from_numpy(ix)) and torch.equal(getattr(brain,f'weight_{size}'),torch.from_numpy(wt))
+   else:
+    brain.register_buffer(f'out_{size}',torch.from_numpy(ix),persistent=False);brain.register_buffer(f'weight_{size}',torch.from_numpy(wt),persistent=False)
  from experiments.expand_dagger_experience import features
  from experiments.train_joint_interface import tensor_hash
  frozen=tensor_hash(brain.state_dict())
