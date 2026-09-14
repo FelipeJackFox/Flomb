@@ -34,14 +34,17 @@ def validation(model,rows):
   x,l,c,y=arrays(rows[i:i+16]);total+=float(equivalent_loss(model(x,c),l,y))*len(x)
  return total/len(rows)
 
-def main():
+def main(seed=20261002,output=None,games_path=None,train_only=False):
+ global OUT,PARENT
+ if output is not None:OUT=Path(output)
+ PARENT=Path(f'runs/input-representation-001/best-brain-{seed}.pt')
  torch.set_num_threads(1);OUT.mkdir(exist_ok=False)
  paths=[PARENT,BASE/'dataset.pkl',BASE/'mapping.pkl',BASE/'training/retina_plastic-20260926.pt',CACHE/'train.pt',CACHE/'holdout.pt',Path('runs/hybrid-001/checkpoint.pkl')]
  hashes={str(p):digest(p) for p in paths}
- write_json(OUT/'manifest.json',dict(seed=20261002,updates=UPDATES,batch=64,microbatch=16,head_lr=.001,encoder_lr=.0001,parent=str(PARENT),selection='minimum original holdout loss at0/250/500/750; earliest tie',scope='one paired pilot, pretrained brain and selected head; no new DAgger',hashes=hashes))
+ write_json(OUT/'manifest.json',dict(seed=seed,updates=UPDATES,batch=64,microbatch=16,head_lr=.001,encoder_lr=.0001,parent=str(PARENT),selection='minimum original holdout loss at0/250/500/750; earliest tie',scope='one paired pilot, pretrained brain and selected head; no new DAgger',hashes=hashes))
  src=OUT/'source';src.mkdir()
  for p in [Path(__file__),*[Path('experiments')/n for n in ('joint_interface.py','test_joint_interface.py','retina_policy.py','plastic_sparse.py','spatial_decoder.py','expressive_models.py','capacity_probe.py','scaled_train.py','validate_spatial_decoder.py')],Path('solver.py'),Path('minesweeper.py')]:shutil.copy2(p,src/p.name)
- games=reserve();write_json(OUT/'games.json',games)
+ games=reserve() if games_path is None else json.loads(Path(games_path).read_text());write_json(OUT/'games.json',games)
  with (OUT/'dataset.pkl').open('wb') as f:pickle.dump(dict(games=games),f)
  data=pickle.loads((BASE/'dataset.pkl').read_bytes());cache={s:torch.load(CACHE/f'{s}.pt',weights_only=False) for s in ('train','holdout')}
  for split in cache:
@@ -101,6 +104,10 @@ def main():
   else:assert tensor_hash(brain.encoder.state_dict())!=tensor_hash(original_encoder)
  assert pairing['control']==pairing['joint'];write_json(OUT/'pairing.json',pairing)
  write_json(OUT/'selection.json',selection);seal=digest(OUT/'selection.json');write_json(OUT/'selection-seal.json',dict(sha256=seal))
+ if train_only:
+  assert all(digest(p)==sha for p,sha in hashes.items())
+  write_json(OUT/'training-verification.json',dict(original_hashes_unchanged=True,frozen_brain_parameters_unchanged=True,control_encoder_unchanged=True,joint_encoder_changed=True,paired_minibatches=True,cache_and_online_initial_validation_equal=True))
+  write_json(OUT/'training-completed.json',dict(completed=True));write_json(OUT/'progress.json',dict(phase='awaiting_shared_evaluation'));op.close();return
  results={}
  for arm in ('baseline','control','joint'):
   saved=dict(head=old['head'],encoder=original_encoder) if arm=='baseline' else torch.load(OUT/f'best-{arm}.pt',weights_only=False)

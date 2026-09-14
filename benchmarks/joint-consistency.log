@@ -1,0 +1,41 @@
+{'phase': 'training', 'arm': 'control', 'step': 0, 'target': 750, 'seconds': 1.08394306153059e-06}
+control {'step': 0, 'validation_loss': 1.8524234447479249, 'chosen': 0, 'seconds': 0.0023047500289976597}
+{'phase': 'training', 'arm': 'control', 'step': 25, 'target': 750, 'seconds': 0.3978529169689864}
+{'phase': 'training', 'arm': 'control', 'step': 50, 'target': 750, 'seconds': 0.7943842499516904}
+{'phase': 'training', 'arm': 'control', 'step': 75, 'target': 750, 'seconds': 1.19477454200387}
+{'phase': 'training', 'arm': 'control', 'step': 100, 'target': 750, 'seconds': 1.5875531249912456}
+{'phase': 'training', 'arm': 'control', 'step': 125, 'target': 750, 'seconds': 1.9938237919704989}
+{'phase': 'training', 'arm': 'control', 'step': 150, 'target': 750, 'seconds': 2.3813098339596763}
+{'phase': 'training', 'arm': 'control', 'step': 175, 'target': 750, 'seconds': 2.7633907089475542}
+{'phase': 'training', 'arm': 'control', 'step': 200, 'target': 750, 'seconds': 3.151419708970934}
+{'phase': 'training', 'arm': 'control', 'step': 225, 'target': 750, 'seconds': 3.5412755419965833}
+{'phase': 'training', 'arm': 'control', 'step': 250, 'target': 750, 'seconds': 3.9260758749442175}
+control {'step': 250, 'validation_loss': 1.8535200939178467, 'chosen': 0, 'seconds': 4.026133333914913}
+{'phase': 'training', 'arm': 'control', 'step': 275, 'target': 750, 'seconds': 4.410573749919422}
+{'phase': 'training', 'arm': 'control', 'step': 300, 'target': 750, 'seconds': 4.795557125005871}
+{'phase': 'training', 'arm': 'control', 'step': 325, 'target': 750, 'seconds': 5.1810285419924185}
+{'phase': 'training', 'arm': 'control', 'step': 350, 'target': 750, 'seconds': 5.564867083914578}
+{'phase': 'training', 'arm': 'control', 'step': 375, 'target': 750, 'seconds': 5.958778416970745}
+{'phase': 'training', 'arm': 'control', 'step': 400, 'target': 750, 'seconds': 6.3435173749458045}
+{'phase': 'training', 'arm': 'control', 'step': 425, 'target': 750, 'seconds': 6.726400333922356}
+{'phase': 'training', 'arm': 'control', 'step': 450, 'target': 750, 'seconds': 7.109720958978869}
+{'phase': 'training', 'arm': 'control', 'step': 475, 'target': 750, 'seconds': 7.491178291966207}
+{'phase': 'training', 'arm': 'control', 'step': 500, 'target': 750, 'seconds': 7.87320124998223}
+control {'step': 500, 'validation_loss': 1.8538664340972901, 'chosen': 0, 'seconds': 7.9760479589458555}
+{'phase': 'training', 'arm': 'control', 'step': 525, 'target': 750, 'seconds': 8.364560917019844}
+{'phase': 'training', 'arm': 'control', 'step': 550, 'target': 750, 'seconds': 8.750625083921477}
+{'phase': 'training', 'arm': 'control', 'step': 575, 'target': 750, 'seconds': 9.138069916982204}
+{'phase': 'training', 'arm': 'control', 'step': 600, 'target': 750, 'seconds': 9.521914083976299}
+{'phase': 'training', 'arm': 'control', 'step': 625, 'target': 750, 'seconds': 9.906947916955687}
+{'phase': 'training', 'arm': 'control', 'step': 650, 'target': 750, 'seconds': 10.299099958967417}
+{'phase': 'training', 'arm': 'control', 'step': 675, 'target': 750, 'seconds': 10.683775333920494}
+{'phase': 'training', 'arm': 'control', 'step': 700, 'target': 750, 'seconds': 11.082110167015344}
+{'phase': 'training', 'arm': 'control', 'step': 725, 'target': 750, 'seconds': 11.47061095898971}
+{'phase': 'training', 'arm': 'control', 'step': 750, 'target': 750, 'seconds': 11.884269292000681}
+control {'step': 750, 'validation_loss': 1.8545037269592286, 'chosen': 0, 'seconds': 11.994525959016755}
+{'phase': 'training', 'arm': 'joint', 'step': 0, 'target': 750, 'seconds': 1.0419171303510666e-06}
+joint {'step': 0, 'validation_loss': 1.8524234447479249, 'chosen': 0, 'seconds': 0.0023038749350234866}
+{'phase': 'training', 'arm': 'joint', 'step': 25, 'target': 750, 'seconds': 24.921798957977444}
+{'phase': 'training', 'arm': 'joint', 'step': 50, 'target': 750, 'seconds': 50.29177479201462}
+{'phase': 'training', 'arm': 'joint', 'step': 75, 'target': 750, 'seconds': 75.63072575000115}
+{'phase': 'training', 'arm': 'joint', 'step': 100, 'target': 750, 'seconds': 101.7743959169602}

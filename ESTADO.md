@@ -420,3 +420,9 @@ Final500 nuevos7×7/7minas,0 aperturas ganadoras automáticas:baseline56/500,con
 Encoder control cambioL2=0;encoder conjuntoL2=.35840355. Pesos mejores/últimos,Adam,RNG preservados. Test disperso vsdenso pasa;grafo real forward/acumulación equivalentes,gradiente encoderL1=32.964 no nulo;resto cerebro intacto,validación online/caché inicial igual,memo vsforward restaurado igual. Auditoría independiente reconstruye500layouts,solapamiento0,selección/conteos/hashes/sello correctos.Figura `research/joint-interface-results.png` inspeccionada.Informe `research/RESULTADO_INTERFAZ_CONJUNTA.md`. Ningún modelo servido cambiado ni fase posterior iniciada.
 
 Siguiente propuesta: repetir mismo protocolo en las otras dos semillas y evaluar en benchmark nuevo compartido para comprobar consistencia,antes de ampliar presupuesto o sustituir agentes.
+
+## Consistencia interfaz conjunta · en curso14 septiembre2026
+
+Autorizada repetición750updates en semillas20261003/4, mismo protocolo del piloto y checkpoint/Adam/RNG propio. Coordinador `experiments/repeat_joint_interface.py`, salida `runs/joint-consistency-001`, hijos `runs/joint-interface-20261003` y `runs/joint-interface-20261004`. Piloto20261002 preservado y reevaluado.500layouts nuevoscompartidos,sello de todos los candidatos antes de pruebafinal. Principal dossemillas nuevas,secundario las tres. Memo por encoder,dedup solo pesosiguales. Protocolo `research/PROTOCOLO_CONSISTENCIA_INTERFAZ.md`. Sin agente servido cambiado.
+
+Seguimiento de esta repetición: automatización heartbeat `resultado-consistencia-interfaz-mosca` activa cada10min en esta tarea; silencio mientras siga normal, genera/audita informe e inspecciona figura al terminar, avisa resultado o fallo y se pausa. Runner observado activo PID78764, primera semilla nueva paso75/750 sin errores. Informe/auditoría preparados en `experiments/report_joint_consistency.py`, pendientes de ejecutar al completar. Duración estimada25–30min, no resultado todavía.
