@@ -295,3 +295,4 @@ control {'step': 2750, 'validation_loss': 1.8671374588012695, 'chosen': 0, 'seco
 {'phase': 'training', 'arm': 'control', 'step': 2975, 'target': 3000, 'seconds': 35.443460874957964}
 {'phase': 'training', 'arm': 'control', 'step': 3000, 'target': 3000, 'seconds': 35.83130295795854}
 control {'step': 3000, 'validation_loss': 1.8762862491607666, 'chosen': 0, 'seconds': 35.92996945802588}
+{'phase': 'training', 'arm': 'joint', 'step': 775, 'target': 3000, 'seconds': 20.767725334037095}
