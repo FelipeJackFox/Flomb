@@ -39,3 +39,30 @@ joint {'step': 0, 'validation_loss': 1.8524234447479249, 'chosen': 0, 'seconds':
 {'phase': 'training', 'arm': 'joint', 'step': 50, 'target': 750, 'seconds': 50.29177479201462}
 {'phase': 'training', 'arm': 'joint', 'step': 75, 'target': 750, 'seconds': 75.63072575000115}
 {'phase': 'training', 'arm': 'joint', 'step': 100, 'target': 750, 'seconds': 101.7743959169602}
+{'phase': 'training', 'arm': 'joint', 'step': 125, 'target': 750, 'seconds': 129.6749027079204}
+{'phase': 'training', 'arm': 'joint', 'step': 150, 'target': 750, 'seconds': 157.22932591696735}
+{'phase': 'training', 'arm': 'joint', 'step': 175, 'target': 750, 'seconds': 190.1664920420153}
+{'phase': 'training', 'arm': 'joint', 'step': 200, 'target': 750, 'seconds': 217.76290704193525}
+{'phase': 'training', 'arm': 'joint', 'step': 225, 'target': 750, 'seconds': 237.9306328749517}
+{'phase': 'training', 'arm': 'joint', 'step': 250, 'target': 750, 'seconds': 258.7442675830098}
+joint {'step': 250, 'validation_loss': 1.8455210723876954, 'chosen': 250, 'seconds': 266.75683033291716}
+{'phase': 'training', 'arm': 'joint', 'step': 275, 'target': 750, 'seconds': 288.30583341699094}
+{'phase': 'training', 'arm': 'joint', 'step': 300, 'target': 750, 'seconds': 309.0779172920156}
+{'phase': 'training', 'arm': 'joint', 'step': 325, 'target': 750, 'seconds': 330.1082327499753}
+{'phase': 'training', 'arm': 'joint', 'step': 350, 'target': 750, 'seconds': 351.50338545802515}
+{'phase': 'training', 'arm': 'joint', 'step': 375, 'target': 750, 'seconds': 372.44436224992387}
+{'phase': 'training', 'arm': 'joint', 'step': 400, 'target': 750, 'seconds': 394.0227402920136}
+{'phase': 'training', 'arm': 'joint', 'step': 425, 'target': 750, 'seconds': 418.6800817080075}
+{'phase': 'training', 'arm': 'joint', 'step': 450, 'target': 750, 'seconds': 439.6778967080172}
+{'phase': 'training', 'arm': 'joint', 'step': 475, 'target': 750, 'seconds': 461.78961070801597}
+{'phase': 'training', 'arm': 'joint', 'step': 500, 'target': 750, 'seconds': 484.6958812919911}
+joint {'step': 500, 'validation_loss': 1.8430175704956056, 'chosen': 500, 'seconds': 495.9472757920157}
+{'phase': 'training', 'arm': 'joint', 'step': 525, 'target': 750, 'seconds': 569.8981219169218}
+{'phase': 'training', 'arm': 'joint', 'step': 550, 'target': 750, 'seconds': 592.8853668749798}
+{'phase': 'training', 'arm': 'joint', 'step': 575, 'target': 750, 'seconds': 613.9643569169566}
+{'phase': 'training', 'arm': 'joint', 'step': 600, 'target': 750, 'seconds': 634.1658556669718}
+{'phase': 'training', 'arm': 'joint', 'step': 625, 'target': 750, 'seconds': 654.4387973749544}
+{'phase': 'training', 'arm': 'joint', 'step': 650, 'target': 750, 'seconds': 674.8936563329771}
+{'phase': 'training', 'arm': 'joint', 'step': 675, 'target': 750, 'seconds': 694.993350249948}
+{'phase': 'training', 'arm': 'joint', 'step': 700, 'target': 750, 'seconds': 715.174639249919}
+{'phase': 'training', 'arm': 'joint', 'step': 725, 'target': 750, 'seconds': 735.3282445420045}
