@@ -46,3 +46,6 @@
 20261003-baseline {'wins': 108, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 147, 'safe_choices': 2477, 'safe_opportunities': 2813}
 20261003-local {'wins': 115, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 153, 'safe_choices': 2475, 'safe_opportunities': 2846}
 20261003-wide {'wins': 83, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 138, 'safe_choices': 2051, 'safe_opportunities': 2377}
+20261004-baseline {'wins': 95, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 139, 'safe_choices': 2241, 'safe_opportunities': 2585}
+20261004-local {'wins': 100, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 149, 'safe_choices': 2466, 'safe_opportunities': 2806}
+20261004-wide {'wins': 61, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 157, 'safe_choices': 1875, 'safe_opportunities': 2261}
