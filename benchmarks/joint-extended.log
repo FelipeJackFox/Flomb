@@ -587,3 +587,20 @@ joint {'step': 2750, 'validation_loss': 1.83495192527771, 'chosen': 2000, 'secon
 {'phase': 'training', 'arm': 'joint', 'step': 2850, 'target': 3000, 'seconds': 1701.2293039170327}
 {'phase': 'training', 'arm': 'joint', 'step': 2875, 'target': 3000, 'seconds': 1720.7333792090649}
 {'phase': 'training', 'arm': 'joint', 'step': 2900, 'target': 3000, 'seconds': 1741.2158636250533}
+{'phase': 'training', 'arm': 'joint', 'step': 2925, 'target': 3000, 'seconds': 1761.421554874978}
+{'phase': 'training', 'arm': 'joint', 'step': 2950, 'target': 3000, 'seconds': 1780.93256508396}
+{'phase': 'training', 'arm': 'joint', 'step': 2975, 'target': 3000, 'seconds': 1800.5420263750711}
+{'phase': 'training', 'arm': 'joint', 'step': 3000, 'target': 3000, 'seconds': 1820.0102663750295}
+joint {'step': 3000, 'validation_loss': 1.8305598812103272, 'chosen': 2000, 'seconds': 1826.819274208974}
+20261002-baseline {'wins': 56, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 185, 'safe_choices': 1885, 'safe_opportunities': 2312}
+20261002-control {'wins': 56, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 185, 'safe_choices': 1885, 'safe_opportunities': 2312, 'duplicate_of': '20261002-baseline'}
+20261002-joint {'wins': 83, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 150, 'safe_choices': 2003, 'safe_opportunities': 2378}
+20261002-prior {'wins': 81, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 161, 'safe_choices': 2066, 'safe_opportunities': 2476}
+20261003-baseline {'wins': 59, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 173, 'safe_choices': 1879, 'safe_opportunities': 2318}
+20261003-control {'wins': 59, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 173, 'safe_choices': 1879, 'safe_opportunities': 2318, 'duplicate_of': '20261003-baseline'}
+20261003-joint {'wins': 88, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 144, 'safe_choices': 2054, 'safe_opportunities': 2413}
+20261003-prior {'wins': 76, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 154, 'safe_choices': 1985, 'safe_opportunities': 2386}
+20261004-baseline {'wins': 59, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 184, 'safe_choices': 1893, 'safe_opportunities': 2350}
+20261004-control {'wins': 59, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 184, 'safe_choices': 1893, 'safe_opportunities': 2350, 'duplicate_of': '20261004-baseline'}
+20261004-joint {'wins': 79, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 153, 'safe_choices': 1970, 'safe_opportunities': 2343}
+20261004-prior {'wins': 76, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 172, 'safe_choices': 1989, 'safe_opportunities': 2420}
