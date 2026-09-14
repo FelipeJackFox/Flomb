@@ -1,0 +1,45 @@
+{'seed': 20261002, 'variant': 'control', 'step': 250, 'validation_loss': 1.8009207038879393, 'selected_step': 0, 'known_mine_errors_at_refresh': 683}
+{'seed': 20261002, 'variant': 'control', 'step': 500, 'validation_loss': 1.7972999095916748, 'selected_step': 500, 'known_mine_errors_at_refresh': 648}
+{'seed': 20261002, 'variant': 'control', 'step': 750, 'validation_loss': 1.7970514755249023, 'selected_step': 750, 'known_mine_errors_at_refresh': 643}
+{'seed': 20261002, 'variant': 'control', 'step': 1000, 'validation_loss': 1.8014661712646485, 'selected_step': 750, 'known_mine_errors_at_refresh': 620}
+{'seed': 20261002, 'variant': 'control', 'step': 1250, 'validation_loss': 1.8024641208648682, 'selected_step': 750, 'known_mine_errors_at_refresh': 620}
+{'seed': 20261002, 'variant': 'control', 'step': 1500, 'validation_loss': 1.8021636734008788, 'selected_step': 750, 'known_mine_errors_at_refresh': 638}
+{'seed': 20261002, 'variant': 'priority', 'step': 250, 'validation_loss': 1.8036821689605713, 'selected_step': 0, 'known_mine_errors_at_refresh': 683}
+{'seed': 20261002, 'variant': 'priority', 'step': 500, 'validation_loss': 1.7970500087738037, 'selected_step': 500, 'known_mine_errors_at_refresh': 634}
+{'seed': 20261002, 'variant': 'priority', 'step': 750, 'validation_loss': 1.8001682472229004, 'selected_step': 500, 'known_mine_errors_at_refresh': 630}
+{'seed': 20261002, 'variant': 'priority', 'step': 1000, 'validation_loss': 1.7992231121063234, 'selected_step': 500, 'known_mine_errors_at_refresh': 602}
+{'seed': 20261002, 'variant': 'priority', 'step': 1250, 'validation_loss': 1.8012754001617433, 'selected_step': 500, 'known_mine_errors_at_refresh': 622}
+{'seed': 20261002, 'variant': 'priority', 'step': 1500, 'validation_loss': 1.8082968406677247, 'selected_step': 500, 'known_mine_errors_at_refresh': 593}
+{'seed': 20261003, 'variant': 'control', 'step': 250, 'validation_loss': 1.8133690528869628, 'selected_step': 250, 'known_mine_errors_at_refresh': 480}
+{'seed': 20261003, 'variant': 'control', 'step': 500, 'validation_loss': 1.830325584411621, 'selected_step': 250, 'known_mine_errors_at_refresh': 481}
+{'seed': 20261003, 'variant': 'control', 'step': 750, 'validation_loss': 1.8179144077301026, 'selected_step': 250, 'known_mine_errors_at_refresh': 535}
+{'seed': 20261003, 'variant': 'control', 'step': 1000, 'validation_loss': 1.8179846839904785, 'selected_step': 250, 'known_mine_errors_at_refresh': 520}
+{'seed': 20261003, 'variant': 'control', 'step': 1250, 'validation_loss': 1.8272005863189698, 'selected_step': 250, 'known_mine_errors_at_refresh': 492}
+{'seed': 20261003, 'variant': 'control', 'step': 1500, 'validation_loss': 1.8182603092193603, 'selected_step': 250, 'known_mine_errors_at_refresh': 470}
+{'seed': 20261003, 'variant': 'priority', 'step': 250, 'validation_loss': 1.8279945545196534, 'selected_step': 0, 'known_mine_errors_at_refresh': 480}
+{'seed': 20261003, 'variant': 'priority', 'step': 500, 'validation_loss': 1.8277383079528808, 'selected_step': 0, 'known_mine_errors_at_refresh': 530}
+{'seed': 20261003, 'variant': 'priority', 'step': 750, 'validation_loss': 1.8213399543762208, 'selected_step': 0, 'known_mine_errors_at_refresh': 494}
+{'seed': 20261003, 'variant': 'priority', 'step': 1000, 'validation_loss': 1.8143190250396728, 'selected_step': 1000, 'known_mine_errors_at_refresh': 469}
+{'seed': 20261003, 'variant': 'priority', 'step': 1250, 'validation_loss': 1.8330774116516113, 'selected_step': 1000, 'known_mine_errors_at_refresh': 415}
+{'seed': 20261003, 'variant': 'priority', 'step': 1500, 'validation_loss': 1.8179187564849852, 'selected_step': 1000, 'known_mine_errors_at_refresh': 398}
+{'seed': 20261004, 'variant': 'control', 'step': 250, 'validation_loss': 1.804310899734497, 'selected_step': 0, 'known_mine_errors_at_refresh': 502}
+{'seed': 20261004, 'variant': 'control', 'step': 500, 'validation_loss': 1.8095735969543456, 'selected_step': 0, 'known_mine_errors_at_refresh': 495}
+{'seed': 20261004, 'variant': 'control', 'step': 750, 'validation_loss': 1.8084399280548096, 'selected_step': 0, 'known_mine_errors_at_refresh': 458}
+{'seed': 20261004, 'variant': 'control', 'step': 1000, 'validation_loss': 1.803292179107666, 'selected_step': 0, 'known_mine_errors_at_refresh': 454}
+{'seed': 20261004, 'variant': 'control', 'step': 1250, 'validation_loss': 1.7978667163848876, 'selected_step': 1250, 'known_mine_errors_at_refresh': 457}
+{'seed': 20261004, 'variant': 'control', 'step': 1500, 'validation_loss': 1.8072779273986816, 'selected_step': 1250, 'known_mine_errors_at_refresh': 413}
+{'seed': 20261004, 'variant': 'priority', 'step': 250, 'validation_loss': 1.809174425125122, 'selected_step': 0, 'known_mine_errors_at_refresh': 502}
+{'seed': 20261004, 'variant': 'priority', 'step': 500, 'validation_loss': 1.8132404441833496, 'selected_step': 0, 'known_mine_errors_at_refresh': 490}
+{'seed': 20261004, 'variant': 'priority', 'step': 750, 'validation_loss': 1.8071060523986817, 'selected_step': 0, 'known_mine_errors_at_refresh': 466}
+{'seed': 20261004, 'variant': 'priority', 'step': 1000, 'validation_loss': 1.8117991828918456, 'selected_step': 0, 'known_mine_errors_at_refresh': 454}
+{'seed': 20261004, 'variant': 'priority', 'step': 1250, 'validation_loss': 1.805795955657959, 'selected_step': 0, 'known_mine_errors_at_refresh': 447}
+{'seed': 20261004, 'variant': 'priority', 'step': 1500, 'validation_loss': 1.8094757995605468, 'selected_step': 0, 'known_mine_errors_at_refresh': 352}
+20261002 baseline {'wins': 103, 'n': 500, 'selected_step': 0}
+20261002 control {'wins': 105, 'n': 500, 'selected_step': 750}
+20261002 priority {'wins': 108, 'n': 500, 'selected_step': 500}
+20261003 baseline {'wins': 103, 'n': 500, 'selected_step': 0}
+20261003 control {'wins': 96, 'n': 500, 'selected_step': 250}
+20261003 priority {'wins': 90, 'n': 500, 'selected_step': 1000}
+20261004 baseline {'wins': 87, 'n': 500, 'selected_step': 0}
+20261004 control {'wins': 93, 'n': 500, 'selected_step': 1250}
+20261004 priority {'wins': 87, 'n': 500, 'selected_step': 0}
