@@ -63,11 +63,12 @@ def collect(memo,head,games):
  _,l,c,y=arrays(rows)
  return rows,(torch.stack(maps),l,c,y),stats
 
-def main(out=OUT,seed=SEED,splits=None,train_only=False):
+def main(out=OUT,seed=SEED,splits=None,train_only=False,parent_path=None):
  OUT=Path(out);SEED=seed
  torch.set_num_threads(1);OUT.mkdir(exist_ok=True)
  if (OUT/'manifest.json').exists():raise SystemExit('Preserve existing run')
  paths=[Path(f'runs/joint-extended-{SEED}')/'best-joint.pt',BASE/'training/retina_plastic-20260926.pt',BASE/'dataset.pkl',CACHE/'train.pt',CACHE/'holdout.pt',Path('runs/hybrid-001/checkpoint.pkl')]
+ if parent_path is not None:paths[0]=Path(parent_path)
  hashes={str(p):digest(p) for p in paths}
  write_json(OUT/'manifest.json',dict(seed=SEED,rounds=3,games_per_round=300,updates_per_round=750,batch=64,new_fraction=.5,teacher_actions=0,labels='certified safe only',selection='old holdout minimum loss including baseline',hashes=hashes))
  (OUT/'source').mkdir()

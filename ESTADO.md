@@ -468,3 +468,13 @@ Piloto20261002 completado:control/baseline72/500(14.4%),DAgger108/500(21.6%),+7.
 Se repite mismoprotocolo en20261003/4; piloto02 preservado y reevaluado sobre500nuevos compartidos. Nueva colección900layoutscompartida por lasdosreplicas con trayectorias propias. Principal dosnuevas,secundario tressemillas. Runner `experiments/repeat_adapted_dagger.py`,coordinador `runs/adapted-dagger-consistency-001`,hijos`runs/adapted-dagger-20261003/4`. Sellar todosloscandidatosantesdetest. Protocolo `research/PROTOCOLO_CONSISTENCIA_DAGGER_ADAPTADO.md`.
 
 Seguimiento actualizado a consistenciaDAggeradaptado;informe/auditoría preparados `experiments/report_adapted_dagger_consistency.py`,pendientes de resultados. Primera repetición03 iniciada,cache adaptada en construcción. Al terminar informar dosnuevas/principal y tres/secundario y continuar con siguienteexperimento justificado. No volver a informar piloto como resultado nuevo.
+
+## Consistencia DAgger adaptado · terminado14sept21:04UTC
+
+Dosnuevas control18.6%→DAgger23.3%,+4.7pp IC95%pareado[+2.2,+7.1];03:102→112/500(+2pp,IC[-1.2,+5.2] individualinconcluso),04:84→121/500(+7.4pp). Secundariotres19.2667%→24.0667%,+4.8pp IC[+2.8,+6.8];pilotoreevaluado103→128/500.500nuevoscompartidos,0auto,uncerebro. Controleseligieron0/0/1500;DAgger2250/1750/2250. Signopositivo ambasnuevas y agregadofavorable,no universalidad ni ventaja anatómica. Auditoría1400layoutsreconstruidos,solapamiento0,selección/conteos/encoder/hash/sello pasan;figuraadapted-dagger-consistency-results.pnginspeccionada;informe RESULTADO_CONSISTENCIA_DAGGER_ADAPTADO.md. Originales/servidointactos.
+
+## Comparación interfaces antes de DAgger · en curso14sept2026
+
+Siguientepaso autorizado: `experiments/compare_dagger_interfaces.py`, `runs/dagger-interface-comparison-001`. Tresnoadaptadosnuevos desdecontrolprevio conigualpresupuesto vsadaptadosDAggerpreservados;DAgger3x300partidas+750updates,misma colección900 decontraparte porsemilla,final500nuevo. Comparapipelines,NOencoderaislado;selección previa difiere pero presupuestosnominalesigualados. Principaladaptado−noadaptado,pareado3semillas/500/uncerebro. Protocolo `research/PROTOCOLO_COMPARACION_INTERFACES_DAGGER.md`.
+
+Seguimiento actualizado a comparacióninterfacesDAgger;reportero/auditoría `experiments/report_dagger_interfaces.py` preparados. Primera semilla noadaptada02 iniciada. Esperar cierre/figura/reportar antes de decidir nuevaintervención;no repetir aviso consistencia anterior. Originales protegidos y seguimiento continuo local.
