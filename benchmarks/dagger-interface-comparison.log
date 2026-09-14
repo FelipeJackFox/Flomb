@@ -1,0 +1,107 @@
+collection 16 {'games': 300, 'wins': 1, 'clicks': 132, 'safe_opportunities': 103, 'safe_choices': 86, 'teacher_actions': 0}
+collection 32 {'games': 300, 'wins': 2, 'clicks': 208, 'safe_opportunities': 152, 'safe_choices': 123, 'teacher_actions': 0}
+collection 48 {'games': 300, 'wins': 3, 'clicks': 293, 'safe_opportunities': 205, 'safe_choices': 165, 'teacher_actions': 0}
+collection 64 {'games': 300, 'wins': 7, 'clicks': 408, 'safe_opportunities': 291, 'safe_choices': 234, 'teacher_actions': 0}
+collection 80 {'games': 300, 'wins': 11, 'clicks': 518, 'safe_opportunities': 367, 'safe_choices': 297, 'teacher_actions': 0}
+collection 96 {'games': 300, 'wins': 12, 'clicks': 596, 'safe_opportunities': 416, 'safe_choices': 332, 'teacher_actions': 0}
+collection 112 {'games': 300, 'wins': 13, 'clicks': 712, 'safe_opportunities': 506, 'safe_choices': 406, 'teacher_actions': 0}
+collection 128 {'games': 300, 'wins': 16, 'clicks': 821, 'safe_opportunities': 592, 'safe_choices': 477, 'teacher_actions': 0}
+collection 144 {'games': 300, 'wins': 18, 'clicks': 923, 'safe_opportunities': 669, 'safe_choices': 539, 'teacher_actions': 0}
+collection 160 {'games': 300, 'wins': 18, 'clicks': 1026, 'safe_opportunities': 727, 'safe_choices': 583, 'teacher_actions': 0}
+collection 176 {'games': 300, 'wins': 20, 'clicks': 1138, 'safe_opportunities': 820, 'safe_choices': 664, 'teacher_actions': 0}
+collection 192 {'games': 300, 'wins': 20, 'clicks': 1224, 'safe_opportunities': 875, 'safe_choices': 704, 'teacher_actions': 0}
+collection 208 {'games': 300, 'wins': 22, 'clicks': 1328, 'safe_opportunities': 949, 'safe_choices': 770, 'teacher_actions': 0}
+collection 224 {'games': 300, 'wins': 24, 'clicks': 1460, 'safe_opportunities': 1044, 'safe_choices': 843, 'teacher_actions': 0}
+collection 240 {'games': 300, 'wins': 27, 'clicks': 1582, 'safe_opportunities': 1144, 'safe_choices': 927, 'teacher_actions': 0}
+collection 256 {'games': 300, 'wins': 28, 'clicks': 1702, 'safe_opportunities': 1233, 'safe_choices': 1002, 'teacher_actions': 0}
+collection 272 {'games': 300, 'wins': 29, 'clicks': 1800, 'safe_opportunities': 1312, 'safe_choices': 1060, 'teacher_actions': 0}
+collection 288 {'games': 300, 'wins': 31, 'clicks': 1893, 'safe_opportunities': 1372, 'safe_choices': 1115, 'teacher_actions': 0}
+collection 300 {'games': 300, 'wins': 34, 'clicks': 1986, 'safe_opportunities': 1443, 'safe_choices': 1175, 'teacher_actions': 0}
+{'phase': 'training', 'variant': 'control', 'round': 1, 'step': 250, 'validation_loss': 1.8550865116119384, 'aggregated_positions': 1443}
+{'phase': 'training', 'variant': 'control', 'round': 1, 'step': 500, 'validation_loss': 1.8452046298980713, 'aggregated_positions': 1443}
+{'phase': 'training', 'variant': 'control', 'round': 1, 'step': 750, 'validation_loss': 1.844065378189087, 'aggregated_positions': 1443}
+{'phase': 'training', 'variant': 'dagger', 'round': 1, 'step': 250, 'validation_loss': 1.8298870162963867, 'aggregated_positions': 1443}
+{'phase': 'training', 'variant': 'dagger', 'round': 1, 'step': 500, 'validation_loss': 1.828937313079834, 'aggregated_positions': 1443}
+{'phase': 'training', 'variant': 'dagger', 'round': 1, 'step': 750, 'validation_loss': 1.8210903682708741, 'aggregated_positions': 1443}
+collection 16 {'games': 300, 'wins': 4, 'clicks': 113, 'safe_opportunities': 81, 'safe_choices': 71, 'teacher_actions': 0}
+collection 32 {'games': 300, 'wins': 6, 'clicks': 262, 'safe_opportunities': 204, 'safe_choices': 174, 'teacher_actions': 0}
+collection 48 {'games': 300, 'wins': 8, 'clicks': 363, 'safe_opportunities': 273, 'safe_choices': 228, 'teacher_actions': 0}
+collection 64 {'games': 300, 'wins': 9, 'clicks': 440, 'safe_opportunities': 311, 'safe_choices': 254, 'teacher_actions': 0}
+collection 80 {'games': 300, 'wins': 12, 'clicks': 546, 'safe_opportunities': 393, 'safe_choices': 324, 'teacher_actions': 0}
+collection 96 {'games': 300, 'wins': 12, 'clicks': 635, 'safe_opportunities': 439, 'safe_choices': 358, 'teacher_actions': 0}
+collection 112 {'games': 300, 'wins': 13, 'clicks': 731, 'safe_opportunities': 501, 'safe_choices': 406, 'teacher_actions': 0}
+collection 128 {'games': 300, 'wins': 16, 'clicks': 835, 'safe_opportunities': 554, 'safe_choices': 452, 'teacher_actions': 0}
+collection 144 {'games': 300, 'wins': 17, 'clicks': 939, 'safe_opportunities': 621, 'safe_choices': 504, 'teacher_actions': 0}
+collection 160 {'games': 300, 'wins': 18, 'clicks': 1067, 'safe_opportunities': 710, 'safe_choices': 574, 'teacher_actions': 0}
+collection 176 {'games': 300, 'wins': 21, 'clicks': 1187, 'safe_opportunities': 809, 'safe_choices': 656, 'teacher_actions': 0}
+collection 192 {'games': 300, 'wins': 27, 'clicks': 1308, 'safe_opportunities': 914, 'safe_choices': 749, 'teacher_actions': 0}
+collection 208 {'games': 300, 'wins': 29, 'clicks': 1418, 'safe_opportunities': 999, 'safe_choices': 814, 'teacher_actions': 0}
+collection 224 {'games': 300, 'wins': 30, 'clicks': 1556, 'safe_opportunities': 1085, 'safe_choices': 881, 'teacher_actions': 0}
+collection 240 {'games': 300, 'wins': 34, 'clicks': 1658, 'safe_opportunities': 1155, 'safe_choices': 941, 'teacher_actions': 0}
+collection 256 {'games': 300, 'wins': 35, 'clicks': 1734, 'safe_opportunities': 1201, 'safe_choices': 974, 'teacher_actions': 0}
+collection 272 {'games': 300, 'wins': 37, 'clicks': 1844, 'safe_opportunities': 1290, 'safe_choices': 1053, 'teacher_actions': 0}
+collection 288 {'games': 300, 'wins': 37, 'clicks': 1917, 'safe_opportunities': 1336, 'safe_choices': 1083, 'teacher_actions': 0}
+collection 300 {'games': 300, 'wins': 39, 'clicks': 1986, 'safe_opportunities': 1385, 'safe_choices': 1125, 'teacher_actions': 0}
+{'phase': 'training', 'variant': 'control', 'round': 2, 'step': 1000, 'validation_loss': 1.843489185333252, 'aggregated_positions': 2828}
+{'phase': 'training', 'variant': 'control', 'round': 2, 'step': 1250, 'validation_loss': 1.843244571685791, 'aggregated_positions': 2828}
+{'phase': 'training', 'variant': 'control', 'round': 2, 'step': 1500, 'validation_loss': 1.8404719924926758, 'aggregated_positions': 2828}
+{'phase': 'training', 'variant': 'dagger', 'round': 2, 'step': 1000, 'validation_loss': 1.8183853073120118, 'aggregated_positions': 2828}
+{'phase': 'training', 'variant': 'dagger', 'round': 2, 'step': 1250, 'validation_loss': 1.8202022094726562, 'aggregated_positions': 2828}
+{'phase': 'training', 'variant': 'dagger', 'round': 2, 'step': 1500, 'validation_loss': 1.822149257659912, 'aggregated_positions': 2828}
+collection 16 {'games': 300, 'wins': 4, 'clicks': 118, 'safe_opportunities': 87, 'safe_choices': 70, 'teacher_actions': 0}
+collection 32 {'games': 300, 'wins': 8, 'clicks': 231, 'safe_opportunities': 175, 'safe_choices': 147, 'teacher_actions': 0}
+collection 48 {'games': 300, 'wins': 10, 'clicks': 332, 'safe_opportunities': 245, 'safe_choices': 206, 'teacher_actions': 0}
+collection 64 {'games': 300, 'wins': 13, 'clicks': 432, 'safe_opportunities': 319, 'safe_choices': 266, 'teacher_actions': 0}
+collection 80 {'games': 300, 'wins': 18, 'clicks': 595, 'safe_opportunities': 445, 'safe_choices': 378, 'teacher_actions': 0}
+collection 96 {'games': 300, 'wins': 20, 'clicks': 710, 'safe_opportunities': 532, 'safe_choices': 451, 'teacher_actions': 0}
+collection 112 {'games': 300, 'wins': 22, 'clicks': 810, 'safe_opportunities': 608, 'safe_choices': 515, 'teacher_actions': 0}
+collection 128 {'games': 300, 'wins': 24, 'clicks': 926, 'safe_opportunities': 697, 'safe_choices': 586, 'teacher_actions': 0}
+collection 144 {'games': 300, 'wins': 24, 'clicks': 1019, 'safe_opportunities': 754, 'safe_choices': 624, 'teacher_actions': 0}
+collection 160 {'games': 300, 'wins': 26, 'clicks': 1126, 'safe_opportunities': 817, 'safe_choices': 672, 'teacher_actions': 0}
+collection 176 {'games': 300, 'wins': 28, 'clicks': 1233, 'safe_opportunities': 905, 'safe_choices': 746, 'teacher_actions': 0}
+collection 192 {'games': 300, 'wins': 29, 'clicks': 1327, 'safe_opportunities': 970, 'safe_choices': 802, 'teacher_actions': 0}
+collection 208 {'games': 300, 'wins': 32, 'clicks': 1412, 'safe_opportunities': 1035, 'safe_choices': 854, 'teacher_actions': 0}
+collection 224 {'games': 300, 'wins': 33, 'clicks': 1551, 'safe_opportunities': 1141, 'safe_choices': 943, 'teacher_actions': 0}
+collection 240 {'games': 300, 'wins': 35, 'clicks': 1639, 'safe_opportunities': 1208, 'safe_choices': 999, 'teacher_actions': 0}
+collection 256 {'games': 300, 'wins': 36, 'clicks': 1733, 'safe_opportunities': 1276, 'safe_choices': 1057, 'teacher_actions': 0}
+collection 272 {'games': 300, 'wins': 37, 'clicks': 1848, 'safe_opportunities': 1360, 'safe_choices': 1121, 'teacher_actions': 0}
+collection 288 {'games': 300, 'wins': 43, 'clicks': 1995, 'safe_opportunities': 1477, 'safe_choices': 1225, 'teacher_actions': 0}
+collection 300 {'games': 300, 'wins': 43, 'clicks': 2056, 'safe_opportunities': 1515, 'safe_choices': 1254, 'teacher_actions': 0}
+{'phase': 'training', 'variant': 'control', 'round': 3, 'step': 1750, 'validation_loss': 1.8492434921264649, 'aggregated_positions': 4343}
+{'phase': 'training', 'variant': 'control', 'round': 3, 'step': 2000, 'validation_loss': 1.8389705410003663, 'aggregated_positions': 4343}
+{'phase': 'training', 'variant': 'control', 'round': 3, 'step': 2250, 'validation_loss': 1.8453683280944824, 'aggregated_positions': 4343}
+{'phase': 'training', 'variant': 'dagger', 'round': 3, 'step': 1750, 'validation_loss': 1.818095251083374, 'aggregated_positions': 4343}
+{'phase': 'training', 'variant': 'dagger', 'round': 3, 'step': 2000, 'validation_loss': 1.8097616195678712, 'aggregated_positions': 4343}
+{'phase': 'training', 'variant': 'dagger', 'round': 3, 'step': 2250, 'validation_loss': 1.8117681636810303, 'aggregated_positions': 4343}
+collection 16 {'games': 300, 'wins': 1, 'clicks': 68, 'safe_opportunities': 43, 'safe_choices': 34, 'teacher_actions': 0}
+collection 32 {'games': 300, 'wins': 5, 'clicks': 188, 'safe_opportunities': 135, 'safe_choices': 108, 'teacher_actions': 0}
+collection 48 {'games': 300, 'wins': 7, 'clicks': 279, 'safe_opportunities': 196, 'safe_choices': 161, 'teacher_actions': 0}
+collection 64 {'games': 300, 'wins': 7, 'clicks': 362, 'safe_opportunities': 245, 'safe_choices': 197, 'teacher_actions': 0}
+collection 80 {'games': 300, 'wins': 8, 'clicks': 435, 'safe_opportunities': 300, 'safe_choices': 239, 'teacher_actions': 0}
+collection 96 {'games': 300, 'wins': 9, 'clicks': 548, 'safe_opportunities': 386, 'safe_choices': 311, 'teacher_actions': 0}
+collection 112 {'games': 300, 'wins': 10, 'clicks': 664, 'safe_opportunities': 461, 'safe_choices': 375, 'teacher_actions': 0}
+collection 128 {'games': 300, 'wins': 11, 'clicks': 761, 'safe_opportunities': 529, 'safe_choices': 426, 'teacher_actions': 0}
+collection 144 {'games': 300, 'wins': 11, 'clicks': 844, 'safe_opportunities': 585, 'safe_choices': 467, 'teacher_actions': 0}
+collection 160 {'games': 300, 'wins': 14, 'clicks': 975, 'safe_opportunities': 699, 'safe_choices': 567, 'teacher_actions': 0}
+collection 176 {'games': 300, 'wins': 16, 'clicks': 1079, 'safe_opportunities': 772, 'safe_choices': 625, 'teacher_actions': 0}
+collection 192 {'games': 300, 'wins': 16, 'clicks': 1156, 'safe_opportunities': 823, 'safe_choices': 664, 'teacher_actions': 0}
+collection 208 {'games': 300, 'wins': 16, 'clicks': 1247, 'safe_opportunities': 889, 'safe_choices': 715, 'teacher_actions': 0}
+collection 224 {'games': 300, 'wins': 19, 'clicks': 1348, 'safe_opportunities': 967, 'safe_choices': 781, 'teacher_actions': 0}
+collection 240 {'games': 300, 'wins': 21, 'clicks': 1414, 'safe_opportunities': 1003, 'safe_choices': 810, 'teacher_actions': 0}
+collection 256 {'games': 300, 'wins': 21, 'clicks': 1517, 'safe_opportunities': 1067, 'safe_choices': 864, 'teacher_actions': 0}
+collection 272 {'games': 300, 'wins': 22, 'clicks': 1611, 'safe_opportunities': 1130, 'safe_choices': 910, 'teacher_actions': 0}
+collection 288 {'games': 300, 'wins': 22, 'clicks': 1705, 'safe_opportunities': 1194, 'safe_choices': 955, 'teacher_actions': 0}
+collection 300 {'games': 300, 'wins': 22, 'clicks': 1779, 'safe_opportunities': 1246, 'safe_choices': 993, 'teacher_actions': 0}
+{'phase': 'training', 'variant': 'control', 'round': 1, 'step': 250, 'validation_loss': 1.8535200939178467, 'aggregated_positions': 1246}
+{'phase': 'training', 'variant': 'control', 'round': 1, 'step': 500, 'validation_loss': 1.8538664340972901, 'aggregated_positions': 1246}
+{'phase': 'training', 'variant': 'control', 'round': 1, 'step': 750, 'validation_loss': 1.8545037269592286, 'aggregated_positions': 1246}
+{'phase': 'training', 'variant': 'dagger', 'round': 1, 'step': 250, 'validation_loss': 1.8472746925354004, 'aggregated_positions': 1246}
+{'phase': 'training', 'variant': 'dagger', 'round': 1, 'step': 500, 'validation_loss': 1.8418402042388915, 'aggregated_positions': 1246}
+{'phase': 'training', 'variant': 'dagger', 'round': 1, 'step': 750, 'validation_loss': 1.842548822402954, 'aggregated_positions': 1246}
+collection 16 {'games': 300, 'wins': 1, 'clicks': 99, 'safe_opportunities': 77, 'safe_choices': 58, 'teacher_actions': 0}
+collection 32 {'games': 300, 'wins': 4, 'clicks': 182, 'safe_opportunities': 134, 'safe_choices': 107, 'teacher_actions': 0}
+collection 48 {'games': 300, 'wins': 6, 'clicks': 300, 'safe_opportunities': 204, 'safe_choices': 167, 'teacher_actions': 0}
+collection 64 {'games': 300, 'wins': 7, 'clicks': 417, 'safe_opportunities': 301, 'safe_choices': 249, 'teacher_actions': 0}
+collection 80 {'games': 300, 'wins': 8, 'clicks': 508, 'safe_opportunities': 369, 'safe_choices': 305, 'teacher_actions': 0}
+collection 96 {'games': 300, 'wins': 12, 'clicks': 614, 'safe_opportunities': 448, 'safe_choices': 377, 'teacher_actions': 0}
+collection 112 {'games': 300, 'wins': 14, 'clicks': 725, 'safe_opportunities': 528, 'safe_choices': 442, 'teacher_actions': 0}
