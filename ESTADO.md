@@ -537,3 +537,14 @@ Evaluación válida con mapeo extendido:7×7 52/41/53de200,media24.3333%;9×9 3/
 Siguientehipótesis exposicióna dominio nuevo: experiments/train_nine_dagger.py,runs/nine-dagger-001,benchmarks/nine-dagger.log. Piloto02desdelocalpreservado,mapeocorregido;3rondas300partidas9×9/12autónomas+750updates,control64originales vsDAgger32originales5/7+32nuevas9acumuladas. Cerebro/encoderfijos;Adam/RNGheredados. Presupuesto2250porbrazo;FIJARultimo2250antesdetest,mejorholdoutantiguo solo diagnóstico. Test500nuevos9+250nuevos7pareados frentecontrol ybaseline,colección900disjunta. Fuente protocolo research/PROTOCOLO_DAGGER_9X9.md.
 
 Recolector adapted_dagger.collect generalizado tamaño/minas/contexto/solver/índices segúnpartida;prueba conservaexactamente7histórico yrecalculaetiquetaspúblicas9/accioneslegales,65posicionestest. Registro benchmarks/generalized-collector-verification.json. Firma main acepta mapping_path explícito,tablasnuevas no persistentes postcarga yviejasexactas. Reportero experiments/report_nine_dagger.py,auditaetiquetaspúblicas/layouts/hash/endpoint/encoder. No usarmejoressegúnholdout para eltestprincipal,solo latest2250. Sin cambios agente servido.
+
+
+## DAgger9×9 piloto · terminado14sept23:38UTC
+
+2250fijo9×9 baseline4/500,control2/500,DAgger13/500. Principal+2.2pp IC95%[+1,+3.6];vsbaseline+1.8pp[+.6,+3.2]. Aprovechamientosegurocontrol1112/1766(63%)→2567/3063(83.8%).7×7 baseline53/250,control45/250,DAgger42/250;delta−1.2ppvscontrol IC[−5.6,+3.2],vsbaseline−4.4pp[−8.8,0]. Ganancia9piloto limitada y posibleolvido7;no adoptar comoreemplazoglobal. Auditoría1650layouts,0solapamiento,4533etiquetaspúblicas recalculadas,endpoint/encoder/hashes/sello pasan. Figurainspeccionada research/nine-dagger-results.png,informe RESULTADO_DAGGER_9X9.md. Maestroacciones0,uncerebro/unasemilla.
+
+## Consistencia DAgger9×9 · en curso14sept2026
+
+Se repite mismoprotocolo en03/04desdelectorlocalpropio;piloto02preservado reevaluadosin entrenar. Coordinador runs/nine-dagger-consistency-001,runner experiments/repeat_nine_dagger.py,log benchmarks/nine-dagger-consistency.log;hijos runs/nine-dagger-20261003/4.900colección9nueva compartida dosréplicascon trayectoriaspropias;test5009+2507nuevocompartidotres. Principaldosnuevas9dagger-control,secundariotres/vsbaseline/retención7. Last2250fijoantesdetest. Protocolo PROTOCOLO_CONSISTENCIA_DAGGER_9X9.md. Reportero report_nine_dagger_consistency.py,auditaetiquetas/hash/coleccióncompartida/exclusiónhistórica/endpoint. No asumir2250layoutsindependientes ni3cerebros.
+
+train_nine_dagger.main parametrizado(out,seed,splits,train_only),mantiene defaultpiloto;reserve acepta out explícito para que coordinador NOexcluya accidentalmentelospilotosprevios delregistro. Fuente archivada porrun. Agente servido yoriginales intactos.

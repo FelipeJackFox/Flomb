@@ -19,8 +19,8 @@ OUT=Path('runs/nine-dagger-001')
 MAPPING=Path('runs/difficulty-transfer-002/extended-mapping.pkl')
 
 
-def reserve():
-    used=prior_layouts(exclude=OUT); result={'games':[],'collection':[]}
+def reserve(out=None):
+    used=prior_layouts(exclude=OUT if out is None else Path(out)); result={'games':[],'collection':[]}
     for split,size,mines,n in [('games',9,12,500),('games',7,7,250),('collection',9,12,900)]:
         found=0
         for seed in range(8300000000+size*100000,8300000000+(size+1)*100000):
@@ -32,12 +32,15 @@ def reserve():
     return result
 
 
-def main():
+def main(out=OUT,seed=20261002,splits=None,train_only=False):
+    global OUT,PARENT
+    OUT=Path(out)
+    PARENT=Path(f'runs/wide-reader-001/best-{seed}-local.pt')
     OUT.mkdir(exist_ok=False)
     shutil.copy2(Path(__file__),OUT/'driver-source.py')
     shutil.copy2('benchmarks/generalized-collector-verification.json',OUT/'collector-preflight.json')
-    splits=reserve()
-    write_json(OUT/'protocol.json',dict(seed=20261002,rounds=3,updates=2250,
+    splits=reserve() if splits is None else splits
+    write_json(OUT/'protocol.json',dict(seed=seed,rounds=3,updates=2250,
         collection='900 new autonomous 9x9/12 games, 300 per round',
         mixture='32 balanced original 5/7 positions +32 aggregated new9; control64 original',
         checkpoint='fixed last2250 for both arms; best old holdout retained only as diagnostic',
@@ -45,10 +48,11 @@ def main():
         secondary='vs preserved baseline; 7x7 retention and safe-choice ratios',
         evaluation='500 new9 and250 new7, shared across three arms; one seed/brain',
         hashes={str(p):digest(p) for p in [PARENT,MAPPING]}))
-    adapted_dagger.main(out=OUT,seed=20261002,splits=splits,train_only=True,
+    adapted_dagger.main(out=OUT,seed=seed,splits=splits,train_only=True,
         parent_path=PARENT,mapping_path=MAPPING)
     for p in [Path(__file__),Path('experiments/spatial_decoder.py'),Path('experiments/retina_policy.py')]:
         shutil.copy2(p,OUT/'source'/p.name)
+    if train_only:return
     paths={'baseline':PARENT,'control':OUT/'latest-control.pt','dagger':OUT/'latest-dagger.pt'}
     fixed={k:dict(path=str(p),sha256=digest(p)) for k,p in paths.items()}
     write_json(OUT/'evaluation-checkpoints.json',fixed)
