@@ -148,3 +148,4 @@ joint {'step': 1750, 'validation_loss': 1.8282351093292237, 'chosen': 1500, 'sec
 {'phase': 'training', 'arm': 'joint', 'step': 1875, 'target': 3000, 'seconds': 1228.903076541028}
 {'phase': 'training', 'arm': 'joint', 'step': 1900, 'target': 3000, 'seconds': 1258.385309083038}
 {'phase': 'training', 'arm': 'joint', 'step': 1925, 'target': 3000, 'seconds': 1288.2156655410072}
+{'phase': 'training', 'arm': 'joint', 'step': 1950, 'target': 3000, 'seconds': 1320.6060877080308}
