@@ -1,0 +1,3 @@
+baseline {'wins': 123, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 140, 'safe_choices': 2563, 'safe_opportunities': 2872}
+last_policy {'wins': 117, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 135, 'safe_choices': 2517, 'safe_opportunities': 2849}
+last_risk {'wins': 48, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 137, 'safe_choices': 926, 'safe_opportunities': 1645}

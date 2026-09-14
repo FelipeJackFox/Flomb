@@ -1,0 +1,9 @@
+# Decidir por el riesgo aprendido
+
+Diagnóstico autorizado continuo; sin entrenar ni escoger checkpoints por resultados. Últimoauxiliar1500 dejóauxloss.310 y7816/8781clasificacionescertificadascorrectas,pero reglaCEseleccionó0. Hipótesisdistinta: ramaaux aprendida puede serútilparaelegiracciones aunque no mejoreCEdelcabezalpolítica.
+
+Comparartreslecturascongeladas:baselinepreservado;políticadelúltimoaux1500;negativodelogitdemina delmismoúltimoaux1500. Principal riesgo−políticaúltima,mismosencoder/features/checkpoint;secundarioriesgo−baseline. No mezcla ni filtrosolver;argminlogitaprendido,casillasabiertas/offboardenmascaradasigualqueantes. Logitentrenadoconclasesbalanceadas no esprobabilidadcalibrada. Comportamientoeninciertas no fue etiquetado,caveatcentral.
+
+Fijar protocolo/archivo/hash antesde500layouts7×7/7minasnuevoscompartidos,bootstrap pareadounasemilla/uncerebro,excluiraperturasautomáticas. No elegirmejoracción porverdadmina ni seleccionarmejorcheckpointposhoc. Test confirmaindependencia riesgo respectoacapafinalpolítica. Ningúnservido modificado.
+
+Runner`experiments/evaluate_risk_readout.py`,salida`runs/risk-readout-001`.

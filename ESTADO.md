@@ -498,3 +498,20 @@ Local21.8667% vsamplio16%,delta−5.8667pp IC95%pareado[−8.4,−3.4667]. Frent
 Siguientepiloto `experiments/train_risk_auxiliary.py`, `runs/risk-auxiliary-001`. Desde local02 elegido1250,fijarencoder/cerebro,lectorpolítica vslectorpolítica+0.2auxBCEcertificadosmine/safe;inciertasmascaradas. Mismosdatos/draws/headAdam/RNG,1500updates,b64,32original+32DAggerheredado. Ramaaux33parámetros,noacciones,nofiltromaestro. SelecciónmismaCEpolíticaholdout,selloantes500nuevos. Testgradientesinciertas/signos yforwardpolítica pasa. Protocolo PROTOCOLO_AUXILIAR_RIESGO.md. Hipótesisdistinta depriorizaciónya fallida.
 
 Seguimiento actualizado a auxiliarseguridad;reportero `experiments/report_risk_auxiliary.py` preparado. Entrenamiento acabó ypasóaevaluación al configurar seguimiento. Ramaauxseleccionópaso0 segúnCEpolítica;últimoauxloss.31014 y7816/8781 certificadoscorrectos esdiagnóstico delúltimo,no confundirconcheckpointseleccionado. Esperarpartidas/auditoríaantesdeconcluir.
+
+## Auxiliar seguridad · terminado14sept22:29UTC
+
+Baseline/control/auxseleccionado117/500(23.4%),idénticastrayectorias,0auto. Ambosseleccionaronpaso0porCEpolítica: no se adoptóningúnupdate. Delta0/IC[0,0] refleja pesosdepolíticaidénticos,no pruebageneraldeequivalencia. Últimoaux1500(lossaux.31014,7816/8781certificadoscorrectos) NOeselmodelo evaluado. Auditoríarecomputacertificadospúblicos,todoslayouts/draws/selección/hash/sello/conteospasan;figura risk-auxiliary-results.pnginspeccionada;informe RESULTADO_AUXILIAR_RIESGO.md. No gananciapormétodoseleccionado.
+
+## Lectura directa riesgo · en curso14sept2026
+
+Diagnósticosinentrenar `experiments/evaluate_risk_readout.py`,`runs/risk-readout-001`:fijarúltimoaux1500ypreservadobaseline antesde500testnuevos. Principal decidirargminlogitmineaprendido vsheadpolíticadelMISMOúltimocheckpoint;secundariovsbaseline. Sinfiltromaestro,noprobabilidadcalibrada,inciertasnoetiquetadasduranteaux. Testindependenciadecapafinalpolíticapasa. Protocolo `research/PROTOCOLO_LECTURA_RIESGO.md`. Originales/servidointactos.
+
+
+## Lectura directa riesgo · cerrada14sept2026
+
+Auditoría completa: en500layouts nuevos7×7/7,baseline123/500(24.6%),últimapolítica117/500(23.4%),últimoriesgo48/500(9.6%),0auto. Principal riesgo−política −13.8pp IC95%pareado[−17.6,−10];vsbaseline−15pp [−19,−11.2]. Riesgo empeora claramente este piloto;no adoptar. Misma representación/checkpoint último para dos salidas, no reentrenamiento; inciertas no supervisadas, no probabilidades calibradas. Auditoría hashes/layouts/conteos verificada;figura inspeccionada;informe research/RESULTADO_LECTURA_RIESGO.md.
+
+## Transferencia por dificultad · en curso14sept2026
+
+Usuario pidió reportar y seguir sin parar. Nueva evaluación acotada sin entrenamiento: experiments/evaluate_difficulty_transfer.py, runs/difficulty-transfer-001, benchmarks/difficulty-transfer.log. Fijos tres best-SEED-local.pt de wide-reader-001 (02/03/04);200layouts nuevos compartidos por tamaño7×7/7,9×9/12,12×12/22,16×16/38. Total800layouts/2400episodios. Métricas autónomas por tamaño y semilla, decisiones seguras/oportunidades, minas deducibles, derrotas con segura y 50%exacto separado. No ajustar victorias por suerte. Protocolo research/PROTOCOLO_TRANSFERENCIA_DIFICULTAD.md,reportero experiments/report_difficulty_transfer.py. Caché limitada a50partidas y reiniciada para cada encoder. Cerebro/encoder/pesos congelados y protegidos;ningún cambio al agente servido. Objetivo orientar el siguiente entrenamiento hacia fallos observados antes de repetir cambios arquitectónicos.

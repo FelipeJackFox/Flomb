@@ -1,0 +1,5 @@
+{'phase': 'evaluation', 'seed': 20261002, 'size': 7, 'mines': 7, 'completed': 50, 'total': 200}
+{'phase': 'evaluation', 'seed': 20261002, 'size': 7, 'mines': 7, 'completed': 100, 'total': 200}
+{'phase': 'evaluation', 'seed': 20261002, 'size': 7, 'mines': 7, 'completed': 150, 'total': 200}
+{'phase': 'evaluation', 'seed': 20261002, 'size': 7, 'mines': 7, 'completed': 200, 'total': 200}
+{'phase': 'evaluation', 'seed': 20261002, 'size': 9, 'mines': 12, 'completed': 50, 'total': 200}
