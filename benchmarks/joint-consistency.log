@@ -133,3 +133,17 @@ joint {'step': 500, 'validation_loss': 1.841089138031006, 'chosen': 500, 'second
 {'phase': 'training', 'arm': 'joint', 'step': 600, 'target': 750, 'seconds': 527.5874460829655}
 {'phase': 'training', 'arm': 'joint', 'step': 625, 'target': 750, 'seconds': 547.5097495829687}
 {'phase': 'training', 'arm': 'joint', 'step': 650, 'target': 750, 'seconds': 567.707241582917}
+{'phase': 'training', 'arm': 'joint', 'step': 675, 'target': 750, 'seconds': 588.2420755829662}
+{'phase': 'training', 'arm': 'joint', 'step': 700, 'target': 750, 'seconds': 608.2818182079354}
+{'phase': 'training', 'arm': 'joint', 'step': 725, 'target': 750, 'seconds': 628.1735387078952}
+{'phase': 'training', 'arm': 'joint', 'step': 750, 'target': 750, 'seconds': 648.3608479578979}
+joint {'step': 750, 'validation_loss': 1.8367778549194336, 'chosen': 750, 'seconds': 655.3647060409421}
+20261002-baseline {'wins': 58, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 180, 'safe_choices': 1823, 'safe_opportunities': 2229}
+20261002-control {'wins': 58, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 180, 'safe_choices': 1823, 'safe_opportunities': 2229, 'duplicate_of': '20261002-baseline'}
+20261002-joint {'wins': 77, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 147, 'safe_choices': 1889, 'safe_opportunities': 2270}
+20261003-baseline {'wins': 53, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 164, 'safe_choices': 1588, 'safe_opportunities': 1973}
+20261003-control {'wins': 53, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 164, 'safe_choices': 1588, 'safe_opportunities': 1973, 'duplicate_of': '20261003-baseline'}
+20261003-joint {'wins': 73, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 153, 'safe_choices': 1705, 'safe_opportunities': 2096}
+20261004-baseline {'wins': 51, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 161, 'safe_choices': 1596, 'safe_opportunities': 1998}
+20261004-control {'wins': 51, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 161, 'safe_choices': 1596, 'safe_opportunities': 1998, 'duplicate_of': '20261004-baseline'}
+20261004-joint {'wins': 61, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 147, 'safe_choices': 1622, 'safe_opportunities': 1995}
