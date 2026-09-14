@@ -103,3 +103,6 @@ collection 32 {'games': 300, 'wins': 9, 'clicks': 176, 'safe_opportunities': 126
 collection 48 {'games': 300, 'wins': 12, 'clicks': 277, 'safe_opportunities': 191, 'safe_choices': 170, 'teacher_actions': 0}
 collection 64 {'games': 300, 'wins': 17, 'clicks': 388, 'safe_opportunities': 284, 'safe_choices': 253, 'teacher_actions': 0}
 collection 80 {'games': 300, 'wins': 19, 'clicks': 488, 'safe_opportunities': 361, 'safe_choices': 314, 'teacher_actions': 0}
+collection 96 {'games': 300, 'wins': 22, 'clicks': 598, 'safe_opportunities': 440, 'safe_choices': 383, 'teacher_actions': 0}
+collection 112 {'games': 300, 'wins': 24, 'clicks': 690, 'safe_opportunities': 504, 'safe_choices': 438, 'teacher_actions': 0}
+collection 128 {'games': 300, 'wins': 28, 'clicks': 809, 'safe_opportunities': 595, 'safe_choices': 513, 'teacher_actions': 0}
