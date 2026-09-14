@@ -223,3 +223,9 @@ collection 300 {'games': 300, 'wins': 54, 'clicks': 2061, 'safe_opportunities': 
 {'phase': 'training', 'variant': 'dagger', 'round': 3, 'step': 1750, 'validation_loss': 1.8173284816741944, 'aggregated_positions': 4317}
 {'phase': 'training', 'variant': 'dagger', 'round': 3, 'step': 2000, 'validation_loss': 1.8194695625305175, 'aggregated_positions': 4317}
 {'phase': 'training', 'variant': 'dagger', 'round': 3, 'step': 2250, 'validation_loss': 1.8201945362091065, 'aggregated_positions': 4317}
+20261002-unadapted {'wins': 87, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 172, 'safe_choices': 2151, 'safe_opportunities': 2518}
+20261002-adapted {'wins': 125, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 137, 'safe_choices': 2396, 'safe_opportunities': 2708}
+20261003-unadapted {'wins': 82, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 171, 'safe_choices': 2112, 'safe_opportunities': 2486}
+20261003-adapted {'wins': 104, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 152, 'safe_choices': 2316, 'safe_opportunities': 2648}
+20261004-unadapted {'wins': 84, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 167, 'safe_choices': 2103, 'safe_opportunities': 2458}
+20261004-adapted {'wins': 100, 'n': 500, 'automatic_excluded': 0, 'known_mine_choices': 150, 'safe_choices': 2238, 'safe_opportunities': 2560}
