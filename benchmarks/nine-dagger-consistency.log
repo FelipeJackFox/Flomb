@@ -86,3 +86,5 @@ collection 160 {'games': 300, 'wins': 0, 'clicks': 865, 'safe_opportunities': 56
 collection 176 {'games': 300, 'wins': 0, 'clicks': 952, 'safe_opportunities': 610, 'safe_choices': 388, 'teacher_actions': 0}
 collection 192 {'games': 300, 'wins': 0, 'clicks': 1036, 'safe_opportunities': 651, 'safe_choices': 417, 'teacher_actions': 0}
 collection 208 {'games': 300, 'wins': 0, 'clicks': 1107, 'safe_opportunities': 687, 'safe_choices': 433, 'teacher_actions': 0}
+collection 224 {'games': 300, 'wins': 0, 'clicks': 1206, 'safe_opportunities': 742, 'safe_choices': 468, 'teacher_actions': 0}
+collection 240 {'games': 300, 'wins': 0, 'clicks': 1250, 'safe_opportunities': 756, 'safe_choices': 476, 'teacher_actions': 0}
