@@ -1,0 +1,14 @@
+{'phase': 'training', 'arm': 'control', 'step': 0, 'validation_loss': 1.78419331741333, 'auxiliary_holdout_loss': 0.6931473016738892, 'certified_correct': 4885, 'certified_n': 8781, 'chosen': 0}
+{'phase': 'training', 'arm': 'control', 'step': 250, 'validation_loss': 1.7892583084106446, 'auxiliary_holdout_loss': 0.6931473016738892, 'certified_correct': 4885, 'certified_n': 8781, 'chosen': 0}
+{'phase': 'training', 'arm': 'control', 'step': 500, 'validation_loss': 1.7850460014343261, 'auxiliary_holdout_loss': 0.6931473016738892, 'certified_correct': 4885, 'certified_n': 8781, 'chosen': 0}
+{'phase': 'training', 'arm': 'control', 'step': 750, 'validation_loss': 1.7879645824432373, 'auxiliary_holdout_loss': 0.6931473016738892, 'certified_correct': 4885, 'certified_n': 8781, 'chosen': 0}
+{'phase': 'training', 'arm': 'control', 'step': 1000, 'validation_loss': 1.7863610553741456, 'auxiliary_holdout_loss': 0.6931473016738892, 'certified_correct': 4885, 'certified_n': 8781, 'chosen': 0}
+{'phase': 'training', 'arm': 'control', 'step': 1250, 'validation_loss': 1.785714319229126, 'auxiliary_holdout_loss': 0.6931473016738892, 'certified_correct': 4885, 'certified_n': 8781, 'chosen': 0}
+{'phase': 'training', 'arm': 'control', 'step': 1500, 'validation_loss': 1.788275619506836, 'auxiliary_holdout_loss': 0.6931473016738892, 'certified_correct': 4885, 'certified_n': 8781, 'chosen': 0}
+{'phase': 'training', 'arm': 'auxiliary', 'step': 0, 'validation_loss': 1.78419331741333, 'auxiliary_holdout_loss': 0.6931473016738892, 'certified_correct': 4885, 'certified_n': 8781, 'chosen': 0}
+{'phase': 'training', 'arm': 'auxiliary', 'step': 250, 'validation_loss': 1.7897110862731933, 'auxiliary_holdout_loss': 0.48152685165405273, 'certified_correct': 7234, 'certified_n': 8781, 'chosen': 0}
+{'phase': 'training', 'arm': 'auxiliary', 'step': 500, 'validation_loss': 1.7854433898925781, 'auxiliary_holdout_loss': 0.39965304732322693, 'certified_correct': 7562, 'certified_n': 8781, 'chosen': 0}
+{'phase': 'training', 'arm': 'auxiliary', 'step': 750, 'validation_loss': 1.7887925624847412, 'auxiliary_holdout_loss': 0.3640481233596802, 'certified_correct': 7649, 'certified_n': 8781, 'chosen': 0}
+{'phase': 'training', 'arm': 'auxiliary', 'step': 1000, 'validation_loss': 1.7875018939971923, 'auxiliary_holdout_loss': 0.34006673097610474, 'certified_correct': 7698, 'certified_n': 8781, 'chosen': 0}
+{'phase': 'training', 'arm': 'auxiliary', 'step': 1250, 'validation_loss': 1.787555450439453, 'auxiliary_holdout_loss': 0.32318392395973206, 'certified_correct': 7744, 'certified_n': 8781, 'chosen': 0}
+{'phase': 'training', 'arm': 'auxiliary', 'step': 1500, 'validation_loss': 1.790170093536377, 'auxiliary_holdout_loss': 0.3101448118686676, 'certified_correct': 7816, 'certified_n': 8781, 'chosen': 0}

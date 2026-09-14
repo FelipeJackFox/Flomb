@@ -488,3 +488,13 @@ Trespares:sinadaptar87/82/84→adaptados125/104/100 sobre500nuevoscompartidos. M
 Siguientefase autorizadacontinua `experiments/train_wide_reader.py`, `runs/wide-reader-001`. Trespares local/wide desdeDAggeradaptado. Únicocambioarquitectura dilation/padding segunda conv1→3; mismos12,769param,pesos/Adam/RNG/batches,1500updatesextras,50%original+50%DAggerheredadofijo;brain/encodercongelados. Campo9×9 vs5×5 verificado porgradiente,pruebapasa. Nuevo500finalcompartido,selloantesdeevaluarbaseline/local/wide. Protocolo `research/PROTOCOLO_LECTOR_AMPLIADO.md`. No asumirqueRF9ve todo7×7desdecadaesquina ni quecerebrocarezcarecurrencianolocal.
 
 Seguimiento actualizado a `runs/wide-reader-001`;reportero `experiments/report_wide_reader.py` preparado. Primera semilla en cacheexperienciaheredada. Test de campo/parametrización pasa. Al cerrar auditar/inspeccionar figura/reportar y continuar según evidencia sin otrodale. No repetir cierre comparacióninterfacesprevio.
+
+## Lector ampliado · terminado14sept22:13UTC
+
+Local21.8667% vsamplio16%,delta−5.8667pp IC95%pareado[−8.4,−3.4667]. Frente inicial20.7333%,amplio−4.7333pp IC[−7.2667,−2.2667].500compartidos/uncerebro,0auto. Local113/115/100;amplio96/83/61;baseline108/108/95. Amplioseligieron1500,todospeores;local1250/750/1250. Esta intervención conpesos/Adamheredadosperjudica,no demuestra inutilidad decontextoamplio entrenadodeotro modo. No adoptar ampliado. Auditoría yfigura wide-reader-results.png verificados,informe RESULTADO_LECTOR_AMPLIADO.md;originales/servido intactos.
+
+## Auxiliar seguridad · en curso14sept2026
+
+Siguientepiloto `experiments/train_risk_auxiliary.py`, `runs/risk-auxiliary-001`. Desde local02 elegido1250,fijarencoder/cerebro,lectorpolítica vslectorpolítica+0.2auxBCEcertificadosmine/safe;inciertasmascaradas. Mismosdatos/draws/headAdam/RNG,1500updates,b64,32original+32DAggerheredado. Ramaaux33parámetros,noacciones,nofiltromaestro. SelecciónmismaCEpolíticaholdout,selloantes500nuevos. Testgradientesinciertas/signos yforwardpolítica pasa. Protocolo PROTOCOLO_AUXILIAR_RIESGO.md. Hipótesisdistinta depriorizaciónya fallida.
+
+Seguimiento actualizado a auxiliarseguridad;reportero `experiments/report_risk_auxiliary.py` preparado. Entrenamiento acabó ypasóaevaluación al configurar seguimiento. Ramaauxseleccionópaso0 segúnCEpolítica;últimoauxloss.31014 y7816/8781 certificadoscorrectos esdiagnóstico delúltimo,no confundirconcheckpointseleccionado. Esperarpartidas/auditoríaantesdeconcluir.
