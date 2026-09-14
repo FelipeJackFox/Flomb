@@ -14,7 +14,7 @@ INPUT_TYPES=('L1','L2','L3')
 OUTPUT_TYPES=('Mi1','Mi4','Mi9','Tm1','Tm2','Tm4','Tm9','Tm20','T1','C3')
 
 
-def build_mapping():
+def build_mapping(sizes=(5,7)):
     import pyarrow.feather as feather
     ids=np.load('data/processed/neuron_ids.npy')
     table=feather.read_table('data/raw/annotations.feather',columns=['bodyId','assignedOlHex1','assignedOlHex2','type'])
@@ -30,7 +30,9 @@ def build_mapping():
     result=dict(input_index=index[input_mask].astype(np.int64),input_xy=xy[input_mask].astype(np.float32),
                 input_channel=np.array([INPUT_TYPES.index(t) for t in types[input_mask]],np.int64),
                 input_types=INPUT_TYPES,output_types=OUTPUT_TYPES,outputs={})
-    for size in (5,7):
+    for size in sizes:
+        if not 2 <= size <= 16:
+            raise ValueError('Mapped board sizes must be between 2 and 16')
         query=np.array([(c/(size-1),r/(size-1)) for r in range(size) for c in range(size)])
         indices,weights=[],[]
         for kind in OUTPUT_TYPES:

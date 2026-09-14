@@ -1,0 +1,41 @@
+{
+  "checks": {
+    "5": {
+      "nonzero": true,
+      "finite": true,
+      "observation_sensitive": true,
+      "legacy_equal": true,
+      "padding_zero": true
+    },
+    "7": {
+      "nonzero": true,
+      "finite": true,
+      "observation_sensitive": true,
+      "legacy_equal": true,
+      "padding_zero": true
+    },
+    "9": {
+      "nonzero": true,
+      "finite": true,
+      "observation_sensitive": true,
+      "legacy_equal": false,
+      "padding_zero": true
+    },
+    "12": {
+      "nonzero": true,
+      "finite": true,
+      "observation_sensitive": true,
+      "legacy_equal": false,
+      "padding_zero": true
+    },
+    "16": {
+      "nonzero": true,
+      "finite": true,
+      "observation_sensitive": true,
+      "legacy_equal": false,
+      "padding_zero": true
+    }
+  },
+  "missing_mapping_rejected": true,
+  "parent_intact": true
+}

@@ -12,14 +12,20 @@ from experiments.scaled_data import identity
 from minesweeper import Minesweeper
 
 
-def main():
+def main(out=OUT):
+    global OUT
+    OUT = Path(out)
     assert json.loads((OUT/'completed.json').read_text())['completed']
     manifest = json.loads((OUT/'manifest.json').read_text())
     assert all(digest(p) == sha for p, sha in manifest['hashes'].items())
+    if manifest.get('expanded_mapping'):
+        mapping_check = json.loads((OUT/'mapping-verification.json').read_text())
+        assert mapping_check['old_5_7_exact']
+        assert mapping_check['mapping_sha256'] == digest(OUT/'extended-mapping.pkl')
     games = json.loads((OUT/'games.json').read_text())
     keys = {g['layout_hash'] for g in games}
     assert len(games) == len(keys) == N * len(LEVELS)
-    assert not keys & prior_layouts()
+    assert not keys & prior_layouts(exclude=OUT)
     for g in games:
         assert identity(Minesweeper(g['seed'], g['size'], g['mines'])) == g['layout_hash']
     metrics = ('safe_choices', 'safe_opportunities', 'known_mine_choices',
@@ -56,7 +62,9 @@ def main():
             conditional_ci95_percent=np.quantile(boot, [.025, .975]).tolist())
     write_json(OUT/'summary.json', summary)
     write_json(OUT/'independent_verification.json', dict(layouts_reconstructed=len(games),
-        prior_overlap=0, originals_intact=True, identities_and_counts_checked=True))
+        prior_overlap=0, originals_intact=True, identities_and_counts_checked=True,
+        evaluation_valid_for_sizes=[s for s, _ in LEVELS] if manifest.get('expanded_mapping') else [7],
+        legacy_zero_map_issue=not manifest.get('expanded_mapping')))
     fig, axes = plt.subplots(1, 3, figsize=(15, 4.8), layout='constrained')
     x = np.arange(len(LEVELS))
     for i, seed in enumerate(SEEDS):
@@ -74,7 +82,10 @@ def main():
         ax.set_ylabel('%')
         ax.grid(alpha=.2)
     axes[0].legend(title='Semilla de política')
-    fig.savefig('research/difficulty-transfer-results.png', dpi=150)
+    suffix = '-corrected' if manifest.get('expanded_mapping') else ''
+    if not manifest.get('expanded_mapping'):
+        fig.suptitle('INVÁLIDO para tamaños >7: entrada de actividad vacía')
+    fig.savefig(f'research/difficulty-transfer{suffix}-results.png', dpi=150)
     plt.close(fig)
     table = []
     for size, _ in LEVELS:
@@ -82,15 +93,22 @@ def main():
         counts = ' / '.join(f"{v['per_seed'][str(s)]['wins']}/{v['per_seed'][str(s)]['n']}" for s in SEEDS)
         lo, hi = v['conditional_ci95_percent']
         table.append(f"| {size}×{size}/{v['mines']} | {counts} | {v['mean_win_percent']:.1f}% [{lo:.1f}, {hi:.1f}] |")
-    Path('research/RESULTADO_TRANSFERENCIA_DIFICULTAD.md').write_text(
-        '# Evaluación por dificultad\n\n'
+    validity = ('Mapeo ampliado explícitamente a 9/12/16, con igualdad exacta del mapeo histórico 5/7. '
+        'No hubo entrenamiento con tableros grandes: mide transferencia con una interfaz ampliada. '
+        if manifest.get('expanded_mapping') else
+        '**INVALIDADA PARA TAMAÑOS MAYORES A 7.** La extracción histórica solo agrupaba actividad para 5/7; '
+        '9/12/16 recibieron mapas cero. Sus resultados no miden generalización del cerebro. '
+        'La auditoría de conteos no detectaba este error semántico. Se conservan datos como diagnóstico del fallo. ')
+    Path(f'research/RESULTADO_TRANSFERENCIA_DIFICULTAD{suffix.upper()}.md').write_text(
+        '# Evaluación por dificultad\n\n' + validity + '\n\n'
         '| Tablero/minas | Victorias por política (02 / 03 / 04) | Media e IC95% condicional |\n'
         '|---|---|---|\n' + '\n'.join(table) + '\n\n'
-        '![Resultados](difficulty-transfer-results.png)\n\n'
+        f'![Resultados](difficulty-transfer{suffix}-results.png)\n\n'
         'Políticas fijadas antes del test, sin entrenamiento ni intervención del maestro. '
         '800 layouts nuevos, 200 por tamaño, compartidos por tres políticas sobre un cerebro. '
         'Victorias automáticas excluidas; el denominador se muestra por política. '
         'El intervalo remuestrea layouts conjuntamente entre políticas; no mide variabilidad entre cerebros. '
+        'Con cero victorias el bootstrap es degenerado [0,0] y no demuestra probabilidad verdadera cero. '
         'Densidad cercana a 15%, tamaños y número de minas cambian juntos. '
         'El solver solo certifica un subconjunto de lo deducible. Las derrotas tras riesgo exacto de 50% '
         'se cuentan aparte y no se convierten en victorias.\n\n'
@@ -100,4 +118,7 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--out', type=Path, default=OUT)
+    main(parser.parse_args().out)

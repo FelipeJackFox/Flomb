@@ -39,8 +39,8 @@ def prior_layouts(exclude=OUT):
     return used
 
 
-def reserve():
-    used, games = prior_layouts(), []
+def reserve(out=OUT):
+    used, games = prior_layouts(exclude=out), []
     for size, mines in LEVELS:
         found = 0
         for seed in range(8100000000 + size * 100000, 8100000000 + (size + 1) * 100000):
@@ -56,7 +56,9 @@ def reserve():
     return games
 
 
-def main():
+def main(out=OUT, expanded=False):
+    global OUT
+    OUT = Path(out)
     torch.set_num_threads(1)
     OUT.mkdir(exist_ok=False)
     parents = {s: Path(f'runs/wide-reader-001/best-{s}-local.pt') for s in SEEDS}
@@ -64,7 +66,8 @@ def main():
              BASE/'mapping.pkl', Path('runs/hybrid-001/checkpoint.pkl')]
     hashes = {str(p): digest(p) for p in paths}
     write_json(OUT/'manifest.json', dict(training=False, seeds=SEEDS, levels=LEVELS,
-        games_per_level=N, hashes=hashes, selection='fixed preserved local heads; no test selection',
+        games_per_level=N, hashes=hashes, expanded_mapping=expanded,
+        selection='fixed preserved local heads; no test selection',
         scope='three policies, one brain; 800 shared new layouts, roughly 15% mines',
         primary='autonomous win rate by size',
         secondary='safe choices/opportunities, deaths with safe available, certified mine choices, exact half-risk deaths',
@@ -72,9 +75,10 @@ def main():
     src = OUT/'source'
     src.mkdir()
     for p in [Path(__file__), Path('experiments/report_difficulty_transfer.py'),
-              Path('experiments/scaled_train.py'), Path('solver.py'), Path('minesweeper.py')]:
+              Path('experiments/scaled_train.py'), Path('experiments/spatial_decoder.py'),
+              Path('experiments/retina_policy.py'), Path('solver.py'), Path('minesweeper.py')]:
         shutil.copy2(p, src/p.name)
-    games = reserve()
+    games = reserve(OUT)
     write_json(OUT/'games.json', games)
     with (OUT/'dataset.pkl').open('wb') as f:
         pickle.dump(dict(games=games), f)
@@ -82,6 +86,20 @@ def main():
     try:
         brain = RetinaPolicy(op, pickle.loads((BASE/'mapping.pkl').read_bytes()), True)
         brain.load_state_dict(torch.load(BASE/'training/retina_plastic-20260926.pt', weights_only=False)['model'])
+        if expanded:
+            from experiments.retina_policy import build_mapping
+            mapping = build_mapping(sizes=(5, 7, 9, 12, 16))
+            for size, (ix, wt) in mapping['outputs'].items():
+                if hasattr(brain, f'out_{size}'):
+                    assert torch.equal(getattr(brain, f'out_{size}'), torch.from_numpy(ix))
+                    assert torch.equal(getattr(brain, f'weight_{size}'), torch.from_numpy(wt))
+                else:
+                    brain.register_buffer(f'out_{size}', torch.from_numpy(ix), persistent=False)
+                    brain.register_buffer(f'weight_{size}', torch.from_numpy(wt), persistent=False)
+            with (OUT/'extended-mapping.pkl').open('wb') as f:
+                pickle.dump(mapping, f)
+            write_json(OUT/'mapping-verification.json', dict(old_5_7_exact=True,
+                mapping_sha256=digest(OUT/'extended-mapping.pkl'), new_sizes=[9,12,16]))
         brain.requires_grad_(False)
         for seed in SEEDS:
             saved = torch.load(parents[seed], weights_only=False)
@@ -111,4 +129,9 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--out', type=Path, default=OUT)
+    parser.add_argument('--expand-mapping', action='store_true')
+    args = parser.parse_args()
+    main(args.out, args.expand_mapping)

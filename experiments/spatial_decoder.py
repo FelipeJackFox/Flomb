@@ -7,6 +7,10 @@ from torch.nn import functional as F
 @torch.no_grad()
 def activity_map(brain,x,context):
  b=len(x);sizes=(context[:,0]*16).round().long()
+ mapped_sizes=sorted(set(sizes.tolist()))
+ for size in mapped_sizes:
+  if not 2<=size<=16 or not hasattr(brain,f'out_{size}') or not hasattr(brain,f'weight_{size}'):
+   raise ValueError(f'Missing output mapping for {size}x{size}; refusing silent zero activity')
  grid=x.reshape(b,16,16,10).permute(0,3,1,2)
  encoded=brain.encoder(torch.cat([grid,context[:,:,None,None].expand(-1,-1,16,16)],1))
  encoded*=grid.sum(1,keepdim=True)!=0
@@ -19,7 +23,7 @@ def activity_map(brain,x,context):
  brain.operator.bind(values.numpy(),force=True)
  for _ in range(brain.cycles):state=torch.tanh(torch.from_numpy(brain.operator.multiply(values.numpy(),(gain*state).numpy()))+.15*drive)
  result=x.new_zeros(b,10,16,16)
- for size in (5,7):
+ for size in mapped_sizes:
   selected=torch.nonzero(sizes==size).flatten()
   if not len(selected):continue
   ix=getattr(brain,f'out_{size}');wt=getattr(brain,f'weight_{size}')

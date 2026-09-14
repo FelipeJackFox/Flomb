@@ -515,3 +515,14 @@ Auditoría completa: en500layouts nuevos7×7/7,baseline123/500(24.6%),últimapol
 ## Transferencia por dificultad · en curso14sept2026
 
 Usuario pidió reportar y seguir sin parar. Nueva evaluación acotada sin entrenamiento: experiments/evaluate_difficulty_transfer.py, runs/difficulty-transfer-001, benchmarks/difficulty-transfer.log. Fijos tres best-SEED-local.pt de wide-reader-001 (02/03/04);200layouts nuevos compartidos por tamaño7×7/7,9×9/12,12×12/22,16×16/38. Total800layouts/2400episodios. Métricas autónomas por tamaño y semilla, decisiones seguras/oportunidades, minas deducibles, derrotas con segura y 50%exacto separado. No ajustar victorias por suerte. Protocolo research/PROTOCOLO_TRANSFERENCIA_DIFICULTAD.md,reportero experiments/report_difficulty_transfer.py. Caché limitada a50partidas y reiniciada para cada encoder. Cerebro/encoder/pesos congelados y protegidos;ningún cambio al agente servido. Objetivo orientar el siguiente entrenamiento hacia fallos observados antes de repetir cambios arquitectónicos.
+
+
+## Evaluación por dificultad001 · fallo de mapeo detectado14sept22:52UTC
+
+Completó2400episodios, pero auditoría de código detectó que activity_map solo agrupaba tamaños5/7 y devolvía mapas cero para9/12/16. Estos1800episodios NOevalúan generalización del cerebro. Conteos/layouts/hashes correctos no bastaban para detectar fallo semántico. 7×7válido:57/40/54victorias de200porsemilla,media25.1667%,ICcondicional[20.3333,30.3333]. Mayores0nointerpretables como capacidad;no reportarlos como aprendizaje fallido. Reportero y figura marcan invalidez;historias originales preservadas.
+
+## Repetición dificultad002 con mapeo extendido · en curso14sept2026
+
+Corrección implementada en retina_policy.build_mapping(sizes) y spatial_decoder.activity_map: mismos cuatrovecinos/ponderación delmapeo anotado,tablas9/12/16nuevas;validación temprana tamaño y rechazo sinmapeo. Tablasnuevas buffersno persistentes tras cargarcheckpoint;tabla5/7exacta. Prueba congraforeal pasa:paridadexactaactividad5/7,salida finita/no vacía/sensibleaobservaciones9/12/16,paddingcero,rechazo mapasfaltantes. Primera prueba tenía dosfixtures con igualobservación;se corrigiófixture exigiendo observaciones distintas antesde medir sensibilidad. Evidencia benchmarks/extended-mapping-verification.json.
+
+Repetición lanzada: experiments.evaluate_difficulty_transfer --out runs/difficulty-transfer-002 --expand-mapping;log benchmarks/difficulty-transfer-corrected.log.800layouts NUEVOS excluyendo001,3políticas/2400episodios,sin entrenar;igualmétricas/presupuesto. Protocolo research/PROTOCOLO_TRANSFERENCIA_DIFICULTAD_CORREGIDA.md. Reportero alfinal --out runs/difficulty-transfer-002;figura difficulty-transfer-corrected-results.png,informe RESULTADO_TRANSFERENCIA_DIFICULTAD-CORRECTED.md. Checkpoints y agenteservido intactos. Evaluación mide transferencia desdeentrenamiento5/7coninterfazampliada.
