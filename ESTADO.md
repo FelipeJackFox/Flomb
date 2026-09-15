@@ -681,3 +681,8 @@ Intento preflight archivado sin updates: diferencia cache lote16 vsdirecto4 de5.
 ## Consistencia rotaciones cerrada15sept08:14UTC
 
 9rotado118/128vsidentidad39/38de500,+16.9pp[14.2,19.7];7rotado106/113vs69/69de250,+16.2pp[11.4,21]. Auditorías hijos/global1500layouts pasan,figura inspeccionada. Siguiente rotation-training-001/train_rotation_augmentation,log rotation-training.log:encoderpiloto fijo1ciclo,heads nuevosseed08/3000updates,originalvsrotaciónuniformeporposición/labels;ambos una inferencia.750testnuevos,protocolo ENTRENAMIENTO_ROTACIONES;report_rotation_training. Agenteservido intacto.
+
+
+## Entrenamiento rotaciones cerrado15sept08:45UTC
+
+9aumentado49/control43de500,+1.2pp[-1.6,4];7aumentado85/control73de250,+4.8[-1.2,10.8]. Incierto,una inferencia no replicaensemble. Auditoría pasa yfigura inspeccionada. Siguiente ensemble-distillation-001/train_ensemble_distillation,log ensemble-distillation.log:profesor fijo4orientaciones early-interfacepiloto,alumnos nuevosseed09/3000updates,CEvs.5CE+.5KL(T2),mismosdatos/encoder/grafo1fijos.750testnuevos,protocolo DESTILACION,report_ensemble_distillation. Agente servido intacto.
