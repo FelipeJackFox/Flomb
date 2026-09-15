@@ -1,0 +1,34 @@
+{'phase': 'training', 'arm': 'distilled', 'step': 250}
+{'phase': 'training', 'arm': 'distilled', 'step': 500}
+{'phase': 'training', 'arm': 'distilled', 'step': 750}
+{'phase': 'training', 'arm': 'distilled', 'step': 1000}
+{'phase': 'training', 'arm': 'distilled', 'step': 1250}
+{'phase': 'training', 'arm': 'distilled', 'step': 1500}
+{'phase': 'training', 'arm': 'distilled', 'step': 1750}
+{'phase': 'training', 'arm': 'distilled', 'step': 2000}
+{'phase': 'training', 'arm': 'distilled', 'step': 2250}
+{'phase': 'training', 'arm': 'distilled', 'step': 2500}
+{'phase': 'training', 'arm': 'distilled', 'step': 2750}
+{'phase': 'training', 'arm': 'distilled', 'step': 3000}
+{'phase': 'training', 'arm': 'control', 'step': 250}
+{'phase': 'training', 'arm': 'control', 'step': 500}
+{'phase': 'training', 'arm': 'control', 'step': 750}
+{'phase': 'training', 'arm': 'control', 'step': 1000}
+{'phase': 'training', 'arm': 'control', 'step': 1250}
+{'phase': 'training', 'arm': 'control', 'step': 1500}
+{'phase': 'training', 'arm': 'control', 'step': 1750}
+{'phase': 'training', 'arm': 'control', 'step': 2000}
+{'phase': 'training', 'arm': 'control', 'step': 2250}
+{'phase': 'training', 'arm': 'control', 'step': 2500}
+{'phase': 'training', 'arm': 'control', 'step': 2750}
+{'phase': 'training', 'arm': 'control', 'step': 3000}
+{'phase': 'evaluation', 'arm': 'distilled', 'completed': 50, 'total': 750}
+{'phase': 'evaluation', 'arm': 'distilled', 'completed': 100, 'total': 750}
+{'phase': 'evaluation', 'arm': 'distilled', 'completed': 150, 'total': 750}
+{'phase': 'evaluation', 'arm': 'distilled', 'completed': 200, 'total': 750}
+{'phase': 'evaluation', 'arm': 'distilled', 'completed': 250, 'total': 750}
+{'phase': 'evaluation', 'arm': 'distilled', 'completed': 300, 'total': 750}
+{'phase': 'evaluation', 'arm': 'distilled', 'completed': 350, 'total': 750}
+{'phase': 'evaluation', 'arm': 'distilled', 'completed': 400, 'total': 750}
+{'phase': 'evaluation', 'arm': 'distilled', 'completed': 450, 'total': 750}
+{'phase': 'evaluation', 'arm': 'distilled', 'completed': 500, 'total': 750}
