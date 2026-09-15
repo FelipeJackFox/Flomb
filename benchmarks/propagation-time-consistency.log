@@ -1,0 +1,26 @@
+{'phase': 'training', 'arm': 'early', 'step': 250}
+{'phase': 'training', 'arm': 'early', 'step': 500}
+{'phase': 'training', 'arm': 'early', 'step': 750}
+{'phase': 'training', 'arm': 'early', 'step': 1000}
+{'phase': 'training', 'arm': 'early', 'step': 1250}
+{'phase': 'training', 'arm': 'early', 'step': 1500}
+{'phase': 'training', 'arm': 'early', 'step': 1750}
+{'phase': 'training', 'arm': 'early', 'step': 2000}
+{'phase': 'training', 'arm': 'early', 'step': 2250}
+{'phase': 'training', 'arm': 'early', 'step': 2500}
+{'phase': 'training', 'arm': 'early', 'step': 2750}
+{'phase': 'training', 'arm': 'early', 'step': 3000}
+{'phase': 'training', 'arm': 'late', 'step': 250}
+{'phase': 'training', 'arm': 'late', 'step': 500}
+{'phase': 'training', 'arm': 'late', 'step': 750}
+{'phase': 'training', 'arm': 'late', 'step': 1000}
+{'phase': 'training', 'arm': 'late', 'step': 1250}
+{'phase': 'training', 'arm': 'late', 'step': 1500}
+{'phase': 'training', 'arm': 'late', 'step': 1750}
+{'phase': 'training', 'arm': 'late', 'step': 2000}
+{'phase': 'training', 'arm': 'late', 'step': 2250}
+{'phase': 'training', 'arm': 'late', 'step': 2500}
+{'phase': 'training', 'arm': 'late', 'step': 2750}
+{'phase': 'training', 'arm': 'late', 'step': 3000}
+{'phase': 'evaluation', 'arm': 'early', 'completed': 50, 'total': 750}
+{'phase': 'evaluation', 'arm': 'early', 'completed': 100, 'total': 750}
