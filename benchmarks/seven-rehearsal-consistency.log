@@ -69,3 +69,4 @@
 {'phase': 'training', 'arm': 'replay', 'step': 1500, 'validation_loss': 1.787537281036377}
 {'phase': 'evaluation', 'arm': 'baseline', 'completed': 50, 'total': 750}
 {'phase': 'evaluation', 'arm': 'baseline', 'completed': 100, 'total': 750}
+{'phase': 'evaluation', 'arm': 'baseline', 'completed': 150, 'total': 750}
