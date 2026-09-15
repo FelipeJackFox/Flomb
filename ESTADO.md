@@ -548,3 +548,14 @@ Recolector adapted_dagger.collect generalizado tamaño/minas/contexto/solver/ín
 Se repite mismoprotocolo en03/04desdelectorlocalpropio;piloto02preservado reevaluadosin entrenar. Coordinador runs/nine-dagger-consistency-001,runner experiments/repeat_nine_dagger.py,log benchmarks/nine-dagger-consistency.log;hijos runs/nine-dagger-20261003/4.900colección9nueva compartida dosréplicascon trayectoriaspropias;test5009+2507nuevocompartidotres. Principaldosnuevas9dagger-control,secundariotres/vsbaseline/retención7. Last2250fijoantesdetest. Protocolo PROTOCOLO_CONSISTENCIA_DAGGER_9X9.md. Reportero report_nine_dagger_consistency.py,auditaetiquetas/hash/coleccióncompartida/exclusiónhistórica/endpoint. No asumir2250layoutsindependientes ni3cerebros.
 
 train_nine_dagger.main parametrizado(out,seed,splits,train_only),mantiene defaultpiloto;reserve acepta out explícito para que coordinador NOexcluya accidentalmentelospilotosprevios delregistro. Fuente archivada porrun. Agente servido yoriginales intactos.
+
+
+## Consistencia DAgger9×9 · terminada15sept00:24UTC
+
+Nuevas03/04en9×9 control0/1vsDAgger7/15de500;principalmedia+2.1pp IC95%[+1.2,+3.1],vsbaseline0/0 +2.2pp[+1.3,+3.3]. Pilotoreevaluado14/500vscontrol0/baseline1;3semillas+2.333pp[+1.467,+3.333].7×7 nuevasbaseline65/59,control51/57,DAgger53/51de250;DAgger−baseline−4pp[−7.6,−.4],vscontrol−.8pp[−4,+2.4]inconcluso.02baseline55/control51/dagger49. Mejora9repetida perobajaabsoluta,retención7empeorafrenteparent;noatribuir toda pérdidaalDAggerporquecontroltambiéncontinúaactualizaciones. Auditoríaetiquetaspúblicas/1650layouts/hash/encoder/endpointpasa;figurainspeccionada,informe RESULTADO_CONSISTENCIA_DAGGER_9X9.md.
+
+## Repaso7 durante continuación9 · en curso15sept2026
+
+Piloto experiments/train_seven_rehearsal.py,runs/seven-rehearsal-001,log benchmarks/seven-rehearsal.log. Parte latest-dagger2250 delpiloto9,1500updatesmásfijos(3750total);control32original+32experiencia9fija vsrepaso16original+16DAgger7heredada+32misma9. Mismopesos/Adam/RNG/índicesgenerados;solo se sustituyen16originales,primeros16originalesy32nueveidénticos. Grafoencoderfijos,no nuevaspartidastrain.750testnuevos(2507/5009),principal7replay-control,reportarcoste9 ycomparaciónconpadre9. Protocolo PROTOCOLO_REPASO_7X7.md,reportero report_seven_rehearsal.py. Recomputar8muestrasen3cachesconigualdadexactaantesentrenar. Agente servido yoriginalesintactos.
+
+Preflightrepaso: igualdadbitabitactividadfalló porredondeofloat32alrecomputarconbatch8frentecachévariable,máximo1.01e-6. Preservado runs/seven-rehearsal-preflight-001 sinupdates ylogpreflight. Reiniciofreshcon750testnuevos;verificaencoder ylabels/context/maskexactos,actividadrtol1e-5/atol2e-6conmáximosregistrados. Protocolocorregido,noperderestadoentrenamiento(nohabíaempezado).
