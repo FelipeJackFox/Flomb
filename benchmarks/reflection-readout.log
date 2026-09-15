@@ -25,3 +25,6 @@
 {'phase': 'evaluation', 'arm': 'eight', 'completed': 500, 'total': 750}
 {'phase': 'evaluation', 'arm': 'eight', 'completed': 550, 'total': 750}
 {'phase': 'evaluation', 'arm': 'eight', 'completed': 600, 'total': 750}
+{'phase': 'evaluation', 'arm': 'eight', 'completed': 650, 'total': 750}
+{'phase': 'evaluation', 'arm': 'eight', 'completed': 700, 'total': 750}
+{'phase': 'evaluation', 'arm': 'eight', 'completed': 750, 'total': 750}
