@@ -30,3 +30,4 @@
 {'phase': 'evaluation', 'arm': 'rotated', 'completed': 750, 'total': 750}
 {'phase': 'evaluation', 'arm': 'identity', 'completed': 50, 'total': 750}
 {'phase': 'evaluation', 'arm': 'identity', 'completed': 100, 'total': 750}
+{'phase': 'evaluation', 'arm': 'identity', 'completed': 150, 'total': 750}
