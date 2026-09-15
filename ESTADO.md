@@ -656,3 +656,8 @@ Intento preflight archivado sin updates: diferencia cache lote16 vsdirecto4 de5.
 ## Interfaz temprana cerrada15sept05:46UTC
 
 9baseline33/control36/joint44 de500; joint-control+1.6pp IC95[-.2,3.6].7baseline59/control69/joint66 de250,−1.2pp[-6,3.6]. Señal incierta. Auditoría pasa, figura inspeccionada. Siguiente consistencia early-interface-consistency-001,runner repeat_early_interface,log early-interface-consistency.log: padres tempranos04/05,750updates porbrazo,encoder común,1500test nuevos total. Protocolo CONSISTENCIA_INTERFAZ_TEMPRANA prefijado;reportero report_early_interface_consistency. Originales/agente servido intactos.
+
+
+## Consistencia interfaz temprana cerrada15sept06:24UTC
+
+9joint37/32vscontrol29/27de500;media+1.3pp IC95[-.2,2.7].7joint92/90vscontrol71/79de250;+6.4pp[3.4,9.4]. Mejora9 pequeña incierta;7 favorable nuevasréplicas. Auditorías hijos/global1500layouts pasan,figura inspeccionada. Siguiente runs/adapted-time-001,runner compare_adapted_time,log adapted-time.log:1vs2ciclos conencoderpilotoearly-interface/latest-joint fijo,headsnuevosseed06/3000updates,750testnuevos. Protocolo TIEMPO_ADAPTADO prefijado;reportero report_adapted_time. No promover agenteservido.
