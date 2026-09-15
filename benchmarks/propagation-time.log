@@ -23,3 +23,32 @@
 {'phase': 'training', 'arm': 'late', 'step': 2750}
 {'phase': 'training', 'arm': 'late', 'step': 3000}
 {'phase': 'evaluation', 'arm': 'early', 'completed': 50, 'total': 750}
+{'phase': 'evaluation', 'arm': 'early', 'completed': 100, 'total': 750}
+{'phase': 'evaluation', 'arm': 'early', 'completed': 150, 'total': 750}
+{'phase': 'evaluation', 'arm': 'early', 'completed': 200, 'total': 750}
+{'phase': 'evaluation', 'arm': 'early', 'completed': 250, 'total': 750}
+{'phase': 'evaluation', 'arm': 'early', 'completed': 300, 'total': 750}
+{'phase': 'evaluation', 'arm': 'early', 'completed': 350, 'total': 750}
+{'phase': 'evaluation', 'arm': 'early', 'completed': 400, 'total': 750}
+{'phase': 'evaluation', 'arm': 'early', 'completed': 450, 'total': 750}
+{'phase': 'evaluation', 'arm': 'early', 'completed': 500, 'total': 750}
+{'phase': 'evaluation', 'arm': 'early', 'completed': 550, 'total': 750}
+{'phase': 'evaluation', 'arm': 'early', 'completed': 600, 'total': 750}
+{'phase': 'evaluation', 'arm': 'early', 'completed': 650, 'total': 750}
+{'phase': 'evaluation', 'arm': 'early', 'completed': 700, 'total': 750}
+{'phase': 'evaluation', 'arm': 'early', 'completed': 750, 'total': 750}
+{'phase': 'evaluation', 'arm': 'late', 'completed': 50, 'total': 750}
+{'phase': 'evaluation', 'arm': 'late', 'completed': 100, 'total': 750}
+{'phase': 'evaluation', 'arm': 'late', 'completed': 150, 'total': 750}
+{'phase': 'evaluation', 'arm': 'late', 'completed': 200, 'total': 750}
+{'phase': 'evaluation', 'arm': 'late', 'completed': 250, 'total': 750}
+{'phase': 'evaluation', 'arm': 'late', 'completed': 300, 'total': 750}
+{'phase': 'evaluation', 'arm': 'late', 'completed': 350, 'total': 750}
+{'phase': 'evaluation', 'arm': 'late', 'completed': 400, 'total': 750}
+{'phase': 'evaluation', 'arm': 'late', 'completed': 450, 'total': 750}
+{'phase': 'evaluation', 'arm': 'late', 'completed': 500, 'total': 750}
+{'phase': 'evaluation', 'arm': 'late', 'completed': 550, 'total': 750}
+{'phase': 'evaluation', 'arm': 'late', 'completed': 600, 'total': 750}
+{'phase': 'evaluation', 'arm': 'late', 'completed': 650, 'total': 750}
+{'phase': 'evaluation', 'arm': 'late', 'completed': 700, 'total': 750}
+{'phase': 'evaluation', 'arm': 'late', 'completed': 750, 'total': 750}
