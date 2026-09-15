@@ -77,3 +77,4 @@
 {'phase': 'evaluation', 'arm': 'control', 'completed': 100, 'total': 750}
 {'phase': 'evaluation', 'arm': 'control', 'completed': 150, 'total': 750}
 {'phase': 'evaluation', 'arm': 'control', 'completed': 200, 'total': 750}
+{'phase': 'evaluation', 'arm': 'control', 'completed': 250, 'total': 750}
