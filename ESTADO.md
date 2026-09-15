@@ -637,3 +637,12 @@ Hipótesis:lectura temprana conserva información útil. experiments/compare_pro
 ## Consistencia propagación · en curso15sept2026
 
 Repetir conlectoresnuevos20261104/05,mismoencoder/grafofijo y3000updatesporbrazo. Runner experiments/repeat_propagation_time.py,coordinador runs/propagation-time-consistency-001,log benchmarks/propagation-time-consistency.log;hijos runs/propagation-time-20261104/5.750testpropiosporréplica5009/2507,1500únicos/disjuntos,principalmedia9early-late dedosnuevas,7secundario,pilotoexcluido. Protocolo PROTOCOLO_CONSISTENCIA_TIEMPO.md,reportero report_propagation_time_consistency.py,auditoríashijosylaidglobal. Sinpublicar nicambiaragenteservido;originalesintactos.
+
+
+## Consistencia propagación · terminada15sept05:05UTC
+
+Nuevas04/05en9early31/44vs late15/18de500,principal+4.2pp IC95%[+2.4,+6].7early70/57vs late62/50de250,+3pp[−1.4,+7.4].Ventaja9repetida,7inconcluso. Ambosgrafo/encoderfijospreentrenados3,lectoresnuevos3000updates.1500layoutstestúnicos;auditoríashijos/globalpasan,figurainspeccionada,informe RESULTADO_CONSISTENCIA_TIEMPO.md. Nociclosbiológicosni3cerebros.
+
+## Adaptación interfaz temprana · en curso15sept2026
+
+Siguientepiloto originalseed20261103 delprimerpar(prefijado,no escogermáximotest). experiments/train_early_interface.py,runs/early-interface-001,benchmarks/early-interface.log. Baselinecomponehead propagation-time-001/latest-early.pt yencoder deep-coverage/latest-autonomous,inrun baseline.pt sinmodificarfuentes. Ambos1ciclo,750updatesfijos,controlheadvsjointhead+encoder;Adamhead/RNGheredados,encoderAdam1e-4nuevo,head.001,clip5separado. Mismos16original+16old7+16old9+16new9. Grafo/gains/aristasfijos. TODAScaches1ciclo recomputadas yjointonline4microbatch16. Preflightrealgradientes/forward,mismo procedimientoauditado.750testnuevos5009/2507,principal9joint-control. Protocolo PROTOCOLO_INTERFAZ_TEMPRANA.md,reportero report_early_interface.py conauditoríaprovenanciabaselinecompuesto. Agenteservido/originalesintactos.

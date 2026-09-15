@@ -1,0 +1,142 @@
+# Consistencia de lectura temprana
+
+Principal dos nuevas9×9,1ciclo−3ciclos: +4.20pp,IC95%[+2.40,+6.00].
+
+![Resultados](propagation-time-consistency-results.png)
+
+Dos lectores nuevos,un cerebro/encoder fijo previamente adaptado a3ciclos.3000updates prefijados porbrazo,misma arquitectura/inicialización/muestras dentrodepar. 1500layouts únicos de test:750porréplica,compartidos entre brazos. Bootstrapestratificadoy pareadoporlayout. Piloto anterior excluido. Ambosbrazos usan grafo;no se equiparan ciclos con tiempobiológico. Agente servido intacto.
+
+```json
+{
+  "per_seed": {
+    "20261104": {
+      "7": {
+        "results": {
+          "early": {
+            "wins": 70,
+            "n": 250,
+            "safe_choices": 1337,
+            "safe_opportunities": 1494,
+            "known_mine_choices": 71,
+            "death_with_safe_available": 101
+          },
+          "late": {
+            "wins": 62,
+            "n": 250,
+            "safe_choices": 1238,
+            "safe_opportunities": 1376,
+            "known_mine_choices": 59,
+            "death_with_safe_available": 97
+          }
+        },
+        "early_minus_late": {
+          "delta_pp": 3.2,
+          "ci95_pp": [
+            -2.8000000000000003,
+            9.2
+          ]
+        }
+      },
+      "9": {
+        "results": {
+          "early": {
+            "wins": 31,
+            "n": 500,
+            "safe_choices": 3312,
+            "safe_opportunities": 3764,
+            "known_mine_choices": 182,
+            "death_with_safe_available": 272
+          },
+          "late": {
+            "wins": 15,
+            "n": 500,
+            "safe_choices": 2882,
+            "safe_opportunities": 3337,
+            "known_mine_choices": 194,
+            "death_with_safe_available": 294
+          }
+        },
+        "early_minus_late": {
+          "delta_pp": 3.2,
+          "ci95_pp": [
+            0.6,
+            5.800000000000001
+          ]
+        }
+      }
+    },
+    "20261105": {
+      "7": {
+        "results": {
+          "early": {
+            "wins": 57,
+            "n": 250,
+            "safe_choices": 1252,
+            "safe_opportunities": 1411,
+            "known_mine_choices": 70,
+            "death_with_safe_available": 98
+          },
+          "late": {
+            "wins": 50,
+            "n": 250,
+            "safe_choices": 1211,
+            "safe_opportunities": 1383,
+            "known_mine_choices": 76,
+            "death_with_safe_available": 111
+          }
+        },
+        "early_minus_late": {
+          "delta_pp": 2.8000000000000003,
+          "ci95_pp": [
+            -3.2,
+            8.799999999999999
+          ]
+        }
+      },
+      "9": {
+        "results": {
+          "early": {
+            "wins": 44,
+            "n": 500,
+            "safe_choices": 4232,
+            "safe_opportunities": 4763,
+            "known_mine_choices": 231,
+            "death_with_safe_available": 307
+          },
+          "late": {
+            "wins": 18,
+            "n": 500,
+            "safe_choices": 2986,
+            "safe_opportunities": 3463,
+            "known_mine_choices": 222,
+            "death_with_safe_available": 311
+          }
+        },
+        "early_minus_late": {
+          "delta_pp": 5.2,
+          "ci95_pp": [
+            2.6,
+            7.8
+          ]
+        }
+      }
+    }
+  },
+  "new_two_early_minus_late": {
+    "7": {
+      "delta_pp": 3.0,
+      "ci95_pp": [
+        -1.4,
+        7.3999999999999995
+      ]
+    },
+    "9": {
+      "delta_pp": 4.199999999999999,
+      "ci95_pp": [
+        2.4,
+        6.0
+      ]
+    }
+  }
+}
+```
