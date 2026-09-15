@@ -686,3 +686,8 @@ Intento preflight archivado sin updates: diferencia cache lote16 vsdirecto4 de5.
 ## Entrenamiento rotaciones cerrado15sept08:45UTC
 
 9aumentado49/control43de500,+1.2pp[-1.6,4];7aumentado85/control73de250,+4.8[-1.2,10.8]. Incierto,una inferencia no replicaensemble. Auditoría pasa yfigura inspeccionada. Siguiente ensemble-distillation-001/train_ensemble_distillation,log ensemble-distillation.log:profesor fijo4orientaciones early-interfacepiloto,alumnos nuevosseed09/3000updates,CEvs.5CE+.5KL(T2),mismosdatos/encoder/grafo1fijos.750testnuevos,protocolo DESTILACION,report_ensemble_distillation. Agente servido intacto.
+
+
+## Destilación cerrada15sept09:20UTC
+
+9destilado32/control30de500,+.4pp[-2.2,3];7destilado90/control86de250,+1.6[-3.2,6.4]. Sinmejora clara. Auditoría pasa,figura inspeccionada. Siguiente reflection-readout-001/evaluate_reflection_readout,log reflection-readout.log:8simetrías vs4rotaciones,mismo modelopiloto early-interface/latest-joint fijo1ciclo,750testnuevos,0updates,2xcoste nominal. Protocolo REFLEJOS;report_reflection_readout. Agenteservido intacto.
