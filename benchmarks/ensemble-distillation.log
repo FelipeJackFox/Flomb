@@ -32,3 +32,4 @@
 {'phase': 'evaluation', 'arm': 'distilled', 'completed': 400, 'total': 750}
 {'phase': 'evaluation', 'arm': 'distilled', 'completed': 450, 'total': 750}
 {'phase': 'evaluation', 'arm': 'distilled', 'completed': 500, 'total': 750}
+{'phase': 'evaluation', 'arm': 'distilled', 'completed': 550, 'total': 750}
