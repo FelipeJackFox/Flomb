@@ -568,3 +568,14 @@ Preflightrepaso: igualdadbitabitactividadfalló porredondeofloat32alrecomputarco
 ## Consistencia repaso7 · en curso15sept2026
 
 Dosnuevas03/04conigual1500adicionalesdesdesusparent9latest2250;datos/caches/DAgger7propiosporsemilla. Runner experiments/repeat_seven_rehearsal.py,coordinador runs/seven-rehearsal-consistency-001,log benchmarks/seven-rehearsal-consistency.log,hijos runs/seven-rehearsal-20261003/4. Test750propiosporréplica(2507+5009),disjuntosentre sí ydelhistórico;principalmedia7replay-control dedosnuevas,secundariocoste9/vsparent. Piloto02NOreutilizadoenprincipal. Bootstrapestratificadoporsemillaypareadoporl ayout:1500layoutstotales/uncerebro. Protocolo PROTOCOLO_CONSISTENCIA_REPASO_7X7.md. Parametrizados train/report mantienendefaultpiloto,reporteshijosdentroderuncorrespondiente para no pisar piloto. Reportero global report_seven_rehearsal_consistency.py. Originalesyagente servidointactos.
+
+
+## Consistencia repaso7 · terminada15sept01:20UTC
+
+Dosnuevas7:03parent49/control57/repaso64de250;04parent60/control50/repaso61. Principalrepaso-control+3.6pp IC95%[+.6,+6.6],vsparent+3.2pp[−.2,+6.6].9:03parent10/control8/repaso10de500;04parent14/control11/repaso13;vscontrol+.4pp[−.3,+1.1],vsparent−.1pp[−1.1,+.9]. Recuperación7vscontrolrepetida,coste9inconcluso(noformalnoinferioridad),rendimiento9aúnbajo. Auditoríasindividuales+1500layouts únicos/disjuntos/hash pasan,figurainspeccionada,informe RESULTADO_CONSISTENCIA_REPASO_7X7.md. Piloto02excluido.
+
+## Adaptación interfaz9 · en curso15sept2026
+
+Siguientepiloto02: experiments/train_nine_interface.py,runs/nine-interface-001,benchmarks/nine-interface.log. Desde seven-rehearsal-001/latest-replay.pt,750updatesfijos con16original+16DAgger7+32DAgger9;controlsololector vsconjuntolector+encoder. Mismospesos/Adamlector/RNG/índices,encoderAdam nuevo1e-4,head.001heredado,clip5porgruposeparado. Grafo/aristas/gainsneuronales fijos;online4microbatch16 paraencoder;controlcacheverificada. Último750antesdetest5009+2507nuevos;principal9joint-control,7retenciónsecundaria. Protocolo PROTOCOLO_INTERFAZ_9X9.md.
+
+JointInterface.activity ahora usa tamañosconmapeo registrado yrechaza faltantes;antes solo5/7igualquelarutacachehistórica. Testdense/gradientesexistente pasa. Preflightrealantesentrenarcompruebaforwardmezcla5/7/9,gradienteacumuladovscompleto,gradienteencoder9positivo,cachesactuales. Reportero report_nine_interface.py preparado;no reutilizarcachevieja trasadaptarencoder. Agente servido/originales intactos.

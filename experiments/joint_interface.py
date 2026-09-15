@@ -28,6 +28,10 @@ class JointInterface(torch.nn.Module):
 
     def activity(self, x, context, dense=None):
         b = self.brain; count = len(x); sizes = (context[:,0]*16).round().long()
+        mapped_sizes = sorted(set(sizes.tolist()))
+        for size in mapped_sizes:
+            if not 2 <= size <= 16 or not hasattr(b,f'out_{size}') or not hasattr(b,f'weight_{size}'):
+                raise ValueError(f'Missing output mapping for {size}x{size}')
         grid = x.reshape(count,16,16,10).permute(0,3,1,2)
         encoded = b.encoder(torch.cat([grid,context[:,:,None,None].expand(-1,-1,16,16)],1))
         encoded = encoded*(grid.sum(1,keepdim=True)!=0)
@@ -40,7 +44,7 @@ class JointInterface(torch.nn.Module):
             signal = FixedMessage.apply(self.gain*state,b.operator,self.values) if dense is None else dense@(self.gain*state)
             state = torch.tanh(signal+.15*drive)
         result = x.new_zeros(count,10,16,16)
-        for size in (5,7):
+        for size in mapped_sizes:
             selected = torch.nonzero(sizes==size).flatten()
             if not len(selected): continue
             ix, wt = getattr(b,f'out_{size}'), getattr(b,f'weight_{size}')
