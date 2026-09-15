@@ -1,0 +1,106 @@
+# Probabilidad total de elegir una segura
+
+Principal9×9, masa segura−CEuniforme: -0.80pp,IC95%[-2.80,+1.20].
+
+![Resultados](safe-mass-results.png)
+
+1500updates fijos desdeparent, mismos pesos/Adam/RNG/índices ybatches. Solo cambia objetivo: CEuniforme sobretodaslasetiquetasseguras frente−logdelaprobabilidadtotaldelconjuntoseguro. No hay filtros delmaestro eninferencia,etiquetas usan solo información pública. Encoder/grafo fijos,features recomputadas paraencoderactual,datosidénticos16original+16old7+16old9+16new9autónomos. Test750layouts nuevos compartidos5009/2507,una semilla/un cerebro. Último1500prefijado;no comparar pérdidas numéricas entre objetivos como evidencia de rendimiento. Retención7secundaria,agente servido intacto.
+
+```json
+{
+  "7": {
+    "results": {
+      "baseline": {
+        "wins": 52,
+        "n": 250,
+        "safe_choices": 1267,
+        "safe_opportunities": 1435,
+        "known_mine_choices": 78,
+        "death_with_safe_available": 116,
+        "death_after_exact_half_min_risk": 0
+      },
+      "uniform": {
+        "wins": 63,
+        "n": 250,
+        "safe_choices": 1325,
+        "safe_opportunities": 1478,
+        "known_mine_choices": 74,
+        "death_with_safe_available": 104,
+        "death_after_exact_half_min_risk": 1
+      },
+      "mass": {
+        "wins": 68,
+        "n": 250,
+        "safe_choices": 1350,
+        "safe_opportunities": 1488,
+        "known_mine_choices": 61,
+        "death_with_safe_available": 96,
+        "death_after_exact_half_min_risk": 1
+      }
+    },
+    "comparisons": {
+      "uniform": {
+        "delta_pp": 2.0,
+        "ci95_pp": [
+          -3.2,
+          7.199999999999999
+        ]
+      },
+      "baseline": {
+        "delta_pp": 6.4,
+        "ci95_pp": [
+          1.6,
+          11.600000000000001
+        ]
+      }
+    }
+  },
+  "9": {
+    "results": {
+      "baseline": {
+        "wins": 27,
+        "n": 500,
+        "safe_choices": 3077,
+        "safe_opportunities": 3581,
+        "known_mine_choices": 194,
+        "death_with_safe_available": 292,
+        "death_after_exact_half_min_risk": 1
+      },
+      "uniform": {
+        "wins": 28,
+        "n": 500,
+        "safe_choices": 3013,
+        "safe_opportunities": 3499,
+        "known_mine_choices": 194,
+        "death_with_safe_available": 288,
+        "death_after_exact_half_min_risk": 0
+      },
+      "mass": {
+        "wins": 24,
+        "n": 500,
+        "safe_choices": 3280,
+        "safe_opportunities": 3747,
+        "known_mine_choices": 199,
+        "death_with_safe_available": 299,
+        "death_after_exact_half_min_risk": 1
+      }
+    },
+    "comparisons": {
+      "uniform": {
+        "delta_pp": -0.8,
+        "ci95_pp": [
+          -2.8000000000000003,
+          1.2
+        ]
+      },
+      "baseline": {
+        "delta_pp": -0.6,
+        "ci95_pp": [
+          -2.6,
+          1.4000000000000001
+        ]
+      }
+    }
+  }
+}
+```

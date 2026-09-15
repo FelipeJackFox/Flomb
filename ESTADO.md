@@ -610,3 +610,12 @@ Evaluaciónautónoma9:parent20/500,datosautónomos28/500,datoscorregidos22/500;p
 Experimento experiments/train_safe_mass.py,runs/safe-mass-001,benchmarks/safe-mass.log. Parentdeep-coverage/latest-autonomous1500 (prefijadoparahipótesis),1500adicionaleslector,encoder/grafofijos. Mismosdatos16original+16old7+16old9+16new9autónomos,Adam/RNG/índices/batchesidénticos. SoloobjetivoCEuniformesobretodasetiquetassegurasvs−logmasaprobabilísticatotaldelconjuntoseguro;se permiteconcentrarenunasegura. Sinauxiliares/filtros/nuevacolección. Último1500fijopretest750nuevos5009+2507,principal9mass-uniform,retención7secundaria. Protocolo PROTOCOLO_MASA_SEGURA.md,reportero report_safe_mass.py.
 
 4tests pasan:singletonCEvalor/gradiente,ilegalgrad0,invarianciarepartodentroseguras,desplazamientologits/todasseguras,rechazoetiquetasinválidas. Featuresrecomputadasconencoderactual. No afirmaréxitoporlossmenor(esobjetivodistinto). Agenteservido/originalesintactos.
+
+
+## Masa segura · terminada15sept03:28UTC
+
+9parent27/500,uniforme28/500,masa24/500;principal−.8pp IC95%[−2.8,+1.2],vsparent−.6pp[−2.6,+1.4]. No mejora9concluyente.7parent52/250,uniforme63,masa68. Auditoríapares/encoderfijo/hash/endpoint/layouts pasa;figurainspeccionada,informe RESULTADO_MASA_SEGURA.md. No adoptarcambioporguancia7puntualni lossdistinto.
+
+## Comparación entradas con datos9 · en curso15sept2026
+
+Nuevo diagnóstico experiments/compare_nine_representation.py,runs/nine-representation-001,benchmarks/nine-representation.log. Mismolector12769param NUEVOenambos,seed20261103,Adam.001nuevo,3000updatesfijos ybatchesidénticos16original+16old7+16old9+16new9autónomos. Raw10canalespistasvsbrain10actividadconencoderactualadaptado9fijo;amboscontextopúblico. Noheredarheadbrainpararaw. Test5009+2507nuevoscompartidos,principal9raw-brain,secundario7. Noigualacomputohistóricototal;una inicialización/un cerebro,noinviabilidadbiológica. Protocolo PROTOCOLO_REPRESENTACION_9X9.md,reportero report_nine_representation.py. Antigua comparacióninputs era7condatos5/7;esta prueba usa dominio9yencoderadaptado9. Rawescontrol,sinatribuirlecerebro. Agente servido/originalesintactos.
