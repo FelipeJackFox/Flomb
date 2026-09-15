@@ -588,3 +588,14 @@ JointInterface.activity ahora usa tamañosconmapeo registrado yrechaza faltantes
 ## Diagnóstico asistencia pública · en curso15sept2026
 
 Antesdeentrenarmás,experiments/evaluate_assistance.py,runs/assistance-diagnostic-001,benchmarks/assistance-diagnostic.log. Checkpointlatestjoint750 fijocomoobjetodiagnóstico,no ganadorelegido.500nuevos9×9/12 compartidos cuatrobrazos:autónomo,corregir50%propuestasqueomiten segura,corregir100%,solverpúblicocompleto(incluyeprobabilidadheurísticacuandoexactonoalcanza). Soloautónomoesrendimientodelagente. Sinentrenamiento,nicambiosagenteservido. Noatribuirvictoriasasistidasaaprendizaje niverloscomocotaóptima. Preflight compara16partidasautónomasconevalexistente,traceestadovisible/propuesta/acción/intervención en cadapaso para auditoríareconstruccióncompleta. Protocolo PROTOCOLO_DIAGNOSTICO_ASISTENCIA.md,reportero report_assistance.py. Lastrayectoriasdivergen,lasdiferenciasno soncomponentescausalesaditivosdelerror.
+
+
+## Diagnóstico asistencia · terminado15sept02:24UTC
+
+500nuevos9:autónomo19(3.8%),corrige50%44(8.8%),corrige100%275(55%),solvercompleto351(70.2%). Intervencionesdelegadas0/365/2048/9462;erroreseligibles424/723/2048/1518 respectivamente. SOLOprimeroautónomo;restoasistidos,nolearningni cotasóptimas. Auditoríareconstruyeestados/accionespúblicas/layouts/hashyparidadpasada,figurainspeccionada,informe RESULTADO_DIAGNOSTICO_ASISTENCIA.md. Trayectoriasdivergen,noparticióncausaladitiva.
+
+## Cobertura con recolección corregida · en curso15sept2026
+
+Hipótesis estadosavanzadosfaltanporqueautónomomuerepronto. experiments/train_deep_coverage.py,runs/deep-coverage-001,benchmarks/deep-coverage.log.400nuevoslayouts9colecciónpareadaautónoma vsseguridadcorregida100%;políticafijalatestjoint750,públicoseguros. Guardartraces/etiquetasprofundidad/ocultas;maestroactúasoloenrecolecciónexperimental.1500updatesporbrazo,mismosheadAdam/RNG,16original+16old7+16old9+16datosnuevosbrazo;primeros48idénticos,nuevosuniformescompartidosdistintostamañosdepósitos. Encoder/grafofijos actualadaptado9;RECOMPUTARtodasfeatures(no cachesviejas).
+
+EvaluaciónfinalSIEMPREAUTÓNOMA750nuevos5009+2507frenteparent/controlautonomous-trained/assisted-trained,último1500prefijado. Protocolo PROTOCOLO_COBERTURA_PROFUNDA.md,reportero report_deep_coverage.py auditaacciones/etiquetaspúblicascolecciónytestseparado. Noatribuircambiossoloa profundidad porque cantidadestadostambiéncambia. Agenteservido/originalesintactos.
