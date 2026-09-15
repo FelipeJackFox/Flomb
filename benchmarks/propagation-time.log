@@ -21,3 +21,5 @@
 {'phase': 'training', 'arm': 'late', 'step': 2250}
 {'phase': 'training', 'arm': 'late', 'step': 2500}
 {'phase': 'training', 'arm': 'late', 'step': 2750}
+{'phase': 'training', 'arm': 'late', 'step': 3000}
+{'phase': 'evaluation', 'arm': 'early', 'completed': 50, 'total': 750}
