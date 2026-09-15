@@ -39,3 +39,4 @@
 {'phase': 'evaluation', 'arm': 'uniform', 'completed': 600, 'total': 750}
 {'phase': 'evaluation', 'arm': 'uniform', 'completed': 650, 'total': 750}
 {'phase': 'evaluation', 'arm': 'uniform', 'completed': 700, 'total': 750}
+{'phase': 'evaluation', 'arm': 'uniform', 'completed': 750, 'total': 750}
