@@ -160,3 +160,5 @@
 {'phase': 'training', 'arm': 'joint', 'step': 625}
 {'phase': 'training', 'arm': 'joint', 'step': 650}
 {'phase': 'training', 'arm': 'joint', 'step': 675}
+{'phase': 'training', 'arm': 'joint', 'step': 700}
+{'phase': 'training', 'arm': 'joint', 'step': 725}
