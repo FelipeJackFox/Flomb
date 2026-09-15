@@ -1,0 +1,142 @@
+# Consistencia de cuatro orientaciones
+
+Principal dos nuevas9×9,rotaciones−identidad: +16.90pp,IC95%[+14.20,+19.70].
+
+![Resultados](rotation-consistency-results.png)
+
+Dos modelos adaptados previamente con1ciclo,pesos fijos,0updates. Mismo modelo porpar,cuatro orientaciones vsidentidad;4x inferencia nominal, no presupuesto igualado. 1500layouts únicos de test:750porréplica,compartidos entre brazos. Bootstrapestratificadoy pareadoporlayout. Piloto anterior excluido. Ambosbrazos usan grafo;no se equiparan ciclos con tiempobiológico. Agente servido intacto.
+
+```json
+{
+  "per_seed": {
+    "20261104": {
+      "7": {
+        "results": {
+          "rotated": {
+            "wins": 106,
+            "n": 250,
+            "safe_choices": 1754,
+            "safe_opportunities": 1876,
+            "known_mine_choices": 56,
+            "death_with_safe_available": 76
+          },
+          "identity": {
+            "wins": 69,
+            "n": 250,
+            "safe_choices": 1349,
+            "safe_opportunities": 1502,
+            "known_mine_choices": 72,
+            "death_with_safe_available": 94
+          }
+        },
+        "rotated_minus_identity": {
+          "delta_pp": 14.799999999999999,
+          "ci95_pp": [
+            7.6,
+            22.0
+          ]
+        }
+      },
+      "9": {
+        "results": {
+          "rotated": {
+            "wins": 118,
+            "n": 500,
+            "safe_choices": 4845,
+            "safe_opportunities": 5191,
+            "known_mine_choices": 127,
+            "death_with_safe_available": 190
+          },
+          "identity": {
+            "wins": 39,
+            "n": 500,
+            "safe_choices": 3643,
+            "safe_opportunities": 4125,
+            "known_mine_choices": 185,
+            "death_with_safe_available": 277
+          }
+        },
+        "rotated_minus_identity": {
+          "delta_pp": 15.8,
+          "ci95_pp": [
+            12.0,
+            19.6
+          ]
+        }
+      }
+    },
+    "20261105": {
+      "7": {
+        "results": {
+          "rotated": {
+            "wins": 113,
+            "n": 250,
+            "safe_choices": 1747,
+            "safe_opportunities": 1859,
+            "known_mine_choices": 35,
+            "death_with_safe_available": 59
+          },
+          "identity": {
+            "wins": 69,
+            "n": 250,
+            "safe_choices": 1507,
+            "safe_opportunities": 1676,
+            "known_mine_choices": 85,
+            "death_with_safe_available": 107
+          }
+        },
+        "rotated_minus_identity": {
+          "delta_pp": 17.599999999999998,
+          "ci95_pp": [
+            11.200000000000001,
+            24.0
+          ]
+        }
+      },
+      "9": {
+        "results": {
+          "rotated": {
+            "wins": 128,
+            "n": 500,
+            "safe_choices": 5165,
+            "safe_opportunities": 5547,
+            "known_mine_choices": 134,
+            "death_with_safe_available": 208
+          },
+          "identity": {
+            "wins": 38,
+            "n": 500,
+            "safe_choices": 3992,
+            "safe_opportunities": 4500,
+            "known_mine_choices": 215,
+            "death_with_safe_available": 302
+          }
+        },
+        "rotated_minus_identity": {
+          "delta_pp": 18.0,
+          "ci95_pp": [
+            14.000000000000002,
+            22.0
+          ]
+        }
+      }
+    }
+  },
+  "new_two_rotated_minus_identity": {
+    "7": {
+      "delta_pp": 16.2,
+      "ci95_pp": [
+        11.4,
+        21.000000000000004
+      ]
+    },
+    "9": {
+      "delta_pp": 16.9,
+      "ci95_pp": [
+        14.2,
+        19.7
+      ]
+    }
+  }
+}
+```

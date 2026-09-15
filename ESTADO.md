@@ -676,3 +676,8 @@ Intento preflight archivado sin updates: diferencia cache lote16 vsdirecto4 de5.
 ## Rotaciones piloto cerrado15sept07:42UTC
 
 9rotado119/500 vsidentidad39/500,+16pp IC95[12.4,19.8].7rotado98/250vs74/250,+9.6pp[3.2,16]. Diagnóstico favorable,sinupdates,4xinferencia nominal. Auditoría pesos/hash/750layouts pasa,figura inspeccionada. Siguiente rotation-consistency-001,repeat_rotation_readout,log rotation-consistency.log: modelosadaptados04/05,1500test nuevos disjuntos,principalmedia9sinpiloto. Protocolo CONSISTENCIA_ROTACIONES;report_rotation_consistency. Agente servido intacto.
+
+
+## Consistencia rotaciones cerrada15sept08:14UTC
+
+9rotado118/128vsidentidad39/38de500,+16.9pp[14.2,19.7];7rotado106/113vs69/69de250,+16.2pp[11.4,21]. Auditorías hijos/global1500layouts pasan,figura inspeccionada. Siguiente rotation-training-001/train_rotation_augmentation,log rotation-training.log:encoderpiloto fijo1ciclo,heads nuevosseed08/3000updates,originalvsrotaciónuniformeporposición/labels;ambos una inferencia.750testnuevos,protocolo ENTRENAMIENTO_ROTACIONES;report_rotation_training. Agenteservido intacto.
