@@ -1,0 +1,54 @@
+{'phase': 'training', 'arm': 'combined', 'step': 250}
+{'phase': 'training', 'arm': 'combined', 'step': 500}
+{'phase': 'training', 'arm': 'combined', 'step': 750}
+{'phase': 'training', 'arm': 'combined', 'step': 1000}
+{'phase': 'training', 'arm': 'combined', 'step': 1250}
+{'phase': 'training', 'arm': 'combined', 'step': 1500}
+{'phase': 'training', 'arm': 'combined', 'step': 1750}
+{'phase': 'training', 'arm': 'combined', 'step': 2000}
+{'phase': 'training', 'arm': 'combined', 'step': 2250}
+{'phase': 'training', 'arm': 'combined', 'step': 2500}
+{'phase': 'training', 'arm': 'combined', 'step': 2750}
+{'phase': 'training', 'arm': 'combined', 'step': 3000}
+{'phase': 'training', 'arm': 'control', 'step': 250}
+{'phase': 'training', 'arm': 'control', 'step': 500}
+{'phase': 'training', 'arm': 'control', 'step': 750}
+{'phase': 'training', 'arm': 'control', 'step': 1000}
+{'phase': 'training', 'arm': 'control', 'step': 1250}
+{'phase': 'training', 'arm': 'control', 'step': 1500}
+{'phase': 'training', 'arm': 'control', 'step': 1750}
+{'phase': 'training', 'arm': 'control', 'step': 2000}
+{'phase': 'training', 'arm': 'control', 'step': 2250}
+{'phase': 'training', 'arm': 'control', 'step': 2500}
+{'phase': 'training', 'arm': 'control', 'step': 2750}
+{'phase': 'training', 'arm': 'control', 'step': 3000}
+{'phase': 'evaluation', 'arm': 'combined', 'completed': 50, 'total': 750}
+{'phase': 'evaluation', 'arm': 'combined', 'completed': 100, 'total': 750}
+{'phase': 'evaluation', 'arm': 'combined', 'completed': 150, 'total': 750}
+{'phase': 'evaluation', 'arm': 'combined', 'completed': 200, 'total': 750}
+{'phase': 'evaluation', 'arm': 'combined', 'completed': 250, 'total': 750}
+{'phase': 'evaluation', 'arm': 'combined', 'completed': 300, 'total': 750}
+{'phase': 'evaluation', 'arm': 'combined', 'completed': 350, 'total': 750}
+{'phase': 'evaluation', 'arm': 'combined', 'completed': 400, 'total': 750}
+{'phase': 'evaluation', 'arm': 'combined', 'completed': 450, 'total': 750}
+{'phase': 'evaluation', 'arm': 'combined', 'completed': 500, 'total': 750}
+{'phase': 'evaluation', 'arm': 'combined', 'completed': 550, 'total': 750}
+{'phase': 'evaluation', 'arm': 'combined', 'completed': 600, 'total': 750}
+{'phase': 'evaluation', 'arm': 'combined', 'completed': 650, 'total': 750}
+{'phase': 'evaluation', 'arm': 'combined', 'completed': 700, 'total': 750}
+{'phase': 'evaluation', 'arm': 'combined', 'completed': 750, 'total': 750}
+{'phase': 'evaluation', 'arm': 'control', 'completed': 50, 'total': 750}
+{'phase': 'evaluation', 'arm': 'control', 'completed': 100, 'total': 750}
+{'phase': 'evaluation', 'arm': 'control', 'completed': 150, 'total': 750}
+{'phase': 'evaluation', 'arm': 'control', 'completed': 200, 'total': 750}
+{'phase': 'evaluation', 'arm': 'control', 'completed': 250, 'total': 750}
+{'phase': 'evaluation', 'arm': 'control', 'completed': 300, 'total': 750}
+{'phase': 'evaluation', 'arm': 'control', 'completed': 350, 'total': 750}
+{'phase': 'evaluation', 'arm': 'control', 'completed': 400, 'total': 750}
+{'phase': 'evaluation', 'arm': 'control', 'completed': 450, 'total': 750}
+{'phase': 'evaluation', 'arm': 'control', 'completed': 500, 'total': 750}
+{'phase': 'evaluation', 'arm': 'control', 'completed': 550, 'total': 750}
+{'phase': 'evaluation', 'arm': 'control', 'completed': 600, 'total': 750}
+{'phase': 'evaluation', 'arm': 'control', 'completed': 650, 'total': 750}
+{'phase': 'evaluation', 'arm': 'control', 'completed': 700, 'total': 750}
+{'phase': 'evaluation', 'arm': 'control', 'completed': 750, 'total': 750}
