@@ -19,13 +19,15 @@ from experiments.scaled_train import evaluate_games
 OUT=Path('runs/early-interface-001');PARENT=Path('runs/propagation-time-001/latest-early.pt')
 ENCODER=Path('runs/deep-coverage-001/latest-autonomous.pt')
 
-def main():
+def main(out=OUT,parent_path=PARENT,seed=20261103):
+    global OUT,PARENT
+    OUT=Path(out);PARENT=Path(parent_path)
     torch.set_num_threads(1);OUT.mkdir(exist_ok=False)
     paths=[PARENT,MAPPING,BASE/'training/retina_plastic-20260926.pt',BASE/'dataset.pkl',Path('runs/hybrid-001/checkpoint.pkl'),
         Path('runs/nine-dagger-001/dataset.pkl'),Path('runs/adapted-dagger-001/dataset.pkl'),
         Path('runs/deep-coverage-001/states-autonomous.pkl'),ENCODER]
     hashes={str(p):digest(p) for p in paths}
-    write_json(OUT/'manifest.json',dict(seed=20261103,updates=750,cycles=1,batch=64,microbatch=16,hashes=hashes,
+    write_json(OUT/'manifest.json',dict(seed=seed,parent=str(PARENT),updates=750,cycles=1,batch=64,microbatch=16,hashes=hashes,
         primary='9x9 joint minus control',secondary='7retention and vsearly parent',
         mixture='16original+16inherited7+16old9+16fresh9',encoder_lr=.0001,head_lr=.001,clip='5 separately for head and encoder',checkpoint='fixed last750'))
     (OUT/'source').mkdir()

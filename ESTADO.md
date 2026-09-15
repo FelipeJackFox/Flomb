@@ -651,3 +651,8 @@ Siguientepiloto originalseed20261103 delprimerpar(prefijado,no escogermáximotes
 ## Recuperación interfaz temprana15sept05:22UTC
 
 Intento preflight archivado sin updates: diferencia cache lote16 vsdirecto4 de5.25e-6. Reproducción con mismo lote/deduplicación ahora debe ser exacta; diagnóstico4vs16 registrado, actividad entre lotes atol1e-5/rtol1e-5, otras verificaciones sin relajar. Reinicio en early-interface-001 con test nuevo, fuentes originales intactas.
+
+
+## Interfaz temprana cerrada15sept05:46UTC
+
+9baseline33/control36/joint44 de500; joint-control+1.6pp IC95[-.2,3.6].7baseline59/control69/joint66 de250,−1.2pp[-6,3.6]. Señal incierta. Auditoría pasa, figura inspeccionada. Siguiente consistencia early-interface-consistency-001,runner repeat_early_interface,log early-interface-consistency.log: padres tempranos04/05,750updates porbrazo,encoder común,1500test nuevos total. Protocolo CONSISTENCIA_INTERFAZ_TEMPRANA prefijado;reportero report_early_interface_consistency. Originales/agente servido intactos.

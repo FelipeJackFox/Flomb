@@ -23,7 +23,7 @@ def main(out=OUT):
     assert digest(OUT/'evaluation-checkpoints.json')==json.loads((OUT/'evaluation-seal.json').read_text())['sha256']
     PARENT=Path(json.loads((OUT/'evaluation-checkpoints.json').read_text())['baseline']['path'])
     parent=torch.load(PARENT,weights_only=False)
-    source_head=torch.load('runs/propagation-time-001/latest-early.pt',weights_only=False)
+    source_head=torch.load(m.get('parent','runs/propagation-time-001/latest-early.pt'),weights_only=False)
     source_encoder=torch.load('runs/deep-coverage-001/latest-autonomous.pt',weights_only=False)
     assert tensor_hash(parent['head'])==tensor_hash(source_head['head'])
     assert tensor_hash(parent['encoder'])==tensor_hash(source_encoder['encoder'])
@@ -59,9 +59,9 @@ def main(out=OUT):
         ax.bar(range(3),values,color=['#899398','#9068b0','#089aa0'])
         for i,c in enumerate(cc):ax.text(i,values[i]+.4,f"{c['wins']}/{c['n']}",ha='center')
         ax.set_xticks(range(3),['Padre1ciclo','Solo lector','Lector + encoder']);ax.set_title(f'{size}×{size}');ax.set_ylabel('Victorias (%)');ax.set_ylim(0,max(values)+7)
-    fig.savefig('research/early-interface-results.png',dpi=150);plt.close(fig)
+    fig.savefig('research/early-interface-results.png' if OUT.name=='early-interface-001' else OUT/'results.png',dpi=150);plt.close(fig)
     c=summary['9']['comparisons']['control'];lo,hi=c['ci95_pp']
-    Path('research/RESULTADO_INTERFAZ_TEMPRANA.md').write_text(
+    (Path('research/RESULTADO_INTERFAZ_TEMPRANA.md') if OUT.name=='early-interface-001' else OUT/'report.md').write_text(
         '# Adaptación de interfaz a1ciclo\n\n'
         f"Principal9×9, conjunto−control: {c['delta_pp']:+.2f}pp,IC95%[{lo:+.2f},{hi:+.2f}].\n\n"
         '![Resultados](early-interface-results.png)\n\n'
