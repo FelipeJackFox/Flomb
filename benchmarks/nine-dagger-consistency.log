@@ -88,3 +88,112 @@ collection 192 {'games': 300, 'wins': 0, 'clicks': 1036, 'safe_opportunities': 6
 collection 208 {'games': 300, 'wins': 0, 'clicks': 1107, 'safe_opportunities': 687, 'safe_choices': 433, 'teacher_actions': 0}
 collection 224 {'games': 300, 'wins': 0, 'clicks': 1206, 'safe_opportunities': 742, 'safe_choices': 468, 'teacher_actions': 0}
 collection 240 {'games': 300, 'wins': 0, 'clicks': 1250, 'safe_opportunities': 756, 'safe_choices': 476, 'teacher_actions': 0}
+collection 256 {'games': 300, 'wins': 0, 'clicks': 1385, 'safe_opportunities': 855, 'safe_choices': 551, 'teacher_actions': 0}
+collection 272 {'games': 300, 'wins': 0, 'clicks': 1522, 'safe_opportunities': 965, 'safe_choices': 626, 'teacher_actions': 0}
+collection 288 {'games': 300, 'wins': 0, 'clicks': 1622, 'safe_opportunities': 1038, 'safe_choices': 669, 'teacher_actions': 0}
+collection 300 {'games': 300, 'wins': 0, 'clicks': 1698, 'safe_opportunities': 1089, 'safe_choices': 700, 'teacher_actions': 0}
+{'phase': 'training', 'variant': 'control', 'round': 1, 'step': 250, 'validation_loss': 1.7953461074829102, 'aggregated_positions': 1089}
+{'phase': 'training', 'variant': 'control', 'round': 1, 'step': 500, 'validation_loss': 1.8022635002136231, 'aggregated_positions': 1089}
+{'phase': 'training', 'variant': 'control', 'round': 1, 'step': 750, 'validation_loss': 1.8118438892364501, 'aggregated_positions': 1089}
+{'phase': 'training', 'variant': 'dagger', 'round': 1, 'step': 250, 'validation_loss': 1.8092648849487305, 'aggregated_positions': 1089}
+{'phase': 'training', 'variant': 'dagger', 'round': 1, 'step': 500, 'validation_loss': 1.805200746536255, 'aggregated_positions': 1089}
+{'phase': 'training', 'variant': 'dagger', 'round': 1, 'step': 750, 'validation_loss': 1.8133413639068603, 'aggregated_positions': 1089}
+collection 16 {'games': 300, 'wins': 0, 'clicks': 79, 'safe_opportunities': 34, 'safe_choices': 24, 'teacher_actions': 0}
+collection 32 {'games': 300, 'wins': 0, 'clicks': 191, 'safe_opportunities': 127, 'safe_choices': 98, 'teacher_actions': 0}
+collection 48 {'games': 300, 'wins': 1, 'clicks': 302, 'safe_opportunities': 200, 'safe_choices': 157, 'teacher_actions': 0}
+collection 64 {'games': 300, 'wins': 1, 'clicks': 387, 'safe_opportunities': 253, 'safe_choices': 198, 'teacher_actions': 0}
+collection 80 {'games': 300, 'wins': 1, 'clicks': 533, 'safe_opportunities': 367, 'safe_choices': 291, 'teacher_actions': 0}
+collection 96 {'games': 300, 'wins': 1, 'clicks': 670, 'safe_opportunities': 478, 'safe_choices': 384, 'teacher_actions': 0}
+collection 112 {'games': 300, 'wins': 1, 'clicks': 742, 'safe_opportunities': 514, 'safe_choices': 409, 'teacher_actions': 0}
+collection 128 {'games': 300, 'wins': 1, 'clicks': 830, 'safe_opportunities': 567, 'safe_choices': 448, 'teacher_actions': 0}
+collection 144 {'games': 300, 'wins': 1, 'clicks': 902, 'safe_opportunities': 620, 'safe_choices': 489, 'teacher_actions': 0}
+collection 160 {'games': 300, 'wins': 2, 'clicks': 1084, 'safe_opportunities': 784, 'safe_choices': 621, 'teacher_actions': 0}
+collection 176 {'games': 300, 'wins': 2, 'clicks': 1174, 'safe_opportunities': 846, 'safe_choices': 667, 'teacher_actions': 0}
+collection 192 {'games': 300, 'wins': 2, 'clicks': 1289, 'safe_opportunities': 932, 'safe_choices': 738, 'teacher_actions': 0}
+collection 208 {'games': 300, 'wins': 2, 'clicks': 1398, 'safe_opportunities': 1017, 'safe_choices': 810, 'teacher_actions': 0}
+collection 224 {'games': 300, 'wins': 2, 'clicks': 1542, 'safe_opportunities': 1116, 'safe_choices': 889, 'teacher_actions': 0}
+collection 240 {'games': 300, 'wins': 2, 'clicks': 1698, 'safe_opportunities': 1243, 'safe_choices': 989, 'teacher_actions': 0}
+collection 256 {'games': 300, 'wins': 2, 'clicks': 1822, 'safe_opportunities': 1326, 'safe_choices': 1058, 'teacher_actions': 0}
+collection 272 {'games': 300, 'wins': 3, 'clicks': 1955, 'safe_opportunities': 1437, 'safe_choices': 1145, 'teacher_actions': 0}
+collection 288 {'games': 300, 'wins': 3, 'clicks': 2048, 'safe_opportunities': 1502, 'safe_choices': 1193, 'teacher_actions': 0}
+collection 300 {'games': 300, 'wins': 3, 'clicks': 2120, 'safe_opportunities': 1548, 'safe_choices': 1230, 'teacher_actions': 0}
+{'phase': 'training', 'variant': 'control', 'round': 2, 'step': 1000, 'validation_loss': 1.8112313652038574, 'aggregated_positions': 2637}
+{'phase': 'training', 'variant': 'control', 'round': 2, 'step': 1250, 'validation_loss': 1.8121381931304932, 'aggregated_positions': 2637}
+{'phase': 'training', 'variant': 'control', 'round': 2, 'step': 1500, 'validation_loss': 1.8144840965270996, 'aggregated_positions': 2637}
+{'phase': 'training', 'variant': 'dagger', 'round': 2, 'step': 1000, 'validation_loss': 1.8149817619323731, 'aggregated_positions': 2637}
+{'phase': 'training', 'variant': 'dagger', 'round': 2, 'step': 1250, 'validation_loss': 1.8102353553771973, 'aggregated_positions': 2637}
+{'phase': 'training', 'variant': 'dagger', 'round': 2, 'step': 1500, 'validation_loss': 1.8166083736419678, 'aggregated_positions': 2637}
+collection 16 {'games': 300, 'wins': 0, 'clicks': 100, 'safe_opportunities': 56, 'safe_choices': 41, 'teacher_actions': 0}
+collection 32 {'games': 300, 'wins': 0, 'clicks': 203, 'safe_opportunities': 122, 'safe_choices': 93, 'teacher_actions': 0}
+collection 48 {'games': 300, 'wins': 1, 'clicks': 314, 'safe_opportunities': 212, 'safe_choices': 164, 'teacher_actions': 0}
+collection 64 {'games': 300, 'wins': 1, 'clicks': 451, 'safe_opportunities': 305, 'safe_choices': 240, 'teacher_actions': 0}
+collection 80 {'games': 300, 'wins': 2, 'clicks': 609, 'safe_opportunities': 417, 'safe_choices': 336, 'teacher_actions': 0}
+collection 96 {'games': 300, 'wins': 2, 'clicks': 691, 'safe_opportunities': 463, 'safe_choices': 371, 'teacher_actions': 0}
+collection 112 {'games': 300, 'wins': 2, 'clicks': 821, 'safe_opportunities': 566, 'safe_choices': 442, 'teacher_actions': 0}
+collection 128 {'games': 300, 'wins': 2, 'clicks': 940, 'safe_opportunities': 653, 'safe_choices': 507, 'teacher_actions': 0}
+collection 144 {'games': 300, 'wins': 2, 'clicks': 1058, 'safe_opportunities': 739, 'safe_choices': 566, 'teacher_actions': 0}
+collection 160 {'games': 300, 'wins': 3, 'clicks': 1173, 'safe_opportunities': 818, 'safe_choices': 631, 'teacher_actions': 0}
+collection 176 {'games': 300, 'wins': 3, 'clicks': 1310, 'safe_opportunities': 912, 'safe_choices': 709, 'teacher_actions': 0}
+collection 192 {'games': 300, 'wins': 3, 'clicks': 1405, 'safe_opportunities': 988, 'safe_choices': 770, 'teacher_actions': 0}
+collection 208 {'games': 300, 'wins': 4, 'clicks': 1507, 'safe_opportunities': 1057, 'safe_choices': 832, 'teacher_actions': 0}
+collection 224 {'games': 300, 'wins': 4, 'clicks': 1659, 'safe_opportunities': 1162, 'safe_choices': 917, 'teacher_actions': 0}
+collection 240 {'games': 300, 'wins': 4, 'clicks': 1767, 'safe_opportunities': 1242, 'safe_choices': 987, 'teacher_actions': 0}
+collection 256 {'games': 300, 'wins': 4, 'clicks': 1883, 'safe_opportunities': 1326, 'safe_choices': 1054, 'teacher_actions': 0}
+collection 272 {'games': 300, 'wins': 4, 'clicks': 2040, 'safe_opportunities': 1455, 'safe_choices': 1167, 'teacher_actions': 0}
+collection 288 {'games': 300, 'wins': 4, 'clicks': 2192, 'safe_opportunities': 1558, 'safe_choices': 1249, 'teacher_actions': 0}
+collection 300 {'games': 300, 'wins': 4, 'clicks': 2269, 'safe_opportunities': 1606, 'safe_choices': 1287, 'teacher_actions': 0}
+{'phase': 'training', 'variant': 'control', 'round': 3, 'step': 1750, 'validation_loss': 1.8128928718566895, 'aggregated_positions': 4243}
+{'phase': 'training', 'variant': 'control', 'round': 3, 'step': 2000, 'validation_loss': 1.820657461166382, 'aggregated_positions': 4243}
+{'phase': 'training', 'variant': 'control', 'round': 3, 'step': 2250, 'validation_loss': 1.8316579246520996, 'aggregated_positions': 4243}
+{'phase': 'training', 'variant': 'dagger', 'round': 3, 'step': 1750, 'validation_loss': 1.8038956756591797, 'aggregated_positions': 4243}
+{'phase': 'training', 'variant': 'dagger', 'round': 3, 'step': 2000, 'validation_loss': 1.8084736595153807, 'aggregated_positions': 4243}
+{'phase': 'training', 'variant': 'dagger', 'round': 3, 'step': 2250, 'validation_loss': 1.8026501426696777, 'aggregated_positions': 4243}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'baseline', 'completed': 50, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'baseline', 'completed': 100, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'baseline', 'completed': 150, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'baseline', 'completed': 200, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'baseline', 'completed': 250, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'baseline', 'completed': 300, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'baseline', 'completed': 350, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'baseline', 'completed': 400, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'baseline', 'completed': 450, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'baseline', 'completed': 500, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'baseline', 'completed': 550, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'baseline', 'completed': 600, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'baseline', 'completed': 650, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'baseline', 'completed': 700, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'baseline', 'completed': 750, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'control', 'completed': 50, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'control', 'completed': 100, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'control', 'completed': 150, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'control', 'completed': 200, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'control', 'completed': 250, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'control', 'completed': 300, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'control', 'completed': 350, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'control', 'completed': 400, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'control', 'completed': 450, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'control', 'completed': 500, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'control', 'completed': 550, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'control', 'completed': 600, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'control', 'completed': 650, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'control', 'completed': 700, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'control', 'completed': 750, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'dagger', 'completed': 50, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'dagger', 'completed': 100, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'dagger', 'completed': 150, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'dagger', 'completed': 200, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'dagger', 'completed': 250, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'dagger', 'completed': 300, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'dagger', 'completed': 350, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'dagger', 'completed': 400, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'dagger', 'completed': 450, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'dagger', 'completed': 500, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'dagger', 'completed': 550, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'dagger', 'completed': 600, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'dagger', 'completed': 650, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'dagger', 'completed': 700, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261002, 'arm': 'dagger', 'completed': 750, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261003, 'arm': 'baseline', 'completed': 50, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261003, 'arm': 'baseline', 'completed': 100, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261003, 'arm': 'baseline', 'completed': 150, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261003, 'arm': 'baseline', 'completed': 200, 'total': 750}
