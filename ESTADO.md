@@ -666,3 +666,8 @@ Intento preflight archivado sin updates: diferencia cache lote16 vsdirecto4 de5.
 ## Tiempo adaptado cerrado15sept06:49UTC
 
 9uno44/dos38de500,+1.2pp[-1.6,4];7uno72/dos68de250,+1.6[-4,7.2]. Inconcluso. Auditoría pasa yfigura inspeccionada. Siguiente temporal-readout-001/compare_temporal_readout/log temporal-readout.log:concatenaciónactividad1+2vs1duplicada,15649params ambos,headsnuevosseed07,3000updatescadauno,750testnuevos. Protocolo LECTURA_TEMPORAL prefijado;report_temporal_readout. Preservar agente servido.
+
+
+## Lectura temporal cerrada15sept07:20UTC
+
+9combinado28/control38de500,−2pp[-4.4,.2];7combinado77/control81de250,−1.6[-8,4.4]. Sinmejora. Auditoría pasa,figura inspeccionada. Siguiente rotation-readout-001/evaluate_rotation_readout/log rotation-readout.log: mismo early-interface/latest-joint fijo1ciclo,identidad vs4rotaciones/logits inversos promedio,750testnuevos,0updates. Protocolo ROTACIONES;report_rotation_readout. Inferencia4x nominal,diagnóstico no aprendizaje.
