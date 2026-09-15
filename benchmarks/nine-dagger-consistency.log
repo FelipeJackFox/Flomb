@@ -279,3 +279,4 @@ collection 300 {'games': 300, 'wins': 4, 'clicks': 2269, 'safe_opportunities': 1
 {'phase': 'evaluation', 'seed': 20261004, 'arm': 'dagger', 'completed': 450, 'total': 750}
 {'phase': 'evaluation', 'seed': 20261004, 'arm': 'dagger', 'completed': 500, 'total': 750}
 {'phase': 'evaluation', 'seed': 20261004, 'arm': 'dagger', 'completed': 550, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261004, 'arm': 'dagger', 'completed': 600, 'total': 750}
