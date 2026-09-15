@@ -79,3 +79,84 @@
 {'phase': 'evaluation', 'arm': 'control', 'completed': 200, 'total': 750}
 {'phase': 'evaluation', 'arm': 'control', 'completed': 250, 'total': 750}
 {'phase': 'evaluation', 'arm': 'control', 'completed': 300, 'total': 750}
+{'phase': 'evaluation', 'arm': 'control', 'completed': 350, 'total': 750}
+{'phase': 'evaluation', 'arm': 'control', 'completed': 400, 'total': 750}
+{'phase': 'evaluation', 'arm': 'control', 'completed': 450, 'total': 750}
+{'phase': 'evaluation', 'arm': 'control', 'completed': 500, 'total': 750}
+{'phase': 'evaluation', 'arm': 'control', 'completed': 550, 'total': 750}
+{'phase': 'evaluation', 'arm': 'control', 'completed': 600, 'total': 750}
+{'phase': 'evaluation', 'arm': 'control', 'completed': 650, 'total': 750}
+{'phase': 'evaluation', 'arm': 'control', 'completed': 700, 'total': 750}
+{'phase': 'evaluation', 'arm': 'control', 'completed': 750, 'total': 750}
+{'phase': 'evaluation', 'arm': 'joint', 'completed': 50, 'total': 750}
+{'phase': 'evaluation', 'arm': 'joint', 'completed': 100, 'total': 750}
+{'phase': 'evaluation', 'arm': 'joint', 'completed': 150, 'total': 750}
+{'phase': 'evaluation', 'arm': 'joint', 'completed': 200, 'total': 750}
+{'phase': 'evaluation', 'arm': 'joint', 'completed': 250, 'total': 750}
+{'phase': 'evaluation', 'arm': 'joint', 'completed': 300, 'total': 750}
+{'phase': 'evaluation', 'arm': 'joint', 'completed': 350, 'total': 750}
+{'phase': 'evaluation', 'arm': 'joint', 'completed': 400, 'total': 750}
+{'phase': 'evaluation', 'arm': 'joint', 'completed': 450, 'total': 750}
+{'phase': 'evaluation', 'arm': 'joint', 'completed': 500, 'total': 750}
+{'phase': 'evaluation', 'arm': 'joint', 'completed': 550, 'total': 750}
+{'phase': 'evaluation', 'arm': 'joint', 'completed': 600, 'total': 750}
+{'phase': 'evaluation', 'arm': 'joint', 'completed': 650, 'total': 750}
+{'phase': 'evaluation', 'arm': 'joint', 'completed': 700, 'total': 750}
+{'phase': 'evaluation', 'arm': 'joint', 'completed': 750, 'total': 750}
+{'phase': 'training', 'arm': 'control', 'step': 25}
+{'phase': 'training', 'arm': 'control', 'step': 50}
+{'phase': 'training', 'arm': 'control', 'step': 75}
+{'phase': 'training', 'arm': 'control', 'step': 100}
+{'phase': 'training', 'arm': 'control', 'step': 125}
+{'phase': 'training', 'arm': 'control', 'step': 150}
+{'phase': 'training', 'arm': 'control', 'step': 175}
+{'phase': 'training', 'arm': 'control', 'step': 200}
+{'phase': 'training', 'arm': 'control', 'step': 225}
+{'phase': 'training', 'arm': 'control', 'step': 250}
+{'phase': 'training', 'arm': 'control', 'step': 275}
+{'phase': 'training', 'arm': 'control', 'step': 300}
+{'phase': 'training', 'arm': 'control', 'step': 325}
+{'phase': 'training', 'arm': 'control', 'step': 350}
+{'phase': 'training', 'arm': 'control', 'step': 375}
+{'phase': 'training', 'arm': 'control', 'step': 400}
+{'phase': 'training', 'arm': 'control', 'step': 425}
+{'phase': 'training', 'arm': 'control', 'step': 450}
+{'phase': 'training', 'arm': 'control', 'step': 475}
+{'phase': 'training', 'arm': 'control', 'step': 500}
+{'phase': 'training', 'arm': 'control', 'step': 525}
+{'phase': 'training', 'arm': 'control', 'step': 550}
+{'phase': 'training', 'arm': 'control', 'step': 575}
+{'phase': 'training', 'arm': 'control', 'step': 600}
+{'phase': 'training', 'arm': 'control', 'step': 625}
+{'phase': 'training', 'arm': 'control', 'step': 650}
+{'phase': 'training', 'arm': 'control', 'step': 675}
+{'phase': 'training', 'arm': 'control', 'step': 700}
+{'phase': 'training', 'arm': 'control', 'step': 725}
+{'phase': 'training', 'arm': 'control', 'step': 750}
+{'phase': 'training', 'arm': 'joint', 'step': 25}
+{'phase': 'training', 'arm': 'joint', 'step': 50}
+{'phase': 'training', 'arm': 'joint', 'step': 75}
+{'phase': 'training', 'arm': 'joint', 'step': 100}
+{'phase': 'training', 'arm': 'joint', 'step': 125}
+{'phase': 'training', 'arm': 'joint', 'step': 150}
+{'phase': 'training', 'arm': 'joint', 'step': 175}
+{'phase': 'training', 'arm': 'joint', 'step': 200}
+{'phase': 'training', 'arm': 'joint', 'step': 225}
+{'phase': 'training', 'arm': 'joint', 'step': 250}
+{'phase': 'training', 'arm': 'joint', 'step': 275}
+{'phase': 'training', 'arm': 'joint', 'step': 300}
+{'phase': 'training', 'arm': 'joint', 'step': 325}
+{'phase': 'training', 'arm': 'joint', 'step': 350}
+{'phase': 'training', 'arm': 'joint', 'step': 375}
+{'phase': 'training', 'arm': 'joint', 'step': 400}
+{'phase': 'training', 'arm': 'joint', 'step': 425}
+{'phase': 'training', 'arm': 'joint', 'step': 450}
+{'phase': 'training', 'arm': 'joint', 'step': 475}
+{'phase': 'training', 'arm': 'joint', 'step': 500}
+{'phase': 'training', 'arm': 'joint', 'step': 525}
+{'phase': 'training', 'arm': 'joint', 'step': 550}
+{'phase': 'training', 'arm': 'joint', 'step': 575}
+{'phase': 'training', 'arm': 'joint', 'step': 600}
+{'phase': 'training', 'arm': 'joint', 'step': 625}
+{'phase': 'training', 'arm': 'joint', 'step': 650}
+{'phase': 'training', 'arm': 'joint', 'step': 675}
