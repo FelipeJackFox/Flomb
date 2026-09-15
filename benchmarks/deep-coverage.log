@@ -14,3 +14,55 @@
 {'phase': 'collection', 'arm': 'assisted', 'completed': 300, 'total': 400}
 {'phase': 'collection', 'arm': 'assisted', 'completed': 350, 'total': 400}
 {'phase': 'collection', 'arm': 'assisted', 'completed': 400, 'total': 400}
+{'phase': 'training', 'arm': 'autonomous', 'step': 250}
+{'phase': 'training', 'arm': 'autonomous', 'step': 500}
+{'phase': 'training', 'arm': 'autonomous', 'step': 750}
+{'phase': 'training', 'arm': 'autonomous', 'step': 1000}
+{'phase': 'training', 'arm': 'autonomous', 'step': 1250}
+{'phase': 'training', 'arm': 'autonomous', 'step': 1500}
+{'phase': 'training', 'arm': 'assisted', 'step': 250}
+{'phase': 'training', 'arm': 'assisted', 'step': 500}
+{'phase': 'training', 'arm': 'assisted', 'step': 750}
+{'phase': 'training', 'arm': 'assisted', 'step': 1000}
+{'phase': 'training', 'arm': 'assisted', 'step': 1250}
+{'phase': 'training', 'arm': 'assisted', 'step': 1500}
+{'phase': 'autonomous_evaluation', 'arm': 'baseline', 'completed': 50, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'baseline', 'completed': 100, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'baseline', 'completed': 150, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'baseline', 'completed': 200, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'baseline', 'completed': 250, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'baseline', 'completed': 300, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'baseline', 'completed': 350, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'baseline', 'completed': 400, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'baseline', 'completed': 450, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'baseline', 'completed': 500, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'baseline', 'completed': 550, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'baseline', 'completed': 600, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'baseline', 'completed': 650, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'baseline', 'completed': 700, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'baseline', 'completed': 750, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'autonomous', 'completed': 50, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'autonomous', 'completed': 100, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'autonomous', 'completed': 150, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'autonomous', 'completed': 200, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'autonomous', 'completed': 250, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'autonomous', 'completed': 300, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'autonomous', 'completed': 350, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'autonomous', 'completed': 400, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'autonomous', 'completed': 450, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'autonomous', 'completed': 500, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'autonomous', 'completed': 550, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'autonomous', 'completed': 600, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'autonomous', 'completed': 650, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'autonomous', 'completed': 700, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'autonomous', 'completed': 750, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'assisted', 'completed': 50, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'assisted', 'completed': 100, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'assisted', 'completed': 150, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'assisted', 'completed': 200, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'assisted', 'completed': 250, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'assisted', 'completed': 300, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'assisted', 'completed': 350, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'assisted', 'completed': 400, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'assisted', 'completed': 450, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'assisted', 'completed': 500, 'total': 750}
