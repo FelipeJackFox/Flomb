@@ -15,3 +15,12 @@
 {'phase': 'evaluation', 'arm': 'four', 'completed': 750, 'total': 750}
 {'phase': 'evaluation', 'arm': 'eight', 'completed': 50, 'total': 750}
 {'phase': 'evaluation', 'arm': 'eight', 'completed': 100, 'total': 750}
+{'phase': 'evaluation', 'arm': 'eight', 'completed': 150, 'total': 750}
+{'phase': 'evaluation', 'arm': 'eight', 'completed': 200, 'total': 750}
+{'phase': 'evaluation', 'arm': 'eight', 'completed': 250, 'total': 750}
+{'phase': 'evaluation', 'arm': 'eight', 'completed': 300, 'total': 750}
+{'phase': 'evaluation', 'arm': 'eight', 'completed': 350, 'total': 750}
+{'phase': 'evaluation', 'arm': 'eight', 'completed': 400, 'total': 750}
+{'phase': 'evaluation', 'arm': 'eight', 'completed': 450, 'total': 750}
+{'phase': 'evaluation', 'arm': 'eight', 'completed': 500, 'total': 750}
+{'phase': 'evaluation', 'arm': 'eight', 'completed': 550, 'total': 750}
