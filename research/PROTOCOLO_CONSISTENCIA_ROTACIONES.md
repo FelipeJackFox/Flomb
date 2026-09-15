@@ -1,0 +1,3 @@
+# Repetir agregación de orientaciones
+
+Modelos early-interface-20261104/latest-joint.pt y20261105/latest-joint.pt,ambos fijos1ciclo. Mismo protocolo identidad vs4rotaciones/promedio logits inversos delpiloto.0updates,nomaestro,4inferencias por decisión enrotado.750testnuevos disjuntos por modelo5009/2507,1500layouts total3000episodios. Principalmedia9rotado-identidad dedos modelos;pilotosexcluidos. Bootstrap estratificado por modelo ypareado porlayout,10000. Secundario7. No son cerebros independientes ni comparación cómputo igualado. No cambia agente servido. Protocolo prefijado antes de ejecución.

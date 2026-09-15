@@ -671,3 +671,8 @@ Intento preflight archivado sin updates: diferencia cache lote16 vsdirecto4 de5.
 ## Lectura temporal cerrada15sept07:20UTC
 
 9combinado28/control38de500,−2pp[-4.4,.2];7combinado77/control81de250,−1.6[-8,4.4]. Sinmejora. Auditoría pasa,figura inspeccionada. Siguiente rotation-readout-001/evaluate_rotation_readout/log rotation-readout.log: mismo early-interface/latest-joint fijo1ciclo,identidad vs4rotaciones/logits inversos promedio,750testnuevos,0updates. Protocolo ROTACIONES;report_rotation_readout. Inferencia4x nominal,diagnóstico no aprendizaje.
+
+
+## Rotaciones piloto cerrado15sept07:42UTC
+
+9rotado119/500 vsidentidad39/500,+16pp IC95[12.4,19.8].7rotado98/250vs74/250,+9.6pp[3.2,16]. Diagnóstico favorable,sinupdates,4xinferencia nominal. Auditoría pesos/hash/750layouts pasa,figura inspeccionada. Siguiente rotation-consistency-001,repeat_rotation_readout,log rotation-consistency.log: modelosadaptados04/05,1500test nuevos disjuntos,principalmedia9sinpiloto. Protocolo CONSISTENCIA_ROTACIONES;report_rotation_consistency. Agente servido intacto.

@@ -18,7 +18,9 @@ from experiments.scaled_train import evaluate_games
 from experiments.rotation_readout import RotationPolicy
 OUT=Path('runs/rotation-readout-001');PARENT=Path('runs/early-interface-001/latest-joint.pt')
 
-def main():
+def main(out=OUT,parent_path=PARENT):
+    global OUT,PARENT
+    OUT=Path(out);PARENT=Path(parent_path)
     torch.set_num_threads(1);OUT.mkdir(exist_ok=False)
     paths=[PARENT,MAPPING,BASE/'training/retina_plastic-20260926.pt',Path('runs/hybrid-001/checkpoint.pkl')]
     hashes={str(p):digest(p) for p in paths}
