@@ -30,3 +30,11 @@
 {'phase': 'evaluation', 'mode': 'safe_all', 'completed': 500, 'total': 500}
 {'phase': 'evaluation', 'mode': 'public_solver', 'completed': 50, 'total': 500}
 {'phase': 'evaluation', 'mode': 'public_solver', 'completed': 100, 'total': 500}
+{'phase': 'evaluation', 'mode': 'public_solver', 'completed': 150, 'total': 500}
+{'phase': 'evaluation', 'mode': 'public_solver', 'completed': 200, 'total': 500}
+{'phase': 'evaluation', 'mode': 'public_solver', 'completed': 250, 'total': 500}
+{'phase': 'evaluation', 'mode': 'public_solver', 'completed': 300, 'total': 500}
+{'phase': 'evaluation', 'mode': 'public_solver', 'completed': 350, 'total': 500}
+{'phase': 'evaluation', 'mode': 'public_solver', 'completed': 400, 'total': 500}
+{'phase': 'evaluation', 'mode': 'public_solver', 'completed': 450, 'total': 500}
+{'phase': 'evaluation', 'mode': 'public_solver', 'completed': 500, 'total': 500}
