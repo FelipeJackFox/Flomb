@@ -2,3 +2,15 @@
 {'phase': 'collection', 'arm': 'autonomous', 'completed': 100, 'total': 400}
 {'phase': 'collection', 'arm': 'autonomous', 'completed': 150, 'total': 400}
 {'phase': 'collection', 'arm': 'autonomous', 'completed': 200, 'total': 400}
+{'phase': 'collection', 'arm': 'autonomous', 'completed': 250, 'total': 400}
+{'phase': 'collection', 'arm': 'autonomous', 'completed': 300, 'total': 400}
+{'phase': 'collection', 'arm': 'autonomous', 'completed': 350, 'total': 400}
+{'phase': 'collection', 'arm': 'autonomous', 'completed': 400, 'total': 400}
+{'phase': 'collection', 'arm': 'assisted', 'completed': 50, 'total': 400}
+{'phase': 'collection', 'arm': 'assisted', 'completed': 100, 'total': 400}
+{'phase': 'collection', 'arm': 'assisted', 'completed': 150, 'total': 400}
+{'phase': 'collection', 'arm': 'assisted', 'completed': 200, 'total': 400}
+{'phase': 'collection', 'arm': 'assisted', 'completed': 250, 'total': 400}
+{'phase': 'collection', 'arm': 'assisted', 'completed': 300, 'total': 400}
+{'phase': 'collection', 'arm': 'assisted', 'completed': 350, 'total': 400}
+{'phase': 'collection', 'arm': 'assisted', 'completed': 400, 'total': 400}
