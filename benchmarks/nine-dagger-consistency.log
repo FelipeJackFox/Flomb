@@ -197,3 +197,4 @@ collection 300 {'games': 300, 'wins': 4, 'clicks': 2269, 'safe_opportunities': 1
 {'phase': 'evaluation', 'seed': 20261003, 'arm': 'baseline', 'completed': 100, 'total': 750}
 {'phase': 'evaluation', 'seed': 20261003, 'arm': 'baseline', 'completed': 150, 'total': 750}
 {'phase': 'evaluation', 'seed': 20261003, 'arm': 'baseline', 'completed': 200, 'total': 750}
+{'phase': 'evaluation', 'seed': 20261003, 'arm': 'baseline', 'completed': 250, 'total': 750}
