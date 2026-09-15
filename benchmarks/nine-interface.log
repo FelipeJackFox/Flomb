@@ -59,3 +59,4 @@
 {'phase': 'training', 'arm': 'joint', 'step': 725}
 {'phase': 'training', 'arm': 'joint', 'step': 750}
 {'phase': 'evaluation', 'arm': 'baseline', 'completed': 50, 'total': 750}
+{'phase': 'evaluation', 'arm': 'baseline', 'completed': 100, 'total': 750}
