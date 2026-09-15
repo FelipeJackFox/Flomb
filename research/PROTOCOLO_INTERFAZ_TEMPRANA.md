@@ -7,3 +7,6 @@ Pilotolector20261103(originaldelprimerpar,noelegirelmejorporvictorias) desde pro
 Recomputar TODAScachespara1ciclo;conjuntoonline4microbatch16 ygradientes,hacerparidadreal/gradienteacumulado antes. Último750fijo,holdoutsolo diagnóstico. Test5009+2507nuevoscompartidos,principal9joint-control,retención7secundaria. Unlector/un cerebro,no ciclosbiológicos. Agente servido intacto.
 
 Runner experiments/train_early_interface.py,run runs/early-interface-001,reportero experiments/report_early_interface.py.
+
+
+Recuperación preflight: intento previo archivado en early-interface-preflight-001, sin updates. Falló comparación actividad lote4 contra caché lote16 (máximo5.25e-6). Nuevo preflight exige reproducción exacta de caché con misma deduplicación/lote; registra comparación directa4vs16 y conserva tolerancia relativa1e-5 con absoluta1e-5 solo para actividad entre lotes distintos. Etiquetas/contexto/máscaras siguen exactas; forward/gradientes conservan tolerancias originales. Test reservado nuevo.

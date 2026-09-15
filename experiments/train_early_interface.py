@@ -59,9 +59,18 @@ def main():
         write_json(OUT/'progress.json',dict(phase='recompute_one_cycle_features'))
         caches=[features(ActivityMemo(brain),rows) for rows in (data['train'],seven,nine,fresh)]
         valid=features(ActivityMemo(brain),data['holdout'])
+        batch_diagnostics=[]
         for rows,cache in zip((data['train'],seven,nine,fresh),caches):
             xx,ll,cc,yy=arrays(rows[:4]);aa=activity_map(brain,xx,cc)
-            torch.testing.assert_close(aa,cache[0][:4],rtol=1e-5,atol=2e-6)
+            bx,_,bc,_=arrays(rows[:16])
+            replay=ActivityMemo(brain).get(bx,bc)
+            # Reproduce cache construction with the same batch and deduplication.
+            torch.testing.assert_close(replay,cache[0][:16],rtol=0,atol=0)
+            direct16=activity_map(brain,bx,bc)[:4]
+            batch_diagnostics.append(dict(batch4_vs16_max=float((aa-direct16).abs().max()),batch4_vs_cache_max=float((aa-cache[0][:4]).abs().max())))
+            write_json(OUT/'cache-batch-diagnostics.json',batch_diagnostics)
+            torch.testing.assert_close(aa,direct16,rtol=1e-5,atol=1e-5)
+            torch.testing.assert_close(aa,cache[0][:4],rtol=1e-5,atol=1e-5)
             for a,b in zip((ll,cc,yy),cache[1:]):torch.testing.assert_close(a,b[:4],rtol=0,atol=0)
         write_json(OUT/'preflight.json',dict(real_forward_parity=True,real_gradient_accumulation_parity=True,nine_encoder_gradient_l1=grad,caches_checked=True))
         groups={}

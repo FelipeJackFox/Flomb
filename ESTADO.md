@@ -646,3 +646,8 @@ Nuevas04/05en9early31/44vs late15/18de500,principal+4.2pp IC95%[+2.4,+6].7early7
 ## Adaptación interfaz temprana · en curso15sept2026
 
 Siguientepiloto originalseed20261103 delprimerpar(prefijado,no escogermáximotest). experiments/train_early_interface.py,runs/early-interface-001,benchmarks/early-interface.log. Baselinecomponehead propagation-time-001/latest-early.pt yencoder deep-coverage/latest-autonomous,inrun baseline.pt sinmodificarfuentes. Ambos1ciclo,750updatesfijos,controlheadvsjointhead+encoder;Adamhead/RNGheredados,encoderAdam1e-4nuevo,head.001,clip5separado. Mismos16original+16old7+16old9+16new9. Grafo/gains/aristasfijos. TODAScaches1ciclo recomputadas yjointonline4microbatch16. Preflightrealgradientes/forward,mismo procedimientoauditado.750testnuevos5009/2507,principal9joint-control. Protocolo PROTOCOLO_INTERFAZ_TEMPRANA.md,reportero report_early_interface.py conauditoríaprovenanciabaselinecompuesto. Agenteservido/originalesintactos.
+
+
+## Recuperación interfaz temprana15sept05:22UTC
+
+Intento preflight archivado sin updates: diferencia cache lote16 vsdirecto4 de5.25e-6. Reproducción con mismo lote/deduplicación ahora debe ser exacta; diagnóstico4vs16 registrado, actividad entre lotes atol1e-5/rtol1e-5, otras verificaciones sin relajar. Reinicio en early-interface-001 con test nuevo, fuentes originales intactas.
