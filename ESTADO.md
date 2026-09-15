@@ -599,3 +599,14 @@ Antesdeentrenarmás,experiments/evaluate_assistance.py,runs/assistance-diagnosti
 Hipótesis estadosavanzadosfaltanporqueautónomomuerepronto. experiments/train_deep_coverage.py,runs/deep-coverage-001,benchmarks/deep-coverage.log.400nuevoslayouts9colecciónpareadaautónoma vsseguridadcorregida100%;políticafijalatestjoint750,públicoseguros. Guardartraces/etiquetasprofundidad/ocultas;maestroactúasoloenrecolecciónexperimental.1500updatesporbrazo,mismosheadAdam/RNG,16original+16old7+16old9+16datosnuevosbrazo;primeros48idénticos,nuevosuniformescompartidosdistintostamañosdepósitos. Encoder/grafofijos actualadaptado9;RECOMPUTARtodasfeatures(no cachesviejas).
 
 EvaluaciónfinalSIEMPREAUTÓNOMA750nuevos5009+2507frenteparent/controlautonomous-trained/assisted-trained,último1500prefijado. Protocolo PROTOCOLO_COBERTURA_PROFUNDA.md,reportero report_deep_coverage.py auditaacciones/etiquetaspúblicascolecciónytestseparado. Noatribuircambiossoloa profundidad porque cantidadestadostambiéncambia. Agenteservido/originalesintactos.
+
+
+## Cobertura profunda · terminada15sept03:01UTC
+
+Evaluaciónautónoma9:parent20/500,datosautónomos28/500,datoscorregidos22/500;principalcorregidos−autónomos−1.2pp IC95%[−3.2,+.8],vsparent+.4pp[−1.6,+2.4].7parent59/250,autónomos59,corregidos60. No mejora atribuibleacoleccióncorregida. Recogió5268posicionesvs2571,profundidadmedia12.9vs8.29,menosocultas30.46vs36.02;teacheracciones1883soloenrecolecciónexperimental. Máscoberturanobastóparaestelector/presupuesto. Auditoría pública/layouts/hashes/pares/endpointpasa,figurainspeccionada,informe RESULTADO_COBERTURA_PROFUNDA.md. Una semilla/un cerebro; no usarvictoriascolecciónasistidacomorendimientofinal.
+
+## Masa segura · en curso15sept2026
+
+Experimento experiments/train_safe_mass.py,runs/safe-mass-001,benchmarks/safe-mass.log. Parentdeep-coverage/latest-autonomous1500 (prefijadoparahipótesis),1500adicionaleslector,encoder/grafofijos. Mismosdatos16original+16old7+16old9+16new9autónomos,Adam/RNG/índices/batchesidénticos. SoloobjetivoCEuniformesobretodasetiquetassegurasvs−logmasaprobabilísticatotaldelconjuntoseguro;se permiteconcentrarenunasegura. Sinauxiliares/filtros/nuevacolección. Último1500fijopretest750nuevos5009+2507,principal9mass-uniform,retención7secundaria. Protocolo PROTOCOLO_MASA_SEGURA.md,reportero report_safe_mass.py.
+
+4tests pasan:singletonCEvalor/gradiente,ilegalgrad0,invarianciarepartodentroseguras,desplazamientologits/todasseguras,rechazoetiquetasinválidas. Featuresrecomputadasconencoderactual. No afirmaréxitoporlossmenor(esobjetivodistinto). Agenteservido/originalesintactos.
