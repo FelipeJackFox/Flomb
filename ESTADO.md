@@ -661,3 +661,8 @@ Intento preflight archivado sin updates: diferencia cache lote16 vsdirecto4 de5.
 ## Consistencia interfaz temprana cerrada15sept06:24UTC
 
 9joint37/32vscontrol29/27de500;media+1.3pp IC95[-.2,2.7].7joint92/90vscontrol71/79de250;+6.4pp[3.4,9.4]. Mejora9 pequeña incierta;7 favorable nuevasréplicas. Auditorías hijos/global1500layouts pasan,figura inspeccionada. Siguiente runs/adapted-time-001,runner compare_adapted_time,log adapted-time.log:1vs2ciclos conencoderpilotoearly-interface/latest-joint fijo,headsnuevosseed06/3000updates,750testnuevos. Protocolo TIEMPO_ADAPTADO prefijado;reportero report_adapted_time. No promover agenteservido.
+
+
+## Tiempo adaptado cerrado15sept06:49UTC
+
+9uno44/dos38de500,+1.2pp[-1.6,4];7uno72/dos68de250,+1.6[-4,7.2]. Inconcluso. Auditoría pasa yfigura inspeccionada. Siguiente temporal-readout-001/compare_temporal_readout/log temporal-readout.log:concatenaciónactividad1+2vs1duplicada,15649params ambos,headsnuevosseed07,3000updatescadauno,750testnuevos. Protocolo LECTURA_TEMPORAL prefijado;report_temporal_readout. Preservar agente servido.
