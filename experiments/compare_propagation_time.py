@@ -17,7 +17,9 @@ from experiments.scaled_train import evaluate_games
 
 OUT=Path('runs/propagation-time-001');PARENT=Path('runs/deep-coverage-001/latest-autonomous.pt');SEED=20261103
 
-def main():
+def main(out=OUT,seed=SEED):
+    global OUT,SEED
+    OUT=Path(out);SEED=seed
     torch.set_num_threads(1);OUT.mkdir(exist_ok=False)
     paths=[PARENT,MAPPING,BASE/'training/retina_plastic-20260926.pt',BASE/'dataset.pkl',Path('runs/hybrid-001/checkpoint.pkl'),Path('runs/adapted-dagger-001/dataset.pkl'),Path('runs/nine-dagger-001/dataset.pkl'),Path('runs/deep-coverage-001/states-autonomous.pkl')]
     hashes={str(p):digest(p) for p in paths};write_json(OUT/'manifest.json',dict(seed=SEED,updates=3000,batch=64,hashes=hashes,parameters=12769,initialization='identical fresh heads and Adam',primary='9 early1 minus late3',secondary='7',checkpoint='fixed last3000',scope='frozen encoder previously adapted with3 cycles; same head budget',cycles=dict(early=1,late=3)))

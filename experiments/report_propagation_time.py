@@ -12,7 +12,9 @@ from experiments.capacity_probe import write_json
 from experiments.scaled_data import identity
 from minesweeper import Minesweeper
 
-def main():
+def main(out=OUT):
+    global OUT
+    OUT=Path(out)
     assert (OUT/'completed.json').exists()
     m=json.loads((OUT/'manifest.json').read_text());assert all(digest(p)==sha for p,sha in m['hashes'].items())
     pairs=json.loads((OUT/'pairing.json').read_text());assert pairs['early']==pairs['late']
@@ -47,12 +49,15 @@ def main():
         ax.bar(range(2),v,color=['#aa7945','#099caa'])
         for i,c in enumerate(cc):ax.text(i,v[i]+.5,f"{c['wins']}/{c['n']}",ha='center')
         ax.set_xticks(range(2),['Actividad tras1 ciclo','Actividad tras3 ciclos']);ax.set_title(f'{size}×{size}');ax.set_ylabel('Victorias (%)');ax.set_ylim(0,max(v)+7)
-    fig.savefig('research/propagation-time-results.png',dpi=150);plt.close(fig)
+    pilot=OUT.name=='propagation-time-001'
+    fig.savefig('research/propagation-time-results.png' if pilot else OUT/'results.png',dpi=150);plt.close(fig)
     c=summary['9']['early_minus_late'];lo,hi=c['ci95_pp']
-    Path('research/RESULTADO_TIEMPO_PROPAGACION.md').write_text(
+    report=Path('research/RESULTADO_TIEMPO_PROPAGACION.md') if pilot else OUT/'report.md'
+    figure='propagation-time-results.png' if pilot else 'results.png'
+    report.write_text(
         '# Lectura temprana frente a tardía\n\n'
         f"Principal9×9,1ciclo−3ciclos: {c['delta_pp']:+.2f}pp,IC95%[{lo:+.2f},{hi:+.2f}].\n\n"
-        '![Resultados](propagation-time-results.png)\n\n'
+        f'![Resultados]({figure})\n\n'
         'Ambos usan el grafo cerebral y las mismas10clases de salida,encoder/gains/pesos fijos. '
         'Solo varían pasos de propagación antes de extraer actividad:1vs3. '
         'Lectores idénticos12769parámetros,misma inicialización nueva,Adam,3000updates ybatches. '

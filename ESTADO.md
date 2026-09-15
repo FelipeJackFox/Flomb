@@ -628,3 +628,12 @@ Mismoslectoresnuevos/datos/3000updates:9raw62/500(12.4%)vsbrain18/500(3.6%),prin
 ## Tiempo de propagación · en curso15sept2026
 
 Hipótesis:lectura temprana conserva información útil. experiments/compare_propagation_time.py,runs/propagation-time-001,benchmarks/propagation-time.log. Amboslectoresusanactividadgrafo;solo1cicloversus3antesdeagrupar10clasesdesalida. Mismosencoder/grafo/gain/mappingfijos;encoderhistóricoadaptadoa3(asimetríaexplícita). Lectoresnuevosseed20261103/12769param/3000updatesfijos,CEuniforme/Adam.001/mismosbatches16por4fuentes5/7/9. Cachesseparadasyciclorestablecidosegúncandidatoantesdeevaluar.750testnuevos5009/2507,principal9early-late. Protocolo PROTOCOLO_TIEMPO_PROPAGACION.md,reportero report_propagation_time.py. Ciclosnuméricosno equivalentesaHz/tiempobiológico. Agente servido/originalesintactos.
+
+
+## Propagación piloto · terminada15sept04:23UTC
+
+9early1=27/500vslate3=14/500,principal+2.6pp IC95%[+.2,+5].7early59/250vslate58/250. Señalfavorableuna inicialización,noadoptaraún. Encoderpreentrenadocon3fijo,mismosheadnuevos/Adam/batches/3000updates. Auditoríahashes/inputs/param/pares/endpoint/750layouts pasa;figurainspeccionada,informe RESULTADO_TIEMPO_PROPAGACION.md. Ciclos no tiempo biológico.
+
+## Consistencia propagación · en curso15sept2026
+
+Repetir conlectoresnuevos20261104/05,mismoencoder/grafofijo y3000updatesporbrazo. Runner experiments/repeat_propagation_time.py,coordinador runs/propagation-time-consistency-001,log benchmarks/propagation-time-consistency.log;hijos runs/propagation-time-20261104/5.750testpropiosporréplica5009/2507,1500únicos/disjuntos,principalmedia9early-late dedosnuevas,7secundario,pilotoexcluido. Protocolo PROTOCOLO_CONSISTENCIA_TIEMPO.md,reportero report_propagation_time_consistency.py,auditoríashijosylaidglobal. Sinpublicar nicambiaragenteservido;originalesintactos.
