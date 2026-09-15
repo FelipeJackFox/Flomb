@@ -1,0 +1,54 @@
+{'phase': 'training', 'arm': 'raw', 'step': 250}
+{'phase': 'training', 'arm': 'raw', 'step': 500}
+{'phase': 'training', 'arm': 'raw', 'step': 750}
+{'phase': 'training', 'arm': 'raw', 'step': 1000}
+{'phase': 'training', 'arm': 'raw', 'step': 1250}
+{'phase': 'training', 'arm': 'raw', 'step': 1500}
+{'phase': 'training', 'arm': 'raw', 'step': 1750}
+{'phase': 'training', 'arm': 'raw', 'step': 2000}
+{'phase': 'training', 'arm': 'raw', 'step': 2250}
+{'phase': 'training', 'arm': 'raw', 'step': 2500}
+{'phase': 'training', 'arm': 'raw', 'step': 2750}
+{'phase': 'training', 'arm': 'raw', 'step': 3000}
+{'phase': 'training', 'arm': 'brain', 'step': 250}
+{'phase': 'training', 'arm': 'brain', 'step': 500}
+{'phase': 'training', 'arm': 'brain', 'step': 750}
+{'phase': 'training', 'arm': 'brain', 'step': 1000}
+{'phase': 'training', 'arm': 'brain', 'step': 1250}
+{'phase': 'training', 'arm': 'brain', 'step': 1500}
+{'phase': 'training', 'arm': 'brain', 'step': 1750}
+{'phase': 'training', 'arm': 'brain', 'step': 2000}
+{'phase': 'training', 'arm': 'brain', 'step': 2250}
+{'phase': 'training', 'arm': 'brain', 'step': 2500}
+{'phase': 'training', 'arm': 'brain', 'step': 2750}
+{'phase': 'training', 'arm': 'brain', 'step': 3000}
+{'phase': 'evaluation', 'arm': 'raw', 'completed': 50, 'total': 750}
+{'phase': 'evaluation', 'arm': 'raw', 'completed': 100, 'total': 750}
+{'phase': 'evaluation', 'arm': 'raw', 'completed': 150, 'total': 750}
+{'phase': 'evaluation', 'arm': 'raw', 'completed': 200, 'total': 750}
+{'phase': 'evaluation', 'arm': 'raw', 'completed': 250, 'total': 750}
+{'phase': 'evaluation', 'arm': 'raw', 'completed': 300, 'total': 750}
+{'phase': 'evaluation', 'arm': 'raw', 'completed': 350, 'total': 750}
+{'phase': 'evaluation', 'arm': 'raw', 'completed': 400, 'total': 750}
+{'phase': 'evaluation', 'arm': 'raw', 'completed': 450, 'total': 750}
+{'phase': 'evaluation', 'arm': 'raw', 'completed': 500, 'total': 750}
+{'phase': 'evaluation', 'arm': 'raw', 'completed': 550, 'total': 750}
+{'phase': 'evaluation', 'arm': 'raw', 'completed': 600, 'total': 750}
+{'phase': 'evaluation', 'arm': 'raw', 'completed': 650, 'total': 750}
+{'phase': 'evaluation', 'arm': 'raw', 'completed': 700, 'total': 750}
+{'phase': 'evaluation', 'arm': 'raw', 'completed': 750, 'total': 750}
+{'phase': 'evaluation', 'arm': 'brain', 'completed': 50, 'total': 750}
+{'phase': 'evaluation', 'arm': 'brain', 'completed': 100, 'total': 750}
+{'phase': 'evaluation', 'arm': 'brain', 'completed': 150, 'total': 750}
+{'phase': 'evaluation', 'arm': 'brain', 'completed': 200, 'total': 750}
+{'phase': 'evaluation', 'arm': 'brain', 'completed': 250, 'total': 750}
+{'phase': 'evaluation', 'arm': 'brain', 'completed': 300, 'total': 750}
+{'phase': 'evaluation', 'arm': 'brain', 'completed': 350, 'total': 750}
+{'phase': 'evaluation', 'arm': 'brain', 'completed': 400, 'total': 750}
+{'phase': 'evaluation', 'arm': 'brain', 'completed': 450, 'total': 750}
+{'phase': 'evaluation', 'arm': 'brain', 'completed': 500, 'total': 750}
+{'phase': 'evaluation', 'arm': 'brain', 'completed': 550, 'total': 750}
+{'phase': 'evaluation', 'arm': 'brain', 'completed': 600, 'total': 750}
+{'phase': 'evaluation', 'arm': 'brain', 'completed': 650, 'total': 750}
+{'phase': 'evaluation', 'arm': 'brain', 'completed': 700, 'total': 750}
+{'phase': 'evaluation', 'arm': 'brain', 'completed': 750, 'total': 750}
