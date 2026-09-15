@@ -66,3 +66,5 @@
 {'phase': 'autonomous_evaluation', 'arm': 'assisted', 'completed': 400, 'total': 750}
 {'phase': 'autonomous_evaluation', 'arm': 'assisted', 'completed': 450, 'total': 750}
 {'phase': 'autonomous_evaluation', 'arm': 'assisted', 'completed': 500, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'assisted', 'completed': 550, 'total': 750}
+{'phase': 'autonomous_evaluation', 'arm': 'assisted', 'completed': 600, 'total': 750}
