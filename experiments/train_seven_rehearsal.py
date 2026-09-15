@@ -18,14 +18,19 @@ from experiments.scaled_train import evaluate_games
 
 OUT=Path('runs/seven-rehearsal-001');PARENT=Path('runs/nine-dagger-001/latest-dagger.pt')
 
-def main():
+def main(out=OUT,seed=20261002):
+    global OUT,PARENT
+    OUT=Path(out)
+    nine_run=Path('runs/nine-dagger-001' if seed==20261002 else f'runs/nine-dagger-{seed}')
+    seven_run=Path('runs/adapted-dagger-001' if seed==20261002 else f'runs/adapted-dagger-{seed}')
+    PARENT=nine_run/'latest-dagger.pt'
     torch.set_num_threads(1);OUT.mkdir(exist_ok=False)
     paths=[PARENT,MAPPING,BASE/'dataset.pkl',BASE/'training/retina_plastic-20260926.pt',
-        Path('runs/hybrid-001/checkpoint.pkl'),Path('runs/nine-dagger-001/dataset.pkl'),
-        Path('runs/nine-dagger-001/train.pt'),Path('runs/nine-dagger-001/holdout.pt'),
-        Path('runs/adapted-dagger-001/dataset.pkl'),Path('runs/wide-reader-001/experience-20261002.pt')]
+        Path('runs/hybrid-001/checkpoint.pkl'),nine_run/'dataset.pkl',
+        nine_run/'train.pt',nine_run/'holdout.pt',
+        seven_run/'dataset.pkl',Path(f'runs/wide-reader-001/experience-{seed}.pt')]
     hashes={str(p):digest(p) for p in paths}
-    write_json(OUT/'manifest.json',dict(seed=20261002,updates=1500,parent_step=2250,batch=64,hashes=hashes,
+    write_json(OUT/'manifest.json',dict(seed=seed,updates=1500,parent_step=2250,batch=64,hashes=hashes,
         control='32original +32fixed9',replay='16original +16inherited7 +32samefixed9',
         primary='7x7 replay minus control',secondary='9x9 cost and vsparent',checkpoint='fixed last1500 additional'))
     (OUT/'source').mkdir()
@@ -53,7 +58,7 @@ def main():
             torch.testing.assert_close(fresh[0],cached[0][ix],rtol=1e-5,atol=2e-6)
             cache_errors.append(float((fresh[0]-cached[0][ix]).abs().max()))
             for a,b in zip(fresh[1:],cached[1:]):torch.testing.assert_close(a,b[ix],rtol=0,atol=0)
-        source_encoder=torch.load('runs/wide-reader-001/best-20261002-local.pt',weights_only=False)['encoder']
+        source_encoder=torch.load(f'runs/wide-reader-001/best-{seed}-local.pt',weights_only=False)['encoder']
         assert tensor_hash(source_encoder)==tensor_hash(parent['encoder'])
         new=features(memo,nine);torch.save(new,OUT/'nine-features.pt')
         write_json(OUT/'cache-verification.json',dict(labels_context_masks_exact=True,encoder_exact=True,

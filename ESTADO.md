@@ -559,3 +559,12 @@ Nuevas03/04en9×9 control0/1vsDAgger7/15de500;principalmedia+2.1pp IC95%[+1.2,+3
 Piloto experiments/train_seven_rehearsal.py,runs/seven-rehearsal-001,log benchmarks/seven-rehearsal.log. Parte latest-dagger2250 delpiloto9,1500updatesmásfijos(3750total);control32original+32experiencia9fija vsrepaso16original+16DAgger7heredada+32misma9. Mismopesos/Adam/RNG/índicesgenerados;solo se sustituyen16originales,primeros16originalesy32nueveidénticos. Grafoencoderfijos,no nuevaspartidastrain.750testnuevos(2507/5009),principal7replay-control,reportarcoste9 ycomparaciónconpadre9. Protocolo PROTOCOLO_REPASO_7X7.md,reportero report_seven_rehearsal.py. Recomputar8muestrasen3cachesconigualdadexactaantesentrenar. Agente servido yoriginalesintactos.
 
 Preflightrepaso: igualdadbitabitactividadfalló porredondeofloat32alrecomputarconbatch8frentecachévariable,máximo1.01e-6. Preservado runs/seven-rehearsal-preflight-001 sinupdates ylogpreflight. Reiniciofreshcon750testnuevos;verificaencoder ylabels/context/maskexactos,actividadrtol1e-5/atol2e-6conmáximosregistrados. Protocolocorregido,noperderestadoentrenamiento(nohabíaempezado).
+
+
+## Repaso7 piloto · terminado15sept00:48UTC
+
+7×7padre9=48/250,control46/250,repaso57/250;principal+4.4pp IC95%[+.4,+8.4],vsparent+3.6pp[−.8,+8].9×9padre15/500,control13/500,repaso11/500;−.4ppvscontrol[−2,+1.2],−.8vsparent[−2.4,+.8]. Señalfavorable7vscontrol,gananciavsparentyno-inferioridad9sinconfirmar. Auditoríacache/índices/hash/endpoint/encoder/750layouts pasan;figurainspeccionada,informe RESULTADO_REPASO_7X7.md. Una semilla/un cerebro.
+
+## Consistencia repaso7 · en curso15sept2026
+
+Dosnuevas03/04conigual1500adicionalesdesdesusparent9latest2250;datos/caches/DAgger7propiosporsemilla. Runner experiments/repeat_seven_rehearsal.py,coordinador runs/seven-rehearsal-consistency-001,log benchmarks/seven-rehearsal-consistency.log,hijos runs/seven-rehearsal-20261003/4. Test750propiosporréplica(2507+5009),disjuntosentre sí ydelhistórico;principalmedia7replay-control dedosnuevas,secundariocoste9/vsparent. Piloto02NOreutilizadoenprincipal. Bootstrapestratificadoporsemillaypareadoporl ayout:1500layoutstotales/uncerebro. Protocolo PROTOCOLO_CONSISTENCIA_REPASO_7X7.md. Parametrizados train/report mantienendefaultpiloto,reporteshijosdentroderuncorrespondiente para no pisar piloto. Reportero global report_seven_rehearsal_consistency.py. Originalesyagente servidointactos.

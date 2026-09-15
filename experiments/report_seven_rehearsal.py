@@ -12,13 +12,16 @@ from experiments.capacity_probe import write_json
 from experiments.scaled_data import identity
 from minesweeper import Minesweeper
 
-def main():
+def main(out=OUT):
+    global OUT,PARENT
+    OUT=Path(out)
     assert (OUT/'completed.json').exists()
     m=json.loads((OUT/'manifest.json').read_text());assert all(digest(p)==sha for p,sha in m['hashes'].items())
     pair=json.loads((OUT/'pairing.json').read_text());assert pair['control']==pair['replay']
     cache_check=json.loads((OUT/'cache-verification.json').read_text())
     assert cache_check['labels_context_masks_exact'] and cache_check['encoder_exact']
     assert digest(OUT/'evaluation-checkpoints.json')==json.loads((OUT/'evaluation-seal.json').read_text())['sha256']
+    PARENT=Path(json.loads((OUT/'evaluation-checkpoints.json').read_text())['baseline']['path'])
     parent=torch.load(PARENT,weights_only=False)
     for arm,v in json.loads((OUT/'evaluation-checkpoints.json').read_text()).items():
         assert digest(v['path'])==v['sha256'];state=torch.load(v['path'],weights_only=False)
@@ -51,12 +54,16 @@ def main():
         ax.bar(range(3),values,color=['#899398','#9068b0','#089aa0'])
         for i,c in enumerate(cc):ax.text(i,values[i]+.4,f"{c['wins']}/{c['n']}",ha='center')
         ax.set_xticks(range(3),['Padre9','Control','Repaso7']);ax.set_title(f'{size}×{size}');ax.set_ylabel('Victorias (%)');ax.set_ylim(0,max(values)+7)
-    fig.savefig('research/seven-rehearsal-results.png',dpi=150);plt.close(fig)
+    pilot=OUT.name=='seven-rehearsal-001'
+    figure=Path('research/seven-rehearsal-results.png') if pilot else OUT/'results.png'
+    figure_link='seven-rehearsal-results.png' if pilot else 'results.png'
+    fig.savefig(figure,dpi=150);plt.close(fig)
     c=summary['7']['comparisons']['control'];lo,hi=c['ci95_pp']
-    Path('research/RESULTADO_REPASO_7X7.md').write_text(
+    report=Path('research/RESULTADO_REPASO_7X7.md') if pilot else OUT/'report.md'
+    report.write_text(
         '# Repaso de experiencia7×7\n\n'
         f"Principal7×7,repaso−control: {c['delta_pp']:+.2f}pp,IC95%pareado[{lo:+.2f},{hi:+.2f}].\n\n"
-        '![Resultados](seven-rehearsal-results.png)\n\n'
+        f'![Resultados]({figure_link})\n\n'
         'Continuación1500updates desdepadre9paso2250,últimofijoantesdetest. Misma experiencia9en32de64posiciones; '
         'repaso sustituye16de32originales por16DAgger7heredadas. Mismosíndices generados y mismos primeros16originales. '
         'Una semilla/un cerebro,250test7 y500test9nuevoscompartidos. Padre9es el baseline de esta prueba, no el modelo anterior a adaptar9. '
