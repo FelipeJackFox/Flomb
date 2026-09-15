@@ -619,3 +619,12 @@ Experimento experiments/train_safe_mass.py,runs/safe-mass-001,benchmarks/safe-ma
 ## Comparación entradas con datos9 · en curso15sept2026
 
 Nuevo diagnóstico experiments/compare_nine_representation.py,runs/nine-representation-001,benchmarks/nine-representation.log. Mismolector12769param NUEVOenambos,seed20261103,Adam.001nuevo,3000updatesfijos ybatchesidénticos16original+16old7+16old9+16new9autónomos. Raw10canalespistasvsbrain10actividadconencoderactualadaptado9fijo;amboscontextopúblico. Noheredarheadbrainpararaw. Test5009+2507nuevoscompartidos,principal9raw-brain,secundario7. Noigualacomputohistóricototal;una inicialización/un cerebro,noinviabilidadbiológica. Protocolo PROTOCOLO_REPRESENTACION_9X9.md,reportero report_nine_representation.py. Antigua comparacióninputs era7condatos5/7;esta prueba usa dominio9yencoderadaptado9. Rawescontrol,sinatribuirlecerebro. Agente servido/originalesintactos.
+
+
+## Comparación representación9 · terminada15sept03:51UTC
+
+Mismoslectoresnuevos/datos/3000updates:9raw62/500(12.4%)vsbrain18/500(3.6%),principal+8.8pp IC95%[+5.6,+12.2].7raw76/250vsbrain62/250. Brechaderepresentaciónbajoesteprotocolo,noimposibilidadbiológica,norawagenteconmosca. Encoder/grafoactual9preentrenados,igualpresupuestodellectornohistóricototal. Auditoría750layouts/hash/inicialización/batches/inputs/parametrización/endpoint pasa,figurainspeccionada,informe RESULTADO_REPRESENTACION_9X9.md.
+
+## Tiempo de propagación · en curso15sept2026
+
+Hipótesis:lectura temprana conserva información útil. experiments/compare_propagation_time.py,runs/propagation-time-001,benchmarks/propagation-time.log. Amboslectoresusanactividadgrafo;solo1cicloversus3antesdeagrupar10clasesdesalida. Mismosencoder/grafo/gain/mappingfijos;encoderhistóricoadaptadoa3(asimetríaexplícita). Lectoresnuevosseed20261103/12769param/3000updatesfijos,CEuniforme/Adam.001/mismosbatches16por4fuentes5/7/9. Cachesseparadasyciclorestablecidosegúncandidatoantesdeevaluar.750testnuevos5009/2507,principal9early-late. Protocolo PROTOCOLO_TIEMPO_PROPAGACION.md,reportero report_propagation_time.py. Ciclosnuméricosno equivalentesaHz/tiempobiológico. Agente servido/originalesintactos.
