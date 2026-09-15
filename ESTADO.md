@@ -579,3 +579,12 @@ Dosnuevas7:03parent49/control57/repaso64de250;04parent60/control50/repaso61. Pri
 Siguientepiloto02: experiments/train_nine_interface.py,runs/nine-interface-001,benchmarks/nine-interface.log. Desde seven-rehearsal-001/latest-replay.pt,750updatesfijos con16original+16DAgger7+32DAgger9;controlsololector vsconjuntolector+encoder. Mismospesos/Adamlector/RNG/índices,encoderAdam nuevo1e-4,head.001heredado,clip5porgruposeparado. Grafo/aristas/gainsneuronales fijos;online4microbatch16 paraencoder;controlcacheverificada. Último750antesdetest5009+2507nuevos;principal9joint-control,7retenciónsecundaria. Protocolo PROTOCOLO_INTERFAZ_9X9.md.
 
 JointInterface.activity ahora usa tamañosconmapeo registrado yrechaza faltantes;antes solo5/7igualquelarutacachehistórica. Testdense/gradientesexistente pasa. Preflightrealantesentrenarcompruebaforwardmezcla5/7/9,gradienteacumuladovscompleto,gradienteencoder9positivo,cachesactuales. Reportero report_nine_interface.py preparado;no reutilizarcachevieja trasadaptarencoder. Agente servido/originales intactos.
+
+
+## Adaptación interfaz9 · terminada15sept01:54UTC
+
+9×9: baseline16/500,control17/500,joint19/500;principal+.4pp IC95%[−1,+1.8],vsbaseline+.6pp[−1,+2.2]. Sin ganancia9concluyente.7×7baseline61/250,control55/250,joint63/250. Encoderjointcambió ycontrolidéntico,grafofijo;auditoríapreflight/pares/hashes/layouts/endpointpasa;figurainspeccionada,informe RESULTADO_INTERFAZ_9X9.md. No adoptarcomoavanceconfirmado.
+
+## Diagnóstico asistencia pública · en curso15sept2026
+
+Antesdeentrenarmás,experiments/evaluate_assistance.py,runs/assistance-diagnostic-001,benchmarks/assistance-diagnostic.log. Checkpointlatestjoint750 fijocomoobjetodiagnóstico,no ganadorelegido.500nuevos9×9/12 compartidos cuatrobrazos:autónomo,corregir50%propuestasqueomiten segura,corregir100%,solverpúblicocompleto(incluyeprobabilidadheurísticacuandoexactonoalcanza). Soloautónomoesrendimientodelagente. Sinentrenamiento,nicambiosagenteservido. Noatribuirvictoriasasistidasaaprendizaje niverloscomocotaóptima. Preflight compara16partidasautónomasconevalexistente,traceestadovisible/propuesta/acción/intervención en cadapaso para auditoríareconstruccióncompleta. Protocolo PROTOCOLO_DIAGNOSTICO_ASISTENCIA.md,reportero report_assistance.py. Lastrayectoriasdivergen,lasdiferenciasno soncomponentescausalesaditivosdelerror.

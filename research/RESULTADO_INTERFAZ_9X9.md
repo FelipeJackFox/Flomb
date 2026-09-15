@@ -1,0 +1,106 @@
+# Adaptación de interfaz a9×9
+
+Principal9×9, conjunto−control: +0.40pp,IC95%[-1.00,+1.80].
+
+![Resultados](nine-interface-results.png)
+
+750updates fijos desdepadreconrepaso,lector+encoder vslectorúnicamente. Mismosíndices ymezcla16original/16DAgger7/32DAgger9;Adamlectorheredado,encoderAdamnuevo1e-4. Conjunto calcula gradienteonline en4microbatches16;controlcacheverificada. Graforecurrente,pesosdearistas ygananciasneuronales fijos. 750layouts nuevos compartidos5009y2507,una semilla/un cerebro; evaluación conencoderpropio ycache nueva de cada candidato. Retención7secundaria debeinformarse. No es ventaja anatómica niaprendizaje de conexiones biológicas.
+
+```json
+{
+  "7": {
+    "results": {
+      "baseline": {
+        "wins": 61,
+        "n": 250,
+        "safe_choices": 1239,
+        "safe_opportunities": 1384,
+        "known_mine_choices": 68,
+        "death_with_safe_available": 91,
+        "death_after_exact_half_min_risk": 0
+      },
+      "control": {
+        "wins": 55,
+        "n": 250,
+        "safe_choices": 1105,
+        "safe_opportunities": 1236,
+        "known_mine_choices": 58,
+        "death_with_safe_available": 83,
+        "death_after_exact_half_min_risk": 0
+      },
+      "joint": {
+        "wins": 63,
+        "n": 250,
+        "safe_choices": 1152,
+        "safe_opportunities": 1277,
+        "known_mine_choices": 51,
+        "death_with_safe_available": 76,
+        "death_after_exact_half_min_risk": 0
+      }
+    },
+    "comparisons": {
+      "control": {
+        "delta_pp": 3.2,
+        "ci95_pp": [
+          0.0,
+          6.4
+        ]
+      },
+      "baseline": {
+        "delta_pp": 0.8,
+        "ci95_pp": [
+          -3.5999999999999996,
+          5.2
+        ]
+      }
+    }
+  },
+  "9": {
+    "results": {
+      "baseline": {
+        "wins": 16,
+        "n": 500,
+        "safe_choices": 2842,
+        "safe_opportunities": 3342,
+        "known_mine_choices": 216,
+        "death_with_safe_available": 317,
+        "death_after_exact_half_min_risk": 1
+      },
+      "control": {
+        "wins": 17,
+        "n": 500,
+        "safe_choices": 2800,
+        "safe_opportunities": 3309,
+        "known_mine_choices": 217,
+        "death_with_safe_available": 308,
+        "death_after_exact_half_min_risk": 1
+      },
+      "joint": {
+        "wins": 19,
+        "n": 500,
+        "safe_choices": 3062,
+        "safe_opportunities": 3576,
+        "known_mine_choices": 209,
+        "death_with_safe_available": 309,
+        "death_after_exact_half_min_risk": 0
+      }
+    },
+    "comparisons": {
+      "control": {
+        "delta_pp": 0.4,
+        "ci95_pp": [
+          -1.0,
+          1.7999999999999998
+        ]
+      },
+      "baseline": {
+        "delta_pp": 0.6,
+        "ci95_pp": [
+          -1.0,
+          2.1999999999999997
+        ]
+      }
+    }
+  }
+}
+```
