@@ -1,0 +1,12 @@
+{
+  "layouts_reconstructed": 750,
+  "prior_overlap": 0,
+  "hashes_intact": true,
+  "paired_samples": true,
+  "parameters": {
+    "mean": 12769,
+    "fusion": 12739,
+    "fusion_aug": 12739
+  },
+  "endpoint3000": true
+}

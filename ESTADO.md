@@ -698,3 +698,18 @@ Intento preflight archivado sin updates: diferencia cache lote16 vsdirecto4 de5.
 9ocho119/cuatro119 de500,+0.0pp IC95[-3.2,3.2];7ocho112/cuatro115 de250,−1.2pp[-6.4,4]. Sin mejora: los reflejos no añaden nada sobre las4rotaciones y cuestan2x. verification.json weights_fixed/originals_intact true,figura research/reflection-readout-results.png inspeccionada,informe research/RESULTADO_REFLEJOS.md. Línea de agregación en inferencia agotada: única ganancia robusta sigue siendo4rotaciones(+16.9pp en9,+16.2pp en7,replicada). Siguiente prueba SIN decidir ni arrancar;heartbeat codex sigue PAUSED. Agente servido/originales intactos. Visor temporalmente en8766(8765ocupado por asoiaf-map).
 
 
+## Fusión de orientaciones · en curso 18 sept 2026 (Claude Code, autorizado por Felipe)
+
+runs/orientation-fusion-001, runner experiments.train_orientation_fusion, log benchmarks/orientation-fusion.log, protocolo research/PROTOCOLO_FUSION_ORIENTACIONES.md, reportero experiments.report_orientation_fusion, tests experiments/test_orientation_fusion.py (5 pasan). Se descartó el lector equivariante de una sola pasada: la ganancia de las rotaciones viene de que el cerebro fijo no es equivariante, y eso solo se aprovecha con 4 pasadas. Tres brazos con 4 pasadas por jugada: mean (promedio de logits, control), fusion (lector sobre las 4 actividades alineadas), fusion_aug (con giros gratis desde caché). Lectores nuevos seed 20261110, 3000 updates, mismos draws; 750 layouts nuevos; principal 9×9 fusion_aug − mean. Encoder early-interface-001/latest-joint y grafo fijos, 1 ciclo. Agente servido/originales intactos.
+
+
+## Aprendizaje sináptico · en curso 18 sept 2026 (Claude Code, autorizado por Felipe: "lo cool sería que aprenda el cerebro")
+
+Conteo nuevo: con 1 ciclo solo 23,778 de 25,582,938 conexiones están en el camino entrada→salida (L1-L3→Mi/Tm, un salto); con 2 ciclos ~380k hacia salidas. La línea 1-ciclo usaba ~0.1% del conectoma. runs/synaptic-learning-001, runner experiments.train_synaptic_learning (arg = workers; reanuda solo si existe warmup.pt/latest-brain.pt), log benchmarks/synaptic-learning.log, protocolo research/PROTOCOLO_APRENDIZAJE_SINAPTICO.md, reportero experiments.report_synaptic_learning, tests experiments/test_synaptic_learning.py (3 pasan, incluye diferencias finitas float64). 3 ciclos; calentamiento lector nuevo 3000 updates (baseline); brazo reader sigue 3000 con cerebro fijo; brazo brain congela encoder+lector y entrena 25.6M log-ganancias por conexión + 166.7k por neurona 3000 updates con las mismas posiciones. Principal 9×9 brain − baseline, 750 layouts nuevos, una inferencia. PID 45157 con caffeinate, 5 workers, corre en paralelo con orientation-fusion-001 (PID 41320). Si hay señal, siguiente paso obligado: control con grafo recableado. Agente servido/originales intactos.
+
+
+## Fusión de orientaciones cerrada 18 sept 2026
+
+9×9: mean 109/500, fusion 118/500, fusion_aug 120/500; principal fusion_aug − mean +2.2 pp IC95 [−2.0, +6.4]; fusion − mean +1.8 [−2.4, +6.0]. 7×7: 90/91/89 de 250, ±0.4 pp [−6.8, +6.8]. Inconcluso: combinar las 4 lecturas con un lector aprendido no supera con claridad al promedio de logits al mismo coste. Auditoría del reportero pasa (hashes, sello, 750 layouts reconstruidos sin solape, mismos draws), figura research/orientation-fusion-results.png inspeccionada, informe research/RESULTADO_FUSION_ORIENTACIONES.md. No replicar: la línea de lectores queda cerrada en favor de aprendizaje sináptico (synaptic-learning-001, en curso). Agente servido intacto.
+
+
