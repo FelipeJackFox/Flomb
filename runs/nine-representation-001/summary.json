@@ -1,0 +1,56 @@
+{
+  "7": {
+    "results": {
+      "raw": {
+        "wins": 76,
+        "n": 250,
+        "safe_choices": 1349,
+        "safe_opportunities": 1492,
+        "known_mine_choices": 57,
+        "death_with_safe_available": 83
+      },
+      "brain": {
+        "wins": 62,
+        "n": 250,
+        "safe_choices": 1281,
+        "safe_opportunities": 1441,
+        "known_mine_choices": 81,
+        "death_with_safe_available": 109
+      }
+    },
+    "raw_minus_brain": {
+      "delta_pp": 5.6000000000000005,
+      "ci95_pp": [
+        -1.2,
+        12.4
+      ]
+    }
+  },
+  "9": {
+    "results": {
+      "raw": {
+        "wins": 62,
+        "n": 500,
+        "safe_choices": 3560,
+        "safe_opportunities": 4068,
+        "known_mine_choices": 161,
+        "death_with_safe_available": 264
+      },
+      "brain": {
+        "wins": 18,
+        "n": 500,
+        "safe_choices": 2910,
+        "safe_opportunities": 3400,
+        "known_mine_choices": 198,
+        "death_with_safe_available": 294
+      }
+    },
+    "raw_minus_brain": {
+      "delta_pp": 8.799999999999999,
+      "ci95_pp": [
+        5.6000000000000005,
+        12.2
+      ]
+    }
+  }
+}

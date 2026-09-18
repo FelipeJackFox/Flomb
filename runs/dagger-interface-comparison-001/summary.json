@@ -1,0 +1,100 @@
+{
+  "comparisons": {
+    "all": {
+      "unadapted_mean_pct": 16.866666666666667,
+      "adapted_mean_pct": 21.93333333333333,
+      "delta_pp": 5.066666666666666,
+      "conditional_ci95_pp": [
+        2.8666666666666667,
+        7.199999999999999
+      ]
+    },
+    "20261002": {
+      "unadapted_mean_pct": 17.4,
+      "adapted_mean_pct": 25.0,
+      "delta_pp": 7.6,
+      "conditional_ci95_pp": [
+        4.0,
+        11.200000000000001
+      ]
+    },
+    "20261003": {
+      "unadapted_mean_pct": 16.400000000000002,
+      "adapted_mean_pct": 20.8,
+      "delta_pp": 4.3999999999999995,
+      "conditional_ci95_pp": [
+        0.8,
+        8.0
+      ]
+    },
+    "20261004": {
+      "unadapted_mean_pct": 16.8,
+      "adapted_mean_pct": 20.0,
+      "delta_pp": 3.2,
+      "conditional_ci95_pp": [
+        0.0,
+        6.2
+      ]
+    }
+  },
+  "results": {
+    "20261002-unadapted": {
+      "wins": 87,
+      "n": 500,
+      "automatic_excluded": 0,
+      "known_mine_choices": 172,
+      "safe_choices": 2151,
+      "safe_opportunities": 2518
+    },
+    "20261002-adapted": {
+      "wins": 125,
+      "n": 500,
+      "automatic_excluded": 0,
+      "known_mine_choices": 137,
+      "safe_choices": 2396,
+      "safe_opportunities": 2708
+    },
+    "20261003-unadapted": {
+      "wins": 82,
+      "n": 500,
+      "automatic_excluded": 0,
+      "known_mine_choices": 171,
+      "safe_choices": 2112,
+      "safe_opportunities": 2486
+    },
+    "20261003-adapted": {
+      "wins": 104,
+      "n": 500,
+      "automatic_excluded": 0,
+      "known_mine_choices": 152,
+      "safe_choices": 2316,
+      "safe_opportunities": 2648
+    },
+    "20261004-unadapted": {
+      "wins": 84,
+      "n": 500,
+      "automatic_excluded": 0,
+      "known_mine_choices": 167,
+      "safe_choices": 2103,
+      "safe_opportunities": 2458
+    },
+    "20261004-adapted": {
+      "wins": 100,
+      "n": 500,
+      "automatic_excluded": 0,
+      "known_mine_choices": 150,
+      "safe_choices": 2238,
+      "safe_opportunities": 2560
+    }
+  },
+  "steps": {
+    "20261002-unadapted": 2000,
+    "20261002-adapted": 2250,
+    "20261003-unadapted": 2250,
+    "20261003-adapted": 1750,
+    "20261004-unadapted": 1750,
+    "20261004-adapted": 2250
+  },
+  "shared_layouts": 500,
+  "automatic_excluded": 0
+}

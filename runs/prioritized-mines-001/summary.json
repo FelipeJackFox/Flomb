@@ -1,0 +1,210 @@
+{
+  "metrics": {
+    "20261002": {
+      "baseline": {
+        "wins": 102,
+        "n": 499,
+        "known_mine_choices": 169,
+        "death_with_safe_available": 235,
+        "safe_choices": 2594,
+        "safe_opportunities": 2968
+      },
+      "control": {
+        "wins": 104,
+        "n": 499,
+        "known_mine_choices": 159,
+        "death_with_safe_available": 217,
+        "safe_choices": 2476,
+        "safe_opportunities": 2812
+      },
+      "priority": {
+        "wins": 107,
+        "n": 499,
+        "known_mine_choices": 163,
+        "death_with_safe_available": 224,
+        "safe_choices": 2544,
+        "safe_opportunities": 2908
+      }
+    },
+    "20261003": {
+      "baseline": {
+        "wins": 102,
+        "n": 499,
+        "known_mine_choices": 158,
+        "death_with_safe_available": 221,
+        "safe_choices": 2298,
+        "safe_opportunities": 2659
+      },
+      "control": {
+        "wins": 95,
+        "n": 499,
+        "known_mine_choices": 147,
+        "death_with_safe_available": 215,
+        "safe_choices": 2189,
+        "safe_opportunities": 2529
+      },
+      "priority": {
+        "wins": 89,
+        "n": 499,
+        "known_mine_choices": 158,
+        "death_with_safe_available": 226,
+        "safe_choices": 2194,
+        "safe_opportunities": 2558
+      }
+    },
+    "20261004": {
+      "baseline": {
+        "wins": 86,
+        "n": 499,
+        "known_mine_choices": 162,
+        "death_with_safe_available": 228,
+        "safe_choices": 2281,
+        "safe_opportunities": 2665
+      },
+      "control": {
+        "wins": 92,
+        "n": 499,
+        "known_mine_choices": 161,
+        "death_with_safe_available": 224,
+        "safe_choices": 2277,
+        "safe_opportunities": 2640
+      },
+      "priority": {
+        "wins": 86,
+        "n": 499,
+        "known_mine_choices": 162,
+        "death_with_safe_available": 228,
+        "safe_choices": 2281,
+        "safe_opportunities": 2665
+      }
+    }
+  },
+  "comparisons": {
+    "baseline": {
+      "delta_pp": -0.5344021376085505,
+      "conditional_ci95_pp": [
+        -2.0708082832331334,
+        1.002004008016032
+      ]
+    },
+    "control": {
+      "delta_pp": -0.6012024048096193,
+      "conditional_ci95_pp": [
+        -2.338009352037408,
+        1.1356045424181695
+      ]
+    }
+  },
+  "fit": {
+    "20261002": {
+      "control": {
+        "initial_known_mines": 683,
+        "initial_safe": 12722,
+        "positions": 14143,
+        "selected_known_mines": 620,
+        "selected_safe": 12768,
+        "selected_step": 750,
+        "prioritized_draws": 0
+      },
+      "priority": {
+        "initial_known_mines": 683,
+        "initial_safe": 12722,
+        "positions": 14143,
+        "selected_known_mines": 630,
+        "selected_safe": 12666,
+        "selected_step": 500,
+        "prioritized_draws": 24000
+      }
+    },
+    "20261003": {
+      "control": {
+        "initial_known_mines": 480,
+        "initial_safe": 9125,
+        "positions": 10217,
+        "selected_known_mines": 481,
+        "selected_safe": 9130,
+        "selected_step": 250,
+        "prioritized_draws": 0
+      },
+      "priority": {
+        "initial_known_mines": 480,
+        "initial_safe": 9125,
+        "positions": 10217,
+        "selected_known_mines": 415,
+        "selected_safe": 9112,
+        "selected_step": 1000,
+        "prioritized_draws": 24000
+      }
+    },
+    "20261004": {
+      "control": {
+        "initial_known_mines": 502,
+        "initial_safe": 9177,
+        "positions": 10277,
+        "selected_known_mines": 413,
+        "selected_safe": 9326,
+        "selected_step": 1250,
+        "prioritized_draws": 0
+      },
+      "priority": {
+        "initial_known_mines": 502,
+        "initial_safe": 9177,
+        "positions": 10277,
+        "selected_known_mines": 502,
+        "selected_safe": 9177,
+        "selected_step": 0,
+        "prioritized_draws": 24000
+      }
+    }
+  },
+  "terminal_fit": {
+    "20261002": {
+      "control": {
+        "known_mine_choices": 619,
+        "safe_choices": 12817,
+        "positions": 14143,
+        "validation_loss": 1.8021636734008788
+      },
+      "priority": {
+        "known_mine_choices": 579,
+        "safe_choices": 12712,
+        "positions": 14143,
+        "validation_loss": 1.8082968406677247
+      }
+    },
+    "20261003": {
+      "control": {
+        "known_mine_choices": 490,
+        "safe_choices": 9181,
+        "positions": 10217,
+        "validation_loss": 1.8182603092193603
+      },
+      "priority": {
+        "known_mine_choices": 387,
+        "safe_choices": 9155,
+        "positions": 10217,
+        "validation_loss": 1.8179187564849852
+      }
+    },
+    "20261004": {
+      "control": {
+        "known_mine_choices": 481,
+        "safe_choices": 9249,
+        "positions": 10277,
+        "validation_loss": 1.8072779273986816
+      },
+      "priority": {
+        "known_mine_choices": 381,
+        "safe_choices": 9278,
+        "positions": 10277,
+        "validation_loss": 1.8094757995605468
+      }
+    }
+  },
+  "automatic_excluded": 1,
+  "means_pct": {
+    "baseline": 19.372077488309955,
+    "control": 19.43887775551102,
+    "priority": 18.837675350701403
+  }
+}

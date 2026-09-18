@@ -1,0 +1,41 @@
+{
+  "training": false,
+  "seeds": [
+    20261002,
+    20261003,
+    20261004
+  ],
+  "levels": [
+    [
+      7,
+      7
+    ],
+    [
+      9,
+      12
+    ],
+    [
+      12,
+      22
+    ],
+    [
+      16,
+      38
+    ]
+  ],
+  "games_per_level": 200,
+  "hashes": {
+    "runs/wide-reader-001/best-20261002-local.pt": "e25990d0ef52ed7173df5a102085849bdad09c5df514a75123a4f9387a1da46f",
+    "runs/wide-reader-001/best-20261003-local.pt": "e34cf7c9214ca07bea488f3ebd49c45a9cbb6c9319a13f1e69c07bdf6281247b",
+    "runs/wide-reader-001/best-20261004-local.pt": "a8ef4889b5653cc5f5c753a557763e7ebf8f9397f5369ef8ee206e11740feb29",
+    "runs/structural-learning-001/training/retina_plastic-20260926.pt": "9dc158b146f65d1cc29afa8eb989efe02ad8a8b2defd7586ac940dbb9a86568e",
+    "runs/structural-learning-001/mapping.pkl": "568979a06d7b5898725eb43dfe8fd0a4ec6bf0fa3e713744025fe05122f76a6a",
+    "runs/hybrid-001/checkpoint.pkl": "81b09d60395123c0591d8837d2a4419825af51c4a93acb0dbebee31702095ea5"
+  },
+  "expanded_mapping": true,
+  "selection": "fixed preserved local heads; no test selection",
+  "scope": "three policies, one brain; 800 shared new layouts, roughly 15% mines",
+  "primary": "autonomous win rate by size",
+  "secondary": "safe choices/opportunities, deaths with safe available, certified mine choices, exact half-risk deaths",
+  "caution": "solver-certified safe is not all possible logical safety; no luck-adjusted wins"
+}

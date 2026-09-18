@@ -1,0 +1,11 @@
+{
+  "hashes": {
+    "runs/spatial-dagger-expanded-20261002/best-expanded.pt": "46101eccb183c39176ce1592265640e252f73d85c061f7506c2cc105c58a2a90",
+    "runs/spatial-dagger-expanded-20261003/best-expanded.pt": "954e2528bc2070b6a1d651ed719837aa61862700ec1fc779f8a790bf55263ae0",
+    "runs/spatial-dagger-expanded-20261004/best-expanded.pt": "320c9beaa1678697d0033fe0c2ddc5cb050aea03d3ba1cf212e3f084094ef356",
+    "runs/structural-learning-001/training/retina_plastic-20260926.pt": "9dc158b146f65d1cc29afa8eb989efe02ad8a8b2defd7586ac940dbb9a86568e",
+    "runs/hybrid-001/checkpoint.pkl": "81b09d60395123c0591d8837d2a4419825af51c4a93acb0dbebee31702095ea5"
+  },
+  "scope": "cached fit all seeds; exact replay first seed; no training",
+  "benchmark_status": "previous final benchmark now inspected for diagnosis; future interventions require new final games"
+}

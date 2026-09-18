@@ -1,0 +1,18 @@
+{
+  "checkpoint_fixed": true,
+  "training": false,
+  "hashes": {
+    "runs/nine-interface-001/latest-joint.pt": "8e87a20f83a36aed1693af9f9c6e07d8d84ef15fc577a86e1738583f8d255167",
+    "runs/difficulty-transfer-002/extended-mapping.pkl": "902150f76da527a8918be5290778bb0b3421d6350ccaef60c824ad81ba6f9e50",
+    "runs/structural-learning-001/training/retina_plastic-20260926.pt": "9dc158b146f65d1cc29afa8eb989efe02ad8a8b2defd7586ac940dbb9a86568e",
+    "runs/hybrid-001/checkpoint.pkl": "81b09d60395123c0591d8837d2a4419825af51c4a93acb0dbebee31702095ea5"
+  },
+  "modes": [
+    "autonomous",
+    "safe_half",
+    "safe_all",
+    "public_solver"
+  ],
+  "scope": "intervention diagnostic; only autonomous arm is autonomous",
+  "games": 500
+}

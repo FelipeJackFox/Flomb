@@ -691,3 +691,10 @@ Intento preflight archivado sin updates: diferencia cache lote16 vsdirecto4 de5.
 ## Destilación cerrada15sept09:20UTC
 
 9destilado32/control30de500,+.4pp[-2.2,3];7destilado90/control86de250,+1.6[-3.2,6.4]. Sinmejora clara. Auditoría pasa,figura inspeccionada. Siguiente reflection-readout-001/evaluate_reflection_readout,log reflection-readout.log:8simetrías vs4rotaciones,mismo modelopiloto early-interface/latest-joint fijo1ciclo,750testnuevos,0updates,2xcoste nominal. Protocolo REFLEJOS;report_reflection_readout. Agenteservido intacto.
+
+
+## Reflejos cerrado18sept2026 (evaluación terminó15sept09:45UTC; reporte corrido18sept por Claude Code)
+
+9ocho119/cuatro119 de500,+0.0pp IC95[-3.2,3.2];7ocho112/cuatro115 de250,−1.2pp[-6.4,4]. Sin mejora: los reflejos no añaden nada sobre las4rotaciones y cuestan2x. verification.json weights_fixed/originals_intact true,figura research/reflection-readout-results.png inspeccionada,informe research/RESULTADO_REFLEJOS.md. Línea de agregación en inferencia agotada: única ganancia robusta sigue siendo4rotaciones(+16.9pp en9,+16.2pp en7,replicada). Siguiente prueba SIN decidir ni arrancar;heartbeat codex sigue PAUSED. Agente servido/originales intactos. Visor temporalmente en8766(8765ocupado por asoiaf-map).
+
+

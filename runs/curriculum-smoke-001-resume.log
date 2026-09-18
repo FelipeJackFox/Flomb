@@ -1,0 +1,21 @@
+TRAIN {"episode": 32, "target": 32, "group": "large", "size": 16, "mines": 37, "seed": 910926215, "mixture": [0.0, 0.0, 1.0], "won": false, "automatic_win": false, "return": -1.0, "safe_fraction": 0.0045662100456621, "steps": 1, "total_clicks": 150, "gradient_norm": 0.24190467103085028, "internal_gain_l2_change": 2.7070107460021973, "group_counts": {"small": 7, "medium": 3, "large": 22}, "training_wall_seconds": 27.930805832962506, "peak_rss_bytes_macos": 523747328}
+EVAL 5x5-3 {"episodes": 2, "wins": 1, "win_rate": 0.5, "automatic_wins": 0, "decision_win_rate": 0.5, "mean_safe_fraction": 0.9545454545454546, "clicks": 6, "seed_start": 2000000000}
+EVAL 7x7-7 {"episodes": 2, "wins": 0, "win_rate": 0.0, "automatic_wins": 0, "decision_win_rate": 0.0, "mean_safe_fraction": 0.34523809523809523, "clicks": 5, "seed_start": 2000100000}
+EVAL 9x9-10 {"episodes": 2, "wins": 0, "win_rate": 0.0, "automatic_wins": 0, "decision_win_rate": 0.0, "mean_safe_fraction": 0.7323943661971831, "clicks": 6, "seed_start": 2000200000}
+EVAL 12x12-24 {"episodes": 2, "wins": 0, "win_rate": 0.0, "automatic_wins": 0, "decision_win_rate": 0.0, "mean_safe_fraction": 0.26666666666666666, "clicks": 9, "seed_start": 2000300000}
+EVAL 16x16-40 {"episodes": 2, "wins": 0, "win_rate": 0.0, "automatic_wins": 0, "decision_win_rate": 0.0, "mean_safe_fraction": 0.34953703703703703, "clicks": 5, "seed_start": 2000400000}
+EVAL 16x16-56 {"episodes": 2, "wins": 0, "win_rate": 0.0, "automatic_wins": 0, "decision_win_rate": 0.0, "mean_safe_fraction": 0.12, "clicks": 12, "seed_start": 2000500000}
+EVAL 5x5-3 {"episodes": 2, "wins": 0, "win_rate": 0.0, "automatic_wins": 0, "decision_win_rate": 0.0, "mean_safe_fraction": 0.5, "clicks": 5, "seed_start": 2000000000}
+EVAL 7x7-7 {"episodes": 2, "wins": 0, "win_rate": 0.0, "automatic_wins": 0, "decision_win_rate": 0.0, "mean_safe_fraction": 0.35714285714285715, "clicks": 6, "seed_start": 2000100000}
+EVAL 9x9-10 {"episodes": 2, "wins": 0, "win_rate": 0.0, "automatic_wins": 0, "decision_win_rate": 0.0, "mean_safe_fraction": 0.8661971830985915, "clicks": 11, "seed_start": 2000200000}
+EVAL 12x12-24 {"episodes": 2, "wins": 0, "win_rate": 0.0, "automatic_wins": 0, "decision_win_rate": 0.0, "mean_safe_fraction": 0.32916666666666666, "clicks": 6, "seed_start": 2000300000}
+EVAL 16x16-40 {"episodes": 2, "wins": 0, "win_rate": 0.0, "automatic_wins": 0, "decision_win_rate": 0.0, "mean_safe_fraction": 0.1990740740740741, "clicks": 2, "seed_start": 2000400000}
+EVAL 16x16-56 {"episodes": 2, "wins": 0, "win_rate": 0.0, "automatic_wins": 0, "decision_win_rate": 0.0, "mean_safe_fraction": 0.0125, "clicks": 5, "seed_start": 2000500000}
+EVAL 5x5-3 {"episodes": 2, "wins": 1, "win_rate": 0.5, "automatic_wins": 0, "decision_win_rate": 0.5, "mean_safe_fraction": 0.9545454545454546, "clicks": 6, "seed_start": 2000000000}
+EVAL 7x7-7 {"episodes": 2, "wins": 0, "win_rate": 0.0, "automatic_wins": 0, "decision_win_rate": 0.0, "mean_safe_fraction": 0.34523809523809523, "clicks": 5, "seed_start": 2000100000}
+EVAL 9x9-10 {"episodes": 2, "wins": 0, "win_rate": 0.0, "automatic_wins": 0, "decision_win_rate": 0.0, "mean_safe_fraction": 0.7253521126760564, "clicks": 5, "seed_start": 2000200000}
+EVAL 12x12-24 {"episodes": 2, "wins": 0, "win_rate": 0.0, "automatic_wins": 0, "decision_win_rate": 0.0, "mean_safe_fraction": 0.24583333333333335, "clicks": 14, "seed_start": 2000300000}
+EVAL 16x16-40 {"episodes": 2, "wins": 0, "win_rate": 0.0, "automatic_wins": 0, "decision_win_rate": 0.0, "mean_safe_fraction": 0.3587962962962963, "clicks": 9, "seed_start": 2000400000}
+EVAL 16x16-56 {"episodes": 2, "wins": 0, "win_rate": 0.0, "automatic_wins": 0, "decision_win_rate": 0.0, "mean_safe_fraction": 0.065, "clicks": 7, "seed_start": 2000500000}
+COMPLETED runs/curriculum-smoke-001
+INVOCATION_SECONDS 15.833757958025672

@@ -1,0 +1,66 @@
+# Agregación de orientaciones
+
+Principal9×9,ocho−cuatro: +0.00pp,IC95%[-3.20,+3.20].
+
+![Resultados](reflection-readout-results.png)
+
+Mismo modelo fijo de interfaz temprana,1ciclo. Ocho simetrías por decisión,logits inversamente rotados y promediados. Sin nuevos updates ni maestro;cuatro veces inferencia nominal,no presupuesto igualado. 750layouts nuevos compartidos,5009/2507. No demuestra aprendizaje ni ventaja anatómica.
+
+```json
+{
+  "7": {
+    "results": {
+      "eight": {
+        "wins": 112,
+        "n": 250,
+        "safe_choices": 1609,
+        "safe_opportunities": 1701,
+        "known_mine_choices": 34,
+        "death_with_safe_available": 50
+      },
+      "four": {
+        "wins": 115,
+        "n": 250,
+        "safe_choices": 1645,
+        "safe_opportunities": 1760,
+        "known_mine_choices": 34,
+        "death_with_safe_available": 57
+      }
+    },
+    "eight_minus_four": {
+      "delta_pp": -1.2,
+      "ci95_pp": [
+        -6.4,
+        4.0
+      ]
+    }
+  },
+  "9": {
+    "results": {
+      "eight": {
+        "wins": 119,
+        "n": 500,
+        "safe_choices": 5110,
+        "safe_opportunities": 5436,
+        "known_mine_choices": 130,
+        "death_with_safe_available": 191
+      },
+      "four": {
+        "wins": 119,
+        "n": 500,
+        "safe_choices": 5033,
+        "safe_opportunities": 5382,
+        "known_mine_choices": 129,
+        "death_with_safe_available": 196
+      }
+    },
+    "eight_minus_four": {
+      "delta_pp": 0.0,
+      "ci95_pp": [
+        -3.2,
+        3.2
+      ]
+    }
+  }
+}
+```

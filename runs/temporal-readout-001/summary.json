@@ -1,0 +1,56 @@
+{
+  "7": {
+    "results": {
+      "combined": {
+        "wins": 77,
+        "n": 250,
+        "safe_choices": 1457,
+        "safe_opportunities": 1594,
+        "known_mine_choices": 54,
+        "death_with_safe_available": 84
+      },
+      "control": {
+        "wins": 81,
+        "n": 250,
+        "safe_choices": 1478,
+        "safe_opportunities": 1631,
+        "known_mine_choices": 59,
+        "death_with_safe_available": 89
+      }
+    },
+    "combined_minus_control": {
+      "delta_pp": -1.6,
+      "ci95_pp": [
+        -8.0,
+        4.3999999999999995
+      ]
+    }
+  },
+  "9": {
+    "results": {
+      "combined": {
+        "wins": 28,
+        "n": 500,
+        "safe_choices": 3488,
+        "safe_opportunities": 3936,
+        "known_mine_choices": 184,
+        "death_with_safe_available": 265
+      },
+      "control": {
+        "wins": 38,
+        "n": 500,
+        "safe_choices": 3763,
+        "safe_opportunities": 4272,
+        "known_mine_choices": 194,
+        "death_with_safe_available": 286
+      }
+    },
+    "combined_minus_control": {
+      "delta_pp": -2.0,
+      "ci95_pp": [
+        -4.3999999999999995,
+        0.2
+      ]
+    }
+  }
+}

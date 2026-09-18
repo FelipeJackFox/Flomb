@@ -1,0 +1,175 @@
+{
+  "means_pct": {
+    "baseline": 17.066666666666666,
+    "control": 18.666666666666668,
+    "expanded": 19.866666666666667
+  },
+  "comparisons": {
+    "baseline": {
+      "mean_delta_pp": 2.8000000000000003,
+      "conditional_ci95_pp": [
+        0.9333333333333335,
+        4.666666666666666
+      ],
+      "per_seed_delta_pp": {
+        "20261002": 4.2,
+        "20261003": 2.8000000000000003,
+        "20261004": 1.4000000000000001
+      }
+    },
+    "control": {
+      "mean_delta_pp": 1.2,
+      "conditional_ci95_pp": [
+        -0.6,
+        3.0
+      ],
+      "per_seed_delta_pp": {
+        "20261002": 2.0,
+        "20261003": 0.6,
+        "20261004": 1.0
+      }
+    }
+  },
+  "metrics": {
+    "20261002": {
+      "baseline": {
+        "wins": 81,
+        "n": 500,
+        "safe_choices": 2253,
+        "safe_opportunities": 2629,
+        "known_mine_choices": 170,
+        "death_with_safe_available": 249,
+        "death_after_exact_half_min_risk": 0
+      },
+      "control": {
+        "wins": 92,
+        "n": 500,
+        "safe_choices": 2312,
+        "safe_opportunities": 2686,
+        "known_mine_choices": 164,
+        "death_with_safe_available": 228,
+        "death_after_exact_half_min_risk": 0
+      },
+      "expanded": {
+        "wins": 102,
+        "n": 500,
+        "safe_choices": 2591,
+        "safe_opportunities": 2958,
+        "known_mine_choices": 176,
+        "death_with_safe_available": 245,
+        "death_after_exact_half_min_risk": 0
+      }
+    },
+    "20261003": {
+      "baseline": {
+        "wins": 89,
+        "n": 500,
+        "safe_choices": 2132,
+        "safe_opportunities": 2460,
+        "known_mine_choices": 155,
+        "death_with_safe_available": 224,
+        "death_after_exact_half_min_risk": 0
+      },
+      "control": {
+        "wins": 100,
+        "n": 500,
+        "safe_choices": 2119,
+        "safe_opportunities": 2426,
+        "known_mine_choices": 144,
+        "death_with_safe_available": 202,
+        "death_after_exact_half_min_risk": 1
+      },
+      "expanded": {
+        "wins": 103,
+        "n": 500,
+        "safe_choices": 2330,
+        "safe_opportunities": 2708,
+        "known_mine_choices": 179,
+        "death_with_safe_available": 245,
+        "death_after_exact_half_min_risk": 0
+      }
+    },
+    "20261004": {
+      "baseline": {
+        "wins": 86,
+        "n": 500,
+        "safe_choices": 2212,
+        "safe_opportunities": 2613,
+        "known_mine_choices": 180,
+        "death_with_safe_available": 243,
+        "death_after_exact_half_min_risk": 0
+      },
+      "control": {
+        "wins": 88,
+        "n": 500,
+        "safe_choices": 2308,
+        "safe_opportunities": 2720,
+        "known_mine_choices": 189,
+        "death_with_safe_available": 253,
+        "death_after_exact_half_min_risk": 0
+      },
+      "expanded": {
+        "wins": 93,
+        "n": 500,
+        "safe_choices": 2391,
+        "safe_opportunities": 2770,
+        "known_mine_choices": 184,
+        "death_with_safe_available": 241,
+        "death_after_exact_half_min_risk": 0
+      }
+    }
+  },
+  "selection": {
+    "20261002": {
+      "baseline": {
+        "wins": 81,
+        "n": 500,
+        "selected_step": 0
+      },
+      "control": {
+        "wins": 92,
+        "n": 500,
+        "selected_step": 1750
+      },
+      "expanded": {
+        "wins": 102,
+        "n": 500,
+        "selected_step": 2000
+      }
+    },
+    "20261003": {
+      "baseline": {
+        "wins": 89,
+        "n": 500,
+        "selected_step": 0
+      },
+      "control": {
+        "wins": 100,
+        "n": 500,
+        "selected_step": 1750
+      },
+      "expanded": {
+        "wins": 103,
+        "n": 500,
+        "selected_step": 1500
+      }
+    },
+    "20261004": {
+      "baseline": {
+        "wins": 86,
+        "n": 500,
+        "selected_step": 0
+      },
+      "control": {
+        "wins": 88,
+        "n": 500,
+        "selected_step": 750
+      },
+      "expanded": {
+        "wins": 93,
+        "n": 500,
+        "selected_step": 1250
+      }
+    }
+  }
+}

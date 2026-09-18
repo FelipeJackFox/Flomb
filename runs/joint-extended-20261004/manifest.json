@@ -1,0 +1,25 @@
+{
+  "seed": 20261004,
+  "updates": 3000,
+  "batch": 64,
+  "microbatch": 16,
+  "head_lr": 0.001,
+  "encoder_lr": 0.0001,
+  "parent": "runs/input-representation-001/best-brain-20261004.pt",
+  "resume_from": "runs/joint-interface-20261004",
+  "selection": "minimum original holdout loss every250 including inherited best; earliest tie",
+  "scope": "paired adaptation, pretrained brain and selected head; no new DAgger",
+  "hashes": {
+    "runs/input-representation-001/best-brain-20261004.pt": "49f89c2ca217ab5d1a213f764f61ff9932ddafa3a592580b731ee31babf99aa8",
+    "runs/structural-learning-001/dataset.pkl": "1c6d4c5d2ecae61a069f1f65fbb3bd382635d5545b5f39695529da9a109734b4",
+    "runs/structural-learning-001/mapping.pkl": "568979a06d7b5898725eb43dfe8fd0a4ec6bf0fa3e713744025fe05122f76a6a",
+    "runs/structural-learning-001/training/retina_plastic-20260926.pt": "9dc158b146f65d1cc29afa8eb989efe02ad8a8b2defd7586ac940dbb9a86568e",
+    "runs/spatial-decoder-001/train.pt": "223d850d45598e9babd9c583d8383b297c0cc082b3a94ecf1a5dfe92592ba75e",
+    "runs/spatial-decoder-001/holdout.pt": "9ab068f1bac4e966b5da167c37ade33df3dc2c53520fb01c91acd543d6597df3",
+    "runs/hybrid-001/checkpoint.pkl": "81b09d60395123c0591d8837d2a4419825af51c4a93acb0dbebee31702095ea5",
+    "runs/joint-interface-20261004/best-control.pt": "a6bbd8bca1a3160890864fed707161e96248646cca60aae385a3d59ebcfb339c",
+    "runs/joint-interface-20261004/best-joint.pt": "7b0e917454f7209dd49aae1a19725724a39b32652b65ec14627bd8f66c1c2bb3",
+    "runs/joint-interface-20261004/latest-control.pt": "1e6e1b71ff65b0496052e2a3f77e8de19100ca5a03c7f3523388c5acc0fe0ebf",
+    "runs/joint-interface-20261004/latest-joint.pt": "59367883449b40fea61d5de7da93ffdc94f4a9d290fb477a5a7b8377adffec79"
+  }
+}

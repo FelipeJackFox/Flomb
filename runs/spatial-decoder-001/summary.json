@@ -1,0 +1,116 @@
+{
+  "strata": {
+    "original": {
+      "5": {
+        "wins": 29,
+        "n": 113,
+        "automatic": 14,
+        "rate": 0.25663716814159293,
+        "ci": [
+          0.1850368504624997,
+          0.34424039325891465
+        ],
+        "safe": 257,
+        "opportunities": 321,
+        "known_mine_choices": 29,
+        "avoidable_deaths": 43
+      },
+      "7": {
+        "wins": 14,
+        "n": 250,
+        "automatic": 0,
+        "rate": 0.056,
+        "ci": [
+          0.03364733819454402,
+          0.09179151816312153
+        ],
+        "safe": 553,
+        "opportunities": 757,
+        "known_mine_choices": 99,
+        "avoidable_deaths": 137
+      }
+    },
+    "pointwise": {
+      "5": {
+        "wins": 29,
+        "n": 113,
+        "automatic": 14,
+        "rate": 0.25663716814159293,
+        "ci": [
+          0.1850368504624997,
+          0.34424039325891465
+        ],
+        "safe": 254,
+        "opportunities": 315,
+        "known_mine_choices": 29,
+        "avoidable_deaths": 39
+      },
+      "7": {
+        "wins": 11,
+        "n": 250,
+        "automatic": 0,
+        "rate": 0.044,
+        "ci": [
+          0.024743541619069078,
+          0.07705852707258744
+        ],
+        "safe": 526,
+        "opportunities": 734,
+        "known_mine_choices": 106,
+        "avoidable_deaths": 137
+      }
+    },
+    "spatial": {
+      "5": {
+        "wins": 40,
+        "n": 113,
+        "automatic": 14,
+        "rate": 0.35398230088495575,
+        "ci": [
+          0.27194014667572775,
+          0.4456261995571208
+        ],
+        "safe": 312,
+        "opportunities": 364,
+        "known_mine_choices": 25,
+        "avoidable_deaths": 34
+      },
+      "7": {
+        "wins": 26,
+        "n": 250,
+        "automatic": 0,
+        "rate": 0.104,
+        "ci": [
+          0.07196474410827003,
+          0.14802126291343168
+        ],
+        "safe": 828,
+        "opportunities": 1044,
+        "known_mine_choices": 99,
+        "avoidable_deaths": 132
+      }
+    }
+  },
+  "paired": {
+    "original": {
+      "5": {
+        "spatial_only": 12,
+        "control_only": 1
+      },
+      "7": {
+        "spatial_only": 18,
+        "control_only": 6
+      }
+    },
+    "pointwise": {
+      "5": {
+        "spatial_only": 16,
+        "control_only": 5
+      },
+      "7": {
+        "spatial_only": 18,
+        "control_only": 3
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "updates": 120,
+  "seeds": [
+    20260922,
+    20260923
+  ],
+  "variants": [
+    "cnn",
+    "current",
+    "expressive"
+  ],
+  "batch": 16,
+  "lr": 0.001,
+  "torch": "2.14.0",
+  "protected_checkpoint_sha256": "81b09d60395123c0591d8837d2a4419825af51c4a93acb0dbebee31702095ea5",
+  "dataset_sha256": "c86fc5d3fcaf036f7c6ca012c4bdfea09d4f408811f8feb2546fd6cde1c89481",
+  "source_sha256": {
+    "experiments/capacity_probe.py": "14ac8fb4263de4c84942384ba97ef04cd0c5471dba10931acdd2a624c23f86df",
+    "experiments/expressive_models.py": "fdcecef55c29dd6559ba014bb0c4278f371fbd8eb1b4c392ba7c0eee53840f70",
+    "experiments/spatial_probe.py": "d70f607831ed2b46b4734e64c54f6a2c934a30af0ba9794dbffba33704a555cb",
+    "experiments/backbone.py": "f5070368efcc0cff2a5eb9130ce257b8308cdcc024926c8989dd766ec7ec554f",
+    "experiments/train.py": "b0ed79c3157ce78c7605684b88bd95545d297f499c78f2cb6a3112050f6f3e56",
+    "minesweeper.py": "31125d66d33048e440a6a540edcc6d5d60d8856ba57c24670886a65a510f3b8e",
+    "solver.py": "b4f54b9ab7a09dbcf7ce01ebb7d9c66a81866c89658b9385b156a704cc901a52"
+  },
+  "notes": "Fresh parameters; common fixed maps. Current has equivalent mean-Q linear policy, not QR optimizer. Equal updates/batches, not equal compute or parameter count. Architecture bundle screening, not single-factor causal proof.",
+  "strata": {
+    "train": {
+      "5/elementary": 192,
+      "5/relational_or_exact": 64,
+      "7/elementary": 233,
+      "7/relational_or_exact": 23
+    },
+    "holdout": {
+      "5/elementary": 42,
+      "5/relational_or_exact": 20,
+      "7/elementary": 62,
+      "7/relational_or_exact": 2
+    }
+  }
+}

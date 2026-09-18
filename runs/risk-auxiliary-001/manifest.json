@@ -1,0 +1,21 @@
+{
+  "seed": 20261002,
+  "updates": 1500,
+  "batch": 64,
+  "aux_weight": 0.2,
+  "head_lr": 0.001,
+  "aux_lr": 0.001,
+  "loss": "policy CE +0.2 balanced BCE over publicly certified safe/mine; unknown masked",
+  "mixture": "32 original +32 inherited DAgger, identical draws",
+  "selection": "minimum policy holdout loss at0 and every250, same for both",
+  "hashes": {
+    "runs/wide-reader-001/best-20261002-local.pt": "e25990d0ef52ed7173df5a102085849bdad09c5df514a75123a4f9387a1da46f",
+    "runs/structural-learning-001/dataset.pkl": "1c6d4c5d2ecae61a069f1f65fbb3bd382635d5545b5f39695529da9a109734b4",
+    "runs/structural-learning-001/training/retina_plastic-20260926.pt": "9dc158b146f65d1cc29afa8eb989efe02ad8a8b2defd7586ac940dbb9a86568e",
+    "runs/hybrid-001/checkpoint.pkl": "81b09d60395123c0591d8837d2a4419825af51c4a93acb0dbebee31702095ea5",
+    "runs/adapted-dagger-001/dataset.pkl": "e7c9573816184131060764abf9bcde284f11cc7c44b2dd50bf3ef499846daae5",
+    "runs/adapted-dagger-001/train.pt": "27b129eb400e3a660b6b9f4d31211b633e8a452a877bd2c07be35d4a4907fe03",
+    "runs/adapted-dagger-001/holdout.pt": "04fc2d534b4eebfbd4e240a7e5a84ebb2c5640c37b2803827fdec2ae97d8ca0c",
+    "runs/wide-reader-001/experience-20261002.pt": "0e634a82658f4223654e5251c0bf873f3f2512b9a34cbb81b1801be5f841f9dc"
+  }
+}

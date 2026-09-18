@@ -1,0 +1,9 @@
+{
+  "layouts_reconstructed": 1650,
+  "prior_overlap": 0,
+  "checkpoints_fixed2250": true,
+  "encoder_preserved": true,
+  "hashes_intact": true,
+  "teacher_actions": 0,
+  "public_labels_recomputed": 4533
+}

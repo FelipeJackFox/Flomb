@@ -1,0 +1,24 @@
+{
+  "seeds": [
+    20261002,
+    20261003,
+    20261004
+  ],
+  "reused_seed": 20261002,
+  "new_seeds": [
+    20261003,
+    20261004
+  ],
+  "collection": "same 900 layouts as first seed, intentional train reuse",
+  "selection": "same old holdout, min loss including baseline",
+  "hashes": {
+    "runs/spatial-dagger-001/best-dagger.pt": "f37b7cbf0d419138a314342f03bc23f92860a72a077d43b6ed151730928a0bac",
+    "runs/spatial-dagger-001/best-control.pt": "7736696a118d68670b7235d1f74572b10d1bd0e7a4094e434b44fefcd82ea4e5",
+    "runs/spatial-dagger-001/collection-games.json": "86c7881f8f82718c9e7e89c387059fe58aaae0b26a4bcf53495fb0284861098f",
+    "runs/spatial-extended-001/best-20261002.pt": "9408d43b8c43f539508d3a48715a9658150b279292219d9fd3d2a4bb232220b5",
+    "runs/spatial-extended-001/best-20261003.pt": "295094a65ef71619831bc5bf2094069f566cfc7d3d010cd54824c0b11843d6d8",
+    "runs/spatial-extended-001/best-20261004.pt": "4e493119b92370b5f0f4bb94f70749adc9ee41df6eae4f5599281e070478fcce",
+    "runs/structural-learning-001/training/retina_plastic-20260926.pt": "9dc158b146f65d1cc29afa8eb989efe02ad8a8b2defd7586ac940dbb9a86568e",
+    "runs/hybrid-001/checkpoint.pkl": "81b09d60395123c0591d8837d2a4419825af51c4a93acb0dbebee31702095ea5"
+  }
+}

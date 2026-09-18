@@ -1,0 +1,146 @@
+{
+  "replay": {
+    "clicks": 3860,
+    "without_safe": 902,
+    "wins": 102,
+    "death_with_safe": 245,
+    "with_safe": 2958,
+    "known_mine_choices": 176,
+    "known_mine_with_safe": 176,
+    "local_subset": 122,
+    "single_clue": 45,
+    "global_count": 8,
+    "exact_enumeration": 1
+  },
+  "available_training_positions": {
+    "20261002": {
+      "positions": 14143,
+      "safe_choices": 12722,
+      "known_mine_choices": 683,
+      "single_clue": 170
+    },
+    "20261003": {
+      "positions": 10217,
+      "safe_choices": 9125,
+      "known_mine_choices": 480,
+      "single_clue": 152
+    },
+    "20261004": {
+      "positions": 10277,
+      "safe_choices": 9177,
+      "known_mine_choices": 502,
+      "single_clue": 144
+    }
+  },
+  "tiny_overfit": {
+    "scope": "training-set diagnostic only, not generalization or game evaluation",
+    "seed": 20261002,
+    "indices": [
+      88,
+      134,
+      278,
+      296,
+      300,
+      328,
+      386,
+      500,
+      505,
+      850,
+      890,
+      941,
+      945,
+      1047,
+      1110,
+      1196,
+      1397,
+      1399,
+      1894,
+      2271,
+      2355,
+      2539,
+      2663,
+      2796,
+      2905,
+      2959,
+      2988,
+      3181,
+      3245,
+      3268,
+      3323,
+      3335
+    ],
+    "source": "runs/spatial-dagger-001/dataset.pkl",
+    "checkpoint_sha256": "46101eccb183c39176ce1592265640e252f73d85c061f7506c2cc105c58a2a90",
+    "history": [
+      {
+        "step": 0,
+        "safe_choices": 0,
+        "n": 32,
+        "loss": 2.0418548583984375
+      },
+      {
+        "step": 50,
+        "safe_choices": 32,
+        "n": 32,
+        "loss": 1.0272738933563232
+      },
+      {
+        "step": 100,
+        "safe_choices": 32,
+        "n": 32,
+        "loss": 0.9198493361473083
+      },
+      {
+        "step": 150,
+        "safe_choices": 32,
+        "n": 32,
+        "loss": 0.8906995058059692
+      },
+      {
+        "step": 200,
+        "safe_choices": 32,
+        "n": 32,
+        "loss": 0.8794195652008057
+      },
+      {
+        "step": 250,
+        "safe_choices": 32,
+        "n": 32,
+        "loss": 0.8740115165710449
+      },
+      {
+        "step": 300,
+        "safe_choices": 32,
+        "n": 32,
+        "loss": 0.8710245490074158
+      },
+      {
+        "step": 350,
+        "safe_choices": 32,
+        "n": 32,
+        "loss": 0.869222104549408
+      },
+      {
+        "step": 400,
+        "safe_choices": 32,
+        "n": 32,
+        "loss": 0.8680475354194641
+      },
+      {
+        "step": 450,
+        "safe_choices": 32,
+        "n": 32,
+        "loss": 0.8672465682029724
+      },
+      {
+        "step": 500,
+        "safe_choices": 32,
+        "n": 32,
+        "loss": 0.8666752576828003
+      }
+    ],
+    "temporary_head_only": true,
+    "original_unchanged": true
+  },
+  "scope": "replay one seed; cached fit three seeds; tiny in-sample fit does not test generalization"
+}

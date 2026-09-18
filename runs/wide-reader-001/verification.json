@@ -1,0 +1,8 @@
+{
+  "originals_intact": true,
+  "brain_frozen_during_training": true,
+  "paired_batches": true,
+  "initial_weights_equal": true,
+  "parameter_count_equal": true,
+  "selection_sealed": true
+}

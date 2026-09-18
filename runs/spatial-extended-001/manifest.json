@@ -1,0 +1,24 @@
+{
+  "seeds": [
+    20261002,
+    20261003,
+    20261004
+  ],
+  "max_updates": 5000,
+  "base_updates": 1000,
+  "batch": 64,
+  "lr": 0.001,
+  "selection": "min validation loss; checks every250 after1000",
+  "early_stop": "6 checks without >=1e-4 validation improvement",
+  "optimizer": "Adam reconstructed with exact first1000-update replay",
+  "hashes": {
+    "runs/hybrid-001/checkpoint.pkl": "81b09d60395123c0591d8837d2a4419825af51c4a93acb0dbebee31702095ea5",
+    "runs/structural-learning-001/training/retina_plastic-20260926.pt": "9dc158b146f65d1cc29afa8eb989efe02ad8a8b2defd7586ac940dbb9a86568e",
+    "runs/spatial-decoder-001/train.pt": "223d850d45598e9babd9c583d8383b297c0cc082b3a94ecf1a5dfe92592ba75e",
+    "runs/spatial-decoder-001/holdout.pt": "9ab068f1bac4e966b5da167c37ade33df3dc2c53520fb01c91acd543d6597df3",
+    "runs/spatial-consistency-001/spatial-20261002.pt": "9a4ba0029a8a8877f14e2e69ab72b8610532ac7ec865604b374a38ef53052ee5",
+    "runs/spatial-consistency-001/spatial-20261003.pt": "c8df2a1dccc647717854cc7e314fcb90f0d4765dc2dd4d42afaa663d211092da",
+    "runs/spatial-consistency-001/spatial-20261004.pt": "a3462db635df51504383232745b4e40892921d22e2c3f5f6475078188a82af45"
+  },
+  "torch": "2.14.0"
+}

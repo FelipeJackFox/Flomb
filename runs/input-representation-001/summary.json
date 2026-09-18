@@ -1,0 +1,12 @@
+{
+  "raw_mean_pct": 22.400000000000002,
+  "brain_mean_pct": 10.333333333333334,
+  "raw_minus_brain_pp": 12.066666666666666,
+  "conditional_ci95_pp": [
+    9.0,
+    15.133333333333333
+  ],
+  "n_shared_layouts": 500,
+  "n_played": 500,
+  "automatic_excluded": 0
+}

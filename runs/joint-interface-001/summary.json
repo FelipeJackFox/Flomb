@@ -1,0 +1,52 @@
+{
+  "comparisons": {
+    "baseline": {
+      "joint_minus_reference_pp": 3.5999999999999996,
+      "conditional_ci95_pp": [
+        1.0,
+        6.2
+      ]
+    },
+    "control": {
+      "joint_minus_reference_pp": 3.5999999999999996,
+      "conditional_ci95_pp": [
+        1.0,
+        6.2
+      ]
+    }
+  },
+  "results": {
+    "baseline": {
+      "wins": 56,
+      "n": 500,
+      "automatic_excluded": 0,
+      "known_mine_choices": 177,
+      "safe_choices": 1817,
+      "safe_opportunities": 2224
+    },
+    "control": {
+      "wins": 56,
+      "n": 500,
+      "automatic_excluded": 0,
+      "known_mine_choices": 177,
+      "safe_choices": 1817,
+      "safe_opportunities": 2224
+    },
+    "joint": {
+      "wins": 74,
+      "n": 500,
+      "automatic_excluded": 0,
+      "known_mine_choices": 154,
+      "safe_choices": 1834,
+      "safe_opportunities": 2205
+    }
+  },
+  "encoder_change_l2": {
+    "best-control": 0.0,
+    "latest-control": 0.0,
+    "best-joint": 0.35840355412940017,
+    "latest-joint": 0.35840355412940017
+  },
+  "n_shared_games": 500,
+  "automatic_excluded": 0
+}

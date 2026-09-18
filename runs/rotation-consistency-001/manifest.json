@@ -1,0 +1,16 @@
+{
+  "seeds": [
+    20261104,
+    20261105
+  ],
+  "updates": 0,
+  "hashes": {
+    "runs/early-interface-001/latest-joint.pt": "3b8aa7f51ef460b7a6cf367bb74e1af9a25958aba46cf3d364f2a89076287444",
+    "runs/difficulty-transfer-002/extended-mapping.pkl": "902150f76da527a8918be5290778bb0b3421d6350ccaef60c824ad81ba6f9e50",
+    "runs/hybrid-001/checkpoint.pkl": "81b09d60395123c0591d8837d2a4419825af51c4a93acb0dbebee31702095ea5"
+  },
+  "primary": "mean9 rotated-identity two other adapted models",
+  "secondary": "7",
+  "tests": "750 disjoint fresh layouts per seed",
+  "scope": "fixed models,1cycle,4orientations vs identity,0updates"
+}

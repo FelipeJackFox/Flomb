@@ -1,0 +1,7 @@
+{
+  "seed": 20261002,
+  "parent": "runs/spatial-dagger-expanded-20261002/best-expanded.pt",
+  "positions": 14143,
+  "parent_step": 2000,
+  "updates": 1500
+}

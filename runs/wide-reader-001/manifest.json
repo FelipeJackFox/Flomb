@@ -1,0 +1,33 @@
+{
+  "seeds": [
+    20261002,
+    20261003,
+    20261004
+  ],
+  "updates": 1500,
+  "batch": 64,
+  "parameters": 12769,
+  "lr": 0.001,
+  "clipping": 5,
+  "mixture": "32 balanced original +32 fixed inherited DAgger",
+  "selection": "min original holdout at0 and every250, earliest tie",
+  "primary": "wide minus local, paired final boards",
+  "intervention": "only second conv dilation/padding1 to3, RF5 to9; inherited weights and Adam, changed initial function",
+  "hashes": {
+    "runs/structural-learning-001/training/retina_plastic-20260926.pt": "9dc158b146f65d1cc29afa8eb989efe02ad8a8b2defd7586ac940dbb9a86568e",
+    "runs/structural-learning-001/dataset.pkl": "1c6d4c5d2ecae61a069f1f65fbb3bd382635d5545b5f39695529da9a109734b4",
+    "runs/hybrid-001/checkpoint.pkl": "81b09d60395123c0591d8837d2a4419825af51c4a93acb0dbebee31702095ea5",
+    "runs/adapted-dagger-001/best-dagger.pt": "5b2e551c82041394a156095dae996cc90fe4af74c43a921a2921b3934cf2c3ca",
+    "runs/adapted-dagger-001/dataset.pkl": "e7c9573816184131060764abf9bcde284f11cc7c44b2dd50bf3ef499846daae5",
+    "runs/adapted-dagger-001/train.pt": "27b129eb400e3a660b6b9f4d31211b633e8a452a877bd2c07be35d4a4907fe03",
+    "runs/adapted-dagger-001/holdout.pt": "04fc2d534b4eebfbd4e240a7e5a84ebb2c5640c37b2803827fdec2ae97d8ca0c",
+    "runs/adapted-dagger-20261003/best-dagger.pt": "0dc1777db50cfa22010278aa432b61cb4a58400d4f3fa8c363a7c52454818d35",
+    "runs/adapted-dagger-20261003/dataset.pkl": "7756675f2f1e27531f6668d63b84dc09214a3a3ed46207443131d9b987e98303",
+    "runs/adapted-dagger-20261003/train.pt": "c8d2dd046627314d7b9081adcb0e8b667bd30d64763816cd36dafd972b890a43",
+    "runs/adapted-dagger-20261003/holdout.pt": "913e2d2bec53526dca654699ab58aca9f593f794bc1f913f4cb541f8890c2443",
+    "runs/adapted-dagger-20261004/best-dagger.pt": "399eb7c90ba72b5451146cc2bcc3b748a6cef816e827976544586c505019bcda",
+    "runs/adapted-dagger-20261004/dataset.pkl": "3b9584bd84a1a26bafdc2cb85c6ed41a177c86a5824d2bc3a6a22c281ef6d64c",
+    "runs/adapted-dagger-20261004/train.pt": "4be81c6a8453b0b2f4516eac1bfd4cc97b131c13428308c0faee1c477021f1d5",
+    "runs/adapted-dagger-20261004/holdout.pt": "57b40739d5c8b5a1306e1132644ab81096ad7b83837126b181bee0e11acb99b5"
+  }
+}

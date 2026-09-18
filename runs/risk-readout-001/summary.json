@@ -1,0 +1,46 @@
+{
+  "results": {
+    "baseline": {
+      "wins": 123,
+      "n": 500,
+      "automatic_excluded": 0,
+      "known_mine_choices": 140,
+      "safe_choices": 2563,
+      "safe_opportunities": 2872
+    },
+    "last_policy": {
+      "wins": 117,
+      "n": 500,
+      "automatic_excluded": 0,
+      "known_mine_choices": 135,
+      "safe_choices": 2517,
+      "safe_opportunities": 2849
+    },
+    "last_risk": {
+      "wins": 48,
+      "n": 500,
+      "automatic_excluded": 0,
+      "known_mine_choices": 137,
+      "safe_choices": 926,
+      "safe_opportunities": 1645
+    }
+  },
+  "comparisons": {
+    "last_policy": {
+      "delta_pp": -13.8,
+      "conditional_ci95_pp": [
+        -17.599999999999998,
+        -10.0
+      ]
+    },
+    "baseline": {
+      "delta_pp": -15.0,
+      "conditional_ci95_pp": [
+        -19.0,
+        -11.200000000000001
+      ]
+    }
+  },
+  "shared_layouts": 500,
+  "automatic_excluded": 0
+}

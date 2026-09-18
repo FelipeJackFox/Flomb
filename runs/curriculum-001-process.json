@@ -1,0 +1,31 @@
+{
+  "old_pid": 89204,
+  "checkpoint": "checkpoint-016384.npz",
+  "checkpoint_sha256": "3395900ec7a8e5194d52435ac990ad5d6ac783eee4f266e2505a0d393425db70",
+  "resumed_episode": 16384,
+  "original_progress": 16538,
+  "started_at": 1789247339.260478,
+  "new_pid": 22802,
+  "command": [
+    "./.venv/bin/python",
+    "-u",
+    "train_curriculum.py",
+    "--run",
+    "runs/curriculum-001",
+    "--resume",
+    "--total-episodes",
+    "50000",
+    "--chunk-episodes",
+    "50000",
+    "--eval-per-stratum",
+    "32",
+    "--seed",
+    "20260913",
+    "--sparse-workers",
+    "4",
+    "--activation-cache-mb",
+    "1024"
+  ],
+  "log": "runs/curriculum-001-accelerated.log",
+  "idle_sleep_inhibitor_pid": 22803
+}

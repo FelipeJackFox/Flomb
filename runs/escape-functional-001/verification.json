@@ -1,0 +1,11 @@
+{
+  "paired_input_controls": true,
+  "rate_lesion_controls": true,
+  "brian2_functional_replication": true,
+  "numerical_parity": false,
+  "source_sha256": {
+    "escape_brian_reference.py": "c2b43412efb6315de595b32162243f72d1ad4a6517139809e30d84f16ddfc5bb",
+    "report_escape.py": "793cfe725565e7cc6cfe93fb2e1af1d7f754234c7b8f523b5a66ec3b140b5b25",
+    "escape_functional.py": "804d189ce4ec54f886e3ec6c439ea1407354b66efa1fc3d65300aee19ab2c8b9"
+  }
+}

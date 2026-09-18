@@ -1,0 +1,38 @@
+{
+  "seeds": [
+    20261002,
+    20261003,
+    20261004
+  ],
+  "new_seeds": [],
+  "resumed_seeds": [
+    20261002,
+    20261003,
+    20261004
+  ],
+  "updates": 3000,
+  "resume_step": 750,
+  "batch": 64,
+  "microbatch": 16,
+  "hashes": {
+    "runs/structural-learning-001/training/retina_plastic-20260926.pt": "9dc158b146f65d1cc29afa8eb989efe02ad8a8b2defd7586ac940dbb9a86568e",
+    "runs/hybrid-001/checkpoint.pkl": "81b09d60395123c0591d8837d2a4419825af51c4a93acb0dbebee31702095ea5",
+    "runs/input-representation-001/best-brain-20261002.pt": "bbe249a7cb515e6b272552a874346cccf5a5cb8c03f1494294668f6c82eeccce",
+    "runs/input-representation-001/best-brain-20261003.pt": "72df983510257094006cde3195845eb410e5ab9a688a65f43b15e38a6c51146d",
+    "runs/input-representation-001/best-brain-20261004.pt": "49f89c2ca217ab5d1a213f764f61ff9932ddafa3a592580b731ee31babf99aa8",
+    "runs/joint-interface-001/best-control.pt": "738f09b7ee9ef82b7ada2999616bb21372778e200b0dccec806f1dfdcef83b8d",
+    "runs/joint-interface-001/latest-control.pt": "2178114967072519ef1fcdf744feacae0317559f809944fb92225d6eed961ce1",
+    "runs/joint-interface-001/best-joint.pt": "87e86af46a72067e26b4f4e81b2ba695923e4fe8c75bae5592945a4abd9ce344",
+    "runs/joint-interface-001/latest-joint.pt": "4baf7f9d4686b23c87d0bd8c547807fc2b30ccbc5213bbaf93d38f786fcd2054",
+    "runs/joint-interface-20261003/best-control.pt": "863e5b7af69c30b21f8176466ba826b87140ab477959909a1e335c384be63d98",
+    "runs/joint-interface-20261003/latest-control.pt": "984535e9ef2108e63f389eb05106d3a2a4c326fb1cde71810bb525032281ecfb",
+    "runs/joint-interface-20261003/best-joint.pt": "99e1e7f5ddf5c3de0b9021e9032080ef6a7953285ede4ca859e89a5c5c8f2437",
+    "runs/joint-interface-20261003/latest-joint.pt": "b5973517bd45df84b1a7161def120e499b1aa8b127bbe28cfa9d81f15db94e6b",
+    "runs/joint-interface-20261004/best-control.pt": "a6bbd8bca1a3160890864fed707161e96248646cca60aae385a3d59ebcfb339c",
+    "runs/joint-interface-20261004/latest-control.pt": "1e6e1b71ff65b0496052e2a3f77e8de19100ca5a03c7f3523388c5acc0fe0ebf",
+    "runs/joint-interface-20261004/best-joint.pt": "7b0e917454f7209dd49aae1a19725724a39b32652b65ec14627bd8f66c1c2bb3",
+    "runs/joint-interface-20261004/latest-joint.pt": "59367883449b40fea61d5de7da93ffdc94f4a9d290fb477a5a7b8377adffec79"
+  },
+  "primary": "paired mean extended joint minus prior joint across three seeds; extended joint versus equally extended control secondary",
+  "selection": "same original holdout rule; seal every checkpoint before any final games"
+}

@@ -1,0 +1,16 @@
+{
+  "seeds": [
+    20261104,
+    20261105
+  ],
+  "updates": 3000,
+  "hashes": {
+    "runs/deep-coverage-001/latest-autonomous.pt": "2cf016857eb91dde418cd58d0dc59bdcb795f2a1651837ba253d5cc88b92decf",
+    "runs/difficulty-transfer-002/extended-mapping.pkl": "902150f76da527a8918be5290778bb0b3421d6350ccaef60c824ad81ba6f9e50",
+    "runs/hybrid-001/checkpoint.pkl": "81b09d60395123c0591d8837d2a4419825af51c4a93acb0dbebee31702095ea5"
+  },
+  "primary": "mean9 early-late two new reader seeds",
+  "secondary": "7",
+  "tests": "750 disjoint fresh layouts per seed",
+  "scope": "one fixed brain/encoder pretrained at3cycles"
+}

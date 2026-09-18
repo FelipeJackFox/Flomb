@@ -1,0 +1,26 @@
+{
+  "seed": 20261002,
+  "updates": 750,
+  "batch": 64,
+  "microbatch": 16,
+  "hashes": {
+    "runs/seven-rehearsal-001/latest-replay.pt": "79b7cdaad95065b4cd7f736e1e1e631fc044a67eca36fe6631d1a5d082108b69",
+    "runs/difficulty-transfer-002/extended-mapping.pkl": "902150f76da527a8918be5290778bb0b3421d6350ccaef60c824ad81ba6f9e50",
+    "runs/structural-learning-001/training/retina_plastic-20260926.pt": "9dc158b146f65d1cc29afa8eb989efe02ad8a8b2defd7586ac940dbb9a86568e",
+    "runs/structural-learning-001/dataset.pkl": "1c6d4c5d2ecae61a069f1f65fbb3bd382635d5545b5f39695529da9a109734b4",
+    "runs/hybrid-001/checkpoint.pkl": "81b09d60395123c0591d8837d2a4419825af51c4a93acb0dbebee31702095ea5",
+    "runs/nine-dagger-001/dataset.pkl": "a22eefbe20c7e636c01d4add9679615d6fbd6d4dcc67019af72fc57551095a4f",
+    "runs/adapted-dagger-001/dataset.pkl": "e7c9573816184131060764abf9bcde284f11cc7c44b2dd50bf3ef499846daae5",
+    "runs/nine-dagger-001/train.pt": "27b129eb400e3a660b6b9f4d31211b633e8a452a877bd2c07be35d4a4907fe03",
+    "runs/nine-dagger-001/holdout.pt": "04fc2d534b4eebfbd4e240a7e5a84ebb2c5640c37b2803827fdec2ae97d8ca0c",
+    "runs/wide-reader-001/experience-20261002.pt": "0e634a82658f4223654e5251c0bf873f3f2512b9a34cbb81b1801be5f841f9dc",
+    "runs/seven-rehearsal-001/nine-features.pt": "d2b31d1b333923a07452b70f92f9ad13d7da7f5bcccf80f7f3d96d0dff0f7c85"
+  },
+  "primary": "9x9 joint minus control",
+  "secondary": "7retention and vsrehearsal parent",
+  "mixture": "16original+16inherited7+32fixed9",
+  "encoder_lr": 0.0001,
+  "head_lr": 0.001,
+  "clip": "5 separately for head and encoder",
+  "checkpoint": "fixed last750"
+}

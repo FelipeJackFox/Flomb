@@ -1,0 +1,13 @@
+{
+  "hashes": {
+    "runs/early-interface-20261104/latest-joint.pt": "a528c2b72d01b9e85c838a5148880b3a61edfb8231e0e164d7c019f22d570cbb",
+    "runs/difficulty-transfer-002/extended-mapping.pkl": "902150f76da527a8918be5290778bb0b3421d6350ccaef60c824ad81ba6f9e50",
+    "runs/structural-learning-001/training/retina_plastic-20260926.pt": "9dc158b146f65d1cc29afa8eb989efe02ad8a8b2defd7586ac940dbb9a86568e",
+    "runs/hybrid-001/checkpoint.pkl": "81b09d60395123c0591d8837d2a4419825af51c4a93acb0dbebee31702095ea5"
+  },
+  "updates": 0,
+  "cycles": 1,
+  "primary": "9 rotated minus identity",
+  "aggregation": "mean inverse-rotated logits",
+  "extra_compute": "four forwards per decision"
+}

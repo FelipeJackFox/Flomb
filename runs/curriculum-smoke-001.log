@@ -1,0 +1,15 @@
+EVAL 5x5-3 {"episodes": 2, "wins": 0, "win_rate": 0.0, "automatic_wins": 0, "decision_win_rate": 0.0, "mean_safe_fraction": 0.8409090909090909, "clicks": 6, "seed_start": 1500000000}
+EVAL 7x7-7 {"episodes": 2, "wins": 0, "win_rate": 0.0, "automatic_wins": 0, "decision_win_rate": 0.0, "mean_safe_fraction": 0.7619047619047619, "clicks": 6, "seed_start": 1500100000}
+EVAL 9x9-10 {"episodes": 2, "wins": 0, "win_rate": 0.0, "automatic_wins": 0, "decision_win_rate": 0.0, "mean_safe_fraction": 0.8450704225352113, "clicks": 12, "seed_start": 1500200000}
+EVAL 12x12-24 {"episodes": 2, "wins": 0, "win_rate": 0.0, "automatic_wins": 0, "decision_win_rate": 0.0, "mean_safe_fraction": 0.1875, "clicks": 5, "seed_start": 1500300000}
+EVAL 16x16-40 {"episodes": 2, "wins": 0, "win_rate": 0.0, "automatic_wins": 0, "decision_win_rate": 0.0, "mean_safe_fraction": 0.32407407407407407, "clicks": 4, "seed_start": 1500400000}
+EVAL 16x16-56 {"episodes": 2, "wins": 0, "win_rate": 0.0, "automatic_wins": 0, "decision_win_rate": 0.0, "mean_safe_fraction": 0.045, "clicks": 9, "seed_start": 1500500000}
+EVAL 5x5-3 {"episodes": 2, "wins": 1, "win_rate": 0.5, "automatic_wins": 0, "decision_win_rate": 0.5, "mean_safe_fraction": 0.9772727272727273, "clicks": 8, "seed_start": 1500000000}
+EVAL 7x7-7 {"episodes": 2, "wins": 0, "win_rate": 0.0, "automatic_wins": 0, "decision_win_rate": 0.0, "mean_safe_fraction": 0.7976190476190477, "clicks": 4, "seed_start": 1500100000}
+EVAL 9x9-10 {"episodes": 2, "wins": 0, "win_rate": 0.0, "automatic_wins": 0, "decision_win_rate": 0.0, "mean_safe_fraction": 0.7183098591549295, "clicks": 14, "seed_start": 1500200000}
+EVAL 12x12-24 {"episodes": 2, "wins": 0, "win_rate": 0.0, "automatic_wins": 0, "decision_win_rate": 0.0, "mean_safe_fraction": 0.6041666666666666, "clicks": 15, "seed_start": 1500300000}
+EVAL 16x16-40 {"episodes": 2, "wins": 0, "win_rate": 0.0, "automatic_wins": 0, "decision_win_rate": 0.0, "mean_safe_fraction": 0.12731481481481483, "clicks": 12, "seed_start": 1500400000}
+EVAL 16x16-56 {"episodes": 2, "wins": 0, "win_rate": 0.0, "automatic_wins": 0, "decision_win_rate": 0.0, "mean_safe_fraction": 0.125, "clicks": 20, "seed_start": 1500500000}
+TRAIN {"episode": 16, "target": 32, "group": "large", "size": 16, "mines": 56, "seed": 945304899, "mixture": [0.18525345622119815, 0.09262672811059908, 0.7221198156682027], "won": false, "automatic_win": false, "return": -1.0, "safe_fraction": 0.005, "steps": 1, "total_clicks": 98, "gradient_norm": 0.006935345370975235, "internal_gain_l2_change": 1.9366644620895386, "group_counts": {"small": 7, "medium": 3, "large": 6}, "training_wall_seconds": 17.504529541998636, "peak_rss_bytes_macos": 557776896}
+CHUNK_COMPLETED 16 of 32
+INVOCATION_SECONDS 24.287639542017132

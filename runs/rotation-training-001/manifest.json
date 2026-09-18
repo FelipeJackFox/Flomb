@@ -1,0 +1,25 @@
+{
+  "seed": 20261108,
+  "updates": 3000,
+  "batch": 64,
+  "hashes": {
+    "runs/early-interface-001/latest-joint.pt": "3b8aa7f51ef460b7a6cf367bb74e1af9a25958aba46cf3d364f2a89076287444",
+    "runs/difficulty-transfer-002/extended-mapping.pkl": "902150f76da527a8918be5290778bb0b3421d6350ccaef60c824ad81ba6f9e50",
+    "runs/structural-learning-001/training/retina_plastic-20260926.pt": "9dc158b146f65d1cc29afa8eb989efe02ad8a8b2defd7586ac940dbb9a86568e",
+    "runs/structural-learning-001/dataset.pkl": "1c6d4c5d2ecae61a069f1f65fbb3bd382635d5545b5f39695529da9a109734b4",
+    "runs/hybrid-001/checkpoint.pkl": "81b09d60395123c0591d8837d2a4419825af51c4a93acb0dbebee31702095ea5",
+    "runs/adapted-dagger-001/dataset.pkl": "e7c9573816184131060764abf9bcde284f11cc7c44b2dd50bf3ef499846daae5",
+    "runs/nine-dagger-001/dataset.pkl": "a22eefbe20c7e636c01d4add9679615d6fbd6d4dcc67019af72fc57551095a4f",
+    "runs/deep-coverage-001/states-autonomous.pkl": "fc647ce320c70b38fdfb9349e747c74fdc9f462f4e9701a0855719ca6efe2f45"
+  },
+  "parameters": 12769,
+  "initialization": "identical fresh heads and Adam",
+  "primary": "9 augmented minus control, single inference",
+  "secondary": "7",
+  "checkpoint": "fixed last3000",
+  "scope": "frozen encoder previously adapted with1 cycle; same head budget",
+  "cycles": {
+    "augmented": 1,
+    "control": 1
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "seeds": [
+    20261002,
+    20261003,
+    20261004
+  ],
+  "new_seeds": [
+    20261003,
+    20261004
+  ],
+  "reused_seed": 20261002,
+  "updates": 2250,
+  "batch": 64,
+  "microbatch": 16,
+  "hashes": {
+    "runs/structural-learning-001/training/retina_plastic-20260926.pt": "9dc158b146f65d1cc29afa8eb989efe02ad8a8b2defd7586ac940dbb9a86568e",
+    "runs/hybrid-001/checkpoint.pkl": "81b09d60395123c0591d8837d2a4419825af51c4a93acb0dbebee31702095ea5",
+    "runs/joint-extended-20261002/best-joint.pt": "71f348202fb62a397b0a22357dac973831ff993240625dfcce0bd866f9206947",
+    "runs/joint-extended-20261003/best-joint.pt": "af46c993bd3383d32798015f6eafaf9473d90a90ab349e19548c67f9715c42cb",
+    "runs/joint-extended-20261004/best-joint.pt": "27629af80b144b8d792c6eb5bba1415eab7563e63eff8c1aa309ccc3c8b98227",
+    "runs/adapted-dagger-001/best-control.pt": "e8391be0ed4b212f45404c06ca812cc694d43fe14814a6e9610a4d1483002aa6",
+    "runs/adapted-dagger-001/best-dagger.pt": "5b2e551c82041394a156095dae996cc90fe4af74c43a921a2921b3934cf2c3ca"
+  },
+  "primary": "mean paired dagger minus control on the two new seeds; all three secondary",
+  "selection": "same original holdout rule; seal every checkpoint before any final games"
+}

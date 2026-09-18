@@ -1,0 +1,180 @@
+{
+  "candidates": {
+    "20261002-baseline": {
+      "seed": 20261002,
+      "kind": "baseline",
+      "path": "runs/spatial-dagger-expanded-20261002/best-expanded.pt",
+      "step": 0,
+      "validation_loss": 1.7987078170776367,
+      "weights_hash": "bcd36026e369e8fef030b67a1310093f0c60b0e0c3e551c77a9735b3ec31b0d1"
+    },
+    "20261002-control-best": {
+      "seed": 20261002,
+      "kind": "control-best",
+      "path": "runs/prioritized-mines-20261002/best-control.pt",
+      "step": 750,
+      "validation_loss": 1.7970514755249023,
+      "weights_hash": "a7c5d0091634f7ee40663ce285efd64138718da459ce82162a7afd1b48112a46"
+    },
+    "20261002-control-latest": {
+      "seed": 20261002,
+      "kind": "control-latest",
+      "path": "runs/prioritized-mines-20261002/latest-control.pt",
+      "step": 1500,
+      "validation_loss": 1.8021636734008788,
+      "weights_hash": "786dd0781c899d7a4a39fbd74a203263f0125134ffcb35fc34b4a9f35d6a0740"
+    },
+    "20261002-priority-best": {
+      "seed": 20261002,
+      "kind": "priority-best",
+      "path": "runs/prioritized-mines-20261002/best-priority.pt",
+      "step": 500,
+      "validation_loss": 1.7970500087738037,
+      "weights_hash": "a9aa5350e5e8b8e38eee53480cd8e7be40709717cf79d998713a707691e5bf7c"
+    },
+    "20261002-priority-latest": {
+      "seed": 20261002,
+      "kind": "priority-latest",
+      "path": "runs/prioritized-mines-20261002/latest-priority.pt",
+      "step": 1500,
+      "validation_loss": 1.8082968406677247,
+      "weights_hash": "213f2812a7a858f4296c07800b4239cdc465f45601de4fb00179ff62164a2cc1"
+    },
+    "20261003-baseline": {
+      "seed": 20261003,
+      "kind": "baseline",
+      "path": "runs/spatial-dagger-expanded-20261003/best-expanded.pt",
+      "step": 0,
+      "validation_loss": 1.8173622226715087,
+      "weights_hash": "32dc30528ab5394e1e97ac015c162b3c65fe2d8e087cdef7d40e4ca4367ede61"
+    },
+    "20261003-control-best": {
+      "seed": 20261003,
+      "kind": "control-best",
+      "path": "runs/prioritized-mines-20261003/best-control.pt",
+      "step": 250,
+      "validation_loss": 1.8133690528869628,
+      "weights_hash": "f71ed3cd208a5af06f747ab16954fa59aa3df60d818a4e0358b1c089d7baf8cd"
+    },
+    "20261003-control-latest": {
+      "seed": 20261003,
+      "kind": "control-latest",
+      "path": "runs/prioritized-mines-20261003/latest-control.pt",
+      "step": 1500,
+      "validation_loss": 1.8182603092193603,
+      "weights_hash": "11fcdf2d890c09152a722c189281861388a312022445f899b3181f6081eafe46"
+    },
+    "20261003-priority-best": {
+      "seed": 20261003,
+      "kind": "priority-best",
+      "path": "runs/prioritized-mines-20261003/best-priority.pt",
+      "step": 1000,
+      "validation_loss": 1.8143190250396728,
+      "weights_hash": "fc4d588607848232d7cb7203599e49a1b28282ebd79630d9d39d75821e6c5634"
+    },
+    "20261003-priority-latest": {
+      "seed": 20261003,
+      "kind": "priority-latest",
+      "path": "runs/prioritized-mines-20261003/latest-priority.pt",
+      "step": 1500,
+      "validation_loss": 1.8179187564849852,
+      "weights_hash": "2dea2321c9ecc76d33bcdb63ac858effb60537a324fc633968ca42baf905615a"
+    },
+    "20261004-baseline": {
+      "seed": 20261004,
+      "kind": "baseline",
+      "path": "runs/spatial-dagger-expanded-20261004/best-expanded.pt",
+      "step": 0,
+      "validation_loss": 1.803110595703125,
+      "weights_hash": "c45af881cddcbb7e36e0fb3cd3c4e551ecf8601982f3ad33db9dfadcddbca632"
+    },
+    "20261004-control-best": {
+      "seed": 20261004,
+      "kind": "control-best",
+      "path": "runs/prioritized-mines-20261004/best-control.pt",
+      "step": 1250,
+      "validation_loss": 1.7978667163848876,
+      "weights_hash": "04e4e069be4d58fd9bb857200eb899d0615389b3d4fefb956ffa6d3f14a2e3a3"
+    },
+    "20261004-control-latest": {
+      "seed": 20261004,
+      "kind": "control-latest",
+      "path": "runs/prioritized-mines-20261004/latest-control.pt",
+      "step": 1500,
+      "validation_loss": 1.8072779273986816,
+      "weights_hash": "e9cfcf8126e27ef1fed166befdd2d04ae4d55b9352916b2d39c9355b09024ddb"
+    },
+    "20261004-priority-best": {
+      "seed": 20261004,
+      "kind": "priority-best",
+      "path": "runs/prioritized-mines-20261004/best-priority.pt",
+      "step": 0,
+      "validation_loss": 1.803110595703125,
+      "weights_hash": "c45af881cddcbb7e36e0fb3cd3c4e551ecf8601982f3ad33db9dfadcddbca632"
+    },
+    "20261004-priority-latest": {
+      "seed": 20261004,
+      "kind": "priority-latest",
+      "path": "runs/prioritized-mines-20261004/latest-priority.pt",
+      "step": 1500,
+      "validation_loss": 1.8094757995605468,
+      "weights_hash": "dc3aad653b05beacc718ff39a1df1401899d1e54fe78b4764549d55bd46d4c28"
+    }
+  },
+  "arms": {
+    "20261002-control": [
+      "20261002-baseline",
+      "20261002-control-best",
+      "20261002-control-latest"
+    ],
+    "20261002-priority": [
+      "20261002-baseline",
+      "20261002-priority-best",
+      "20261002-priority-latest"
+    ],
+    "20261003-control": [
+      "20261003-baseline",
+      "20261003-control-best",
+      "20261003-control-latest"
+    ],
+    "20261003-priority": [
+      "20261003-baseline",
+      "20261003-priority-best",
+      "20261003-priority-latest"
+    ],
+    "20261004-control": [
+      "20261004-baseline",
+      "20261004-control-best",
+      "20261004-control-latest"
+    ],
+    "20261004-priority": [
+      "20261004-baseline",
+      "20261004-priority-best",
+      "20261004-priority-latest"
+    ]
+  },
+  "protected_hashes": {
+    "runs/spatial-dagger-expanded-20261002/best-expanded.pt": "46101eccb183c39176ce1592265640e252f73d85c061f7506c2cc105c58a2a90",
+    "runs/prioritized-mines-20261002/best-control.pt": "ec92875242e0b6437f1daf6e7aae34ca684e54535739be93d81cf6912cd1f7e1",
+    "runs/prioritized-mines-20261002/latest-control.pt": "1cb395cb010125d1ac0d740461cb430da971dae82dff910e5d986e108190c629",
+    "runs/prioritized-mines-20261002/best-priority.pt": "0b824da0ddd70f625f0b36551d57860856d68a8c4ff98640dfaeb24fbb34d4a5",
+    "runs/prioritized-mines-20261002/latest-priority.pt": "4fac332383c6016b93837d95109bee0e7fd5ab1864cd3377cbe333a8759036a3",
+    "runs/spatial-dagger-expanded-20261003/best-expanded.pt": "954e2528bc2070b6a1d651ed719837aa61862700ec1fc779f8a790bf55263ae0",
+    "runs/prioritized-mines-20261003/best-control.pt": "dab1c117456bb5702af3969efd5fdf4a1e6ccae81c4f74b7d66586cf4d366fb3",
+    "runs/prioritized-mines-20261003/latest-control.pt": "b9f637c1e7e4efb17ae63eb902c9dc4c123d06b1d47cd2654badc4e9f1825732",
+    "runs/prioritized-mines-20261003/best-priority.pt": "90d3fe8e3352a612536fe9fee63b68cde961362b5ea2955900e9169e2d7ca840",
+    "runs/prioritized-mines-20261003/latest-priority.pt": "01d69690712177db7b42b64041d63a05faaea1c0f5d9bd0eeedadb2315e42b36",
+    "runs/spatial-dagger-expanded-20261004/best-expanded.pt": "320c9beaa1678697d0033fe0c2ddc5cb050aea03d3ba1cf212e3f084094ef356",
+    "runs/prioritized-mines-20261004/best-control.pt": "7e03894f658a660806c1dc6d05d8e34479b03ba1e07baf18684f792ec0451f60",
+    "runs/prioritized-mines-20261004/latest-control.pt": "c3f76da9b65d3a9a40cc80620dd35890d04f588246d579a5eff79db38a2abe6c",
+    "runs/prioritized-mines-20261004/best-priority.pt": "edf85be9cd84ebc4e70daf8a0d63037a10fdcbc8b82fd5531784af8ad82be6b8",
+    "runs/prioritized-mines-20261004/latest-priority.pt": "e897bc2862149e2b84a24f888434d25b54a053efce8796d8d06f55da267b6929",
+    "runs/structural-learning-001/training/retina_plastic-20260926.pt": "9dc158b146f65d1cc29afa8eb989efe02ad8a8b2defd7586ac940dbb9a86568e",
+    "runs/structural-learning-001/mapping.pkl": "568979a06d7b5898725eb43dfe8fd0a4ec6bf0fa3e713744025fe05122f76a6a",
+    "runs/hybrid-001/checkpoint.pkl": "81b09d60395123c0591d8837d2a4419825af51c4a93acb0dbebee31702095ea5"
+  },
+  "selection": "highest validation autonomous wins; ties fewer additional updates then fixed candidate order",
+  "validation_games": 500,
+  "test_games": 500,
+  "training": false
+}

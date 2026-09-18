@@ -1,0 +1,56 @@
+{
+  "7": {
+    "results": {
+      "early": {
+        "wins": 72,
+        "n": 250,
+        "safe_choices": 1339,
+        "safe_opportunities": 1470,
+        "known_mine_choices": 58,
+        "death_with_safe_available": 86
+      },
+      "late": {
+        "wins": 68,
+        "n": 250,
+        "safe_choices": 1264,
+        "safe_opportunities": 1414,
+        "known_mine_choices": 57,
+        "death_with_safe_available": 90
+      }
+    },
+    "early_minus_late": {
+      "delta_pp": 1.6,
+      "ci95_pp": [
+        -4.0,
+        7.199999999999999
+      ]
+    }
+  },
+  "9": {
+    "results": {
+      "early": {
+        "wins": 44,
+        "n": 500,
+        "safe_choices": 3812,
+        "safe_opportunities": 4265,
+        "known_mine_choices": 185,
+        "death_with_safe_available": 278
+      },
+      "late": {
+        "wins": 38,
+        "n": 500,
+        "safe_choices": 3496,
+        "safe_opportunities": 3961,
+        "known_mine_choices": 189,
+        "death_with_safe_available": 267
+      }
+    },
+    "early_minus_late": {
+      "delta_pp": 1.2,
+      "ci95_pp": [
+        -1.6,
+        4.0
+      ]
+    }
+  }
+}

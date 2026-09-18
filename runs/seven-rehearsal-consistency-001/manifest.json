@@ -1,0 +1,16 @@
+{
+  "seeds": [
+    20261003,
+    20261004
+  ],
+  "updates": 1500,
+  "hashes": {
+    "runs/nine-dagger-20261003/latest-dagger.pt": "47f0b8962f3aca44bf7723e237f3558dffaeca21ab10aa9683ea4e9b29c2c506",
+    "runs/nine-dagger-20261004/latest-dagger.pt": "35577fd2f8805abe0183aafc9a7d9ab7332941eafd3f15e058a9ba5fdf995d98",
+    "runs/hybrid-001/checkpoint.pkl": "81b09d60395123c0591d8837d2a4419825af51c4a93acb0dbebee31702095ea5"
+  },
+  "primary": "mean7 replay minus control across two NEW seeds",
+  "secondary": "9 cost, vsparent9",
+  "tests": "750 distinct new layouts per seed, disjoint across seeds and history",
+  "checkpoint": "fixed last1500 each; pilot02 excluded from primary"
+}

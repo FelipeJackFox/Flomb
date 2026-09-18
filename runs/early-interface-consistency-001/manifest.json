@@ -1,0 +1,16 @@
+{
+  "seeds": [
+    20261104,
+    20261105
+  ],
+  "updates": 750,
+  "hashes": {
+    "runs/propagation-time-001/latest-early.pt": "8acec5f6837af9ab909b4625a39243fab33753174b03eb5ed1897e736ec13e8d",
+    "runs/difficulty-transfer-002/extended-mapping.pkl": "902150f76da527a8918be5290778bb0b3421d6350ccaef60c824ad81ba6f9e50",
+    "runs/hybrid-001/checkpoint.pkl": "81b09d60395123c0591d8837d2a4419825af51c4a93acb0dbebee31702095ea5"
+  },
+  "primary": "mean9 joint-control two additional pretrained readers",
+  "secondary": "7",
+  "tests": "750 disjoint fresh layouts per seed",
+  "scope": "one fixed graph,1cycle,encoder adaptation vs frozen encoder"
+}

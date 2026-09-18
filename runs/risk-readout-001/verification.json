@@ -1,0 +1,6 @@
+{
+  "originals_intact": true,
+  "checkpoint_fixed_before_test": true,
+  "identical_encoder_for_all": true,
+  "no_training": true
+}

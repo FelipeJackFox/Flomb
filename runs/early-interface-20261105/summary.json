@@ -1,0 +1,96 @@
+{
+  "7": {
+    "results": {
+      "baseline": {
+        "wins": 79,
+        "n": 250,
+        "safe_choices": 1491,
+        "safe_opportunities": 1649,
+        "known_mine_choices": 69,
+        "death_with_safe_available": 93,
+        "death_after_exact_half_min_risk": 1
+      },
+      "control": {
+        "wins": 79,
+        "n": 250,
+        "safe_choices": 1486,
+        "safe_opportunities": 1615,
+        "known_mine_choices": 64,
+        "death_with_safe_available": 86,
+        "death_after_exact_half_min_risk": 1
+      },
+      "joint": {
+        "wins": 90,
+        "n": 250,
+        "safe_choices": 1557,
+        "safe_opportunities": 1688,
+        "known_mine_choices": 56,
+        "death_with_safe_available": 76,
+        "death_after_exact_half_min_risk": 1
+      }
+    },
+    "comparisons": {
+      "control": {
+        "delta_pp": 4.3999999999999995,
+        "ci95_pp": [
+          0.8,
+          8.0
+        ]
+      },
+      "baseline": {
+        "delta_pp": 4.3999999999999995,
+        "ci95_pp": [
+          -0.4,
+          9.2
+        ]
+      }
+    }
+  },
+  "9": {
+    "results": {
+      "baseline": {
+        "wins": 40,
+        "n": 500,
+        "safe_choices": 3816,
+        "safe_opportunities": 4298,
+        "known_mine_choices": 187,
+        "death_with_safe_available": 287,
+        "death_after_exact_half_min_risk": 0
+      },
+      "control": {
+        "wins": 27,
+        "n": 500,
+        "safe_choices": 3415,
+        "safe_opportunities": 3894,
+        "known_mine_choices": 196,
+        "death_with_safe_available": 287,
+        "death_after_exact_half_min_risk": 0
+      },
+      "joint": {
+        "wins": 32,
+        "n": 500,
+        "safe_choices": 3812,
+        "safe_opportunities": 4308,
+        "known_mine_choices": 194,
+        "death_with_safe_available": 287,
+        "death_after_exact_half_min_risk": 1
+      }
+    },
+    "comparisons": {
+      "control": {
+        "delta_pp": 1.0,
+        "ci95_pp": [
+          -0.8,
+          2.8000000000000003
+        ]
+      },
+      "baseline": {
+        "delta_pp": -1.6,
+        "ci95_pp": [
+          -4.2,
+          0.8
+        ]
+      }
+    }
+  }
+}

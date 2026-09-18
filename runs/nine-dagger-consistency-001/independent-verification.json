@@ -1,0 +1,12 @@
+{
+  "layouts_reconstructed": 1650,
+  "prior_overlap": 0,
+  "public_labels_recomputed": {
+    "20261003": 4155,
+    "20261004": 4243
+  },
+  "hashes_intact": true,
+  "endpoint2250": true,
+  "encoder_frozen": true,
+  "teacher_actions": 0
+}

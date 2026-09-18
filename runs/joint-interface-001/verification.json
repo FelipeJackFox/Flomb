@@ -1,0 +1,10 @@
+{
+  "original_hashes_unchanged": true,
+  "frozen_brain_parameters_unchanged": true,
+  "control_encoder_unchanged": true,
+  "joint_encoder_changed": true,
+  "paired_minibatches": true,
+  "cache_and_online_initial_validation_equal": true,
+  "restored_online_and_memo_forward_equal": true,
+  "selection_seal_intact": true
+}

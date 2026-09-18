@@ -1,0 +1,23 @@
+{
+  "seed": 20261003,
+  "updates": 1500,
+  "parent_step": 2250,
+  "batch": 64,
+  "hashes": {
+    "runs/nine-dagger-20261003/latest-dagger.pt": "47f0b8962f3aca44bf7723e237f3558dffaeca21ab10aa9683ea4e9b29c2c506",
+    "runs/difficulty-transfer-002/extended-mapping.pkl": "902150f76da527a8918be5290778bb0b3421d6350ccaef60c824ad81ba6f9e50",
+    "runs/structural-learning-001/dataset.pkl": "1c6d4c5d2ecae61a069f1f65fbb3bd382635d5545b5f39695529da9a109734b4",
+    "runs/structural-learning-001/training/retina_plastic-20260926.pt": "9dc158b146f65d1cc29afa8eb989efe02ad8a8b2defd7586ac940dbb9a86568e",
+    "runs/hybrid-001/checkpoint.pkl": "81b09d60395123c0591d8837d2a4419825af51c4a93acb0dbebee31702095ea5",
+    "runs/nine-dagger-20261003/dataset.pkl": "30cefc7cc9433506b1c9aa502b6e0b4b4ac251a603c10fdc6c8f1245e3e3b76d",
+    "runs/nine-dagger-20261003/train.pt": "c8d2dd046627314d7b9081adcb0e8b667bd30d64763816cd36dafd972b890a43",
+    "runs/nine-dagger-20261003/holdout.pt": "913e2d2bec53526dca654699ab58aca9f593f794bc1f913f4cb541f8890c2443",
+    "runs/adapted-dagger-20261003/dataset.pkl": "7756675f2f1e27531f6668d63b84dc09214a3a3ed46207443131d9b987e98303",
+    "runs/wide-reader-001/experience-20261003.pt": "9ae96315e5c87bc4eb38c77d77fee8383dc2e80eead0646a49a8efdc7359caca"
+  },
+  "control": "32original +32fixed9",
+  "replay": "16original +16inherited7 +32samefixed9",
+  "primary": "7x7 replay minus control",
+  "secondary": "9x9 cost and vsparent",
+  "checkpoint": "fixed last1500 additional"
+}

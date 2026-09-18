@@ -1,0 +1,26 @@
+{
+  "seeds": [
+    20261002,
+    20261003,
+    20261004
+  ],
+  "hashes": {
+    "runs/structural-learning-001/training/retina_plastic-20260926.pt": "9dc158b146f65d1cc29afa8eb989efe02ad8a8b2defd7586ac940dbb9a86568e",
+    "runs/structural-learning-001/mapping.pkl": "568979a06d7b5898725eb43dfe8fd0a4ec6bf0fa3e713744025fe05122f76a6a",
+    "runs/structural-learning-001/dataset.pkl": "1c6d4c5d2ecae61a069f1f65fbb3bd382635d5545b5f39695529da9a109734b4",
+    "runs/spatial-decoder-001/train.pt": "223d850d45598e9babd9c583d8383b297c0cc082b3a94ecf1a5dfe92592ba75e",
+    "runs/spatial-decoder-001/holdout.pt": "9ab068f1bac4e966b5da167c37ade33df3dc2c53520fb01c91acd543d6597df3",
+    "runs/hybrid-001/checkpoint.pkl": "81b09d60395123c0591d8837d2a4419825af51c4a93acb0dbebee31702095ea5",
+    "runs/spatial-dagger-001/best-dagger.pt": "f37b7cbf0d419138a314342f03bc23f92860a72a077d43b6ed151730928a0bac",
+    "runs/spatial-dagger-001/dataset.pkl": "e0def72e67d255a68c0630e13eb1701d837922a07cd70464599201475586c7d0",
+    "runs/spatial-dagger-20261003/best-dagger.pt": "6364ba04798e0a3e9493dc56fb11599c6028913d3e58160f426b9e5f55f2defd",
+    "runs/spatial-dagger-20261003/dataset.pkl": "d8c52d5bb5a5031227ceaa6313df1d95db64b2928b05ef46792d3048ab6caee6",
+    "runs/spatial-dagger-20261004/best-dagger.pt": "858372005f01ca938ac9658d9063ddf2e66c9426084a14ccd17ebbce1f30265f",
+    "runs/spatial-dagger-20261004/dataset.pkl": "32d7514dd4e67153a7be645c5365ec149af8128202e474f601767377b9712c07"
+  },
+  "rounds": 3,
+  "games_per_round": 600,
+  "updates_per_round": 750,
+  "selection": "minimum original holdout loss every250 including baseline",
+  "torch": "2.14.0"
+}

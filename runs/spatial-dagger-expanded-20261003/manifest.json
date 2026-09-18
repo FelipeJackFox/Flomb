@@ -1,0 +1,14 @@
+{
+  "seed": 20261003,
+  "parent": "runs/spatial-dagger-20261003",
+  "parent_checkpoint_sha256": "6364ba04798e0a3e9493dc56fb11599c6028913d3e58160f426b9e5f55f2defd",
+  "parent_step": 1750,
+  "rounds": 3,
+  "games_per_round": 600,
+  "updates_per_round": 750,
+  "batch": 64,
+  "original_fraction": 0.5,
+  "control": "32 original +32 fixed inherited DAgger",
+  "expanded": "32 original +32 aggregate inherited and new DAgger",
+  "teacher_actions": 0
+}

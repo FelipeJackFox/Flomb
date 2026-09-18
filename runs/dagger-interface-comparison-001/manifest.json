@@ -1,0 +1,27 @@
+{
+  "seeds": [
+    20261002,
+    20261003,
+    20261004
+  ],
+  "hashes": {
+    "runs/structural-learning-001/training/retina_plastic-20260926.pt": "9dc158b146f65d1cc29afa8eb989efe02ad8a8b2defd7586ac940dbb9a86568e",
+    "runs/hybrid-001/checkpoint.pkl": "81b09d60395123c0591d8837d2a4419825af51c4a93acb0dbebee31702095ea5",
+    "runs/joint-extended-20261002/best-control.pt": "738f09b7ee9ef82b7ada2999616bb21372778e200b0dccec806f1dfdcef83b8d",
+    "runs/adapted-dagger-001/best-dagger.pt": "5b2e551c82041394a156095dae996cc90fe4af74c43a921a2921b3934cf2c3ca",
+    "runs/adapted-dagger-001/collection-games.json": "228353a811effa11eefbd85ca6dd0870d517b53fa63c764b8d50d550ae3cd5c4",
+    "runs/joint-extended-20261003/best-control.pt": "863e5b7af69c30b21f8176466ba826b87140ab477959909a1e335c384be63d98",
+    "runs/adapted-dagger-20261003/best-dagger.pt": "0dc1777db50cfa22010278aa432b61cb4a58400d4f3fa8c363a7c52454818d35",
+    "runs/adapted-dagger-20261003/collection-games.json": "fdb196765384c829d05c963a42977c65b0371fd0f31e50ce444793523734ec95",
+    "runs/joint-extended-20261004/best-control.pt": "a6bbd8bca1a3160890864fed707161e96248646cca60aae385a3d59ebcfb339c",
+    "runs/adapted-dagger-20261004/best-dagger.pt": "399eb7c90ba72b5451146cc2bcc3b748a6cef816e827976544586c505019bcda",
+    "runs/adapted-dagger-20261004/collection-games.json": "fdb196765384c829d05c963a42977c65b0371fd0f31e50ce444793523734ec95"
+  },
+  "updates": 2250,
+  "rounds": 3,
+  "collection_games_per_seed": 900,
+  "primary": "adapted DAgger minus unadapted DAgger, paired by final board",
+  "scope": "pipeline comparison; matched prior head update budgets, different selected encoder/head/RNG states; not isolated encoder ablation",
+  "collection": "reuse exactly each adapted counterparts historical900 layouts, not final test",
+  "selection": "same historical holdout loss rule; all candidates sealed before final test"
+}

@@ -1,0 +1,25 @@
+{
+  "seeds": [
+    20261002,
+    20261003,
+    20261004
+  ],
+  "updates": 5000,
+  "batch": 64,
+  "lr": 0.001,
+  "parameters": 12769,
+  "selection": "minimum original holdout loss, step0 and every250; earliest tie",
+  "frozen": "existing brain and encoder; both heads initialized from scratch",
+  "data": "original 10000 positions, 1000 holdout; no additional DAgger",
+  "pairing": "identical initial weights and minibatch indices per seed",
+  "scope": "conditional on one pretrained frozen brain, not a comparison of total historical training compute",
+  "hashes": {
+    "runs/structural-learning-001/dataset.pkl": "1c6d4c5d2ecae61a069f1f65fbb3bd382635d5545b5f39695529da9a109734b4",
+    "runs/structural-learning-001/mapping.pkl": "568979a06d7b5898725eb43dfe8fd0a4ec6bf0fa3e713744025fe05122f76a6a",
+    "runs/structural-learning-001/training/retina_plastic-20260926.pt": "9dc158b146f65d1cc29afa8eb989efe02ad8a8b2defd7586ac940dbb9a86568e",
+    "runs/spatial-decoder-001/train.pt": "223d850d45598e9babd9c583d8383b297c0cc082b3a94ecf1a5dfe92592ba75e",
+    "runs/spatial-decoder-001/holdout.pt": "9ab068f1bac4e966b5da167c37ade33df3dc2c53520fb01c91acd543d6597df3",
+    "runs/hybrid-001/checkpoint.pkl": "81b09d60395123c0591d8837d2a4419825af51c4a93acb0dbebee31702095ea5"
+  },
+  "torch": "2.14.0"
+}

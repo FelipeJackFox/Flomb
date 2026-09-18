@@ -1,0 +1,26 @@
+{
+  "seeds": [
+    20261002,
+    20261003,
+    20261004
+  ],
+  "new_seeds": [
+    20261003,
+    20261004
+  ],
+  "reused_seed": 20261002,
+  "updates": 750,
+  "batch": 64,
+  "microbatch": 16,
+  "hashes": {
+    "runs/structural-learning-001/training/retina_plastic-20260926.pt": "9dc158b146f65d1cc29afa8eb989efe02ad8a8b2defd7586ac940dbb9a86568e",
+    "runs/hybrid-001/checkpoint.pkl": "81b09d60395123c0591d8837d2a4419825af51c4a93acb0dbebee31702095ea5",
+    "runs/input-representation-001/best-brain-20261002.pt": "bbe249a7cb515e6b272552a874346cccf5a5cb8c03f1494294668f6c82eeccce",
+    "runs/input-representation-001/best-brain-20261003.pt": "72df983510257094006cde3195845eb410e5ab9a688a65f43b15e38a6c51146d",
+    "runs/input-representation-001/best-brain-20261004.pt": "49f89c2ca217ab5d1a213f764f61ff9932ddafa3a592580b731ee31babf99aa8",
+    "runs/joint-interface-001/best-control.pt": "738f09b7ee9ef82b7ada2999616bb21372778e200b0dccec806f1dfdcef83b8d",
+    "runs/joint-interface-001/best-joint.pt": "87e86af46a72067e26b4f4e81b2ba695923e4fe8c75bae5592945a4abd9ce344"
+  },
+  "primary": "mean paired joint minus control on the two new seeds; all three secondary",
+  "selection": "same original holdout rule; seal every checkpoint before any final games"
+}

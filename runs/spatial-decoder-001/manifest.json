@@ -1,0 +1,13 @@
+{
+  "seed": 20261002,
+  "updates": 1000,
+  "batch": 64,
+  "lr": 0.001,
+  "selection": "minimum validation loss every 100 updates",
+  "checkpoint_sha256": "9dc158b146f65d1cc29afa8eb989efe02ad8a8b2defd7586ac940dbb9a86568e",
+  "protected_sha256": "81b09d60395123c0591d8837d2a4419825af51c4a93acb0dbebee31702095ea5",
+  "dataset_sha256": "1c6d4c5d2ecae61a069f1f65fbb3bd382635d5545b5f39695529da9a109734b4",
+  "frozen": "encoder, node/edge gains, graph, neuronal mapping",
+  "input": "neural activity + board size/mine count only",
+  "torch": "2.14.0"
+}

@@ -1,0 +1,14 @@
+{
+  "updates": 200,
+  "batch": 16,
+  "seeds": [
+    20260920,
+    20260921
+  ],
+  "train_positions": 256,
+  "heldout_positions": 128,
+  "game_boards": 128,
+  "initializer": "common fixed input/output maps; log gains ZERO and heads freshly seeded; no pretrained weights",
+  "local_encoder": "fixed residual 3x3 neighbor category averages, weight0.5, per-board energy matched; no new trainable parameters",
+  "paused_hybrid_sha256": "81b09d60395123c0591d8837d2a4419825af51c4a93acb0dbebee31702095ea5"
+}

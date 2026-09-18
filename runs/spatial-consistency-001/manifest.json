@@ -1,0 +1,24 @@
+{
+  "seeds": [
+    20261002,
+    20261003,
+    20261004
+  ],
+  "new_seeds": [
+    20261003,
+    20261004
+  ],
+  "updates": 1000,
+  "batch": 64,
+  "lr": 0.001,
+  "selection": "minimum validation loss every100",
+  "input_hashes": {
+    "runs/spatial-decoder-001/train.pt": "223d850d45598e9babd9c583d8383b297c0cc082b3a94ecf1a5dfe92592ba75e",
+    "runs/spatial-decoder-001/holdout.pt": "9ab068f1bac4e966b5da167c37ade33df3dc2c53520fb01c91acd543d6597df3",
+    "runs/structural-learning-001/dataset.pkl": "1c6d4c5d2ecae61a069f1f65fbb3bd382635d5545b5f39695529da9a109734b4",
+    "runs/structural-learning-001/training/retina_plastic-20260926.pt": "9dc158b146f65d1cc29afa8eb989efe02ad8a8b2defd7586ac940dbb9a86568e",
+    "runs/hybrid-001/checkpoint.pkl": "81b09d60395123c0591d8837d2a4419825af51c4a93acb0dbebee31702095ea5"
+  },
+  "torch": "2.14.0",
+  "scope": "head seed consistency, not independently retrained brains"
+}

@@ -1,0 +1,9 @@
+{
+  "layouts_reconstructed": 750,
+  "prior_overlap": 0,
+  "hashes_intact": true,
+  "paired_draws": true,
+  "control_encoder_preserved": true,
+  "joint_encoder_changed": true,
+  "endpoint750": true
+}

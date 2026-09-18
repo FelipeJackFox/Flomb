@@ -1,0 +1,262 @@
+{
+  "comparisons": {
+    "control": {
+      "mean_delta_pp": -0.4666666666666666,
+      "conditional_ci95_pp": [
+        -1.8666666666666665,
+        0.9333333333333332
+      ],
+      "loss_mean_pct": 19.333333333333336,
+      "game_mean_pct": 18.866666666666667
+    },
+    "priority": {
+      "mean_delta_pp": -0.1333333333333334,
+      "conditional_ci95_pp": [
+        -2.0,
+        1.6
+      ],
+      "loss_mean_pct": 19.066666666666666,
+      "game_mean_pct": 18.933333333333337
+    },
+    "all": {
+      "mean_delta_pp": -0.3000000000000001,
+      "conditional_ci95_pp": [
+        -1.4999999999999998,
+        0.8666666666666668
+      ],
+      "loss_mean_pct": 19.2,
+      "game_mean_pct": 18.9
+    }
+  },
+  "metrics": {
+    "20261002-control": {
+      "loss": {
+        "candidate": "20261002-control-best",
+        "step": 750,
+        "wins": 103,
+        "n": 500,
+        "validation_wins": 97,
+        "validation_n": 500,
+        "known_mine_choices": 160,
+        "death_with_safe_available": 218,
+        "safe_choices": 2368,
+        "safe_opportunities": 2702
+      },
+      "games": {
+        "candidate": "20261002-control-latest",
+        "step": 1500,
+        "wins": 105,
+        "n": 500,
+        "validation_wins": 107,
+        "validation_n": 500,
+        "known_mine_choices": 163,
+        "death_with_safe_available": 223,
+        "safe_choices": 2482,
+        "safe_opportunities": 2828
+      },
+      "baseline": {
+        "candidate": "20261002-baseline",
+        "step": 0,
+        "wins": 92,
+        "n": 500,
+        "validation_wins": 102,
+        "validation_n": 500,
+        "known_mine_choices": 169,
+        "death_with_safe_available": 233,
+        "safe_choices": 2266,
+        "safe_opportunities": 2602
+      }
+    },
+    "20261002-priority": {
+      "loss": {
+        "candidate": "20261002-priority-best",
+        "step": 500,
+        "wins": 112,
+        "n": 500,
+        "validation_wins": 103,
+        "validation_n": 500,
+        "known_mine_choices": 163,
+        "death_with_safe_available": 221,
+        "safe_choices": 2411,
+        "safe_opportunities": 2767
+      },
+      "games": {
+        "candidate": "20261002-priority-latest",
+        "step": 1500,
+        "wins": 107,
+        "n": 500,
+        "validation_wins": 105,
+        "validation_n": 500,
+        "known_mine_choices": 164,
+        "death_with_safe_available": 228,
+        "safe_choices": 2400,
+        "safe_opportunities": 2761
+      },
+      "baseline": {
+        "candidate": "20261002-baseline",
+        "step": 0,
+        "wins": 92,
+        "n": 500,
+        "validation_wins": 102,
+        "validation_n": 500,
+        "known_mine_choices": 169,
+        "death_with_safe_available": 233,
+        "safe_choices": 2266,
+        "safe_opportunities": 2602
+      }
+    },
+    "20261003-control": {
+      "loss": {
+        "candidate": "20261003-control-best",
+        "step": 250,
+        "wins": 97,
+        "n": 500,
+        "validation_wins": 98,
+        "validation_n": 500,
+        "known_mine_choices": 171,
+        "death_with_safe_available": 223,
+        "safe_choices": 2343,
+        "safe_opportunities": 2660
+      },
+      "games": {
+        "candidate": "20261003-baseline",
+        "step": 0,
+        "wins": 88,
+        "n": 500,
+        "validation_wins": 103,
+        "validation_n": 500,
+        "known_mine_choices": 189,
+        "death_with_safe_available": 240,
+        "safe_choices": 2316,
+        "safe_opportunities": 2682
+      },
+      "baseline": {
+        "candidate": "20261003-baseline",
+        "step": 0,
+        "wins": 88,
+        "n": 500,
+        "validation_wins": 103,
+        "validation_n": 500,
+        "known_mine_choices": 189,
+        "death_with_safe_available": 240,
+        "safe_choices": 2316,
+        "safe_opportunities": 2682
+      }
+    },
+    "20261003-priority": {
+      "loss": {
+        "candidate": "20261003-priority-best",
+        "step": 1000,
+        "wins": 92,
+        "n": 500,
+        "validation_wins": 96,
+        "validation_n": 500,
+        "known_mine_choices": 166,
+        "death_with_safe_available": 231,
+        "safe_choices": 2148,
+        "safe_opportunities": 2496
+      },
+      "games": {
+        "candidate": "20261003-baseline",
+        "step": 0,
+        "wins": 88,
+        "n": 500,
+        "validation_wins": 103,
+        "validation_n": 500,
+        "known_mine_choices": 189,
+        "death_with_safe_available": 240,
+        "safe_choices": 2316,
+        "safe_opportunities": 2682
+      },
+      "baseline": {
+        "candidate": "20261003-baseline",
+        "step": 0,
+        "wins": 88,
+        "n": 500,
+        "validation_wins": 103,
+        "validation_n": 500,
+        "known_mine_choices": 189,
+        "death_with_safe_available": 240,
+        "safe_choices": 2316,
+        "safe_opportunities": 2682
+      }
+    },
+    "20261004-control": {
+      "loss": {
+        "candidate": "20261004-control-best",
+        "step": 1250,
+        "wins": 90,
+        "n": 500,
+        "validation_wins": 92,
+        "validation_n": 500,
+        "known_mine_choices": 172,
+        "death_with_safe_available": 247,
+        "safe_choices": 2285,
+        "safe_opportunities": 2662
+      },
+      "games": {
+        "candidate": "20261004-control-best",
+        "step": 1250,
+        "wins": 90,
+        "n": 500,
+        "validation_wins": 92,
+        "validation_n": 500,
+        "known_mine_choices": 172,
+        "death_with_safe_available": 247,
+        "safe_choices": 2285,
+        "safe_opportunities": 2662
+      },
+      "baseline": {
+        "candidate": "20261004-baseline",
+        "step": 0,
+        "wins": 82,
+        "n": 500,
+        "validation_wins": 90,
+        "validation_n": 500,
+        "known_mine_choices": 171,
+        "death_with_safe_available": 244,
+        "safe_choices": 2177,
+        "safe_opportunities": 2540
+      }
+    },
+    "20261004-priority": {
+      "loss": {
+        "candidate": "20261004-priority-best",
+        "step": 0,
+        "wins": 82,
+        "n": 500,
+        "validation_wins": 90,
+        "validation_n": 500,
+        "known_mine_choices": 171,
+        "death_with_safe_available": 244,
+        "safe_choices": 2177,
+        "safe_opportunities": 2540
+      },
+      "games": {
+        "candidate": "20261004-priority-latest",
+        "step": 1500,
+        "wins": 89,
+        "n": 500,
+        "validation_wins": 91,
+        "validation_n": 500,
+        "known_mine_choices": 156,
+        "death_with_safe_available": 227,
+        "safe_choices": 2054,
+        "safe_opportunities": 2434
+      },
+      "baseline": {
+        "candidate": "20261004-baseline",
+        "step": 0,
+        "wins": 82,
+        "n": 500,
+        "validation_wins": 90,
+        "validation_n": 500,
+        "known_mine_choices": 171,
+        "death_with_safe_available": 244,
+        "safe_choices": 2177,
+        "safe_opportunities": 2540
+      }
+    }
+  },
+  "automatic_excluded": 0
+}

@@ -1,0 +1,27 @@
+{
+  "seeds": [
+    20261002,
+    20261003,
+    20261004
+  ],
+  "new_seeds": [
+    20261003,
+    20261004
+  ],
+  "updates": 2250,
+  "hashes": {
+    "runs/wide-reader-001/best-20261002-local.pt": "e25990d0ef52ed7173df5a102085849bdad09c5df514a75123a4f9387a1da46f",
+    "runs/wide-reader-001/best-20261003-local.pt": "e34cf7c9214ca07bea488f3ebd49c45a9cbb6c9319a13f1e69c07bdf6281247b",
+    "runs/wide-reader-001/best-20261004-local.pt": "a8ef4889b5653cc5f5c753a557763e7ebf8f9397f5369ef8ee206e11740feb29",
+    "runs/difficulty-transfer-002/extended-mapping.pkl": "902150f76da527a8918be5290778bb0b3421d6350ccaef60c824ad81ba6f9e50",
+    "runs/structural-learning-001/training/retina_plastic-20260926.pt": "9dc158b146f65d1cc29afa8eb989efe02ad8a8b2defd7586ac940dbb9a86568e",
+    "runs/hybrid-001/checkpoint.pkl": "81b09d60395123c0591d8837d2a4419825af51c4a93acb0dbebee31702095ea5",
+    "runs/nine-dagger-001/latest-control.pt": "f9f80e800fae3ef57774dd806524195b17855a983665da980aaaed7dbdab2bbe",
+    "runs/nine-dagger-001/latest-dagger.pt": "c8607b473ff1244492368a76b2312301827a633073c6cf0703af2bd03ba85928"
+  },
+  "primary": "mean9x9 dagger minus control on two NEW seeds",
+  "secondary": "three seeds; vsbaseline and7x7 retention",
+  "checkpoint": "fixed last2250, no game selection",
+  "shared_test": "500 new9+250 new7",
+  "shared_collection": 900
+}

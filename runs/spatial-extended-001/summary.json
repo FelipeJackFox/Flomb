@@ -1,0 +1,38 @@
+{
+  "before_mean": 0.09066666666666667,
+  "after_mean": 0.12933333333333333,
+  "difference_pp": 3.8666666666666663,
+  "conditional_board_bootstrap95_pp": [
+    1.7333333333333332,
+    6.066666666666666
+  ],
+  "pairs": [
+    {
+      "seed": 20261002,
+      "before": 45,
+      "after": 61,
+      "n": 500,
+      "difference_pp": 3.2,
+      "extended_only": 40,
+      "baseline_only": 24
+    },
+    {
+      "seed": 20261003,
+      "before": 46,
+      "after": 68,
+      "n": 500,
+      "difference_pp": 4.3999999999999995,
+      "extended_only": 44,
+      "baseline_only": 22
+    },
+    {
+      "seed": 20261004,
+      "before": 45,
+      "after": 65,
+      "n": 500,
+      "difference_pp": 4.0,
+      "extended_only": 41,
+      "baseline_only": 21
+    }
+  ]
+}
