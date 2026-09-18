@@ -1,0 +1,192 @@
+./experiments/train_synaptic_learning.py:36: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:821.)
+  rec=dict(phase='training',arm=label,step=step,loss=float(loss));write_json(OUT/'progress.json',rec);print(rec,flush=True)
+{'phase': 'training', 'arm': 'warmup', 'step': 250, 'loss': 2.557188034057617}
+{'phase': 'training', 'arm': 'warmup', 'step': 500, 'loss': 2.6206202507019043}
+{'phase': 'training', 'arm': 'warmup', 'step': 750, 'loss': 2.609441041946411}
+{'phase': 'training', 'arm': 'warmup', 'step': 1000, 'loss': 2.50590443611145}
+{'phase': 'training', 'arm': 'warmup', 'step': 1250, 'loss': 2.4246883392333984}
+{'phase': 'training', 'arm': 'warmup', 'step': 1500, 'loss': 2.5804738998413086}
+{'phase': 'training', 'arm': 'warmup', 'step': 1750, 'loss': 2.473252296447754}
+{'phase': 'training', 'arm': 'warmup', 'step': 2000, 'loss': 2.4682843685150146}
+{'phase': 'training', 'arm': 'warmup', 'step': 2250, 'loss': 2.3682470321655273}
+{'phase': 'training', 'arm': 'warmup', 'step': 2500, 'loss': 2.4935388565063477}
+{'phase': 'training', 'arm': 'warmup', 'step': 2750, 'loss': 2.3319590091705322}
+{'phase': 'training', 'arm': 'warmup', 'step': 3000, 'loss': 2.4909934997558594}
+{'phase': 'training', 'arm': 'reader', 'step': 3250, 'loss': 2.5373215675354004}
+{'phase': 'training', 'arm': 'reader', 'step': 3500, 'loss': 2.4193789958953857}
+{'phase': 'training', 'arm': 'reader', 'step': 3750, 'loss': 2.20503568649292}
+{'phase': 'training', 'arm': 'reader', 'step': 4000, 'loss': 2.4313371181488037}
+{'phase': 'training', 'arm': 'reader', 'step': 4250, 'loss': 2.4323484897613525}
+{'phase': 'training', 'arm': 'reader', 'step': 4500, 'loss': 2.3348941802978516}
+{'phase': 'training', 'arm': 'reader', 'step': 4750, 'loss': 2.4239513874053955}
+{'phase': 'training', 'arm': 'reader', 'step': 5000, 'loss': 2.480306625366211}
+{'phase': 'training', 'arm': 'reader', 'step': 5250, 'loss': 2.3523473739624023}
+{'phase': 'training', 'arm': 'reader', 'step': 5500, 'loss': 2.477684736251831}
+{'phase': 'training', 'arm': 'reader', 'step': 5750, 'loss': 2.289888381958008}
+{'phase': 'training', 'arm': 'reader', 'step': 6000, 'loss': 2.386711597442627}
+{'phase': 'training', 'arm': 'brain', 'step': 25, 'loss': 2.471523702144623, 'seconds_per_update': 4.13858359336853}
+{'phase': 'training', 'arm': 'brain', 'step': 50, 'loss': 2.5322814285755157, 'seconds_per_update': 4.135317616462707}
+{'phase': 'training', 'arm': 'brain', 'step': 75, 'loss': 2.391614943742752, 'seconds_per_update': 4.125635293324788}
+{'phase': 'training', 'arm': 'brain', 'step': 100, 'loss': 2.4785818457603455, 'seconds_per_update': 4.12578763961792}
+{'phase': 'training', 'arm': 'brain', 'step': 125, 'loss': 2.4118262827396393, 'seconds_per_update': 4.128004280090332}
+{'phase': 'training', 'arm': 'brain', 'step': 150, 'loss': 2.4236359000205994, 'seconds_per_update': 4.1322678454717}
+{'phase': 'training', 'arm': 'brain', 'step': 175, 'loss': 2.417586088180542, 'seconds_per_update': 4.130747074399675}
+{'phase': 'training', 'arm': 'brain', 'step': 200, 'loss': 2.48890620470047, 'seconds_per_update': 4.130921359062195}
+{'phase': 'training', 'arm': 'brain', 'step': 225, 'loss': 2.332048177719116, 'seconds_per_update': 4.127792141172621}
+{'phase': 'training', 'arm': 'brain', 'step': 250, 'loss': 2.4723228812217712, 'seconds_per_update': 4.1272935237884525}
+{'phase': 'training', 'arm': 'brain', 'step': 275, 'loss': 2.321040391921997, 'seconds_per_update': 4.12891660343517}
+{'phase': 'training', 'arm': 'brain', 'step': 300, 'loss': 2.4337446093559265, 'seconds_per_update': 4.129567089080811}
+{'phase': 'training', 'arm': 'brain', 'step': 325, 'loss': 2.3662200272083282, 'seconds_per_update': 4.128605772165152}
+{'phase': 'training', 'arm': 'brain', 'step': 350, 'loss': 2.5164408683776855, 'seconds_per_update': 4.126545185361589}
+{'phase': 'training', 'arm': 'brain', 'step': 375, 'loss': 2.363530308008194, 'seconds_per_update': 4.125602895736694}
+{'phase': 'training', 'arm': 'brain', 'step': 400, 'loss': 2.3276935517787933, 'seconds_per_update': 4.1176683819293975}
+{'phase': 'training', 'arm': 'brain', 'step': 425, 'loss': 2.4575005769729614, 'seconds_per_update': 4.063874921798706}
+{'phase': 'training', 'arm': 'brain', 'step': 450, 'loss': 2.3433110117912292, 'seconds_per_update': 4.015506813261244}
+{'phase': 'training', 'arm': 'brain', 'step': 475, 'loss': 2.3952521681785583, 'seconds_per_update': 3.972291831468281}
+{'phase': 'training', 'arm': 'brain', 'step': 500, 'loss': 2.377750515937805, 'seconds_per_update': 3.933506283760071}
+{'phase': 'training', 'arm': 'brain', 'step': 525, 'loss': 2.313007205724716, 'seconds_per_update': 3.9482147312164306}
+{'phase': 'training', 'arm': 'brain', 'step': 550, 'loss': 2.4934721291065216, 'seconds_per_update': 3.9139541669325397}
+{'phase': 'training', 'arm': 'brain', 'step': 575, 'loss': 2.440821051597595, 'seconds_per_update': 3.882562194907147}
+{'phase': 'training', 'arm': 'brain', 'step': 600, 'loss': 2.2829838395118713, 'seconds_per_update': 3.8540059332052867}
+{'phase': 'training', 'arm': 'brain', 'step': 625, 'loss': 2.4364644289016724, 'seconds_per_update': 3.8289171504974364}
+{'phase': 'training', 'arm': 'brain', 'step': 650, 'loss': 2.419495075941086, 'seconds_per_update': 3.804922827573923}
+{'phase': 'training', 'arm': 'brain', 'step': 675, 'loss': 2.4776747822761536, 'seconds_per_update': 3.782411331953826}
+{'phase': 'training', 'arm': 'brain', 'step': 700, 'loss': 2.5694072246551514, 'seconds_per_update': 3.7732776400021146}
+{'phase': 'training', 'arm': 'brain', 'step': 725, 'loss': 2.5230866074562073, 'seconds_per_update': 3.7829327280768035}
+{'phase': 'training', 'arm': 'brain', 'step': 750, 'loss': 2.1819913387298584, 'seconds_per_update': 3.786137014389038}
+{'phase': 'training', 'arm': 'brain', 'step': 775, 'loss': 2.3968929648399353, 'seconds_per_update': 3.799227776681223}
+{'phase': 'training', 'arm': 'brain', 'step': 800, 'loss': 2.4416897892951965, 'seconds_per_update': 3.814996018409729}
+{'phase': 'training', 'arm': 'brain', 'step': 825, 'loss': 2.38338965177536, 'seconds_per_update': 3.8290731768174604}
+{'phase': 'training', 'arm': 'brain', 'step': 850, 'loss': 2.5171377062797546, 'seconds_per_update': 3.8354863293030683}
+{'phase': 'training', 'arm': 'brain', 'step': 875, 'loss': 2.5005663633346558, 'seconds_per_update': 3.840264779499599}
+{'phase': 'training', 'arm': 'brain', 'step': 900, 'loss': 2.4175750613212585, 'seconds_per_update': 3.8493082253138224}
+{'phase': 'training', 'arm': 'brain', 'step': 925, 'loss': 2.4520984888076782, 'seconds_per_update': 3.8734381103515627}
+{'phase': 'training', 'arm': 'brain', 'step': 950, 'loss': 2.357249617576599, 'seconds_per_update': 3.876625227426228}
+{'phase': 'training', 'arm': 'brain', 'step': 975, 'loss': 2.4524198174476624, 'seconds_per_update': 3.879550535250933}
+{'phase': 'training', 'arm': 'brain', 'step': 1000, 'loss': 2.4071805477142334, 'seconds_per_update': 3.8750700929164887}
+{'phase': 'training', 'arm': 'brain', 'step': 1025, 'loss': 2.303576499223709, 'seconds_per_update': 3.8962078738794093}
+{'phase': 'training', 'arm': 'brain', 'step': 1050, 'loss': 2.3633180260658264, 'seconds_per_update': 3.8895603949683055}
+{'phase': 'training', 'arm': 'brain', 'step': 1075, 'loss': 2.311134457588196, 'seconds_per_update': 3.8832562546397362}
+{'phase': 'training', 'arm': 'brain', 'step': 1100, 'loss': 2.514907479286194, 'seconds_per_update': 3.8773006272315977}
+{'phase': 'training', 'arm': 'brain', 'step': 1125, 'loss': 2.287429541349411, 'seconds_per_update': 3.871919355392456}
+{'phase': 'training', 'arm': 'brain', 'step': 1150, 'loss': 2.3306594491004944, 'seconds_per_update': 3.8743624643657517}
+{'phase': 'training', 'arm': 'brain', 'step': 1175, 'loss': 2.504349946975708, 'seconds_per_update': 3.8810871410369874}
+{'phase': 'training', 'arm': 'brain', 'step': 1200, 'loss': 2.4664745926856995, 'seconds_per_update': 3.8858768008152644}
+{'phase': 'training', 'arm': 'brain', 'step': 1225, 'loss': 2.185346156358719, 'seconds_per_update': 3.892517818723406}
+{'phase': 'training', 'arm': 'brain', 'step': 1250, 'loss': 2.4050807654857635, 'seconds_per_update': 3.8990889127731325}
+{'phase': 'training', 'arm': 'brain', 'step': 1275, 'loss': 2.3258021473884583, 'seconds_per_update': 3.9111916650510303}
+{'phase': 'training', 'arm': 'brain', 'step': 1300, 'loss': 2.355393707752228, 'seconds_per_update': 3.922058073740739}
+{'phase': 'training', 'arm': 'brain', 'step': 1325, 'loss': 2.3868235051631927, 'seconds_per_update': 3.9321515531359976}
+{'phase': 'training', 'arm': 'brain', 'step': 1350, 'loss': 2.420229136943817, 'seconds_per_update': 3.9443293465508353}
+{'phase': 'training', 'arm': 'brain', 'step': 1375, 'loss': 2.4668838381767273, 'seconds_per_update': 3.948878031123768}
+{'phase': 'training', 'arm': 'brain', 'step': 1400, 'loss': 2.514798104763031, 'seconds_per_update': 3.953029387167522}
+{'phase': 'training', 'arm': 'brain', 'step': 1425, 'loss': 2.4383974373340607, 'seconds_per_update': 3.9570770665218955}
+{'phase': 'training', 'arm': 'brain', 'step': 1450, 'loss': 2.3142289221286774, 'seconds_per_update': 3.9619264405349206}
+{'phase': 'training', 'arm': 'brain', 'step': 1475, 'loss': 2.3033820390701294, 'seconds_per_update': 3.964784020407725}
+{'phase': 'training', 'arm': 'brain', 'step': 1500, 'loss': 2.3145459294319153, 'seconds_per_update': 4.004302556673686}
+{'phase': 'training', 'arm': 'brain', 'step': 1525, 'loss': 2.3975914120674133, 'seconds_per_update': 4.067924371000196}
+{'phase': 'training', 'arm': 'brain', 'step': 1550, 'loss': 2.329007089138031, 'seconds_per_update': 4.062119725750339}
+{'phase': 'training', 'arm': 'brain', 'step': 1575, 'loss': 2.3054521083831787, 'seconds_per_update': 4.056373460860479}
+{'phase': 'training', 'arm': 'brain', 'step': 1600, 'loss': 2.469799041748047, 'seconds_per_update': 4.0509099787473675}
+{'phase': 'training', 'arm': 'brain', 'step': 1625, 'loss': 2.254942923784256, 'seconds_per_update': 4.0454385346632735}
+{'phase': 'training', 'arm': 'brain', 'step': 1650, 'loss': 2.329722821712494, 'seconds_per_update': 4.040059116247929}
+{'phase': 'training', 'arm': 'brain', 'step': 1675, 'loss': 2.475729525089264, 'seconds_per_update': 4.034822418440633}
+{'phase': 'training', 'arm': 'brain', 'step': 1700, 'loss': 2.3242006599903107, 'seconds_per_update': 4.0299789376819835}
+{'phase': 'training', 'arm': 'brain', 'step': 1725, 'loss': 2.4664177894592285, 'seconds_per_update': 4.0254851795970525}
+{'phase': 'training', 'arm': 'brain', 'step': 1750, 'loss': 2.396241545677185, 'seconds_per_update': 4.020989171436855}
+{'phase': 'training', 'arm': 'brain', 'step': 1775, 'loss': 2.3151696920394897, 'seconds_per_update': 4.0178001504548835}
+{'phase': 'training', 'arm': 'brain', 'step': 1800, 'loss': 2.395508199930191, 'seconds_per_update': 4.013352998760012}
+{'phase': 'training', 'arm': 'brain', 'step': 1825, 'loss': 2.36416494846344, 'seconds_per_update': 4.0089474931481766}
+{'phase': 'training', 'arm': 'brain', 'step': 1850, 'loss': 2.2659473717212677, 'seconds_per_update': 4.00481485070409}
+{'phase': 'training', 'arm': 'brain', 'step': 1875, 'loss': 2.288046509027481, 'seconds_per_update': 4.0006792255401615}
+{'phase': 'training', 'arm': 'brain', 'step': 1900, 'loss': 2.221114009618759, 'seconds_per_update': 3.996726288419021}
+{'phase': 'training', 'arm': 'brain', 'step': 1925, 'loss': 2.3970967531204224, 'seconds_per_update': 3.9929396990986614}
+{'phase': 'training', 'arm': 'brain', 'step': 1950, 'loss': 2.3037461042404175, 'seconds_per_update': 3.9891676061581345}
+{'phase': 'training', 'arm': 'brain', 'step': 1975, 'loss': 2.5548206567764282, 'seconds_per_update': 3.9855492404744597}
+{'phase': 'training', 'arm': 'brain', 'step': 2000, 'loss': 2.449387013912201, 'seconds_per_update': 3.9816558405160904}
+{'phase': 'training', 'arm': 'brain', 'step': 2025, 'loss': 2.4484880566596985, 'seconds_per_update': 3.992603908114963}
+{'phase': 'training', 'arm': 'brain', 'step': 2050, 'loss': 2.34400337934494, 'seconds_per_update': 3.993764599939672}
+{'phase': 'training', 'arm': 'brain', 'step': 2075, 'loss': 2.3649343252182007, 'seconds_per_update': 4.021543179247753}
+{'phase': 'training', 'arm': 'brain', 'step': 2100, 'loss': 2.234685182571411, 'seconds_per_update': 4.02017250526519}
+{'phase': 'training', 'arm': 'brain', 'step': 2125, 'loss': 2.3427073061466217, 'seconds_per_update': 4.0151302282669965}
+{'phase': 'training', 'arm': 'brain', 'step': 2150, 'loss': 2.3877339959144592, 'seconds_per_update': 4.010209695793861}
+{'phase': 'training', 'arm': 'brain', 'step': 2175, 'loss': 2.388126015663147, 'seconds_per_update': 4.005455750761361}
+{'phase': 'training', 'arm': 'brain', 'step': 2200, 'loss': 2.4214369654655457, 'seconds_per_update': 4.0007665435834365}
+{'phase': 'training', 'arm': 'brain', 'step': 2225, 'loss': 2.5082749724388123, 'seconds_per_update': 3.9966293177443943}
+{'phase': 'training', 'arm': 'brain', 'step': 2250, 'loss': 2.3355923891067505, 'seconds_per_update': 3.9924184097713895}
+{'phase': 'training', 'arm': 'brain', 'step': 2275, 'loss': 2.2969322204589844, 'seconds_per_update': 3.988532269865602}
+{'phase': 'training', 'arm': 'brain', 'step': 2300, 'loss': 2.454323709011078, 'seconds_per_update': 3.984251923457436}
+{'phase': 'training', 'arm': 'brain', 'step': 2325, 'loss': 2.408268392086029, 'seconds_per_update': 3.981250594354445}
+{'phase': 'training', 'arm': 'brain', 'step': 2350, 'loss': 2.2927383184432983, 'seconds_per_update': 3.979599369738964}
+{'phase': 'training', 'arm': 'brain', 'step': 2375, 'loss': 2.2278574109077454, 'seconds_per_update': 3.9803358534762734}
+{'phase': 'training', 'arm': 'brain', 'step': 2400, 'loss': 2.4135503470897675, 'seconds_per_update': 3.9812618957956634}
+{'phase': 'training', 'arm': 'brain', 'step': 2425, 'loss': 2.4061872959136963, 'seconds_per_update': 3.98734647092131}
+{'phase': 'training', 'arm': 'brain', 'step': 2450, 'loss': 2.467573821544647, 'seconds_per_update': 4.010121626562002}
+{'phase': 'training', 'arm': 'brain', 'step': 2475, 'loss': 2.264402896165848, 'seconds_per_update': 4.0093083405735515}
+{'phase': 'training', 'arm': 'brain', 'step': 2500, 'loss': 2.463456928730011, 'seconds_per_update': 4.008964891529083}
+{'phase': 'training', 'arm': 'brain', 'step': 2525, 'loss': 2.3541464805603027, 'seconds_per_update': 4.016603229636013}
+{'phase': 'training', 'arm': 'brain', 'step': 2550, 'loss': 2.318202167749405, 'seconds_per_update': 4.01167683059094}
+{'phase': 'training', 'arm': 'brain', 'step': 2575, 'loss': 2.2915977239608765, 'seconds_per_update': 4.006919942411404}
+{'phase': 'training', 'arm': 'brain', 'step': 2600, 'loss': 2.3654128909111023, 'seconds_per_update': 4.002174148834668}
+{'phase': 'training', 'arm': 'brain', 'step': 2625, 'loss': 2.4327086210250854, 'seconds_per_update': 3.9975498223985944}
+{'phase': 'training', 'arm': 'brain', 'step': 2650, 'loss': 2.3105411529541016, 'seconds_per_update': 3.993063351973048}
+{'phase': 'training', 'arm': 'brain', 'step': 2675, 'loss': 2.3756466805934906, 'seconds_per_update': 3.988560925510442}
+{'phase': 'training', 'arm': 'brain', 'step': 2700, 'loss': 2.5080260038375854, 'seconds_per_update': 3.984107571442922}
+{'phase': 'training', 'arm': 'brain', 'step': 2725, 'loss': 2.3268043398857117, 'seconds_per_update': 3.9798267709224597}
+{'phase': 'training', 'arm': 'brain', 'step': 2750, 'loss': 2.2911572754383087, 'seconds_per_update': 3.9756255391727793}
+{'phase': 'training', 'arm': 'brain', 'step': 2775, 'loss': 2.342641443014145, 'seconds_per_update': 3.9718331268241815}
+{'phase': 'training', 'arm': 'brain', 'step': 2800, 'loss': 2.46483513712883, 'seconds_per_update': 3.9679116278886797}
+{'phase': 'training', 'arm': 'brain', 'step': 2825, 'loss': 2.234527587890625, 'seconds_per_update': 3.964404470730672}
+{'phase': 'training', 'arm': 'brain', 'step': 2850, 'loss': 2.32816618680954, 'seconds_per_update': 3.9604399168282223}
+{'phase': 'training', 'arm': 'brain', 'step': 2875, 'loss': 2.2621970176696777, 'seconds_per_update': 3.956493062890094}
+{'phase': 'training', 'arm': 'brain', 'step': 2900, 'loss': 2.3976837396621704, 'seconds_per_update': 3.952856755832146}
+{'phase': 'training', 'arm': 'brain', 'step': 2925, 'loss': 2.314871668815613, 'seconds_per_update': 3.9496175534501035}
+{'phase': 'training', 'arm': 'brain', 'step': 2950, 'loss': 2.3119760751724243, 'seconds_per_update': 3.9462019657684584}
+{'phase': 'training', 'arm': 'brain', 'step': 2975, 'loss': 2.3364751636981964, 'seconds_per_update': 3.9425469471426573}
+{'phase': 'training', 'arm': 'brain', 'step': 3000, 'loss': 2.351577937602997, 'seconds_per_update': 3.9390595366160075}
+{'phase': 'evaluation', 'arm': 'baseline', 'completed': 50, 'total': 750}
+{'phase': 'evaluation', 'arm': 'baseline', 'completed': 100, 'total': 750}
+{'phase': 'evaluation', 'arm': 'baseline', 'completed': 150, 'total': 750}
+{'phase': 'evaluation', 'arm': 'baseline', 'completed': 200, 'total': 750}
+{'phase': 'evaluation', 'arm': 'baseline', 'completed': 250, 'total': 750}
+{'phase': 'evaluation', 'arm': 'baseline', 'completed': 300, 'total': 750}
+{'phase': 'evaluation', 'arm': 'baseline', 'completed': 350, 'total': 750}
+{'phase': 'evaluation', 'arm': 'baseline', 'completed': 400, 'total': 750}
+{'phase': 'evaluation', 'arm': 'baseline', 'completed': 450, 'total': 750}
+{'phase': 'evaluation', 'arm': 'baseline', 'completed': 500, 'total': 750}
+{'phase': 'evaluation', 'arm': 'baseline', 'completed': 550, 'total': 750}
+{'phase': 'evaluation', 'arm': 'baseline', 'completed': 600, 'total': 750}
+{'phase': 'evaluation', 'arm': 'baseline', 'completed': 650, 'total': 750}
+{'phase': 'evaluation', 'arm': 'baseline', 'completed': 700, 'total': 750}
+{'phase': 'evaluation', 'arm': 'baseline', 'completed': 750, 'total': 750}
+{'phase': 'evaluation', 'arm': 'reader', 'completed': 50, 'total': 750}
+{'phase': 'evaluation', 'arm': 'reader', 'completed': 100, 'total': 750}
+{'phase': 'evaluation', 'arm': 'reader', 'completed': 150, 'total': 750}
+{'phase': 'evaluation', 'arm': 'reader', 'completed': 200, 'total': 750}
+{'phase': 'evaluation', 'arm': 'reader', 'completed': 250, 'total': 750}
+{'phase': 'evaluation', 'arm': 'reader', 'completed': 300, 'total': 750}
+{'phase': 'evaluation', 'arm': 'reader', 'completed': 350, 'total': 750}
+{'phase': 'evaluation', 'arm': 'reader', 'completed': 400, 'total': 750}
+{'phase': 'evaluation', 'arm': 'reader', 'completed': 450, 'total': 750}
+{'phase': 'evaluation', 'arm': 'reader', 'completed': 500, 'total': 750}
+{'phase': 'evaluation', 'arm': 'reader', 'completed': 550, 'total': 750}
+{'phase': 'evaluation', 'arm': 'reader', 'completed': 600, 'total': 750}
+{'phase': 'evaluation', 'arm': 'reader', 'completed': 650, 'total': 750}
+{'phase': 'evaluation', 'arm': 'reader', 'completed': 700, 'total': 750}
+{'phase': 'evaluation', 'arm': 'reader', 'completed': 750, 'total': 750}
+{'phase': 'evaluation', 'arm': 'brain', 'completed': 50, 'total': 750}
+{'phase': 'evaluation', 'arm': 'brain', 'completed': 100, 'total': 750}
+{'phase': 'evaluation', 'arm': 'brain', 'completed': 150, 'total': 750}
+{'phase': 'evaluation', 'arm': 'brain', 'completed': 200, 'total': 750}
+{'phase': 'evaluation', 'arm': 'brain', 'completed': 250, 'total': 750}
+{'phase': 'evaluation', 'arm': 'brain', 'completed': 300, 'total': 750}
+{'phase': 'evaluation', 'arm': 'brain', 'completed': 350, 'total': 750}
+{'phase': 'evaluation', 'arm': 'brain', 'completed': 400, 'total': 750}
+{'phase': 'evaluation', 'arm': 'brain', 'completed': 450, 'total': 750}
+{'phase': 'evaluation', 'arm': 'brain', 'completed': 500, 'total': 750}
+{'phase': 'evaluation', 'arm': 'brain', 'completed': 550, 'total': 750}
+{'phase': 'evaluation', 'arm': 'brain', 'completed': 600, 'total': 750}
+{'phase': 'evaluation', 'arm': 'brain', 'completed': 650, 'total': 750}
+{'phase': 'evaluation', 'arm': 'brain', 'completed': 700, 'total': 750}
+{'phase': 'evaluation', 'arm': 'brain', 'completed': 750, 'total': 750}
