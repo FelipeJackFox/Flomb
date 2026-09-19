@@ -1,0 +1,3 @@
+{'name': 'naive-b300-decay', 'games': 5000, 'dev9': '6/200', 'dev7': '25/200', 'safe_rate': 0.866, 'w_mean': 1.0001318454742432, 'w_min': 0.25973811745643616, 'seconds': 245}
+{'name': 'naive-b300-decay', 'games': 10000, 'dev9': '15/200', 'dev7': '25/200', 'safe_rate': 0.872, 'w_mean': 1.0002434253692627, 'w_min': 0.2555761933326721, 'seconds': 446}
+{'name': 'naive-b300-decay', 'games': 15000, 'dev9': '11/200', 'dev7': '24/200', 'safe_rate': 0.853, 'w_mean': 1.0003243684768677, 'w_min': 0.292878657579422, 'seconds': 613}

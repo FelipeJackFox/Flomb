@@ -1,0 +1,32 @@
+{
+ "KC": 4064,
+ "MBON": 97,
+ "PAM": 316,
+ "PPL1": 16,
+ "APL": 2,
+ "PN": 314,
+ "PN_KC": {
+  "edges": 22586,
+  "synapses": 390928
+ },
+ "KC_MBON": {
+  "edges": 61210,
+  "synapses": 463640
+ },
+ "PAM_MBON": {
+  "edges": 2693,
+  "synapses": 28546
+ },
+ "PPL1_MBON": {
+  "edges": 430,
+  "synapses": 11070
+ },
+ "KC_APL": {
+  "edges": 4693,
+  "synapses": 210352
+ },
+ "APL_KC": {
+  "edges": 4633,
+  "synapses": 196200
+ }
+}

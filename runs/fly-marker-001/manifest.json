@@ -1,0 +1,22 @@
+{
+  "config": {
+    "rule": "rpe",
+    "sparsity": 0.2,
+    "tuning": 0.35,
+    "beta": 100.0
+  },
+  "training_games": 10000,
+  "arms": [
+    "real-0",
+    "real-1",
+    "real-2",
+    "shuffled-0",
+    "shuffled-1",
+    "shuffled-2",
+    "naive",
+    "no-marks",
+    "hand-policy"
+  ],
+  "training_layouts_in_test": 0,
+  "protocol": "research/PROTOCOLO_MOSCA_MARCADORA.md"
+}
