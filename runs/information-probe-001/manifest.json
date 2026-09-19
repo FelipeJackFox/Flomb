@@ -1,0 +1,20 @@
+{
+  "seed": 20261112,
+  "cycles": 4,
+  "train_positions": 3000,
+  "test_positions": 1000,
+  "split": "by game seed, 150 held-out games",
+  "hashes": {
+    "runs/early-interface-001/latest-joint.pt": "3b8aa7f51ef460b7a6cf367bb74e1af9a25958aba46cf3d364f2a89076287444",
+    "runs/difficulty-transfer-002/extended-mapping.pkl": "902150f76da527a8918be5290778bb0b3421d6350ccaef60c824ad81ba6f9e50",
+    "runs/structural-learning-001/training/retina_plastic-20260926.pt": "9dc158b146f65d1cc29afa8eb989efe02ad8a8b2defd7586ac940dbb9a86568e",
+    "runs/synaptic-learning-001/latest-brain.pt": "e2c7349a4b1c410541005f8f0652f92b3b6e3ab0f69be5a351009b6c727b5259",
+    "runs/nine-dagger-001/dataset.pkl": "a22eefbe20c7e636c01d4add9679615d6fbd6d4dcc67019af72fc57551095a4f"
+  },
+  "decoders": {
+    "linear1": "1x1 linear",
+    "linear3": "3x3 linear",
+    "mlp3": "3x3, 64 tanh units"
+  },
+  "target": "clue class per cell: hidden or 0..8"
+}

@@ -1,0 +1,163 @@
+{
+  "probe": {
+    "baseline": {
+      "linear1": {
+        "accuracy": 0.7142345905303955,
+        "clue_accuracy": 0.544547975063324,
+        "balanced_accuracy": 0.3486141420268853,
+        "number_error_mean": 0.6779883503913879
+      },
+      "linear3": {
+        "accuracy": 0.8200494050979614,
+        "clue_accuracy": 0.7206820249557495,
+        "balanced_accuracy": 0.5278991460800171,
+        "number_error_mean": 0.37913256883621216
+      },
+      "mlp3": {
+        "accuracy": 0.8912469148635864,
+        "clue_accuracy": 0.8309891223907471,
+        "balanced_accuracy": 0.6083349074636187,
+        "number_error_mean": 0.23562932014465332
+      }
+    },
+    "encoder": {
+      "linear1": {
+        "accuracy": 0.7613703608512878,
+        "clue_accuracy": 0.6428248286247253,
+        "balanced_accuracy": 0.4184973013720342,
+        "number_error_mean": 0.5429876446723938
+      },
+      "linear3": {
+        "accuracy": 0.9295555353164673,
+        "clue_accuracy": 0.8899416327476501,
+        "balanced_accuracy": 0.8304437015737806,
+        "number_error_mean": 0.1813124716281891
+      },
+      "mlp3": {
+        "accuracy": 0.9572963118553162,
+        "clue_accuracy": 0.9325222969055176,
+        "balanced_accuracy": 0.8869609492165702,
+        "number_error_mean": 0.1023472473025322
+      }
+    },
+    "synapses": {
+      "linear1": {
+        "accuracy": 0.7436913847923279,
+        "clue_accuracy": 0.6017140746116638,
+        "balanced_accuracy": 0.3944766063775335,
+        "number_error_mean": 0.6638098955154419
+      },
+      "linear3": {
+        "accuracy": 0.963160514831543,
+        "clue_accuracy": 0.94179368019104,
+        "balanced_accuracy": 0.7461804662431989,
+        "number_error_mean": 0.09128940105438232
+      },
+      "mlp3": {
+        "accuracy": 0.9725185036659241,
+        "clue_accuracy": 0.9556781649589539,
+        "balanced_accuracy": 0.8384441307612828,
+        "number_error_mean": 0.06555560231208801
+      }
+    }
+  },
+  "edges_modified": 8700,
+  "7": {
+    "results": {
+      "baseline": {
+        "wins": 69,
+        "n": 250,
+        "safe_choices": 1190,
+        "safe_opportunities": 1310,
+        "known_mine_choices": 48,
+        "death_with_safe_available": 76
+      },
+      "encoder": {
+        "wins": 32,
+        "n": 250,
+        "safe_choices": 1091,
+        "safe_opportunities": 1272,
+        "known_mine_choices": 105,
+        "death_with_safe_available": 126
+      },
+      "synapses": {
+        "wins": 40,
+        "n": 250,
+        "safe_choices": 1250,
+        "safe_opportunities": 1460,
+        "known_mine_choices": 114,
+        "death_with_safe_available": 147
+      }
+    },
+    "synapses_minus_baseline": {
+      "delta_pp": -11.600000000000001,
+      "ci95_pp": [
+        -17.599999999999998,
+        -5.6000000000000005
+      ]
+    },
+    "encoder_minus_baseline": {
+      "delta_pp": -14.799999999999999,
+      "ci95_pp": [
+        -20.8,
+        -8.799999999999999
+      ]
+    },
+    "synapses_minus_encoder": {
+      "delta_pp": 3.2,
+      "ci95_pp": [
+        -2.009999999999991,
+        8.799999999999999
+      ]
+    }
+  },
+  "9": {
+    "results": {
+      "baseline": {
+        "wins": 49,
+        "n": 500,
+        "safe_choices": 3985,
+        "safe_opportunities": 4458,
+        "known_mine_choices": 188,
+        "death_with_safe_available": 266
+      },
+      "encoder": {
+        "wins": 4,
+        "n": 500,
+        "safe_choices": 2541,
+        "safe_opportunities": 3135,
+        "known_mine_choices": 262,
+        "death_with_safe_available": 377
+      },
+      "synapses": {
+        "wins": 11,
+        "n": 500,
+        "safe_choices": 2819,
+        "safe_opportunities": 3306,
+        "known_mine_choices": 237,
+        "death_with_safe_available": 316
+      }
+    },
+    "synapses_minus_baseline": {
+      "delta_pp": -7.6,
+      "ci95_pp": [
+        -10.4,
+        -5.0
+      ]
+    },
+    "encoder_minus_baseline": {
+      "delta_pp": -9.0,
+      "ci95_pp": [
+        -11.799999999999999,
+        -6.4
+      ]
+    },
+    "synapses_minus_encoder": {
+      "delta_pp": 1.4000000000000001,
+      "ci95_pp": [
+        0.0,
+        2.8000000000000003
+      ]
+    }
+  }
+}
