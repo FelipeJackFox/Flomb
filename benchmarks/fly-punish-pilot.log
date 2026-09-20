@@ -1,0 +1,18 @@
+{'dread': 3.0, 'fly': '{"seed": 3}', 'win9': np.float64(0.0), 'win7': np.float64(0.0), 'marks': 22.116, 'false_marks': 7669}
+{'dread': 6.0, 'fly': '{"seed": 3}', 'win9': np.float64(0.0), 'win7': np.float64(0.0), 'marks': 22.116, 'false_marks': 7669}
+{'dread': 3.0, 'fly': '{"seed": 100}', 'win9': np.float64(0.0), 'win7': np.float64(0.0), 'marks': 22.116, 'false_marks': 7669}
+{'dread': 3.0, 'fly': '{"seed": 101}', 'win9': np.float64(0.0), 'win7': np.float64(0.0), 'marks': 22.116, 'false_marks': 7669}
+{'dread': 3.0, 'fly': '{"seed": 102}', 'win9': np.float64(0.0), 'win7': np.float64(0.0), 'marks': 22.116, 'false_marks': 7669}
+{'dread': 6.0, 'fly': '{"seed": 102}', 'win9': np.float64(0.0), 'win7': np.float64(0.0), 'marks': 22.116, 'false_marks': 7669}
+{'dread': 3.0, 'fly': '{"seed": 103}', 'win9': np.float64(0.0), 'win7': np.float64(0.0), 'marks': 22.116, 'false_marks': 7669}
+{'dread': 6.0, 'fly': '{"seed": 103}', 'win9': np.float64(0.0), 'win7': np.float64(0.0), 'marks': 22.116, 'false_marks': 7669}
+{'dread': 6.0, 'fly': '{"seed": 100}', 'win9': np.float64(0.0), 'win7': np.float64(0.0), 'marks': 22.116, 'false_marks': 7669}
+{'dread': 3.0, 'fly': '{"seed": 6, "logistic": true}', 'win9': np.float64(54.333333333333336), 'win7': np.float64(61.5), 'marks': 6.232, 'false_marks': 0}
+{'dread': 6.0, 'fly': '{"seed": 6, "logistic": true}', 'win9': np.float64(0.0), 'win7': np.float64(0.0), 'marks': 18.324, 'false_marks': 6025}
+{'dread': 6.0, 'fly': '{"seed": 3, "shuffled": true}', 'win9': np.float64(0.0), 'win7': np.float64(0.0), 'marks': 22.116, 'false_marks': 7669}
+{'dread': 6.0, 'fly': '{"seed": 101}', 'win9': np.float64(0.0), 'win7': np.float64(0.0), 'marks': 22.116, 'false_marks': 7669}
+{'dread': 3.0, 'fly': '{"seed": 1, "shuffled": true}', 'win9': np.float64(0.0), 'win7': np.float64(0.0), 'marks': 22.116, 'false_marks': 7669}
+{'dread': 6.0, 'fly': '{"seed": 1, "shuffled": true}', 'win9': np.float64(0.0), 'win7': np.float64(0.0), 'marks': 22.116, 'false_marks': 7669}
+{'dread': 3.0, 'fly': '{"seed": 3, "shuffled": true}', 'win9': np.float64(0.0), 'win7': np.float64(0.0), 'marks': 22.116, 'false_marks': 7669}
+{'dread': 3.0, 'fly': '{"seed": 5, "shuffled": true}', 'win9': np.float64(0.0), 'win7': np.float64(0.0), 'marks': 22.116, 'false_marks': 7669}
+{'dread': 6.0, 'fly': '{"seed": 5, "shuffled": true}', 'win9': np.float64(0.0), 'win7': np.float64(0.0), 'marks': 22.116, 'false_marks': 7669}

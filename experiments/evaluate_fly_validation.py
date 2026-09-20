@@ -8,14 +8,14 @@ from minesweeper import Minesweeper
 from experiments.capacity_probe import write_json
 from experiments.scaled_data import identity
 
-OUT=Path('runs/fly-marker-002');GAMES=10000;CONFIG=dict(rule='rpe',sparsity=.2,tuning=.35,beta=100.);SEEDS=range(10);EXTRA={}
+OUT=Path('runs/fly-marker-002');GAMES=10000;CONFIG=dict(rule='rpe',sparsity=.2,tuning=.35,beta=100.);SEEDS=range(10);EXTRA={};DREAD=.03
 def arms():return [(f'real-{s}',dict(seed=s)) for s in SEEDS]+[(f'shuffled-{s}',dict(seed=s,shuffled=True)) for s in SEEDS]+[(f'logistic-{s}',dict(seed=s,logistic=True)) for s in SEEDS]+[('naive',dict(seed=0,games=0))]
 
 def build(options):
     from experiments.mushroom_body import MushroomBody
     from experiments.fly_agents import FlyAgent,LogisticAgent
     options=dict(options);options.pop('games',None);far=options.pop('far_field',False)
-    if options.pop('logistic',False):return LogisticAgent(),None
+    if options.pop('logistic',False):return LogisticAgent(punish_gain=EXTRA.get('punish_gain',1.)),None
     mb=MushroomBody(**CONFIG,**EXTRA,**options);return FlyAgent(mb,far),mb
 
 def train(agent,mb,seed,n):
@@ -25,12 +25,12 @@ def train(agent,mb,seed,n):
         eta=eta0/(1+g/3000)
         if mb is not None:mb.eta=eta
         else:agent.eta=eta
-        play(agent,10_000_000+g,[7,9][g%2],[7,12][g%2],rng,True)
+        play(agent,10_000_000+g,[7,9][g%2],[7,12][g%2],rng,True,dread=DREAD)
     return rng
 
 def evaluate(agent,games,rng):
     from experiments.fly_agents import play
-    return [dict(**g,automatic=bool(Minesweeper(g['seed'],g['size'],g['mines']).won),**play(agent,g['seed'],g['size'],g['mines'],rng,False)) for g in games]
+    return [dict(**g,automatic=bool(Minesweeper(g['seed'],g['size'],g['mines']).won),**play(agent,g['seed'],g['size'],g['mines'],rng,False,dread=DREAD)) for g in games]
 
 def run(arm):
     name,options=arm;games=json.loads((OUT/'games.json').read_text());agent,mb=build(options);rng=train(agent,mb,options['seed'],options.get('games',GAMES))

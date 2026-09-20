@@ -1,0 +1,21 @@
+{'dread': 0.03, 'fly': '{"seed": 3}', 'win9': np.float64(3.0), 'win7': np.float64(12.0), 'marks': 0.0, 'false_marks': 0}
+{'dread': 0.2, 'fly': '{"seed": 3}', 'win9': np.float64(0.0), 'win7': np.float64(0.0), 'marks': 22.116, 'false_marks': 7669}
+{'dread': 0.03, 'fly': '{"seed": 100}', 'win9': np.float64(55.666666666666664), 'win7': np.float64(61.0), 'marks': 6.384, 'false_marks': 0}
+{'dread': 0.2, 'fly': '{"seed": 101}', 'win9': np.float64(50.33333333333333), 'win7': np.float64(60.0), 'marks': 6.008, 'false_marks': 11}
+{'dread': 0.1, 'fly': '{"seed": 3}', 'win9': np.float64(1.6666666666666667), 'win7': np.float64(9.5), 'marks': 5.64, 'false_marks': 554}
+{'dread': 0.2, 'fly': '{"seed": 100}', 'win9': np.float64(45.0), 'win7': np.float64(59.0), 'marks': 5.858, 'false_marks': 14}
+{'dread': 0.1, 'fly': '{"seed": 101}', 'win9': np.float64(33.0), 'win7': np.float64(48.0), 'marks': 5.112, 'false_marks': 12}
+{'dread': 0.1, 'fly': '{"seed": 100}', 'win9': np.float64(49.0), 'win7': np.float64(57.49999999999999), 'marks': 5.834, 'false_marks': 0}
+{'dread': 0.03, 'fly': '{"seed": 101}', 'win9': np.float64(53.333333333333336), 'win7': np.float64(60.0), 'marks': 6.154, 'false_marks': 0}
+{'dread': 0.03, 'fly': '{"seed": 1, "shuffled": true}', 'win9': np.float64(4.0), 'win7': np.float64(13.0), 'marks': 0.0, 'false_marks': 0}
+{'dread': 0.03, 'fly': '{"seed": 6, "logistic": true}', 'win9': np.float64(4.333333333333334), 'win7': np.float64(11.5), 'marks': 0.0, 'false_marks': 0}
+{'dread': 0.2, 'fly': '{"seed": 1, "shuffled": true}', 'win9': np.float64(0.0), 'win7': np.float64(0.0), 'marks': 22.116, 'false_marks': 7669}
+{'dread': 0.03, 'fly': '{"seed": 3, "shuffled": true}', 'win9': np.float64(4.0), 'win7': np.float64(12.5), 'marks': 0.0, 'false_marks': 0}
+{'dread': 0.1, 'fly': '{"seed": 1, "shuffled": true}', 'win9': np.float64(3.3333333333333335), 'win7': np.float64(12.0), 'marks': 0.0, 'false_marks': 0}
+{'dread': 0.2, 'fly': '{"seed": 3, "shuffled": true}', 'win9': np.float64(0.0), 'win7': np.float64(0.0), 'marks': 22.116, 'false_marks': 7669}
+{'dread': 0.1, 'fly': '{"seed": 3, "shuffled": true}', 'win9': np.float64(2.666666666666667), 'win7': np.float64(10.5), 'marks': 5.46, 'false_marks': 517}
+{'dread': 0.03, 'fly': '{"seed": 5, "shuffled": true}', 'win9': np.float64(4.666666666666667), 'win7': np.float64(15.5), 'marks': 0.0, 'false_marks': 0}
+{'dread': 0.1, 'fly': '{"seed": 6, "logistic": true}', 'win9': np.float64(55.00000000000001), 'win7': np.float64(60.0), 'marks': 6.302, 'false_marks': 0}
+{'dread': 0.2, 'fly': '{"seed": 5, "shuffled": true}', 'win9': np.float64(42.66666666666667), 'win7': np.float64(55.50000000000001), 'marks': 5.616, 'false_marks': 0}
+{'dread': 0.2, 'fly': '{"seed": 6, "logistic": true}', 'win9': np.float64(51.0), 'win7': np.float64(57.49999999999999), 'marks': 5.848, 'false_marks': 0}
+{'dread': 0.1, 'fly': '{"seed": 5, "shuffled": true}', 'win9': np.float64(49.666666666666664), 'win7': np.float64(57.99999999999999), 'marks': 5.87, 'false_marks': 0}
