@@ -772,3 +772,15 @@ Lo único que sí mejora y ya está medido en layouts reservados (002): ensamble
 Siguiente idea sin probar: que marcar no dependa de una probabilidad absoluta sino de evidencia acumulada por olor (p. ej. nº de quemaduras sin ningún azúcar), o que la mosca re-muestree olores temidos de vez en cuando; ambas atacan la causa (falta de muestras), no el síntoma.
 
 
+## Análisis del mundo de sentidos · 19 sept 2026 (solo documento; sin código ni corridas)
+
+A pedido de Felipe: research/ANALISIS_SENTIDOS_MOSCA.md. Criterio sentido↔trampa vuelto operativo en 5 pruebas (estado oculto, física que conoce las reglas, política de una línea, lector lineal, modalidad animal) y escala 0–4. Veredicto sobre lo actual: N/k y la resta de marcas son trampa (nivel 3); el olor lejano de densidad también; el reflejo de marca es política nuestra (gris). Propuesta central: olfateos crudos (N, k, m) con física genérica, con controles logística aditiva / tabla de pares / barajado; se acepta que el número puede bajar. De nuestro lado: entrenamiento no letal + currículum por densidad contra el colapso. Descartadas por fraude: patas que prueban minas, gradientes térmicos, olor de incertidumbre, olor de casillas compartidas, peligro iterado, moldeo con solver, castigo a marcas falsas. Pendiente decisión de Felipe; nada corriendo.
+
+
+## DECISIÓN DE FELIPE · 19 sept 2026 · número oficial y cómo citarlo
+
+Número oficial que se reporta: **ensamble jugado de 10 moscas = 53.2% en 9×9 (cableado real; 55.4% barajado), runs/fly-marker-002, 500 tableros reservados.**
+LÉASE ANTES DE CITAR: eso es un ENJAMBRE QUE VOTA (promedio de valencias de 10 cerebros entrenados por separado), NO una mosca. No cuenta como "la mosca mejoró". Una mosca individual gana 44.5% en promedio, IC95 [33.1, 56.0] con la semilla como unidad, y 1 de cada 6 no aprende a marcar y se queda en ~3%. Además, ese resultado usa sentidos que hoy clasificamos como TRAMPA (la arena divide N/k y resta las marcas; ver research/ANALISIS_SENTIDOS_MOSCA.md): una regresión logística sin cerebro con los mismos sentidos saca 47.5%. Quien cite "53%" sin estas tres frases lo está citando mal.
+Plan aprobado por Felipe (orden): 1) olfateos crudos (N, k, m) con controles logística aditiva / tabla / barajado; 2) entrenamiento no letal + currículum por densidad; 3) sentidos crudos de densidad + densidad variable; 4) traza de elegibilidad → marcar aprendido; 5) novedad interna. Instrucción explícita: si con sentidos crudos la mosca no aprende a marcar, decirlo sin suavizar; "el salto fue 100% de la arena" es un resultado legítimo.
+
+
