@@ -794,3 +794,16 @@ Lectura: (1) la mosca aprende sola la relación entre N, k y m a partir de calor
 Nota de citación: el número legítimo de UNA mosca es 34.0% [28.1, 39.9] en 9×9 con sentidos crudos. El 53.2% oficial es enjambre + sentidos de trampa.
 
 
+## Punto 2 cerrado · entrenamiento no letal sobre olfateos crudos · 20 sept 2026 · runs/fly-raw-002
+
+Piloto dev (benchmarks/fly-training-pilot, 20k partidas, evaluación letal): letal ~23–25% en 9×9; no letal ~50–57% y subiendo; currículum por densidad sin ganancia sola ni sumada → DESCARTADO, no entró a la formal.
+Protocolo research/PROTOCOLO_ENTRENAMIENTO_NO_LETAL.md prefijado. 750 layouts reservados nuevos, 10 semillas, 20,000 partidas, sentidos crudos (N,k,m), evaluación SIEMPRE letal, unidad = semilla.
+9×9 (media, IC95 t): mosca no letal 45.6% [41.4, 49.8] (52.6 42.8 44.0 32.2 51.2 45.2 47.6 49.4 42.4 48.4); mosca letal con el mismo presupuesto 32.7% [28.4, 37.1]; TABLA sin cerebro no letal 53.7% [51.1, 56.3]; aditiva no letal 15.1% [12.9, 17.3]; ingenua 0.0; a mano 61.4; enjambre de 10 moscas no letales 48.4 (solo dato).
+7×7: mosca no letal 58.5% [56.9, 60.1]; letal 51.2%; tabla 60.6% [58.7, 62.6]; aditiva 38.0%; a mano 72.8; enjambre 60.8.
+Pareados por semilla, 9×9: no letal − letal +12.8 pp [7.3, 18.4], t=5.3, p=0.0005; mosca − tabla −8.1 [−14.2, −2.1], p=0.014; mosca − aditiva +30.5 [24.9, 36.0]. 7×7: no letal − letal +7.3 [5.0, 9.5]; mosca − tabla −2.2 [−5.5, 1.2], p=0.18.
+Nadie colapsa (0 de 40 nunca marcan). Marcas falsas: mosca no letal 22 en 9×9 y 1 en 7×7 (sobre ~35,000 marcas); resto 0.
+Lectura sin suavizar: (1) La hipótesis de la escasez de muestras se confirma: entrenar sin morir sube a la mosca cruda +12.8 pp y reduce su varianza entre semillas (DE 5.8; con trampa era 16–17). Una mosca individual con sentidos legítimos llega a 45.6%, prácticamente lo que daba con la arena haciéndole la aritmética (44.5–50.4%). (2) PERO la ventaja del cerebro del punto 1 NO sobrevive: con muestras de sobra, la tabla de triples sin cerebro le gana a la mosca por 8 pp en 9×9. Lo del punto 1 era eficiencia muestral (generalizar entre triples parecidos cuando hay pocos datos), no capacidad. Con datos abundantes esa misma generalización se vuelve un lastre: confunde triples vecinos (de ahí sus 22 marcas falsas; la tabla, 0). (3) Lo que sí queda en pie: hacen falta CONJUNCIONES. La logística aditiva se queda en 15% aun con muestras de sobra, como predije: no puede tener a la vez certeza en N=k y gradación en lo de junto. La mosca (conjunciones al azar) queda entre la aditiva y la tabla exacta, que era el orden que esperaba en el análisis de sentidos. (4) El cableado real no se probó contra barajado en esta corrida (en 001 no se distinguían).
+Incidente operativo: el primer lanzamiento de esta corrida habría escrito en runs/fly-raw-001 (los workers de multiprocessing con spawn reimportan el módulo y no veían el OUT del lanzador). Detenido al minuto, antes de cualquier escritura; verificado que 001 no tiene archivos posteriores a su completed.json (antes y después de esta corrida). Arreglo: Pool con initializer que pasa OUT/GAMES/GROUPS y seguro que se niega a escribir en un run con completed.json.
+Pendiente del plan aprobado: 3) sentidos crudos de densidad + densidad variable; 4) traza de elegibilidad → marcar aprendido; 5) novedad interna. Nada corriendo.
+
+
