@@ -1,0 +1,179 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Mosca Fruta · Arena</title>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js","three/addons/":"./vendor/addons/"}}</script>
+<style>
+:root{--face:#c0c0c0;--hi:#fff;--lo:#808080;--dark:#404040;--ink:#111;--led:#ff2a1a;--ledbg:#2a0000}
+*{box-sizing:border-box}html,body{margin:0;background:#008080;color:var(--ink);font:13px/1.35 "MS Sans Serif",Tahoma,Verdana,sans-serif}
+.win{background:var(--face);border:2px solid;border-color:var(--hi) var(--dark) var(--dark) var(--hi);box-shadow:1px 1px 0 #000;padding:3px}
+.title{background:linear-gradient(90deg,#000080,#1084d0);color:#fff;font-weight:700;padding:3px 6px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.title small{font-weight:400;opacity:.85}
+.sunk{border:2px solid;border-color:var(--lo) var(--hi) var(--hi) var(--lo)}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:10px;padding:10px;max-width:1500px;margin:0 auto}
+#stage{position:relative;height:min(74vh,760px);min-height:380px;background:#9fb7c9;overflow:hidden}
+#stage canvas{display:block;width:100%;height:100%}
+#loading{position:absolute;inset:0;display:grid;place-items:center;font-weight:700;background:#9fb7c9}
+#caption{position:absolute;left:8px;right:8px;bottom:8px;background:#ffffe1;border:1px solid #000;padding:5px 8px;font-size:13px;min-height:30px}
+.bar{display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:6px 4px 3px}
+button,select{font:inherit;background:var(--face);border:2px solid;border-color:var(--hi) var(--dark) var(--dark) var(--hi);padding:3px 10px;color:var(--ink);cursor:pointer}
+button:active{border-color:var(--dark) var(--hi) var(--hi) var(--dark)}
+label{display:inline-flex;gap:4px;align-items:center}
+.side{display:flex;flex-direction:column;gap:10px;min-width:0}
+.classic{padding:6px}.hud{display:flex;justify-content:space-between;align-items:center;padding:4px 6px;margin-bottom:6px}
+.led{background:var(--ledbg);color:var(--led);font:700 22px/1 "Courier New",monospace;padding:2px 4px;letter-spacing:1px;min-width:52px;text-align:right}
+#face{font-size:20px;width:34px;height:34px;padding:0;line-height:1}
+#board2d{display:block;width:100%;height:auto;image-rendering:auto}
+#brain{display:block;width:100%;height:auto;background:#0b0f1a}
+.sniffs{font:12px/1.5 "Courier New",monospace;background:#fff;padding:4px 6px;height:112px;overflow:auto}
+.sniffs div.on{background:#000080;color:#fff}
+.note{font-size:11.5px;padding:4px 6px;color:#222}
+@media (max-width:980px){.layout{grid-template-columns:1fr;padding:8px 16px}#stage{height:56vh}}
+</style></head><body>
+<div class="layout">
+ <section class="win"><div class="title"><span>Arena · la mosca juega en el tablero</span><small id="meta"></small></div>
+  <div id="stage" class="sunk"><div id="loading">Cargando la mosca…</div><div id="caption">—</div></div>
+  <div class="bar"><button id="play">Pausa</button><button id="next">Paso →</button><button id="restart">⟲ Partida</button>
+   <label>Partida <select id="game"></select></label><label>Velocidad <select id="speed"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="4">4×</option></select></label>
+   <label><input type="checkbox" id="odours" checked> Esferas de olor</label><label><input type="checkbox" id="heat"> Valencia por casilla</label><span id="stepno"></span></div>
+ </section>
+ <aside class="side">
+  <section class="win classic"><div class="title"><span>Buscaminas</span><small>lo mismo, en 2D</small></div>
+   <div class="hud sunk"><span class="led" id="minesled">000</span><button id="face">🙂</button><span class="led" id="stepled">000</span></div>
+   <div class="sunk"><canvas id="board2d" width="432" height="432"></canvas></div></section>
+  <section class="win"><div class="title"><span>Cerebro · cuerpo pedunculado</span><small id="kcinfo"></small></div>
+   <div class="sunk"><canvas id="brain" width="720" height="400"></canvas></div>
+   <div class="sniffs sunk" id="sniffs"></div>
+   <div class="note">Cada olfateo son tres olores crudos: <b>N</b> la pista, <b>k</b> cuánto tapado la rodea, <b>m</b> cuántas marcas propias la rodean. Nadie divide ni resta por ella. Calor (mina) → PPL1 · azúcar (segura) → PAM.</div></section>
+ </aside>
+</div>
+<script type="module">
+import * as THREE from 'three';
+import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
+import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+const $=id=>document.getElementById(id),COLORS=['','#0000ff','#008000','#ff0000','#000080','#800000','#008080','#000000','#808080'];
+const data=await (await fetch('./data/arena.json',{cache:'no-store'})).json(),meta=data.meta;
+$('meta').textContent=`${meta.title} · gana ${meta.win_rate_dev}% en 9×9`;
+data.games.forEach((g,i)=>{const o=document.createElement('option');o.value=i;o.textContent=`${i+1} · ${g.won?'gana':'pierde'} · ${g.steps.length} jugadas`;$('game').append(o)});
+
+/* ---------- clock: every animation awaits tween(); pause and speed live here ---------- */
+let playing=true,speed=1,token=0,stepOnce=false;
+const tween=(seconds,fn,my)=>new Promise(res=>{let t=0,last=performance.now();const tick=now=>{if(my!==token)return res(false);const dt=(now-last)/1000;last=now;if(playing||stepOnce)t+=dt*speed;const p=Math.min(1,t/seconds);fn(p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2,p);p<1?requestAnimationFrame(tick):res(true)};requestAnimationFrame(tick)});
+const wait=(s,my)=>tween(s,()=>{},my);
+
+/* ---------- 3D scene ---------- */
+const stage=$('stage'),renderer=new THREE.WebGLRenderer({antialias:true});renderer.setPixelRatio(Math.min(2,devicePixelRatio));renderer.shadowMap.enabled=true;stage.prepend(renderer.domElement);
+const scene=new THREE.Scene();scene.background=new THREE.Color(0x9fb7c9);
+const camera=new THREE.PerspectiveCamera(42,1,.1,100);camera.position.set(0,9.5,9.5);
+const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.maxPolarAngle=1.45;controls.minDistance=4;controls.maxDistance=24;controls.target.set(0,0,.3);
+scene.add(new THREE.HemisphereLight(0xffffff,0x667788,1.15));const sun=new THREE.DirectionalLight(0xffffff,1.5);sun.position.set(-6,12,5);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);Object.assign(sun.shadow.camera,{left:-8,right:8,top:8,bottom:-8});scene.add(sun);
+const resize=()=>{const w=stage.clientWidth,h=stage.clientHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix()};new ResizeObserver(resize).observe(stage);resize();
+const M=c=>new THREE.MeshStandardMaterial({color:c,roughness:.75,metalness:0});
+const mat={face:M(0xc0c0c0),hi:M(0xf4f4f4),lo:M(0x808080),open:M(0xb4b4b4),table:M(0x5b4636),boom:M(0xff2a1a),mine:M(0x151515),pole:M(0x202020),flag:new THREE.MeshStandardMaterial({color:0xe01010,side:THREE.DoubleSide,roughness:.6})};
+const H=.2;let N=9,cells=[],board=new THREE.Group();scene.add(board);
+const pos=i=>new THREE.Vector3(i%N-(N-1)/2,0,Math.floor(i/N)-(N-1)/2);
+const numberTex={};const texFor=n=>numberTex[n]??=(()=>{const c=document.createElement('canvas');c.width=c.height=128;const x=c.getContext('2d');x.font='900 104px "Arial Black",Arial,sans-serif';x.textAlign='center';x.textBaseline='middle';x.fillStyle=COLORS[n];x.fillText(n,64,70);const t=new THREE.CanvasTexture(c);t.anisotropy=8;return t})();
+const odourColor=n=>new THREE.Color().lerpColors(new THREE.Color(0xffd54a),new THREE.Color(0xff2a1a),Math.min(1,(n-1)/3));
+function buildBoard(n){N=n;board.clear();cells=[];
+ const slab=new THREE.Mesh(new THREE.BoxGeometry(n+1.1,.5,n+1.1),mat.table);slab.position.y=-.31;slab.receiveShadow=true;board.add(slab);
+ const frame=new THREE.Mesh(new THREE.BoxGeometry(n+.5,.12,n+.5),mat.face);frame.position.y=-.06;frame.receiveShadow=true;board.add(frame);
+ const floor=new THREE.Mesh(new THREE.BoxGeometry(n,.02,n),mat.open);floor.position.y=.0;floor.receiveShadow=true;board.add(floor);
+ for(let i=0;i<=n;i++)for(const v of [0,1]){const l=new THREE.Mesh(new THREE.BoxGeometry(v?n:.03,.012,v?.03:n),mat.lo);l.position.set(v?0:i-n/2,.016,v?i-n/2:0);board.add(l)}
+ for(let i=0;i<n*n;i++){const g=new THREE.Group();g.position.copy(pos(i));
+  const cover=new THREE.Group(),body=new THREE.Mesh(new THREE.BoxGeometry(.94,H,.94),mat.face);body.position.y=H/2;body.castShadow=body.receiveShadow=true;cover.add(body);
+  const a=new THREE.Mesh(new THREE.BoxGeometry(.94,.03,.07),mat.hi);a.position.set(0,H,-.435);const b=new THREE.Mesh(new THREE.BoxGeometry(.07,.03,.94),mat.hi);b.position.set(-.435,H,0);
+  const c=new THREE.Mesh(new THREE.BoxGeometry(.94,.03,.07),mat.lo);c.position.set(0,H,.435);const d=new THREE.Mesh(new THREE.BoxGeometry(.07,.03,.94),mat.lo);d.position.set(.435,H,0);cover.add(a,b,c,d);
+  const heat=new THREE.Mesh(new THREE.PlaneGeometry(.78,.78),new THREE.MeshBasicMaterial({transparent:true,opacity:0,depthWrite:false}));heat.rotation.x=-Math.PI/2;heat.position.y=H+.02;cover.add(heat);
+  const num=new THREE.Mesh(new THREE.PlaneGeometry(.8,.8),new THREE.MeshBasicMaterial({transparent:true}));num.rotation.x=-Math.PI/2;num.position.y=.03;num.visible=false;
+  const odour=new THREE.Mesh(new THREE.SphereGeometry(1,28,20),new THREE.MeshBasicMaterial({transparent:true,opacity:.1,depthWrite:false,blending:THREE.AdditiveBlending}));odour.visible=false;odour.position.y=.12;
+  const flag=new THREE.Group(),pole=new THREE.Mesh(new THREE.CylinderGeometry(.025,.025,.62,8),mat.pole);pole.position.y=.31;const base=new THREE.Mesh(new THREE.CylinderGeometry(.16,.2,.06,12),mat.pole);base.position.y=.03;
+  const shape=new THREE.Shape();shape.moveTo(0,0);shape.lineTo(.34,-.13);shape.lineTo(0,-.26);const cloth=new THREE.Mesh(new THREE.ShapeGeometry(shape),mat.flag);cloth.position.set(.02,.62,0);cloth.castShadow=true;
+  const phero=new THREE.Mesh(new THREE.SphereGeometry(.55,20,14),new THREE.MeshBasicMaterial({color:0x9b5cff,transparent:true,opacity:.13,depthWrite:false,blending:THREE.AdditiveBlending}));phero.position.y=.2;
+  flag.add(pole,base,cloth,phero);flag.position.y=H;flag.visible=false;
+  const mine=new THREE.Group(),ball=new THREE.Mesh(new THREE.SphereGeometry(.26,18,14),mat.mine);mine.add(ball);for(let k=0;k<8;k++){const s=new THREE.Mesh(new THREE.CylinderGeometry(.03,.03,.78,6),mat.mine);s.rotation.set(k<4?Math.PI/2:k%2*Math.PI/4+.4,0,k*Math.PI/4);mine.add(s)}mine.position.y=.3;mine.visible=false;
+  g.add(cover,num,odour,flag,mine);board.add(g);cells.push({g,cover,num,odour,flag,mine,heat,phero,state:-1,flagged:false})}
+ camera.position.set(0,n*1.02,n*.86);controls.target.set(0,0,n*.07)}
+function setCell(i,v){const c=cells[i];c.state=v;c.cover.visible=v<0;c.num.visible=v>0;if(v>0){c.num.material.map=texFor(v);c.num.material.needsUpdate=true;c.odour.material.color=odourColor(v);c.odour.userData.r=.3+.17*v}c.odour.userData.on=v>0}
+function applyState(visible,flags){visible.forEach((v,i)=>{setCell(i,v);cells[i].flagged=false;cells[i].flag.visible=false;cells[i].flag.scale.setScalar(1);cells[i].mine.visible=false;cells[i].cover.position.y=0;cells[i].cover.scale.set(1,1,1)});(flags||[]).forEach(i=>{cells[i].flagged=true;cells[i].flag.visible=true});refreshOdours()}
+function refreshOdours(){const show=$('odours').checked;cells.forEach((c,i)=>{if(!c.odour.userData.on){c.odour.visible=false;return}const r=Math.floor(i/N),q=i%N;let k=0;for(let a=-1;a<2;a++)for(let b=-1;b<2;b++){const rr=r+a,cc=q+b;if((a||b)&&rr>=0&&cc>=0&&rr<N&&cc<N&&cells[rr*N+cc].state<0)k++}
+  c.odour.visible=show;c.odour.userData.base=(k?.085:.025)+.012*c.state;c.odour.material.opacity=c.odour.userData.base})}
+function paintHeat(field){const on=$('heat').checked;cells.forEach(c=>c.heat.material.opacity=0);if(!on||!field)return;const vals=Object.values(field),hi=Math.max(...vals.map(Math.abs),1e-6);for(const [i,v] of Object.entries(field)){const m=cells[i].heat.material;m.color.set(v>=0?0x00a040:0xd01010);m.opacity=.15+.55*Math.abs(v)/hi}}
+$('odours').onchange=refreshOdours;
+
+/* fly */
+const fly=new THREE.Group();scene.add(fly);let flyBody=new THREE.Group();fly.add(flyBody);
+try{const gltf=await new GLTFLoader().loadAsync('./assets/flybody.glb');const a=gltf.scene;a.rotation.x=-Math.PI/2;const wrap=new THREE.Group();wrap.add(a);const box=new THREE.Box3().setFromObject(wrap),size=box.getSize(new THREE.Vector3()),c=box.getCenter(new THREE.Vector3());a.position.set(-c.x,-box.min.y,-c.z);wrap.scale.setScalar(1.35/Math.max(size.x,size.z));
+ wrap.traverse(n=>{if(n.isMesh){n.castShadow=true;for(const m of [].concat(n.material)){m.side=THREE.DoubleSide;if(m.transparent)m.depthWrite=false}}});flyBody.add(wrap)}
+catch(e){const b=new THREE.Mesh(new THREE.SphereGeometry(.2,16,12),M(0x3a2a1a));b.scale.set(1.8,1,1);b.position.y=.22;const h=new THREE.Mesh(new THREE.SphereGeometry(.13,12,10),M(0xa01010));h.position.set(.38,.25,0);flyBody.add(b,h)}
+const ring=new THREE.Mesh(new THREE.RingGeometry(.5,.6,40),new THREE.MeshBasicMaterial({color:0xffef00,transparent:true,opacity:.9,side:THREE.DoubleSide,depthWrite:false}));ring.rotation.x=-Math.PI/2;ring.position.y=.012;fly.add(ring);
+const pulse=new THREE.Mesh(new THREE.SphereGeometry(.09,12,10),new THREE.MeshBasicMaterial({color:0xffffff}));pulse.visible=false;scene.add(pulse);
+const tagCanvas=document.createElement('canvas');tagCanvas.width=384;tagCanvas.height=96;const tagTex=new THREE.CanvasTexture(tagCanvas),tag=new THREE.Sprite(new THREE.SpriteMaterial({map:tagTex,depthTest:false,transparent:true}));tag.scale.set(2.1,.52,1);tag.visible=false;scene.add(tag);
+function drawTag(text,bg='#ffffe1'){const x=tagCanvas.getContext('2d');x.clearRect(0,0,384,96);x.fillStyle=bg;x.strokeStyle='#000';x.lineWidth=4;x.beginPath();x.roundRect(4,4,376,88,10);x.fill();x.stroke();x.fillStyle='#000';x.font='700 40px "Courier New",monospace';x.textAlign='center';x.textBaseline='middle';x.fillText(text,192,50);tagTex.needsUpdate=true}
+const burst=[];for(let i=0;i<26;i++){const p=new THREE.Mesh(new THREE.SphereGeometry(.05,8,6),new THREE.MeshBasicMaterial({transparent:true}));p.visible=false;scene.add(p);burst.push(p)}
+const glow=new THREE.PointLight(0xff3010,0,6);scene.add(glow);
+const surface=i=>cells[i].state<0?H:.02;let flyCell=0;
+async function walk(to,my){if(to===flyCell)return;const a=fly.position.clone(),b=pos(to);b.y=surface(to);const d=b.clone().sub(a),dist=Math.hypot(d.x,d.z),yaw=Math.atan2(-d.z,d.x);let y0=fly.rotation.y,dy=((yaw-y0+Math.PI*3)%(Math.PI*2))-Math.PI;
+ await tween(.18,e=>fly.rotation.y=y0+dy*e,my);await tween(.22+.16*dist,(e,p)=>{fly.position.lerpVectors(a,b,e);fly.position.y+=Math.abs(Math.sin(p*Math.PI*dist*3))*.035;flyBody.rotation.z=Math.sin(p*Math.PI*dist*6)*.05},my);flyBody.rotation.z=0;flyCell=to}
+async function sniff(s,idx,my){markSniff(idx);const from=pos(s.src);from.y=.35;const to=fly.position.clone();to.y+=.3;const c=cells[s.src];drawTag(`N${s.N} · k${s.k} · m${s.m}`);tag.position.copy(from).setY(1.25);tag.visible=true;pulse.visible=true;pulse.material.color.copy(odourColor(Math.max(1,s.N)));
+ await tween(.42,(e,p)=>{pulse.position.lerpVectors(from,to,e);pulse.position.y+=Math.sin(p*Math.PI)*.45;c.odour.material.opacity=(c.odour.userData.base||.08)*(1+2.5*Math.sin(p*Math.PI));c.odour.scale.setScalar((c.odour.userData.r||.5)*(1+.15*Math.sin(p*Math.PI)))},my);pulse.visible=false;tag.visible=false}
+async function plant(m,my){await walk(m.cell,my);view.fly=m.cell;say(`Un olfateo le da pavor: pista ${m.trigger.N} con ${m.trigger.k} tapada(s) alrededor y ${m.trigger.m} marca(s) suya(s) (seguridad ${(m.trigger.safe*100).toFixed(1)}%). Deja su marca de estrés.`);
+ const c=cells[m.cell];c.flag.visible=true;c.flagged=true;draw2d();await tween(.1,e=>flyBody.rotation.x=0,my);await tween(.4,e=>{c.flag.scale.set(1,Math.max(.01,e),1);c.flag.position.y=H+(1-e)*.5;flyBody.position.y=Math.sin(e*Math.PI)*.12},my);flyBody.position.y=0;refreshOdours()}
+async function tap(my){await tween(.16,e=>{flyBody.rotation.z=-.5*e;flyBody.position.y=-.03*e},my);await tween(.16,e=>{flyBody.rotation.z=-.5*(1-e);flyBody.position.y=-.03*(1-e)},my)}
+async function reveal(step,my){const opened=step.after.map((v,i)=>v>=0&&step.before[i]<0?i:-1).filter(i=>i>=0),o=pos(step.cell),order=opened.map(i=>[i,pos(i).distanceTo(o)]).sort((a,b)=>a[1]-b[1]),far=Math.max(1,...order.map(x=>x[1]));
+ await tween(.25+.12*far,(e,p)=>{for(const [i,d] of order){const c=cells[i],q=Math.min(1,Math.max(0,(p*(far+1.2)-d)/1.2));if(q>0&&c.state<0&&q<1){c.cover.scale.y=1-q;c.cover.position.y=0}if(q>=1&&c.state<0){setCell(i,step.after[i])}}fly.position.y=surface(flyCell)},my);opened.forEach(i=>{setCell(i,step.after[i]);cells[i].cover.scale.y=1});fly.position.y=surface(flyCell);refreshOdours()}
+async function sugar(my){const o=fly.position.clone();burst.forEach((p,i)=>{p.visible=true;p.material.color.set(0x30e060);p.userData.v=new THREE.Vector3(Math.cos(i*2.4)*(.4+i%5*.12),1.3+i%4*.25,Math.sin(i*2.4)*(.4+i%5*.12))});await tween(.55,(e,p)=>burst.forEach(b=>{b.position.copy(o).addScaledVector(b.userData.v,p);b.position.y-=p*p*1.2;b.material.opacity=1-p}),my);burst.forEach(p=>p.visible=false)}
+async function heat(game,step,my){const c=cells[step.cell];c.cover.visible=false;c.mine.visible=true;c.mine.children[0].material=mat.boom;glow.position.copy(pos(step.cell)).setY(.6);const o=fly.position.clone();
+ burst.forEach((p,i)=>{p.visible=true;p.material.color.set(i%2?0xff3010:0xffb020);p.userData.v=new THREE.Vector3(Math.cos(i*1.7)*(1+i%5*.3),1.6+i%4*.4,Math.sin(i*1.7)*(1+i%5*.3))});
+ await tween(.9,(e,p)=>{glow.intensity=14*Math.sin(p*Math.PI);burst.forEach(b=>{b.position.copy(o).addScaledVector(b.userData.v,p);b.position.y-=p*p*1.5;b.material.opacity=1-p});fly.position.y=o.y+Math.sin(p*Math.PI)*.9;flyBody.rotation.x=p*Math.PI*2},my);burst.forEach(p=>p.visible=false);flyBody.rotation.x=Math.PI;glow.intensity=0;
+ game.layout.forEach((m,i)=>{if(m&&i!==step.cell&&!cells[i].flagged){cells[i].cover.visible=false;cells[i].mine.visible=true;cells[i].mine.children[0].material=mat.mine}})}
+
+/* ---------- 2D classic board ---------- */
+const c2=$('board2d'),x2=c2.getContext('2d');let view={visible:[],flags:new Set(),fly:-1,boom:-1,layout:null,field:null,over:false,won:false};
+function draw2d(){const n=N,s=c2.width/n;x2.clearRect(0,0,c2.width,c2.height);view.flags=new Set(cells.map((c,i)=>c.flagged?i:-1).filter(i=>i>=0));const vals=view.field?Object.values(view.field):[],hi=Math.max(...vals.map(Math.abs),1e-6);
+ for(let i=0;i<n*n;i++){const x=i%n*s,y=Math.floor(i/n)*s,v=cells[i].state;
+  if(v<0){x2.fillStyle='#c0c0c0';x2.fillRect(x,y,s,s);x2.fillStyle='#fff';x2.fillRect(x,y,s,4);x2.fillRect(x,y,4,s);x2.fillStyle='#808080';x2.fillRect(x,y+s-4,s,4);x2.fillRect(x+s-4,y,4,s);
+   if($('heat').checked&&view.field&&view.field[i]!==undefined){const f=view.field[i];x2.fillStyle=f>=0?`rgba(0,160,64,${.15+.5*Math.abs(f)/hi})`:`rgba(208,16,16,${.15+.5*Math.abs(f)/hi})`;x2.fillRect(x+5,y+5,s-10,s-10)}
+   if(view.flags.has(i)){x2.fillStyle='#000';x2.fillRect(x+s*.5-1,y+s*.22,3,s*.5);x2.fillRect(x+s*.3,y+s*.72,s*.42,4);x2.fillStyle='#e01010';x2.beginPath();x2.moveTo(x+s*.52,y+s*.2);x2.lineTo(x+s*.52,y+s*.52);x2.lineTo(x+s*.22,y+s*.36);x2.fill()}
+   if(view.over&&view.layout[i]&&!view.flags.has(i))mine2d(x,y,s,false)}
+  else{x2.fillStyle=i===view.boom?'#ff2a1a':'#bdbdbd';x2.fillRect(x,y,s,s);x2.strokeStyle='#7b7b7b';x2.lineWidth=1;x2.strokeRect(x+.5,y+.5,s-1,s-1);if(v>0){x2.fillStyle=COLORS[v];x2.font=`900 ${s*.68}px "Arial Black",Arial,sans-serif`;x2.textAlign='center';x2.textBaseline='middle';x2.fillText(v,x+s/2,y+s/2+2)}}
+  if(i===view.boom)mine2d(x,y,s,true)}
+ if(view.fly>=0){const x=view.fly%n*s+s/2,y=Math.floor(view.fly/n)*s+s/2;x2.strokeStyle='#ffef00';x2.lineWidth=3;x2.strokeRect(x-s/2+2,y-s/2+2,s-4,s-4);x2.font=`${s*.5}px serif`;x2.textAlign='center';x2.textBaseline='middle';x2.fillText('🪰',x+s*.18,y-s*.16)}
+ $('minesled').textContent=String(Math.max(0,current.mines-view.flags.size)).padStart(3,'0');$('face').textContent=view.over?(view.won?'😎':'😵'):'🙂'}
+function mine2d(x,y,s,red){if(red){x2.fillStyle='#ff2a1a';x2.fillRect(x+1,y+1,s-2,s-2)}x2.fillStyle='#000';x2.beginPath();x2.arc(x+s/2,y+s/2,s*.24,0,7);x2.fill();x2.lineWidth=3;x2.strokeStyle='#000';for(let k=0;k<4;k++){const a=k*Math.PI/4;x2.beginPath();x2.moveTo(x+s/2-Math.cos(a)*s*.36,y+s/2-Math.sin(a)*s*.36);x2.lineTo(x+s/2+Math.cos(a)*s*.36,y+s/2+Math.sin(a)*s*.36);x2.stroke()}x2.fillStyle='#fff';x2.fillRect(x+s*.4,y+s*.4,4,4)}
+$('heat').onchange=()=>{paintHeat(view.field);draw2d()};
+
+/* ---------- brain panel ---------- */
+const bc=$('brain'),bx=bc.getContext('2d'),sign=meta.mbon_sign,order=sign.map((s,i)=>[s,i]).sort((a,b)=>b[0]-a[0]).map(x=>x[1]);let brain={kc:[],mbon:null,valence:0,da:null,glow:0};
+function drawBrain(){const W=bc.width,Hh=bc.height;bx.fillStyle='#0b0f1a';bx.fillRect(0,0,W,Hh);bx.font='600 15px Verdana,sans-serif';bx.fillStyle='#9fb0d0';bx.textAlign='left';bx.fillText('CÉLULAS DE KENYON',18,24);bx.fillText('NEURONAS DE SALIDA (MBON)',356,24);
+ const s=4.6,ox=18,oy=36;bx.fillStyle='#1c2740';for(let i=0;i<meta.kc_count;i++)bx.fillRect(ox+i%64*s,oy+Math.floor(i/64)*s,s-1.4,s-1.4);bx.fillStyle='#ffd54a';bx.shadowColor='#ffd54a';bx.shadowBlur=6;for(const i of brain.kc)bx.fillRect(ox+i%64*s-.5,oy+Math.floor(i/64)*s-.5,s,s);bx.shadowBlur=0;
+ const x0=356,w=(W-x0-18)/order.length,mid=190;bx.strokeStyle='#33405f';bx.beginPath();bx.moveTo(x0,mid);bx.lineTo(W-18,mid);bx.stroke();
+ if(brain.mbon){const hi=Math.max(...brain.mbon.map(Math.abs),1e-6);order.forEach((m,j)=>{const v=brain.mbon[m]/hi*120;bx.fillStyle=v>=0?'#30e060':'#ff4a3a';bx.fillRect(x0+j*w,v>=0?mid-v:mid,Math.max(1.5,w-1),Math.abs(v))})}
+ bx.fillStyle='#30e060';bx.font='12px Verdana';bx.fillText('↑ acércate',x0,52);bx.fillStyle='#ff4a3a';bx.fillText('↓ evita',x0,Hh-64);
+ bx.font='700 22px Verdana';bx.fillStyle=brain.valence>=0?'#30e060':'#ff4a3a';bx.textAlign='right';bx.fillText(`valencia ${brain.valence>=0?'+':''}${brain.valence.toFixed(1)}`,W-18,52);bx.textAlign='left';
+ const lamp=(x,label,on,color)=>{bx.beginPath();bx.arc(x,Hh-30,13,0,7);bx.fillStyle=on?color:'#1c2740';bx.shadowColor=color;bx.shadowBlur=on?24*brain.glow:0;bx.fill();bx.shadowBlur=0;bx.fillStyle='#cfd8ee';bx.font='13px Verdana';bx.fillText(label,x+20,Hh-25)};
+ lamp(x0+14,'PAM · azúcar',brain.da==='sugar','#30e060');lamp(x0+190,'PPL1 · calor',brain.da==='heat','#ff4a3a')}
+function markSniff(idx){[...$('sniffs').children].forEach((d,i)=>d.classList.toggle('on',i===idx));const el=$('sniffs').children[idx];if(el)el.scrollIntoView({block:'nearest'})}
+function listSniffs(step){$('sniffs').innerHTML=step.blind?'<div>(casilla sin olor: nada que olfatear, solo el contexto aprendido)</div>':step.sniffs.map(s=>`<div>pista N=${s.N}  tapadas k=${s.k}  marcas m=${s.m}  →  ${s.v>=0?'+':''}${s.v.toFixed(1)}</div>`).join('')}
+const say=t=>$('caption').textContent=t;
+
+/* ---------- playback ---------- */
+let current=data.games[0];
+async function run(gi){const my=++token,game=current=data.games[gi];buildBoard(game.size);applyState(game.first.visible,[]);view={visible:game.first.visible,flags:new Set(),fly:-1,boom:-1,layout:game.layout,field:null,over:false,won:false};brain={kc:[],mbon:null,valence:0,da:null,glow:0};
+ flyCell=Math.floor(N/2)*N+Math.floor(N/2);fly.position.copy(pos(flyCell)).setY(surface(flyCell));fly.rotation.y=0;flyBody.rotation.set(0,0,0);flyBody.position.y=0;view.fly=flyCell;paintHeat(null);draw2d();drawBrain();$('sniffs').innerHTML='';$('stepled').textContent='000';
+ say('La apertura central es automática. La mosca empieza parada ahí.');if(!await wait(1,my))return;
+ for(let k=0;k<game.steps.length;k++){const step=game.steps[k];$('stepno').textContent=`jugada ${k+1} / ${game.steps.length}`;$('stepled').textContent=String(k+1).padStart(3,'0');$('kcinfo').textContent=`${step.kc_total} de ${meta.kc_count} Kenyon activas`;
+  for(const m of step.marks){if(!await wait(.05,my))return;await plant(m,my);if(my!==token)return}
+  view.field=step.field;paintHeat(step.field);draw2d();listSniffs(step);brain.da=null;drawBrain();
+  await walk(step.cell,my);if(my!==token)return;view.fly=step.cell;draw2d();
+  if(step.blind)say('Aquí no huele a nada: ninguna vecina está abierta. Decide solo con lo que aprendió del contexto.');else say(`Olfatea una por una a sus ${step.sniffs.length} vecinas abiertas.`);
+  for(let j=0;j<step.sniffs.length;j++){await sniff(step.sniffs[j],j,my);if(my!==token)return}
+  markSniff(-1);brain={kc:step.kc,mbon:step.mbon,valence:step.valence,da:null,glow:0};drawBrain();say(step.blind?'Todo lo que huele le da mala espina, así que prefiere una casilla sin olor. Le da un toque.':`Las Kenyon mezclan lo olido, las MBON votan: valencia ${step.valence>=0?'+':''}${step.valence.toFixed(1)}. Es la mejor casilla que encontró. Le da un toque.`);if(!await wait(.7,my))return;
+  await tap(my);if(my!==token)return;
+  if(step.mine){brain.da='heat';view.boom=step.cell;view.over=true;say('💥 Mina. Calor → dopamina PPL1. En la evaluación esto es letal.');await Promise.all([heat(game,step,my),tween(.9,(e,p)=>{brain.glow=Math.sin(p*Math.PI);drawBrain()},my)]);draw2d();break}
+  brain.da='sugar';say('Casilla segura. Azúcar → dopamina PAM.');await Promise.all([reveal(step,my),sugar(my),tween(.55,(e,p)=>{brain.glow=Math.sin(p*Math.PI);drawBrain()},my)]);if(my!==token)return;draw2d();
+  if(stepOnce){stepOnce=false;playing=false;$('play').textContent='Reproducir'}}
+ if(my!==token)return;if(game.won){view.over=true;view.won=true;draw2d();say('😎 Tablero limpio. Ganó.')}
+ if(!await wait(3.5,my))return;$('game').value=(gi+1)%data.games.length;run((gi+1)%data.games.length)}
+$('play').onclick=()=>{playing=!playing;$('play').textContent=playing?'Pausa':'Reproducir'};
+$('next').onclick=()=>{stepOnce=true;playing=false;$('play').textContent='Reproducir'};
+$('restart').onclick=()=>run(+$('game').value);$('game').onchange=()=>run(+$('game').value);$('speed').onchange=e=>speed=+e.target.value;
+let t0=performance.now();(function loop(now){const t=(now-t0)/1000;cells.forEach((c,i)=>{if(c.odour.visible&&!pulse.visible)c.odour.scale.setScalar((c.odour.userData.r||.5)*(1+.05*Math.sin(t*1.6+i)))});controls.update();renderer.render(scene,camera);requestAnimationFrame(loop)})(t0);
+$('loading').remove();run(0);
+</script></body></html>

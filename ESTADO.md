@@ -822,3 +822,9 @@ Incidente de rendimiento: la primera pasada no terminó ninguna mosca con campo 
 Decisiones que salen de aquí: adoptar entrenamiento con densidad variable; NO adoptar el campo lejano para la mosca (no ayuda y cuesta cómputo). Pendiente del plan: 4) traza de elegibilidad → marcar aprendido; 5) novedad interna. Nada corriendo.
 
 
+## Visualización "Arena" · 20 sept 2026
+
+scene/dist/arena.html (servida por el visor: http://127.0.0.1:8766/arena.html; en 8765 si se usa scene/serve.py tal cual). Tablero 3D estilo buscaminas clásico (three.js del vendor + assets/flybody.glb) junto a un 2D clásico sincronizado y un panel de cerebro (Kenyon activas, votos de las 97 MBON, valencia, lámparas PAM/PPL1). La mosca camina, olfatea una por una a sus vecinas abiertas (etiqueta N·k·m), planta sus marcas de estrés como banderas (con halo de feromona), da el toque y la casilla se abre en cascada; azúcar o explosión. Esferas de olor con radio ∝ N. Conmutadores: esferas, valencia por casilla; pausa, paso, velocidad, selector de partida.
+Datos REALES: scene/export_arena.py entrena una mosca legítima (olfateos crudos, no letal, densidad variable, 20k partidas, semilla 0; pesos en runs/fly-viz/) y exporta 12 partidas de desarrollo (7 ganadas, 5 perdidas; semillas 23,000,000+, no reservadas) a scene/dist/data/arena.json. Esa mosca gana 48% en 200 tableros dev 9×9. No toca index.html ni el agente servido.
+
+
