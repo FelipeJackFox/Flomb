@@ -1,0 +1,32 @@
+{
+  "config": {
+    "rule": "rpe",
+    "sparsity": 0.2,
+    "tuning": 0.35,
+    "beta": 100.0
+  },
+  "training": {
+    "lethal": true
+  },
+  "training_games": 10000,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "groups": [
+    "raw-real",
+    "raw-shuffled",
+    "table",
+    "additive",
+    "share-real"
+  ],
+  "unit": "seed"
+}

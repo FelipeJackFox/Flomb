@@ -45,7 +45,7 @@ class Ensemble:
         parts=[m.assess(shares,density) for m in self.members];return None,np.mean([p[1] for p in parts],0),np.mean([p[2] for p in parts],0)
 
 def play(agent,seed,size,mines,rng,learn,temperature=1.5,dread=.03,sense=sniffs,lethal=True):
-    env=Minesweeper(seed,size,mines);marked=np.zeros(size*size,bool);steps=safe=false_marks=unknown=burns=0
+    env=Minesweeper(seed,size,mines);marked=np.zeros(size*size,bool);steps=safe=false_marks=unknown=0
     while not env.done:
         while True:
             cells,shares=sense(env.visible,size,marked);density=(mines-marked.sum())/max(1,len(cells)-marked[cells].sum());handle,v,worst=agent.assess(shares,density)
@@ -59,10 +59,7 @@ def play(agent,seed,size,mines,rng,learn,temperature=1.5,dread=.03,sense=sniffs,
         else:k=ids[int(vv.argmax())]
         unknown+=bool(np.isnan(shares[k]).all());mine=env.step(cells[k])<0;steps+=1;safe+=not mine
         if learn:agent.learn(handle[k],mine,float(v[k]))
-        if mine and not lethal:
-            # Training wheels: the burn hurts and teaches, but the fly survives, stress-marks the tile that burned it and plays on.
-            env.done=False;marked[cells[k]]=True;burns+=1
-    return dict(won=bool(env.won),steps=steps,safe_steps=safe,marks=int(marked.sum()),false_marks=false_marks,unknown_steps=unknown,burns=burns)
+    return dict(won=bool(env.won),steps=steps,safe_steps=safe,marks=int(marked.sum()),false_marks=false_marks,unknown_steps=unknown)
 
 
 def keys_of(stimulus):

@@ -23,11 +23,6 @@ class Tests(unittest.TestCase):
         m=lambda r,c:sum(marked[a*5+b] for a in range(r-1,r+2) for b in range(c-1,c+2) if (a,b)!=(r,c))
         self.assertEqual(sorted(map(tuple,row.astype(int).tolist())),sorted([(1,k(2,1),m(2,1)),(2,k(2,2),m(2,2)),(0,k(2,3),m(2,3))]))
         _,unmarked=sniffs_raw(self.board(),5);np.testing.assert_array_equal(np.nan_to_num(unmarked[...,:2]),np.nan_to_num(raw[...,:2]))   # marking never alters N or k
-    def test_non_lethal_training_survives_burns_and_lethal_does_not(self):
-        from experiments.fly_agents import play,TableAgent
-        from experiments.fly_senses import sniffs_raw
-        rng=np.random.default_rng(0);soft=[play(TableAgent(),s,7,7,rng,True,sense=sniffs_raw,lethal=False) for s in range(40)];hard=[play(TableAgent(),s,7,7,rng,True,sense=sniffs_raw) for s in range(40)]
-        self.assertTrue(all(r['won'] for r in soft));self.assertGreater(sum(r['burns'] for r in soft),0);self.assertEqual(sum(r['burns'] for r in hard),0);self.assertLess(sum(r['won'] for r in hard),40)
     def test_senses_never_read_mines(self):
         import inspect,experiments.fly_senses as m;self.assertNotIn('_mines',inspect.getsource(m))
     def test_paired_control_shares_odours_and_only_rewires(self):
