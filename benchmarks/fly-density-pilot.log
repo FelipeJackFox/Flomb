@@ -1,0 +1,1173 @@
+done table-near-fixed-100
+done table-near-var-100
+done table-far-var-100
+done fly-near-fixed-100
+done fly-near-var-100
+done fly-far-var-100
+done hand-policy
+./.venv/lib/python3.14/site-packages/numpy/_core/_methods.py:219: RuntimeWarning: Degrees of freedom <= 0 for slice
+  ret = _var(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+./.venv/lib/python3.14/site-packages/numpy/_core/_methods.py:211: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+./.venv/lib/python3.14/site-packages/scipy/stats/_stats_py.py:1227: RuntimeWarning: divide by zero encountered in divide
+  var *= (n / (n-ddof))  # to avoid error on division by zero
+./.venv/lib/python3.14/site-packages/scipy/stats/_stats_py.py:1227: RuntimeWarning: invalid value encountered in multiply
+  var *= (n / (n-ddof))  # to avoid error on division by zero
+{
+ "9": {
+  "10": {
+   "fly-far-var": {
+    "mean": 96.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     96.0
+    ]
+   },
+   "fly-near-var": {
+    "mean": 85.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     85.0
+    ]
+   },
+   "fly-near-fixed": {
+    "mean": 79.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     79.0
+    ]
+   },
+   "table-far-var": {
+    "mean": 90.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     90.0
+    ]
+   },
+   "table-near-var": {
+    "mean": 92.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     92.0
+    ]
+   },
+   "table-near-fixed": {
+    "mean": 91.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     91.0
+    ]
+   },
+   "hand-policy": 86.0,
+   "fly-far-var minus fly-near-var": {
+    "mean": 11.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     11.0
+    ],
+    "p": NaN
+   },
+   "fly-near-var minus fly-near-fixed": {
+    "mean": 6.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     6.0
+    ],
+    "p": NaN
+   },
+   "fly-far-var minus fly-near-fixed": {
+    "mean": 17.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     17.0
+    ],
+    "p": NaN
+   },
+   "table-far-var minus table-near-var": {
+    "mean": -2.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     -2.0
+    ],
+    "p": NaN
+   },
+   "table-near-var minus table-near-fixed": {
+    "mean": 1.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     1.0
+    ],
+    "p": NaN
+   },
+   "fly-far-var minus table-far-var": {
+    "mean": 6.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     6.0
+    ],
+    "p": NaN
+   },
+   "fly-near-fixed minus table-near-fixed": {
+    "mean": -12.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     -12.0
+    ],
+    "p": NaN
+   }
+  },
+  "15": {
+   "fly-far-var": {
+    "mean": 53.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     53.0
+    ]
+   },
+   "fly-near-var": {
+    "mean": 64.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     64.0
+    ]
+   },
+   "fly-near-fixed": {
+    "mean": 45.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     45.0
+    ]
+   },
+   "table-far-var": {
+    "mean": 48.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     48.0
+    ]
+   },
+   "table-near-var": {
+    "mean": 54.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     54.0
+    ]
+   },
+   "table-near-fixed": {
+    "mean": 49.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     49.0
+    ]
+   },
+   "hand-policy": 66.0,
+   "fly-far-var minus fly-near-var": {
+    "mean": -11.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     -11.0
+    ],
+    "p": NaN
+   },
+   "fly-near-var minus fly-near-fixed": {
+    "mean": 19.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     19.0
+    ],
+    "p": NaN
+   },
+   "fly-far-var minus fly-near-fixed": {
+    "mean": 8.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     8.0
+    ],
+    "p": NaN
+   },
+   "table-far-var minus table-near-var": {
+    "mean": -6.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     -6.0
+    ],
+    "p": NaN
+   },
+   "table-near-var minus table-near-fixed": {
+    "mean": 5.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     5.0
+    ],
+    "p": NaN
+   },
+   "fly-far-var minus table-far-var": {
+    "mean": 5.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     5.0
+    ],
+    "p": NaN
+   },
+   "fly-near-fixed minus table-near-fixed": {
+    "mean": -4.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     -4.0
+    ],
+    "p": NaN
+   }
+  },
+  "20": {
+   "fly-far-var": {
+    "mean": 15.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     15.0
+    ]
+   },
+   "fly-near-var": {
+    "mean": 17.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     17.0
+    ]
+   },
+   "fly-near-fixed": {
+    "mean": 9.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     9.0
+    ]
+   },
+   "table-far-var": {
+    "mean": 8.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     8.0
+    ]
+   },
+   "table-near-var": {
+    "mean": 7.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     7.0
+    ]
+   },
+   "table-near-fixed": {
+    "mean": 8.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     8.0
+    ]
+   },
+   "hand-policy": 32.0,
+   "fly-far-var minus fly-near-var": {
+    "mean": -2.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     -2.0
+    ],
+    "p": NaN
+   },
+   "fly-near-var minus fly-near-fixed": {
+    "mean": 8.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     8.0
+    ],
+    "p": NaN
+   },
+   "fly-far-var minus fly-near-fixed": {
+    "mean": 6.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     6.0
+    ],
+    "p": NaN
+   },
+   "table-far-var minus table-near-var": {
+    "mean": 1.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     1.0
+    ],
+    "p": NaN
+   },
+   "table-near-var minus table-near-fixed": {
+    "mean": -1.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     -1.0
+    ],
+    "p": NaN
+   },
+   "fly-far-var minus table-far-var": {
+    "mean": 7.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     7.0
+    ],
+    "p": NaN
+   },
+   "fly-near-fixed minus table-near-fixed": {
+    "mean": 1.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     1.0
+    ],
+    "p": NaN
+   }
+  },
+  "all": {
+   "fly-far-var": {
+    "mean": 54.7,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     54.7
+    ]
+   },
+   "fly-near-var": {
+    "mean": 55.3,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     55.3
+    ]
+   },
+   "fly-near-fixed": {
+    "mean": 44.3,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     44.3
+    ]
+   },
+   "table-far-var": {
+    "mean": 48.7,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     48.7
+    ]
+   },
+   "table-near-var": {
+    "mean": 51.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     51.0
+    ]
+   },
+   "table-near-fixed": {
+    "mean": 49.3,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     49.3
+    ]
+   },
+   "hand-policy": 61.3,
+   "fly-far-var minus fly-near-var": {
+    "mean": -0.7,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     -0.7
+    ],
+    "p": NaN
+   },
+   "fly-near-var minus fly-near-fixed": {
+    "mean": 11.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     11.0
+    ],
+    "p": NaN
+   },
+   "fly-far-var minus fly-near-fixed": {
+    "mean": 10.3,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     10.3
+    ],
+    "p": NaN
+   },
+   "table-far-var minus table-near-var": {
+    "mean": -2.3,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     -2.3
+    ],
+    "p": NaN
+   },
+   "table-near-var minus table-near-fixed": {
+    "mean": 1.7,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     1.7
+    ],
+    "p": NaN
+   },
+   "fly-far-var minus table-far-var": {
+    "mean": 6.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     6.0
+    ],
+    "p": NaN
+   },
+   "fly-near-fixed minus table-near-fixed": {
+    "mean": -5.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     -5.0
+    ],
+    "p": NaN
+   }
+  },
+  "unknown_step_share": {
+   "fly-far-var": 0.199,
+   "fly-near-var": 0.107,
+   "fly-near-fixed": 0.037,
+   "table-far-var": 0.144,
+   "table-near-var": 0.154,
+   "table-near-fixed": 0.168
+  },
+  "false_marks": {
+   "fly-far-var": 13,
+   "fly-near-var": 0,
+   "fly-near-fixed": 2,
+   "table-far-var": 0,
+   "table-near-var": 0,
+   "table-near-fixed": 0
+  }
+ },
+ "7": {
+  "10": {
+   "fly-far-var": {
+    "mean": 88.3,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     88.3
+    ]
+   },
+   "fly-near-var": {
+    "mean": 83.3,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     83.3
+    ]
+   },
+   "fly-near-fixed": {
+    "mean": 70.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     70.0
+    ]
+   },
+   "table-far-var": {
+    "mean": 86.7,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     86.7
+    ]
+   },
+   "table-near-var": {
+    "mean": 88.3,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     88.3
+    ]
+   },
+   "table-near-fixed": {
+    "mean": 85.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     85.0
+    ]
+   },
+   "hand-policy": 85.0,
+   "fly-far-var minus fly-near-var": {
+    "mean": 5.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     5.0
+    ],
+    "p": NaN
+   },
+   "fly-near-var minus fly-near-fixed": {
+    "mean": 13.3,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     13.3
+    ],
+    "p": NaN
+   },
+   "fly-far-var minus fly-near-fixed": {
+    "mean": 18.3,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     18.3
+    ],
+    "p": NaN
+   },
+   "table-far-var minus table-near-var": {
+    "mean": -1.7,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     -1.7
+    ],
+    "p": NaN
+   },
+   "table-near-var minus table-near-fixed": {
+    "mean": 3.3,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     3.3
+    ],
+    "p": NaN
+   },
+   "fly-far-var minus table-far-var": {
+    "mean": 1.7,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     1.7
+    ],
+    "p": NaN
+   },
+   "fly-near-fixed minus table-near-fixed": {
+    "mean": -15.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     -15.0
+    ],
+    "p": NaN
+   }
+  },
+  "15": {
+   "fly-far-var": {
+    "mean": 60.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     60.0
+    ]
+   },
+   "fly-near-var": {
+    "mean": 66.7,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     66.7
+    ]
+   },
+   "fly-near-fixed": {
+    "mean": 43.3,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     43.3
+    ]
+   },
+   "table-far-var": {
+    "mean": 63.3,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     63.3
+    ]
+   },
+   "table-near-var": {
+    "mean": 55.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     55.0
+    ]
+   },
+   "table-near-fixed": {
+    "mean": 51.7,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     51.7
+    ]
+   },
+   "hand-policy": 65.0,
+   "fly-far-var minus fly-near-var": {
+    "mean": -6.7,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     -6.7
+    ],
+    "p": NaN
+   },
+   "fly-near-var minus fly-near-fixed": {
+    "mean": 23.3,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     23.3
+    ],
+    "p": NaN
+   },
+   "fly-far-var minus fly-near-fixed": {
+    "mean": 16.7,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     16.7
+    ],
+    "p": NaN
+   },
+   "table-far-var minus table-near-var": {
+    "mean": 8.3,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     8.3
+    ],
+    "p": NaN
+   },
+   "table-near-var minus table-near-fixed": {
+    "mean": 3.3,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     3.3
+    ],
+    "p": NaN
+   },
+   "fly-far-var minus table-far-var": {
+    "mean": -3.3,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     -3.3
+    ],
+    "p": NaN
+   },
+   "fly-near-fixed minus table-near-fixed": {
+    "mean": -8.3,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     -8.3
+    ],
+    "p": NaN
+   }
+  },
+  "20": {
+   "fly-far-var": {
+    "mean": 30.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     30.0
+    ]
+   },
+   "fly-near-var": {
+    "mean": 25.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     25.0
+    ]
+   },
+   "fly-near-fixed": {
+    "mean": 25.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     25.0
+    ]
+   },
+   "table-far-var": {
+    "mean": 20.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     20.0
+    ]
+   },
+   "table-near-var": {
+    "mean": 20.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     20.0
+    ]
+   },
+   "table-near-fixed": {
+    "mean": 15.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     15.0
+    ]
+   },
+   "hand-policy": 41.7,
+   "fly-far-var minus fly-near-var": {
+    "mean": 5.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     5.0
+    ],
+    "p": NaN
+   },
+   "fly-near-var minus fly-near-fixed": {
+    "mean": 0.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     0.0
+    ],
+    "p": NaN
+   },
+   "fly-far-var minus fly-near-fixed": {
+    "mean": 5.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     5.0
+    ],
+    "p": NaN
+   },
+   "table-far-var minus table-near-var": {
+    "mean": 0.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     0.0
+    ],
+    "p": NaN
+   },
+   "table-near-var minus table-near-fixed": {
+    "mean": 5.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     5.0
+    ],
+    "p": NaN
+   },
+   "fly-far-var minus table-far-var": {
+    "mean": 10.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     10.0
+    ],
+    "p": NaN
+   },
+   "fly-near-fixed minus table-near-fixed": {
+    "mean": 10.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     10.0
+    ],
+    "p": NaN
+   }
+  },
+  "all": {
+   "fly-far-var": {
+    "mean": 59.4,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     59.4
+    ]
+   },
+   "fly-near-var": {
+    "mean": 58.3,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     58.3
+    ]
+   },
+   "fly-near-fixed": {
+    "mean": 46.1,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     46.1
+    ]
+   },
+   "table-far-var": {
+    "mean": 56.7,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     56.7
+    ]
+   },
+   "table-near-var": {
+    "mean": 54.4,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     54.4
+    ]
+   },
+   "table-near-fixed": {
+    "mean": 50.6,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     50.6
+    ]
+   },
+   "hand-policy": 63.9,
+   "fly-far-var minus fly-near-var": {
+    "mean": 1.1,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     1.1
+    ],
+    "p": NaN
+   },
+   "fly-near-var minus fly-near-fixed": {
+    "mean": 12.2,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     12.2
+    ],
+    "p": NaN
+   },
+   "fly-far-var minus fly-near-fixed": {
+    "mean": 13.3,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     13.3
+    ],
+    "p": NaN
+   },
+   "table-far-var minus table-near-var": {
+    "mean": 2.2,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     2.2
+    ],
+    "p": NaN
+   },
+   "table-near-var minus table-near-fixed": {
+    "mean": 3.9,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     3.9
+    ],
+    "p": NaN
+   },
+   "fly-far-var minus table-far-var": {
+    "mean": 2.8,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     2.8
+    ],
+    "p": NaN
+   },
+   "fly-near-fixed minus table-near-fixed": {
+    "mean": -4.4,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "per_seed": [
+     -4.4
+    ],
+    "p": NaN
+   }
+  },
+  "unknown_step_share": {
+   "fly-far-var": 0.308,
+   "fly-near-var": 0.142,
+   "fly-near-fixed": 0.063,
+   "table-far-var": 0.158,
+   "table-near-var": 0.228,
+   "table-near-fixed": 0.27
+  },
+  "false_marks": {
+   "fly-far-var": 4,
+   "fly-near-var": 0,
+   "fly-near-fixed": 2,
+   "table-far-var": 0,
+   "table-near-var": 0,
+   "table-near-fixed": 0
+  }
+ }
+}

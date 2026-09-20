@@ -1,0 +1,47 @@
+{
+  "config": {
+    "rule": "rpe",
+    "sparsity": 0.2,
+    "tuning": 0.35,
+    "beta": 100.0
+  },
+  "training": "non-lethal",
+  "training_games": 20000,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "groups": [
+    "fly-far-var",
+    "fly-near-var",
+    "fly-near-fixed",
+    "table-far-var",
+    "table-near-var",
+    "table-near-fixed"
+  ],
+  "levels": {
+    "10": {
+      "9": 8,
+      "7": 5
+    },
+    "15": {
+      "9": 12,
+      "7": 7
+    },
+    "20": {
+      "9": 16,
+      "7": 10
+    }
+  },
+  "variable_density": "uniform 8-25% per game, shared schedule",
+  "unit": "seed",
+  "training_layouts_in_test": 0
+}
