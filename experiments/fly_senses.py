@@ -41,6 +41,8 @@ def sniffs(visible,size,marked=None):
     return cells,stack[cells]
 
 
+_SHIFTS=[(dr,dc) for dr in (-1,0,1) for dc in (-1,0,1) if (dr,dc)!=(0,0)]
+
 def quantise(count):
     """Weber-like resolution for large amounts: geometric steps of 25%."""
     return 0 if count<=0 else int(round(1.25**round(np.log(count)/np.log(1.25))))
@@ -60,9 +62,11 @@ def sniffs_raw(visible,size,marked=None):
     eight surrounding tiles, the same in every direction. Antennating an open neighbour the fly smells three raw amounts:
     N of that clue, k = covered odour around it, m = own pheromone around it. No division, no subtraction, no rule knowledge.
     Returns covered cells and (cells, 8, 3) with nan where there is no open neighbour."""
-    grid=np.full((size+2,size+2),-2,np.int16);grid[1:-1,1:-1]=visible.reshape(size,size);covered=(grid==-1).astype(np.float32);marks=np.zeros_like(covered)
-    if marked is not None:marks[1:-1,1:-1]=marked.reshape(size,size)
-    shifts=[(dr,dc) for dr in (-1,0,1) for dc in (-1,0,1) if (dr,dc)!=(0,0)];around=lambda a:sum(np.roll(np.roll(a,dr,0),dc,1) for dr,dc in shifts)
-    opened=grid>=0;fields=[np.where(opened,v,np.nan).astype(np.float32) for v in (np.maximum(grid,0),around(covered),around(marks))]
-    stack=np.stack([np.stack([np.roll(np.roll(f,dr,0),dc,1)[1:-1,1:-1].reshape(-1) for dr,dc in shifts],1) for f in fields],2);cells=np.nonzero(visible==-1)[0]
+    n=size;grid=np.full((n+4,n+4),-2,np.int16);grid[2:-2,2:-2]=visible.reshape(n,n);covered=(grid==-1).astype(np.float32);marks=np.zeros_like(covered)
+    if marked is not None:marks[2:-2,2:-2]=marked.reshape(n,n)
+    # slices of a doubly padded board instead of np.roll: same sums, no wrap-around, several times faster
+    around=lambda a:sum(a[1+dr:n+3+dr,1+dc:n+3+dc] for dr,dc in _SHIFTS)            # (n+2,n+2): board plus a one-tile rim
+    opened=grid[1:-1,1:-1]>=0;fields=[np.where(opened,v,np.nan).astype(np.float32) for v in (np.maximum(grid[1:-1,1:-1],0),around(covered),around(marks))]
+    # neighbour in direction (dr,dc) as np.roll(np.roll(f,dr,0),dc,1) read it: the value at (r-dr, c-dc)
+    stack=np.stack([np.stack([f[1-dr:n+1-dr,1-dc:n+1-dc].reshape(-1) for dr,dc in _SHIFTS],1) for f in fields],2);cells=np.nonzero(visible==-1)[0]
     return cells,stack[cells]

@@ -37,12 +37,26 @@ class MushroomBody:
         self.to_pn=np.eye(len(self.glomeruli),dtype=np.float32)[channel].T            # glomerulus -> its sister PNs
         self.pn_kc=(pn_kc/np.maximum(pn_kc.sum(1,keepdims=True),1)).T                   # (PN, KC), each KC's inputs sum to 1
         self.kc_mbon=kc_mbon/np.maximum(kc_mbon.sum(1,keepdims=True),1)                 # (MBON, KC)
-        self.exists=(kc_mbon>0);self.w=np.ones_like(self.kc_mbon);self.baseline=0.
+        self.exists=(kc_mbon>0);self.baseline=0.
         punish,reward=ppl1.sum(1),pam.sum(1);total=np.maximum(punish+reward,1)
         # Compartment logic read from the wiring: MBONs bathed by PPL1 drive approach, those bathed by PAM drive avoidance.
         self.sign=np.where(punish+reward==0,0.,np.where(punish>reward,1.,-1.)).astype(np.float32)
         self.d_punish=(punish/total*(punish>0))[:,None].astype(np.float32);self.d_reward=(reward/total*(reward>0))[:,None].astype(np.float32)
         self.mbon_types=z['types_MBON']
+        # Speed: weights live transposed (KC x MBON) so the active Kenyon cells are contiguous rows, and the valence read-out is kept as
+        # one vector u[i] = sum_j sign_j * C_ji * (w_ji - 1), refreshed only for the Kenyon cells whose synapses just changed.
+        # Only 15% of KC-MBON pairs are real synapses, so plastic weights are stored sparsely, grouped by Kenyon cell (CSR).
+        kc,mbon=np.nonzero(self.exists.T);self._ptr=np.concatenate([[0],np.cumsum(np.bincount(kc,minlength=self.exists.shape[1]))]).astype(np.int64);self._mbon=mbon.astype(np.int64);self._kc=kc.astype(np.int64)
+        self._signed=(self.kc_mbon*self.sign[:,None]).T[kc,mbon].astype(np.float64);self.w=np.ones_like(self.kc_mbon)
+    @property
+    def w(self):
+        dense=np.ones(self.exists.shape,np.float32);dense[self._mbon,self._kc]=self._flat;return dense
+    @w.setter
+    def w(self,value):self._flat=np.asarray(value,np.float32)[self._mbon,self._kc].copy();self._u=np.bincount(self._kc,self._signed*(self._flat-1.),minlength=self.exists.shape[1])
+    def _synapses_of(self,active):
+        """Flat positions of every real synapse of the active Kenyon cells, and which active cell each belongs to."""
+        start,count=self._ptr[active],self._ptr[active+1]-self._ptr[active];owner=np.repeat(np.arange(len(active)),count)
+        return np.arange(count.sum())-np.repeat(np.cumsum(count)-count,count)+np.repeat(start,count),owner
     def glomerular(self,stimulus):
         if stimulus.shape[1]==ODORANTS:return stimulus@self.signature          # symbolic tiles: a bag of odorants
         if stimulus.shape[1]==4:   # near sniff (flag 0) or far field (flag 1): different receptors, same band-pass coding
@@ -58,7 +72,8 @@ class MushroomBody:
         drive=self.glomerular(odor);pn=drive**1.5/(1+drive**1.5+(.1*drive.sum(1,keepdims=True))**1.5)   # antennal-lobe style divisive normalisation
         h=(pn@self.to_pn)@self.pn_kc;k=max(1,int(h.shape[1]*self.sparsity));threshold=np.partition(h,-k,axis=1)[:,-k][:,None]
         h=np.maximum(h-threshold,0);return h/np.maximum(h.sum(1,keepdims=True),1e-9)*k*.1
-    def valence(self,h):return (h@(self.kc_mbon*(self.w-1)).T)@self.sign   # change from the naive fly, which is neutral to every smell
+    def valence(self,h):return (h@self._u).astype(np.float32)   # change from the naive fly, which is neutral to every smell
+    def valence_reference(self,h):return (h@(self.kc_mbon*(self.w-1)).T)@self.sign   # original formula, kept for tests
     def learn(self,h,mine,value):
         """h: the chosen tile's KC pattern. mine -> PPL1 (heat); safe -> PAM (sugar).
 
@@ -66,16 +81,16 @@ class MushroomBody:
                so each synapse ends up tracking how often its KC preceded that outcome.
         rpe:   MBON feedback makes dopamine signal surprise; an omitted expected outcome potentiates (relief).
         """
-        active=h>0;pre=(h[active]/h.max())[None];w=self.w[:,active]
+        active=np.flatnonzero(h>0);at,owner=self._synapses_of(active);pre=(h[active]/h.max())[owner];w=self._flat[at];j=self._mbon[at]
         if self.rule=='plain':
-            w+=self.eta*pre*((1-(self.d_punish if mine else self.d_reward))-w)
+            w+=self.eta*pre*((1-(self.d_punish if mine else self.d_reward))[j,0]-w)
         else:
             safe=1/(1+np.exp(-(self.beta*value+self.baseline)))
             # context_reference: the tonic term learns ONLY on odourless tiles, so valence 0 means 'as safe as an odourless tile'
             gain=self.punish_gain if mine else 1.
             if not self.context_reference:self.baseline+=self.eta*((0. if mine else 1.)-safe)   # the shared tonic term is never sped up: it would drag every smell below the dread threshold   # tonic context term: how safe an odourless tile is
-            w-=self.eta*gain*pre*(self.d_punish*((1. if mine else 0.)-(1-safe))+self.d_reward*((0. if mine else 1.)-safe))
-        self.w[:,active]=np.where(self.exists[:,active],np.clip(w,0,2),1.)
+            w-=self.eta*gain*pre*(self.d_punish*((1. if mine else 0.)-(1-safe))+self.d_reward*((0. if mine else 1.)-safe))[j,0]
+        w=np.clip(w,0,2).astype(np.float32);self._flat[at]=w;self._u[active]=np.bincount(owner,self._signed[at]*(w-1.),minlength=len(active))
     def learn_context(self,mine):
         """An odourless tile: only the tonic context term can learn."""
         safe=1/(1+np.exp(-self.baseline));self.baseline+=self.eta*((0. if mine else 1.)-safe)

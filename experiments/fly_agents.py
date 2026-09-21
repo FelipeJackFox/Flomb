@@ -98,38 +98,50 @@ def keys_of(stimulus):
     if stimulus.ndim==2:return [[None if np.isnan(v) else (round(float(v),3),) for v in row] for row in stimulus]
     return [[None if np.isnan(t[0]) else tuple(int(x) for x in t) for t in row] for row in stimulus]
 
+def sniff_codes(stimulus):
+    """Vectorised sniff keys: one int64 code per sniff (-1 = nothing to smell) for (cells, sniffs, 3 or 4) raw stimuli."""
+    valid=~np.isnan(stimulus[:,:,0]);v=np.nan_to_num(stimulus,nan=0.).astype(np.int64);code=v[:,:,0]
+    for j in range(1,stimulus.shape[2]):code=code*1024+v[:,:,j]
+    return np.where(valid,code,-1),valid
+
+def decode(code,width):
+    out=[]
+    for _ in range(width):out.append(int(code%1024));code//=1024
+    return tuple(reversed(out))
+
+class Lazy:
+    """Kenyon pattern of one tile, built only for the tile the fly actually steps on."""
+    def __init__(self,counts,table):self.counts,self.table=counts,table
+    def __getitem__(self,k):return self.counts[k]@self.table
+
 class RawFlyAgent(FlyAgent):
     """Mushroom-body fly on raw (N,k,m) sniffs: one Kenyon pattern per distinct triple, valence summed over sniffs."""
-    def __init__(self,mb,far_field=False):super().__init__(mb,far_field);self.rows=[]
+    def __init__(self,mb,far_field=False):super().__init__(mb,far_field);self.rows=[];self.codes={}
     def assess(self,stimulus,density):
-        keys=keys_of(stimulus)
-        for row in keys:
-            for key in row:
-                if key is not None and key not in self.index:
-                    self.index[key]=len(self.index);self.rows.append(self.mb.kenyon(np.array([key],np.float32))[0])
-        # Only the smells present on this board matter: cost must not grow with everything the fly has ever smelled.
-        present=sorted({key for row in keys for key in row if key is not None},key=self.index.get);local={key:j for j,key in enumerate(present)}
-        table=np.stack([self.rows[self.index[key]] for key in present]) if present else np.zeros((0,self.mb.kc_mbon.shape[1]),np.float32);counts=np.zeros((len(keys),len(present)),np.float32)
-        for i,row in enumerate(keys):
-            for key in row:
-                if key is not None:counts[i,local[key]]+=1
-        single=self.mb.valence(table) if present else np.zeros(0);near=np.array([len(k)<4 or k[3]==0 for k in present],bool)   # the far field never triggers the stress reflex
-        worst=np.where((counts>0)&near[None],single[None],np.inf).min(1) if present else np.full(len(keys),np.inf)
-        h=counts@table;return h,self.mb.valence(h),sigmoid(self.mb.beta*worst+self.mb.baseline)
+        code,valid=sniff_codes(stimulus);width=stimulus.shape[2];present,inverse=np.unique(code[valid],return_inverse=True)
+        fresh=[c for c in present.tolist() if c not in self.codes]
+        if fresh:
+            patterns=self.mb.kenyon(np.array([decode(c,width) for c in fresh],np.float32))
+            for c,row in zip(fresh,patterns):self.codes[c]=len(self.rows);self.index[decode(c,width)]=self.codes[c];self.rows.append(row)
+        if not len(present):return Lazy(np.zeros((len(code),0),np.float32),np.zeros((0,self.mb.kc_mbon.shape[1]),np.float32)),np.zeros(len(code),np.float32),np.ones(len(code))
+        # Only the smells present on this board matter, and valence is linear: value of a tile = sum of the values of its sniffs.
+        table=np.stack([self.rows[self.codes[c]] for c in present.tolist()]);counts=np.zeros((len(code),len(present)),np.float32);np.add.at(counts,(np.nonzero(valid)[0],inverse),1.)
+        single=self.mb.valence(table);near=(present%1024==0) if width==4 else np.ones(len(present),bool)   # the far field never triggers the stress reflex
+        worst=np.where((counts>0)&near[None],single[None],np.inf).min(1);return Lazy(counts,table),counts@single,sigmoid(self.mb.beta*worst+self.mb.baseline)
 
 class TableAgent(LogisticAgent):
     """No brain: one free weight per distinct sniff key (exact conjunction of N,k,m) plus a bias."""
+    def __init__(self,lr=.3,punish_gain=1.):super().__init__(lr,punish_gain);self.codes={}
     def assess(self,stimulus,density):
-        keys=keys_of(stimulus)
-        for row in keys:
-            for key in row:
-                if key is not None and key not in self.index:self.index[key]=len(self.index);self.w=np.append(self.w,0.)
-        counts=np.zeros((len(keys),len(self.w)))
-        for i,row in enumerate(keys):
-            for key in row:
-                if key is not None:counts[i,self.index[key]]+=1
-        near=np.array([len(k)<4 or k[3]==0 for k in self.index],bool)
-        worst=np.where((counts>0)&near[None],self.w[None],np.inf).min(1) if len(self.w) else np.full(len(keys),np.inf);return counts,counts@self.w,sigmoid(worst+self.b)
+        code,valid=sniff_codes(stimulus);width=stimulus.shape[2];present,inverse=np.unique(code[valid],return_inverse=True)
+        for c in present.tolist():
+            if c not in self.codes:self.codes[c]=len(self.w);self.index[decode(c,width)]=self.codes[c];self.w=np.append(self.w,0.)
+        where=np.array([self.codes[c] for c in present.tolist()],np.int64);counts=np.zeros((len(code),len(present)));np.add.at(counts,(np.nonzero(valid)[0],inverse),1.)
+        single=self.w[where];near=(present%1024==0) if width==4 else np.ones(len(present),bool)
+        worst=np.where((counts>0)&near[None],single[None],np.inf).min(1) if len(present) else np.full(len(code),np.inf)
+        return [(where,row) for row in counts],counts@single,sigmoid(worst+self.b)
+    def learn(self,handle,mine,value):
+        where,row=handle;error=(0. if mine else 1.)-sigmoid(value+self.b);self.w[where]+=self.eta*error*(self.punish_gain if mine else 1.)*row;self.b+=self.eta*error
 
 class AdditiveAgent(LogisticAgent):
     """No brain and no conjunctions: separate one-hot weights for N, for k and for m; a sniff is worth a[N]+b[k]+c[m]."""
