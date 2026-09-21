@@ -5,13 +5,13 @@ from pathlib import Path
 import numpy as np
 from experiments import evaluate_fly_density as D
 
-OUT=Path('benchmarks/fly-aggregate-pilot')
+OUT=Path('benchmarks/fly-aggregate-pilot5')
 def run(job):
     from experiments.mushroom_body import MushroomBody
     from experiments.fly_agents import RawFlyAgent,LearnedMarker,play
     from experiments.fly_senses import sniffs_raw
     agg,seed=job;reflex=agg.endswith('-reflex');label=agg;agg=agg.split('-')[0];mb=MushroomBody(**D.CONFIG,seed=seed);agent=RawFlyAgent(mb,aggregate=agg);marker=None if reflex else LearnedMarker(theta=-8.,tau=.25,lr=.02,burn=3.,ceiling=0. if 'cap' in job[0] else 4.);rng=np.random.default_rng(seed+1);eta0=mb.eta
-    for g in range(12000):
+    for g in range(20000):
         f=1/(1+g/3000);mb.eta=eta0*f
         if marker is not None:marker.lr=marker.lr0*f
         size=[7,9][g%2];play(agent,10_000_000+g,size,D.training_mines(g,size,True),rng,True,sense=sniffs_raw,lethal=False,marker=marker)
@@ -21,4 +21,4 @@ def run(job):
 if __name__=='__main__':
     OUT.mkdir(parents=True,exist_ok=True)
     with Pool(8) as pool:
-        for r in pool.imap_unordered(run,[(a,s) for s in (100,101,102,103,104,105,106,107) for a in ('mean-cap',)]):print(r,flush=True)
+        for r in pool.imap_unordered(run,[(a,s) for s in range(10) for a in ('meanown-cap','mean-cap','sum-cap')]):print(r,flush=True)

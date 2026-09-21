@@ -1,0 +1,46 @@
+./experiments/fly_agents.py:6: RuntimeWarning: overflow encountered in exp
+  def sigmoid(x):return 1/(1+np.exp(-x))
+./experiments/fly_agents.py:6: RuntimeWarning: overflow encountered in exp
+  def sigmoid(x):return 1/(1+np.exp(-x))
+./experiments/fly_agents.py:6: RuntimeWarning: overflow encountered in exp
+  def sigmoid(x):return 1/(1+np.exp(-x))
+./experiments/fly_agents.py:6: RuntimeWarning: overflow encountered in exp
+  def sigmoid(x):return 1/(1+np.exp(-x))
+./experiments/fly_agents.py:6: RuntimeWarning: overflow encountered in exp
+  def sigmoid(x):return 1/(1+np.exp(-x))
+./experiments/fly_agents.py:6: RuntimeWarning: overflow encountered in exp
+  def sigmoid(x):return 1/(1+np.exp(-x))
+./experiments/fly_agents.py:6: RuntimeWarning: overflow encountered in exp
+  def sigmoid(x):return 1/(1+np.exp(-x))
+./experiments/fly_agents.py:6: RuntimeWarning: overflow encountered in exp
+  def sigmoid(x):return 1/(1+np.exp(-x))
+{'aggregate': 'mean-cap', 'seed': 1, 'win9': np.float64(80.25), 'win16': np.float64(51.24999999999999), 'err9': 1.0506716318659404, 'blind': 0.030456177683202555, 'theta': -5.920161372716254, 'false': 43}
+{'aggregate': 'mean-cap', 'seed': 0, 'win9': np.float64(77.25), 'win16': np.float64(51.24999999999999), 'err9': 1.256212037548321, 'blind': 0.07233572611816676, 'theta': -4.831699524166623, 'false': 0}
+{'aggregate': 'sum-cap', 'seed': 0, 'win9': np.float64(70.25), 'win16': np.float64(43.75), 'err9': 1.650714384796781, 'blind': 0.05035372451102788, 'theta': -2.8415391747783394, 'false': 0}
+{'aggregate': 'sum-cap', 'seed': 1, 'win9': np.float64(73.25), 'win16': np.float64(55.00000000000001), 'err9': 1.4116094986807437, 'blind': 0.03284960422163588, 'theta': -3.4863871378957922, 'false': 0}
+{'aggregate': 'mean-cap', 'seed': 2, 'win9': np.float64(79.0), 'win16': np.float64(51.24999999999999), 'err9': 1.1204481792717047, 'blind': 0.02947845804988662, 'theta': -5.126878912244327, 'false': 44}
+{'aggregate': 'meanown-cap', 'seed': 1, 'win9': np.float64(74.25), 'win16': np.float64(58.75), 'err9': 1.448052860958804, 'blind': 0.009841135948263743, 'theta': -3.1788015815781585, 'false': 0}
+{'aggregate': 'meanown-cap', 'seed': 2, 'win9': np.float64(86.25), 'win16': np.float64(57.49999999999999), 'err9': 0.7177345687067738, 'blind': 0.014876680151376746, 'theta': -4.137137169089631, 'false': 0}
+{'aggregate': 'meanown-cap', 'seed': 0, 'win9': np.float64(76.0), 'win16': np.float64(53.75), 'err9': 1.3190436933223415, 'blind': 0.06183017312448475, 'theta': -3.2350056987253146, 'false': 0}
+{'aggregate': 'sum-cap', 'seed': 2, 'win9': np.float64(74.75), 'win16': np.float64(48.75), 'err9': 1.3641274986493812, 'blind': 0.06550513236088601, 'theta': -2.6960362865956986, 'false': 0}
+{'aggregate': 'mean-cap', 'seed': 3, 'win9': np.float64(80.75), 'win16': np.float64(55.00000000000001), 'err9': 1.038155588512879, 'blind': 0.04826749359579345, 'theta': -6.194134142515074, 'false': 0}
+{'aggregate': 'sum-cap', 'seed': 3, 'win9': np.float64(73.0), 'win16': np.float64(48.75), 'err9': 1.4440433212996373, 'blind': 0.03195614386950127, 'theta': -3.054361330835297, 'false': 0}
+{'aggregate': 'mean-cap', 'seed': 4, 'win9': np.float64(79.75), 'win16': np.float64(52.5), 'err9': 1.0833221880433341, 'blind': 0.04239668316169587, 'theta': -5.3694649692488365, 'false': 0}
+{'aggregate': 'meanown-cap', 'seed': 4, 'win9': np.float64(84.75), 'win16': np.float64(66.25), 'err9': 0.8169278157225124, 'blind': 0.0017409937056381412, 'theta': -3.3263609680776907, 'false': 0}
+{'aggregate': 'sum-cap', 'seed': 4, 'win9': np.float64(72.75), 'win16': np.float64(36.25), 'err9': 1.4393239139046665, 'blind': 0.04687706325102337, 'theta': -2.462953499525329, 'false': 0}
+{'aggregate': 'meanown-cap', 'seed': 3, 'win9': np.float64(81.75), 'win16': np.float64(55.00000000000001), 'err9': 0.9576282303555006, 'blind': 0.01928374655647383, 'theta': -2.885252684185177, 'false': 0}
+{'aggregate': 'meanown-cap', 'seed': 5, 'win9': np.float64(72.0), 'win16': np.float64(36.25), 'err9': 1.5949871831387075, 'blind': 0.07405297636001139, 'theta': -2.972677118409989, 'false': 42}
+{'aggregate': 'sum-cap', 'seed': 5, 'win9': np.float64(74.75), 'win16': np.float64(43.75), 'err9': 1.3680075849925477, 'blind': 0.023296762833536502, 'theta': -2.8431135988146012, 'false': 0}
+{'aggregate': 'mean-cap', 'seed': 5, 'win9': np.float64(12.0), 'win16': np.float64(0.0), 'err9': 8.10313075506446, 'blind': 0.0738950276243094, 'theta': -4.730131733118778, 'false': 4082}
+{'aggregate': 'sum-cap', 'seed': 6, 'win9': np.float64(76.0), 'win16': np.float64(50.0), 'err9': 1.2624934245134112, 'blind': 0.040373487638085216, 'theta': -2.5385467673791138, 'false': 0}
+{'aggregate': 'mean-cap', 'seed': 6, 'win9': np.float64(81.75), 'win16': np.float64(60.0), 'err9': 0.9532515016975718, 'blind': 0.022329589971271872, 'theta': -6.361250219487574, 'false': 0}
+{'aggregate': 'meanown-cap', 'seed': 6, 'win9': np.float64(87.0), 'win16': np.float64(65.0), 'err9': 0.6843906291129298, 'blind': 0.016978152145301396, 'theta': -3.4508070326490032, 'false': 0}
+{'aggregate': 'mean-cap', 'seed': 7, 'win9': np.float64(79.0), 'win16': np.float64(52.5), 'err9': 1.1299435028248594, 'blind': 0.04600484261501211, 'theta': -6.5121982431714045, 'false': 0}
+{'aggregate': 'meanown-cap', 'seed': 7, 'win9': np.float64(68.5), 'win16': np.float64(48.75), 'err9': 1.8250289687137933, 'blind': 0.0492468134414832, 'theta': -3.072540372311534, 'false': 0}
+{'aggregate': 'sum-cap', 'seed': 7, 'win9': np.float64(72.5), 'win16': np.float64(46.25), 'err9': 1.4866873901878686, 'blind': 0.06541424516826598, 'theta': -3.1693082788259046, 'false': 0}
+{'aggregate': 'mean-cap', 'seed': 8, 'win9': np.float64(82.5), 'win16': np.float64(58.75), 'err9': 0.9260484191030538, 'blind': 0.02540018520968382, 'theta': -5.918465503302769, 'false': 0}
+{'aggregate': 'sum-cap', 'seed': 8, 'win9': np.float64(71.25), 'win16': np.float64(28.749999999999996), 'err9': 1.558687991325558, 'blind': 0.053402005963675794, 'theta': -2.5521108591505057, 'false': 0}
+{'aggregate': 'mean-cap', 'seed': 9, 'win9': np.float64(80.5), 'win16': np.float64(51.24999999999999), 'err9': 1.0423626887611892, 'blind': 0.043431778698383, 'theta': -7.046047690098307, 'false': 0}
+{'aggregate': 'meanown-cap', 'seed': 8, 'win9': np.float64(81.5), 'win16': np.float64(50.0), 'err9': 0.9989200863930847, 'blind': 0.03766198704103672, 'theta': -4.048114481634336, 'false': 0}
+{'aggregate': 'sum-cap', 'seed': 9, 'win9': np.float64(73.25), 'win16': np.float64(47.5), 'err9': 1.4469235970250183, 'blind': 0.06788370520622042, 'theta': -2.8251164798416695, 'false': 0}
+{'aggregate': 'meanown-cap', 'seed': 9, 'win9': np.float64(83.25), 'win16': np.float64(63.74999999999999), 'err9': 0.8839050131926096, 'blind': 0.011213720316622692, 'theta': -4.103064364438874, 'false': 0}

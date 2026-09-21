@@ -1,5 +1,7 @@
 # La mosca que juega buscaminas — reporte consolidado
 
+> **Actualización (21 sept, más tarde):** con un cambio en cómo combina sus olfateos (sección 6, primer punto) una mosca llega a **81.3%** en 9×9 (IC95 78.8–83.8; `runs/fly-aggregate-002`, semillas nuevas), a 3.5 pp de la política a mano en los mismos tableros. Las cifras de 73.5% de abajo son de la configuración anterior.
+
 21 sept 2026 · sustituye a `REPORTE_MOSCA_MARCADORA.md` (que describe la primera versión, con sentidos que hoy clasificamos como trampa).
 Todo número viene de `runs/*/summary.json`; la bitácora completa, incluidos los errores, está en `ESTADO.md`. El código de cada corrida quedó copiado en `runs/*/source/` y en git (etiquetas `hito/01` … `hito/08`).
 
@@ -51,14 +53,14 @@ La forma de los sentidos (qué emite cada casilla, olfateo por vecina); la codif
 
 ## 6. Frentes abiertos
 
-- **Promediar en vez de sumar los olfateos** (`runs/fly-aggregate-001`): 9 de 10 moscas suben de ~71% a ~80%, a la altura de la política a mano; pero 1 de 10 se hunde (marca de más) y por eso la media (73.3%, IC 58.9–87.7) no mejora de forma significativa. No adoptado. Si se resuelve esa falla, es la mejora más grande disponible.
+- **Promediar en vez de sumar los olfateos — RESUELTO y adoptado** (`runs/fly-aggregate-001` y `-002`). El 85% de las muertes eran adivinanzas forzadas y sumar hace que una casilla con muchas vecinas abiertas pese más solo por tener más. Promediar subía a 9 de 10 moscas a ~80% pero hundía a 1 de 10: al promediar, un olfateo de mina segura tenía que volverse extremo para pesar, y ese extremo se contagiaba a olores parecidos casi siempre seguros (marcas falsas). Arreglo: cada olfateo se condiciona por separado con el resultado y la mosca promedia sus opiniones. Confirmado con semillas que no se usaron al diseñarlo: **81.3% en 9×9** (suma 76.3%; +5.1 pp, p=0.011), 88.3% en 7×7, 57.3% en 16×16 (+13 pp), cero marcas falsas y ninguna mosca hundida. La política a mano en esos tableros: 84.8 / 91.2 / 61.3.
 - **Memoria de pares de pistas** (frente 6): en pilotos sin mosca recupera casi todo el hueco hasta el solver (88.3% vs 89.8%) y sobrevive al aprendizaje por resultados (85.2% a 80 mil partidas). En la mosca solo dio ≈ +3 pp; sospecha sin probar: los 88 glomérulos no alcanzan para ligar siete atributos. Felipe decidió dejarlo ahí: ampliar la entrada ya no sería la mosca.
 - **Cuerpo visible** (estacionado): conectar las MBON con las neuronas descendentes y ver a la mosca aprender en el visor.
 - Réplica con semillas nuevas del 73.5% y de la curva de eficiencia (cada uno salió de una sola corrida).
 
 ## 7. Cómo citarlo bien
 
-- "Una mosca" = 73.5% en 9×9/12 minas, inicio en cascada, sentidos crudos, compuerta aprendida (`runs/fly-gate-001`).
+- "Una mosca" = **81.3%** en 9×9/12 minas (IC95 78.8–83.8), inicio en cascada, sentidos crudos, compuerta aprendida, cada olfateo por su cuenta (`runs/fly-aggregate-002`). Con la configuración anterior (suma): 73.5% en `runs/fly-gate-001`; los dos números vienen de conjuntos de tableros distintos.
 - El 53.2% que llegó a ser "número oficial" era un **enjambre de 10 moscas que vota**, con sentidos de trampa y el inicio viejo: no es comparable y no cuenta como que la mosca mejoró. Con sentidos crudos el enjambre además rinde peor que una mosca sola.
 - Los porcentajes de corridas distintas usan tableros distintos y a veces inicios distintos; las comparaciones limpias son siempre las internas de una misma corrida, pareadas por semilla.
 - No hay spikes ni tiempos biológicos; "dopamina" es una señal escalar por compartimento. Es una arquitectura inspirada en el cuerpo pedunculado que usa sus conteos reales, no una simulación de una mosca.

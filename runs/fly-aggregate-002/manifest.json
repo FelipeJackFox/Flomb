@@ -1,0 +1,30 @@
+{
+  "arms": {
+    "sum-cap": [
+      "sum",
+      0.0
+    ],
+    "mean-cap": [
+      "mean",
+      0.0
+    ],
+    "meanown-cap": [
+      "meanown",
+      0.0
+    ]
+  },
+  "seeds": [
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "training_games": 20000,
+  "unit": "seed"
+}
