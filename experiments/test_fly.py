@@ -47,6 +47,12 @@ class Tests(unittest.TestCase):
         for seed in range(200):
             env=Minesweeper(seed,9,12,zero_start=True);self.assertEqual(int(env._mines.sum()),12);self.assertEqual(int(env.visible[40]),0);self.assertGreaterEqual(int((env.visible>=0).sum()),9)
             old=Minesweeper(seed,9,12);self.assertTrue(np.array_equal(old._mines,Minesweeper(seed,9,12,zero_start=False)._mines))
+    def test_pair_memory_is_raw_and_symmetric(self):
+        from experiments.fly_senses import sniffs_pairs,sniffs_raw,GEOMETRIES
+        v=self.board();cells,st=sniffs_pairs(v,5);_,raw=sniffs_raw(v,5);np.testing.assert_array_equal(np.nan_to_num(st.raw,nan=-9),np.nan_to_num(raw,nan=-9))
+        self.assertTrue((st.pairs[:,[0,3]]>0).all());self.assertTrue((st.pairs[:,6]<GEOMETRIES).all());self.assertLess(GEOMETRIES,64)
+        key=lambda s:sorted(sorted(map(tuple,s.pairs[s.owner==i].tolist())) for i in range(len(s.raw)))   # same multiset of pair bags after rotating the board
+        _,rot=sniffs_pairs(np.rot90(v.reshape(5,5)).reshape(-1).copy(),5);self.assertEqual(sorted(map(str,key(st))),sorted(map(str,key(rot))))
     def test_senses_never_read_mines(self):
         import inspect,experiments.fly_senses as m;self.assertNotIn('_mines',inspect.getsource(m))
     def test_paired_control_shares_odours_and_only_rewires(self):

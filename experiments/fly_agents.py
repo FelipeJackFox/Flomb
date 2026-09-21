@@ -82,7 +82,7 @@ def play(agent,seed,size,mines,rng,learn,temperature=1.5,dread=.03,sense=sniffs,
         ids=np.nonzero(free)[0];vv=v[ids]
         if learn:p=np.exp((vv-vv.max())/(temperature*vv.std()+1e-9));k=ids[int(rng.choice(len(ids),p=p/p.sum()))]
         else:k=ids[int(vv.argmax())]
-        unknown+=bool(np.isnan(shares[k][:8]).all());mine=env.step(cells[k])<0;steps+=1;safe+=not mine
+        unknown+=bool(np.isnan(np.asarray(shares[k])[:8]).all());mine=env.step(cells[k])<0;steps+=1;safe+=not mine
         if learn:agent.learn(handle[k],mine,float(v[k]))
         if learn and marker is not None:marker.reward(mine,rng)
         if mine and not lethal:
@@ -131,6 +131,35 @@ class RawFlyAgent(FlyAgent):
         single=self.mb.valence(table);near=(present%1024==0) if width==4 else np.ones(len(present),bool)   # the far field never triggers the stress reflex
         worst=np.where((counts>0)&near[None],single[None],np.inf).min(1);return Lazy(counts,table),counts@single,sigmoid(self.mb.beta*worst+self.mb.baseline)
 
+class PairHandle:
+    def __init__(self,single,counts,table,agent,owner,codes):self.single,self.counts,self.table,self.agent,self.owner,self.codes=single,counts,table,agent,owner,codes
+    def __getitem__(self,k):
+        h=(self.counts[k]@self.table).astype(np.float32) if self.table.shape[0] else np.zeros(self.agent.mb.kc_mbon.shape[1],np.float32);mine=self.codes[self.owner==k]
+        if len(mine):
+            extra=np.zeros_like(h)
+            for c in mine.tolist():idx,val=self.agent.pair_rows[c];extra[idx]+=val
+            h=h+self.agent.pair_weight*extra/len(mine)
+        return h
+
+class PairFlyAgent(RawFlyAgent):
+    """Raw-sniff fly with a short working memory of clue pairs. Value of a tile = sum of its single sniffs + mean of its remembered pairs."""
+    def __init__(self,mb,pair_weight=1.,capacity=60000):super().__init__(mb);self.pair_rows={};self.pair_weight=pair_weight;self.capacity=capacity
+    def assess(self,stimulus,density):
+        handle,v,worst=super().assess(stimulus.raw,density);pairs,owner=stimulus.pairs,stimulus.owner
+        if not len(pairs):return PairHandle(v,handle.counts,handle.table,self,owner,np.zeros(0,np.int64)),v,worst
+        code=pairs[:,0]
+        for j in range(1,6):code=code*9+pairs[:,j]
+        code=code*64+pairs[:,6];present,first,inverse=np.unique(code,return_index=True,return_inverse=True);fresh=[i for i,c in zip(first.tolist(),present.tolist()) if c not in self.pair_rows]
+        if fresh:
+            for c,row in zip(code[fresh].tolist(),self.mb.kenyon(pairs[fresh].astype(np.float32))):idx=np.flatnonzero(row).astype(np.int32);self.pair_rows[c]=(idx,row[idx].astype(np.float32))
+        rows=[self.pair_rows[c] for c in present.tolist()];lengths=np.array([len(r[0]) for r in rows]);where=np.concatenate([r[0] for r in rows]);n=len(v)
+        value=np.bincount(np.repeat(np.arange(len(rows)),lengths),np.concatenate([r[1] for r in rows])*self.mb._u[where],minlength=len(rows))   # one sparse read-out for every remembered pair on the board
+        if len(self.pair_rows)>self.capacity:   # bounded working memory of Kenyon patterns: forget the oldest, they are rebuilt if smelled again
+            for c in list(self.pair_rows)[:self.capacity//3]:
+                if c not in set(present.tolist()):del self.pair_rows[c]
+        total=np.bincount(owner,value[inverse],minlength=n);count=np.bincount(owner,minlength=n);v=v+self.pair_weight*(total/np.maximum(count,1)).astype(np.float32)
+        return PairHandle(v,handle.counts,handle.table,self,owner,code),v,worst
+
 class TableAgent(LogisticAgent):
     """No brain: one free weight per distinct sniff key (exact conjunction of N,k,m) plus a bias."""
     def __init__(self,lr=.3,punish_gain=1.,resolution=1.):super().__init__(lr,punish_gain);self.codes={};self.resolution=resolution
@@ -144,6 +173,21 @@ class TableAgent(LogisticAgent):
         return [(where,row) for row in counts],counts@single,sigmoid(worst+self.b)
     def learn(self,handle,mine,value):
         where,row=handle;error=(0. if mine else 1.)-sigmoid(value+self.b);self.w[where]+=self.eta*error*(self.punish_gain if mine else 1.)*row;self.b+=self.eta*error
+
+class PairTableAgent(TableAgent):
+    """No brain, with the same working memory: one free weight per exact single sniff and per exact remembered pair."""
+    def __init__(self,lr=.3,pair_weight=1.):super().__init__(lr);self.pw={};self.pair_weight=pair_weight
+    def assess(self,stimulus,density):
+        handle,v,worst=super().assess(stimulus.raw,density);pairs,owner=stimulus.pairs,stimulus.owner
+        if not len(pairs):return [(h,np.zeros(0,np.int64)) for h in handle],v,worst
+        code=pairs[:,0]
+        for j in range(1,6):code=code*9+pairs[:,j]
+        code=code*64+pairs[:,6];value=np.array([self.pw.get(c,0.) for c in code.tolist()]);n=len(v)
+        v=v+self.pair_weight*np.bincount(owner,value,minlength=n)/np.maximum(np.bincount(owner,minlength=n),1)
+        return [(h,code[owner==i]) for i,h in enumerate(handle)],v,worst
+    def learn(self,handle,mine,value):
+        single,codes=handle;error=(0. if mine else 1.)-sigmoid(value+self.b);super().learn(single,mine,value)
+        for c in codes.tolist():self.pw[c]=self.pw.get(c,0.)+self.eta*error*self.pair_weight/max(len(codes),1)**.5
 
 class AdditiveAgent(LogisticAgent):
     """No brain and no conjunctions: separate one-hot weights for N, for k and for m; a sniff is worth a[N]+b[k]+c[m]."""

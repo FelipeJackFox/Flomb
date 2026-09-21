@@ -40,6 +40,7 @@ class MushroomBody:
         self.tuning=tuning;self.tuned_odour=rng.integers(2,size=g);self.tuned_mu=np.where(self.tuned_odour==0,rng.uniform(np.log(.06),np.log(4.),size=g),rng.uniform(np.log(.8),np.log(8.5),size=g)).astype(np.float32)
         # Raw three-odour senses (clue N, covered k, own pheromone m): separate generator so older configurations stay bit-identical.
         raw=np.random.default_rng([seed,4242]);self.raw_odour=raw.integers(3,size=g);self.raw_mu=raw.uniform(np.log(.8),np.log(8.5),size=g).astype(np.float32)
+        pair=np.random.default_rng([seed,4444]);self.pair_channel=pair.integers(7,size=g);self.pair_mu=pair.uniform(np.log(.8),np.log(8.5),size=g).astype(np.float32);self.pair_geometry=(pair.random((64,g))<.5).astype(np.float32)*3
         far=np.random.default_rng([seed,4343]);self.far_odour=far.integers(3,size=g);self.far_mu=far.uniform(np.log(.8),np.log(90.),size=g).astype(np.float32)
         self.to_pn=np.eye(len(self.glomeruli),dtype=np.float32)[channel].T            # glomerulus -> its sister PNs
         self.pn_kc=(pn_kc/np.maximum(pn_kc.sum(1,keepdims=True),1)).T                   # (PN, KC), each KC's inputs sum to 1
@@ -73,6 +74,9 @@ class MushroomBody:
         return np.arange(count.sum())-np.repeat(np.cumsum(count)-count,count)+np.repeat(start,count),owner
     def glomerular(self,stimulus):
         if stimulus.shape[1]==ODORANTS:return stimulus@self.signature          # symbolic tiles: a bag of odorants
+        if stimulus.shape[1]==7:   # remembered pair: six concentrations (B then A) on their own receptors, plus the proprioceptive 'how I moved' class
+            ch=self.pair_channel;c=stimulus[:,np.minimum(ch,5)];conc=3*np.exp(-(np.log(np.maximum(c,1e-6))-self.pair_mu[None])**2/(2*(self.tuning or .35)**2))*(c>0)
+            return np.where(ch[None]==6,self.pair_geometry[stimulus[:,6].astype(np.int64)],conc)
         if stimulus.shape[1]==4:   # near sniff (flag 0) or far field (flag 1): different receptors, same band-pass coding
             far=stimulus[:,3:]>0;c=np.where(far,stimulus[:,:3][:,self.far_odour],stimulus[:,:3][:,self.raw_odour]);mu=np.where(far,self.far_mu[None],self.raw_mu[None])
             return 3*np.exp(-(np.log(np.maximum(c,1e-6))-mu)**2/(2*(self.tuning or .35)**2))*(c>0)
