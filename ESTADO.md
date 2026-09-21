@@ -881,3 +881,12 @@ real 30.8 / 42.3 / 47.1 / 53.4 / 68.9 / 71.4 · barajado completo 42.4 / 41.4 / 
 apl-real 36.5 / 44.8 / 49.2 / 54.1 / 53.6 / 60.1 · topk-real 32.9 / 46.5 / 50.2 / 54.6 / 70.2 / 72.6 · apl-barajado 38.0 / 47.9 / 57.6 / 56.3 / 68.4 / 67.6 · apl-azar 43.4 / 45.2 / 58.9 / 62.6 / 68.7 / 68.3.
 Meseta: apl-real − topk-real = −12.5 pp [−21.4, −3.6], p=0.011; apl-real − apl-barajado −7.5 (p=0.07); temprano apl-real − apl-azar −6.4 [−11.9, −0.8], p=0.03. Es decir: meter la inhibición real EMPEORA, y con los pesos APL reales es peor que con esos mismos pesos barajados. Lo único bueno: casi elimina las marcas falsas (1 vs 63).
 Conclusión del frente: para esta tarea lo que sirve es la ARQUITECTURA (expansión dispersa a miles de unidades + lectura plástica gobernada por dopamina); el conectoma concreto de la mosca no aporta nada medible y sus heterogeneidades reales (grados, pesos APL) más bien estorban. Es coherente con la idea de que el cuerpo pedunculado es, a propósito, casi aleatorio en su entrada. NO probado: realimentación real MBON→DAN ni conexiones MBON→MBON; con esta evidencia no espero que cambien el veredicto y cuestan días. Se conserva top-k como configuración de trabajo.
+
+
+## Frente 4 cerrado · error por pisada · 21 sept 2026 · hipótesis refutada, diagnóstico útil
+
+Piloto dev benchmarks/fly-precision-pilot (4 semillas, 8k partidas, 300 tableros 9×9 con cascada + 80 de 16×16): rejilla de dispersión de Kenyon × ancho de sintonía. Victorias 9×9 / 16×16 / error por pisada en 16×16:
+dispersión 0.05: 46–58 / 12–21 / 1.3–1.7% · 0.10: 58–69 / 21–33 / 1.0–1.4% · 0.20 (actual): 70–71 / 39–44 / 0.83–0.93% · 0.40: 44–63 / 10–24 / 1.5–2.7% con miles de marcas falsas.
+Mi hipótesis (un código más disperso y fino confunde menos triples vecinos) era FALSA: más disperso es peor; el óptimo es la configuración actual (0.20; la sintonía entre 0.2 y 0.5 da igual dentro del ruido). No hay nada que confirmar en formal.
+Diagnóstico de muertes (mosca de runs/fly-viz, 400 partidas 9×9 + 100 de 16×16 dev, lógica de un solo punto como vara): de 180 muertes, 153 (85%) fueron ADIVINANZAS FORZADAS (no existía ninguna casilla deducible como segura), 105 de ellas en casillas sin olor; 27 (15%) con una casilla segura disponible; solo 6 sobre una mina deducible. En 14,106 pisadas, 172 veces (1.2%) había una segura deducible y eligió otra.
+Lectura: la deducción de un solo punto la mosca ya la hace casi perfecta. Lo que la separa de la política a mano y de un solver es CÓMO ADIVINA y las deducciones de dos pistas (frente 6), no la precisión de su código.
