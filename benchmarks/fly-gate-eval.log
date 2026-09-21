@@ -1,0 +1,429 @@
+./experiments/fly_agents.py:6: RuntimeWarning: overflow encountered in exp
+  def sigmoid(x):return 1/(1+np.exp(-x))
+./experiments/fly_agents.py:6: RuntimeWarning: overflow encountered in exp
+  def sigmoid(x):return 1/(1+np.exp(-x))
+./experiments/fly_agents.py:6: RuntimeWarning: overflow encountered in exp
+  def sigmoid(x):return 1/(1+np.exp(-x))
+./experiments/fly_agents.py:6: RuntimeWarning: overflow encountered in exp
+  def sigmoid(x):return 1/(1+np.exp(-x))
+./experiments/fly_agents.py:6: RuntimeWarning: overflow encountered in exp
+  def sigmoid(x):return 1/(1+np.exp(-x))
+done reflex-0
+done reflex-1
+./experiments/fly_agents.py:6: RuntimeWarning: overflow encountered in exp
+  def sigmoid(x):return 1/(1+np.exp(-x))
+done gate-2
+done gate-0
+done gate-1
+done sham-1
+done sham-0
+done never-1
+./experiments/fly_agents.py:6: RuntimeWarning: overflow encountered in exp
+  def sigmoid(x):return 1/(1+np.exp(-x))
+done never-0
+done reflex-2
+./experiments/fly_agents.py:6: RuntimeWarning: overflow encountered in exp
+  def sigmoid(x):return 1/(1+np.exp(-x))
+done sham-2
+done reflex-4
+./experiments/fly_agents.py:6: RuntimeWarning: overflow encountered in exp
+  def sigmoid(x):return 1/(1+np.exp(-x))
+done reflex-3
+done gate-4
+done never-2
+done never-3
+done gate-3
+done sham-3
+done reflex-5
+done sham-4
+done gate-5
+done never-4
+done sham-5
+done gate-6
+done never-5
+done reflex-6
+done sham-6
+done reflex-7
+done gate-7
+done never-6
+done sham-7
+done reflex-8
+done never-7
+done gate-8
+done sham-8
+done never-8
+done reflex-9
+done gate-9
+done sham-9
+done never-9
+{
+ "9": {
+  "gate": {
+   "mean": 73.5,
+   "sd": 1.8,
+   "ci95": [
+    72.3,
+    74.8
+   ],
+   "per_seed": [
+    72.2,
+    72.2,
+    75.0,
+    70.6,
+    72.6,
+    72.4,
+    75.2,
+    75.0,
+    74.2,
+    76.0
+   ]
+  },
+  "reflex": {
+   "mean": 71.3,
+   "sd": 4.7,
+   "ci95": [
+    68.0,
+    74.7
+   ],
+   "per_seed": [
+    75.0,
+    72.0,
+    69.8,
+    61.6,
+    69.8,
+    74.2,
+    75.0,
+    73.4,
+    65.8,
+    76.6
+   ]
+  },
+  "sham": {
+   "mean": 44.3,
+   "sd": 20.9,
+   "ci95": [
+    29.3,
+    59.2
+   ],
+   "per_seed": [
+    35.2,
+    32.2,
+    49.0,
+    7.8,
+    70.8,
+    29.4,
+    40.6,
+    75.6,
+    63.8,
+    38.2
+   ]
+  },
+  "never": {
+   "mean": 26.2,
+   "sd": 13.1,
+   "ci95": [
+    16.8,
+    35.6
+   ],
+   "per_seed": [
+    3.0,
+    2.8,
+    36.6,
+    26.6,
+    38.4,
+    30.2,
+    36.4,
+    28.0,
+    35.0,
+    25.2
+   ]
+  },
+  "gate minus reflex": {
+   "mean": 2.2,
+   "sd": 4.1,
+   "ci95": [
+    -0.7,
+    5.2
+   ],
+   "per_seed": [
+    -2.8,
+    0.2,
+    5.2,
+    9.0,
+    2.8,
+    -1.8,
+    0.2,
+    1.6,
+    8.4,
+    -0.6
+   ],
+   "p": 0.1209
+  },
+  "gate minus sham": {
+   "mean": 29.3,
+   "sd": 20.0,
+   "ci95": [
+    15.0,
+    43.6
+   ],
+   "per_seed": [
+    37.0,
+    40.0,
+    26.0,
+    62.8,
+    1.8,
+    43.0,
+    34.6,
+    -0.6,
+    10.4,
+    37.8
+   ],
+   "p": 0.0012
+  },
+  "gate minus never": {
+   "mean": 47.3,
+   "sd": 12.5,
+   "ci95": [
+    38.4,
+    56.3
+   ],
+   "per_seed": [
+    69.2,
+    69.4,
+    38.4,
+    44.0,
+    34.2,
+    42.2,
+    38.8,
+    47.0,
+    39.2,
+    50.8
+   ],
+   "p": 0.0
+  },
+  "marks_per_game": {
+   "gate": 10.39,
+   "reflex": 10.13,
+   "sham": 9.69,
+   "never": 5.07
+  },
+  "false_marks": {
+   "gate": 26,
+   "reflex": 27,
+   "sham": 8120,
+   "never": 0
+  }
+ },
+ "7": {
+  "gate": {
+   "mean": 84.0,
+   "sd": 1.2,
+   "ci95": [
+    83.1,
+    84.9
+   ],
+   "per_seed": [
+    84.0,
+    83.6,
+    85.2,
+    81.6,
+    83.2,
+    82.8,
+    84.8,
+    85.6,
+    84.8,
+    84.4
+   ]
+  },
+  "reflex": {
+   "mean": 83.9,
+   "sd": 1.8,
+   "ci95": [
+    82.6,
+    85.2
+   ],
+   "per_seed": [
+    85.2,
+    85.2,
+    83.6,
+    80.0,
+    82.4,
+    84.4,
+    86.0,
+    84.8,
+    82.8,
+    84.8
+   ]
+  },
+  "sham": {
+   "mean": 66.0,
+   "sd": 17.4,
+   "ci95": [
+    53.5,
+    78.4
+   ],
+   "per_seed": [
+    58.0,
+    58.0,
+    73.2,
+    29.6,
+    85.6,
+    54.0,
+    63.6,
+    86.0,
+    83.2,
+    68.4
+   ]
+  },
+  "never": {
+   "mean": 49.1,
+   "sd": 17.5,
+   "ci95": [
+    36.6,
+    61.6
+   ],
+   "per_seed": [
+    17.2,
+    16.8,
+    60.4,
+    53.2,
+    63.6,
+    54.8,
+    63.2,
+    51.6,
+    58.8,
+    51.2
+   ]
+  },
+  "gate minus reflex": {
+   "mean": 0.1,
+   "sd": 1.4,
+   "ci95": [
+    -0.9,
+    1.1
+   ],
+   "per_seed": [
+    -1.2,
+    -1.6,
+    1.6,
+    1.6,
+    0.8,
+    -1.6,
+    -1.2,
+    0.8,
+    2.0,
+    -0.4
+   ],
+   "p": 0.8638
+  },
+  "gate minus sham": {
+   "mean": 18.0,
+   "sd": 16.6,
+   "ci95": [
+    6.2,
+    29.9
+   ],
+   "per_seed": [
+    26.0,
+    25.6,
+    12.0,
+    52.0,
+    -2.4,
+    28.8,
+    21.2,
+    -0.4,
+    1.6,
+    16.0
+   ],
+   "p": 0.0073
+  },
+  "gate minus never": {
+   "mean": 34.9,
+   "sd": 17.4,
+   "ci95": [
+    22.5,
+    47.4
+   ],
+   "per_seed": [
+    66.8,
+    66.8,
+    24.8,
+    28.4,
+    19.6,
+    28.0,
+    21.6,
+    34.0,
+    26.0,
+    33.2
+   ],
+   "p": 0.0001
+  },
+  "marks_per_game": {
+   "gate": 6.03,
+   "reflex": 5.96,
+   "sham": 5.89,
+   "never": 3.2
+  },
+  "false_marks": {
+   "gate": 4,
+   "reflex": 4,
+   "sham": 2385,
+   "never": 0
+  }
+ },
+ "theta": {
+  "gate": {
+   "final": [
+    -3.26,
+    -3.26,
+    -3.15,
+    -2.63,
+    -2.64,
+    -3.53,
+    -2.54,
+    -3.21,
+    -3.11,
+    -3.36
+   ],
+   "mean_curve": [
+    -4.61,
+    -3.58,
+    -3.37,
+    -2.39,
+    -2.1,
+    -1.95,
+    -2.62,
+    -2.75,
+    -2.4,
+    -3.07
+   ]
+  },
+  "sham": {
+   "final": [
+    -10.51,
+    -9.45,
+    -9.25,
+    3.86,
+    -4.42,
+    -10.52,
+    -10.29,
+    -4.02,
+    -6.13,
+    -10.4
+   ],
+   "mean_curve": [
+    -7.23,
+    -6.01,
+    -6.8,
+    -7.52,
+    -7.4,
+    -7.3,
+    -7.7,
+    -7.31,
+    -7.13,
+    -7.11
+   ]
+  }
+ },
+ "reflex_theta_equivalent": -3.48
+}
