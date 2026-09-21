@@ -14,10 +14,9 @@ DATA=Path('data/processed/mushroom_body.npz')
 def load(name,z):return sparse.csr_matrix((z[f'{name}_data'],z[f'{name}_indices'],z[f'{name}_indptr']),shape=tuple(z[f'{name}_shape'])).toarray().astype(np.float32)
 
 class MushroomBody:
-    def __init__(self,seed=0,rule='plain',shuffled=False,sparsity=.05,eta=.05,beta=30.,background=0.,tuning=0.,wiring_seed=None,context_reference=False,punish_gain=1.,inhibition='topk'):
+    def __init__(self,seed=0,rule='plain',shuffled=False,sparsity=.05,eta=.05,beta=30.,background=0.,tuning=0.,wiring_seed=None,context_reference=False,punish_gain=1.):
         z=np.load(DATA,allow_pickle=False);rng=np.random.default_rng(seed);self.rule,self.eta,self.beta,self.sparsity=rule,eta,beta,sparsity
         pn_kc,kc_mbon,pam,ppl1=load('PN_KC',z),load('KC_MBON',z),load('PAM_MBON',z),load('PPL1_MBON',z)
-        kc_apl,apl_kc=load('KC_APL',z),load('APL_KC',z).T   # both (APL, KC): what each Kenyon cell gives to, and receives from, each APL neuron
         self.context_reference=context_reference;self.punish_gain=punish_gain   # heat teaches faster than sugar (aversive one-trial learning)
         if shuffled:
             # Control: same synapse counts per KC and per MBON, partners drawn at random. The permutations come from their OWN
@@ -29,7 +28,6 @@ class MushroomBody:
                 pn_kc=np.stack([wiring.permutation(row) for row in pn_kc]) if shuffled!='random' else wiring.permutation(pn_kc.ravel()).reshape(pn_kc.shape)
             if shuffled in (True,'output','random'):
                 kc_mbon=np.stack([wiring.permutation(row) for row in kc_mbon]) if shuffled!='random' else wiring.permutation(kc_mbon.ravel()).reshape(kc_mbon.shape)
-            if shuffled in (True,'random'):order=wiring.permutation(kc_apl.shape[1]);kc_apl,apl_kc=kc_apl[:,order],apl_kc[:,wiring.permutation(apl_kc.shape[1])]
         types=z['types_PN'];self.glomeruli=sorted(set(types.tolist()));channel=np.array([self.glomeruli.index(t) for t in types.tolist()])
         # Engineering choice: every odorant has a fixed random glomerular signature (about 10% of glomeruli, graded).
         self.signature=(np.abs(rng.normal(size=(ODORANTS,len(self.glomeruli))))*(rng.random((ODORANTS,len(self.glomeruli)))<.1)).astype(np.float32)
@@ -50,13 +48,6 @@ class MushroomBody:
         self.sign=np.where(punish+reward==0,0.,np.where(punish>reward,1.,-1.)).astype(np.float32)
         self.d_punish=(punish/total*(punish>0))[:,None].astype(np.float32);self.d_reward=(reward/total*(reward>0))[:,None].astype(np.float32)
         self.mbon_types=z['types_MBON']
-        # Optional real feedback inhibition: each APL neuron sums Kenyon activity through its real KC->APL synapses and inhibits each
-        # Kenyon cell through its real APL->KC synapses. One global gain is calibrated so that, on average, `sparsity` of the cells stay active.
-        self.inhibition=inhibition;self._to_apl=(kc_apl/np.maximum(kc_apl.sum(1,keepdims=True),1)).astype(np.float32);self._from_apl=(apl_kc/np.maximum(apl_kc.mean(),1e-9)).astype(np.float32);self._apl_gain=0.
-        if inhibition=='apl':
-            probe=np.random.default_rng([seed,555]).integers(1,9,size=(150,3)).astype(np.float32);probe[:,2]=np.minimum(probe[:,2]-1,probe[:,1]);lo,hi=0.,1e4
-            for _ in range(40):
-                self._apl_gain=(lo+hi)/2;active=float((self.kenyon(probe)>0).mean());lo,hi=(self._apl_gain,hi) if active>sparsity else (lo,self._apl_gain)
         # Speed: weights live transposed (KC x MBON) so the active Kenyon cells are contiguous rows, and the valence read-out is kept as
         # one vector u[i] = sum_j sign_j * C_ji * (w_ji - 1), refreshed only for the Kenyon cells whose synapses just changed.
         # Only 15% of KC-MBON pairs are real synapses, so plastic weights are stored sparsely, grouped by Kenyon cell (CSR).
@@ -84,12 +75,7 @@ class MushroomBody:
         c=stimulus[:,:,None]/self.plume_scale[None,:,None];return ((c**2/(c**2+self.plume_k[None]**2))*self.plume_on[None]).sum(1)*3+self.background
     def kenyon(self,odor):
         drive=self.glomerular(odor);pn=drive**1.5/(1+drive**1.5+(.1*drive.sum(1,keepdims=True))**1.5)   # antennal-lobe style divisive normalisation
-        h=(pn@self.to_pn)@self.pn_kc;k=max(1,int(h.shape[1]*self.sparsity))
-        if self.inhibition=='apl':
-            x=h;a=np.zeros((len(x),self._to_apl.shape[0]),np.float32)
-            for _ in range(60):h=np.maximum(x-self._apl_gain*(a@self._from_apl),0);a=.7*a+.3*(h@self._to_apl.T)   # damped settling of the KC <-> APL loop
-            return h/np.maximum(h.sum(1,keepdims=True),1e-9)*k*.1
-        threshold=np.partition(h,-k,axis=1)[:,-k][:,None]
+        h=(pn@self.to_pn)@self.pn_kc;k=max(1,int(h.shape[1]*self.sparsity));threshold=np.partition(h,-k,axis=1)[:,-k][:,None]
         h=np.maximum(h-threshold,0);return h/np.maximum(h.sum(1,keepdims=True),1e-9)*k*.1
     def valence(self,h):return (h@self._u).astype(np.float32)   # change from the naive fly, which is neutral to every smell
     def valence_reference(self,h):return (h@(self.kc_mbon*(self.w-1)).T)@self.sign   # original formula, kept for tests

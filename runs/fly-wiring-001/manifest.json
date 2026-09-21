@@ -1,0 +1,31 @@
+{
+  "arms": {
+    "real": "False",
+    "shuffled": "True",
+    "input": "input",
+    "output": "output",
+    "random": "random"
+  },
+  "extra": {},
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "checkpoints": [
+    250,
+    500,
+    1000,
+    2000,
+    4000,
+    8000
+  ],
+  "unit": "seed"
+}
