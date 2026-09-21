@@ -941,3 +941,8 @@ FORMAL (10 semillas, 20k partidas, layouts reservados nuevos con cascada: 500 de
   Sin la semilla 5 (dato descriptivo, NO el titular): media 79.7% en 9×9, 59.1% en 16×16, 88.6% en 7×7 — es decir, a la altura de la política a mano en 9×9.
   La semilla hundida no se desbocó hacia arriba (θ = −4.73, dentro del rango de las sanas): marca de más con ese umbral (3,489 de las marcas falsas de todo el brazo). El tope θ ≤ 0 no previene este modo de falla. El tope por sí solo (suma con tope vs suma) no cambia nada medible (+1.5, p=0.26) y elimina las marcas falsas.
 Lectura: promediar es una mejora real y grande del modo de adivinar (9 de 10 moscas pasan de ~71% a ~80%), pero con ella vuelve una falla de 1 en 10 en la compuerta aprendida. Como titular honesto NO se puede adoptar todavía: el número oficial de una mosca sigue siendo 73.5% [72.3, 74.8] (runs/fly-gate-001, suma + compuerta aprendida). Pendiente: entender por qué esa semilla marca de más (hipótesis: con la media, los valores por olfateo de esa mosca quedan mal escalados respecto a su umbral) y hacer robusta la compuerta; o seleccionar moscas por su propio desempeño en entrenamiento (legítimo si no toca layouts reservados).
+
+
+## Reporte consolidado · 21 sept 2026
+
+research/REPORTE_FINAL_MOSCA.md + research/reporte-final-figura.png (barras de runs/fly-gate-001 y curva de eficiencia de runs/fly-vs-table-001). REPORTE_MOSCA_MARCADORA.md queda marcado como sustituido. Frente 6 (memoria de pares) detenido por decisión de Felipe: ampliar la entrada ya no sería la mosca. Frente 7 (cuerpo visible) sigue estacionado. Nada corriendo.

@@ -1,3 +1,5 @@
+> **SUSTITUIDO el 21 sept 2026 por `REPORTE_FINAL_MOSCA.md`.** Este documento describe la primera versión, cuyos sentidos (N/k y resta de marcas) se clasificaron después como trampa, y sus números usan el inicio viejo.
+
 # Reporte: la mosca que olfatea y marca (19 sept 2026)
 
 Fuentes: runs/fly-marker-001/summary.json, research/PROTOCOLO_MOSCA_MARCADORA.md, benchmarks/fly-marker/*.log (pilotos), ESTADO.md.
