@@ -1,0 +1,67 @@
+{
+  "arms": {
+    "old": {
+      "zero": false,
+      "sizes": [
+        7,
+        9
+      ],
+      "games": 20000
+    },
+    "zero": {
+      "zero": true,
+      "sizes": [
+        7,
+        9
+      ],
+      "games": 20000
+    },
+    "zero-big": {
+      "zero": true,
+      "sizes": [
+        9,
+        16
+      ],
+      "games": 10000
+    }
+  },
+  "sets": {
+    "9-old": {
+      "size": 9,
+      "mines": 12,
+      "zero": false,
+      "n": 400
+    },
+    "9-zero": {
+      "size": 9,
+      "mines": 12,
+      "zero": true,
+      "n": 400
+    },
+    "16-zero": {
+      "size": 16,
+      "mines": 40,
+      "zero": true,
+      "n": 150
+    },
+    "30-zero": {
+      "size": 30,
+      "mines": 140,
+      "zero": true,
+      "n": 30
+    }
+  },
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "recipe": "raw sniffs, non-lethal, variable density, 3% reflex",
+  "unit": "seed",
+  "training_layouts_in_test": 0
+}

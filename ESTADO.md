@@ -840,3 +840,19 @@ Decisión: se conserva el reflejo de 3% como configuración de trabajo, declarad
 Pendiente del plan: 5) novedad interna. Nada corriendo.
 
 
+## Inicio justo (apertura garantizada) y tableros grandes · 20 sept 2026 · runs/fly-start-001
+
+Observación de Felipe viendo el visor: el inicio con UNA casilla central segura es injusto. Medido: en 9×9/12 esa apertura destapa una sola casilla con número en el 73.9% de las partidas (mediana abierta = 1). Estándar moderno: primera casilla Y sus ocho vecinas sin minas → abre en cascada. Implementado Minesweeper(..., zero_start=True) (mediana 40 abiertas en 9×9, mínimo 9); el default NO cambió, corridas previas reproducibles. Pruebas 13/13. Protocolo research/PROTOCOLO_INICIO_Y_TAMANO.md.
+Receta: olfateos crudos, no letal, densidad variable, reflejo 3%; 8 semillas por brazo; layouts reservados nuevos; evaluación letal.
+% victorias (IC95 t) por entrenamiento old / zero / zero-big, y política a mano:
+- 9×9 inicio viejo: 54.1 [50.5, 57.7] / 49.3 [41.7, 57.0] / 46.7 [40.2, 53.1] · a mano 64.2
+- 9×9 con cascada: 71.0 [68.9, 73.2] / 68.9 [61.4, 76.5] / 67.8 [60.2, 75.3] · a mano 78.8
+- 16×16/40 con cascada: 40.0 [33.8, 46.2] / 38.9 / 37.0 · a mano 62.0
+- 30×30/140 con cascada: 16.2 [11.7, 20.8] / 15.8 / 14.6 · a mano 40.0
+Otras métricas (entrenamiento old): tablero despejado antes de morir 95.1% (9 cascada), 89.3% (16), 82.2% (30); pisadas seguras 98.4% / 99.1% / 99.6% (a mano 98.8 / 99.4 / 99.7).
+(1) EL INICIO INJUSTO COSTABA ~17 PUNTOS: la MISMA mosca gana +16.9 pp [14.7, 19.1] en 9×9 solo por evaluarla con cascada (54.1 → 71.0). Felipe tenía razón. Las pisadas a ciegas bajan de 10.4% a 5.3%.
+(2) Entrenar con cascada NO ayuda: zero − old = −2.1 pp [−9.9, +5.7], p=0.54 evaluando con cascada, y −4.8 (p=0.18) con inicio viejo; además mete más varianza entre semillas. Lectura sin comprobar: el inicio viejo obliga a practicar más situaciones difíciles (frontera pequeña, adivinanza), y eso transfiere; con cascada ve menos de eso (400k pisadas de entrenamiento vs 488k).
+(3) Entrenar en tableros grandes NO ayuda: zero-big − zero = −1.2 (9×9), −1.9 (16×16), −1.2 (30×30), ninguna distinguible de cero, con más pisadas de entrenamiento (588k). Esperado: los sentidos son locales; un tablero grande o infinito solo cambia la proporción de bordes y la duración.
+(4) La política aprendida en 7×7/9×9 transfiere tal cual a 16×16 y 30×30: 99.1% y 99.6% de pisadas seguras. Las victorias caen (40%, 16%) porque hay que encadenar cientos de decisiones; la política a mano también cae (62%, 40%). El hueco contra la política a mano crece con el tamaño (8 → 22 → 24 pp): un 0.3–0.4% más de error por pisada se paga caro en partidas largas.
+Decisiones: EVALUAR de aquí en adelante con inicio en cascada (estándar); ENTRENAR con el inicio viejo (rinde igual o mejor y con menos varianza). No entrenar en tableros grandes. Número actual de una mosca legítima con inicio justo: 71.0% [68.9, 73.2] en 9×9/12 (política a mano 78.8%).
+Pendiente: la visualización (scene/dist/data/arena.json) sigue con partidas de inicio viejo; regenerar con cascada.
