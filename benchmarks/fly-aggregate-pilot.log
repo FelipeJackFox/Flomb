@@ -1,0 +1,28 @@
+./experiments/fly_agents.py:6: RuntimeWarning: overflow encountered in exp
+  def sigmoid(x):return 1/(1+np.exp(-x))
+./experiments/fly_agents.py:6: RuntimeWarning: overflow encountered in exp
+  def sigmoid(x):return 1/(1+np.exp(-x))
+./experiments/fly_agents.py:6: RuntimeWarning: overflow encountered in exp
+  def sigmoid(x):return 1/(1+np.exp(-x))
+./experiments/fly_agents.py:6: RuntimeWarning: overflow encountered in exp
+  def sigmoid(x):return 1/(1+np.exp(-x))
+./experiments/fly_agents.py:6: RuntimeWarning: overflow encountered in exp
+  def sigmoid(x):return 1/(1+np.exp(-x))
+./experiments/fly_agents.py:6: RuntimeWarning: overflow encountered in exp
+  def sigmoid(x):return 1/(1+np.exp(-x))
+./experiments/fly_agents.py:6: RuntimeWarning: overflow encountered in exp
+  def sigmoid(x):return 1/(1+np.exp(-x))
+./experiments/fly_agents.py:6: RuntimeWarning: overflow encountered in exp
+  def sigmoid(x):return 1/(1+np.exp(-x))
+{'aggregate': 'mean', 'seed': 102, 'win9': np.float64(77.75), 'win16': np.float64(40.0), 'err9': 1.1880923775196894, 'blind': 0.04271792818048325, 'theta': -8.290571424249627, 'false': 0}
+{'aggregate': 'mean', 'seed': 100, 'win9': np.float64(81.0), 'win16': np.float64(58.75), 'err9': 1.0074231177094384, 'blind': 0.03552492046659597, 'theta': -6.7544366451097515, 'false': 0}
+{'aggregate': 'sum', 'seed': 102, 'win9': np.float64(71.75), 'win16': np.float64(38.75), 'err9': 1.5208613728129206, 'blind': 0.06083445491251682, 'theta': -3.530431795635313, 'false': 0}
+{'aggregate': 'sum', 'seed': 100, 'win9': np.float64(71.75), 'win16': np.float64(40.0), 'err9': 1.540348964013083, 'blind': 0.06952017448200655, 'theta': -2.200198348739203, 'false': 41}
+{'aggregate': 'sum', 'seed': 103, 'win9': np.float64(70.0), 'win16': np.float64(41.25), 'err9': 1.6181229773462813, 'blind': 0.021035598705501618, 'theta': -2.9392327034524093, 'false': 0}
+{'aggregate': 'sum', 'seed': 101, 'win9': np.float64(74.75), 'win16': np.float64(45.0), 'err9': 1.3308736328897064, 'blind': 0.026090393991303203, 'theta': -3.191367997878583, 'false': 0}
+{'aggregate': 'mean', 'seed': 103, 'win9': np.float64(76.0), 'win16': np.float64(53.75), 'err9': 1.2953717447038215, 'blind': 0.04155984347591418, 'theta': -6.694259694256918, 'false': 0}
+{'aggregate': 'mean', 'seed': 101, 'win9': np.float64(12.25), 'win16': np.float64(0.0), 'err9': 12.625899280575537, 'blind': 0.5845323741007195, 'theta': 3.857291189800062, 'false': 9205}
+{'aggregate': 'mean', 'seed': 105, 'win9': np.float64(80.75), 'win16': np.float64(57.49999999999999), 'err9': 1.0415257676180123, 'blind': 0.04098471527120249, 'theta': -6.609493595092328, 'false': 0}
+{'aggregate': 'sum', 'seed': 105, 'win9': np.float64(71.0), 'win16': np.float64(45.0), 'err9': 1.6062032677928606, 'blind': 0.05386319579063971, 'theta': -3.5841144821492605, 'false': 0}
+{'aggregate': 'mean', 'seed': 104, 'win9': np.float64(80.25), 'win16': np.float64(56.25), 'err9': 1.0578468130690966, 'blind': 0.045125870380289236, 'theta': -5.690045518504906, 'false': 0}
+{'aggregate': 'sum', 'seed': 104, 'win9': np.float64(72.0), 'win16': np.float64(43.75), 'err9': 1.524639259460936, 'blind': 0.06983392322352301, 'theta': -3.0627335826183186, 'false': 0}

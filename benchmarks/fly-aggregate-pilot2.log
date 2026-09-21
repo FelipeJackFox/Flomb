@@ -1,0 +1,12 @@
+{'aggregate': 'sum-reflex', 'seed': 100, 'win9': np.float64(73.0), 'win16': np.float64(48.75), 'err9': 1.4084507042253502, 'blind': 0.024908711528429838, 'theta': -3.48, 'false': 0}
+{'aggregate': 'sum-reflex', 'seed': 102, 'win9': np.float64(69.25), 'win16': np.float64(32.5), 'err9': 1.6791808873720115, 'blind': 0.07822525597269625, 'theta': -3.48, 'false': 0}
+{'aggregate': 'sum-reflex', 'seed': 101, 'win9': np.float64(71.5), 'win16': np.float64(40.0), 'err9': 1.5041562211373538, 'blind': 0.026784536218498484, 'theta': -3.48, 'false': 0}
+{'aggregate': 'sum-reflex', 'seed': 103, 'win9': np.float64(68.5), 'win16': np.float64(31.25), 'err9': 1.6766467065868262, 'blind': 0.024617431803060547, 'theta': -3.48, 'false': 0}
+{'aggregate': 'mean-reflex', 'seed': 100, 'win9': np.float64(54.25), 'win16': np.float64(17.5), 'err9': 2.69117647058823, 'blind': 0.03867647058823529, 'theta': -3.48, 'false': 542}
+{'aggregate': 'mean-reflex', 'seed': 101, 'win9': np.float64(34.25), 'win16': np.float64(3.75), 'err9': 4.231697506033793, 'blind': 0.02091713596138375, 'theta': -3.48, 'false': 1530}
+{'aggregate': 'mean-reflex', 'seed': 103, 'win9': np.float64(34.25), 'win16': np.float64(6.25), 'err9': 4.230336175004023, 'blind': 0.020106160527585654, 'theta': -3.48, 'false': 1534}
+{'aggregate': 'mean-reflex', 'seed': 102, 'win9': np.float64(12.0), 'win16': np.float64(0.0), 'err9': 8.146262439250174, 'blind': 0.07012265679240916, 'theta': -3.48, 'false': 3814}
+{'aggregate': 'sum-reflex', 'seed': 105, 'win9': np.float64(71.75), 'win16': np.float64(56.25), 'err9': 1.5517714913485303, 'blind': 0.027464982147761604, 'theta': -3.48, 'false': 0}
+{'aggregate': 'sum-reflex', 'seed': 104, 'win9': np.float64(64.75), 'win16': np.float64(37.5), 'err9': 2.0074031890660593, 'blind': 0.018080865603644646, 'theta': -3.48, 'false': 0}
+{'aggregate': 'mean-reflex', 'seed': 104, 'win9': np.float64(33.75), 'win16': np.float64(6.25), 'err9': 4.32370696687877, 'blind': 0.03165279817262196, 'theta': -3.48, 'false': 1525}
+{'aggregate': 'mean-reflex', 'seed': 105, 'win9': np.float64(33.5), 'win16': np.float64(2.5), 'err9': 4.349959116925595, 'blind': 0.03254292722812756, 'theta': -3.48, 'false': 1545}
