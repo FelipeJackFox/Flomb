@@ -1,0 +1,1 @@
+[{"name": "single", "seed": 3, "games": 5000, "win9": 74.5, "win16": 51.5, "safe_guess9": 86.1, "keys": 102, "seconds": 188}, {"name": "single", "seed": 3, "games": 20000, "win9": 74.9, "win16": 50.5, "safe_guess9": 87.8, "keys": 115, "seconds": 538}, {"name": "single", "seed": 3, "games": 80000, "win9": 77.8, "win16": 52.5, "safe_guess9": 89.2, "keys": 121, "seconds": 2258}]

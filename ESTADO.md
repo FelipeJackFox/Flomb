@@ -904,3 +904,16 @@ Aviso sobre el control: el brazo que llamé "never" NO es "nunca marca": Learned
 Qué sigue siendo puesto a mano en la compuerta: τ=0.25, el punto de partida conservador (−8), la relación calor −3 / azúcar +1 y la traza 0.9. El umbral ya no.
 DECISIÓN: la compuerta aprendida pasa a ser la configuración de trabajo. Mejor mosca individual legítima hasta hoy: 73.5% en 9×9/12 con inicio justo.
 Tamaño del premio del frente 6 (medido en dev, inicio en cascada): solver completo de restricciones 89.8% en 9×9 y 86.7% en 16×16; política a mano de un solo punto ≈ 79% y 62%; mosca ≈ 73% y 40%. Quedan ~16 pp en 9×9 y ~45 pp en 16×16 que solo se alcanzan cruzando pistas y adivinando con probabilidades.
+
+
+## Frente 6 · pilotos sin mosca: ¿sirve recordar PARES de pistas? · 21 sept 2026 · SÍ, Y SOBREVIVE AL APRENDIZAJE POR RESULTADOS
+
+Camino (a) elegido por Felipe: memoria de trabajo corta (el olfateo anterior + el paso dado), sin que la arena resuelva nada. Antes de construir la mosca, dos pilotos con un jugador que hace perfecta la lógica de un solo punto
+(marca minas seguras, abre casillas seguras) y SOLO cuando está obligado a adivinar le pregunta a un adivinador que ve cantidades crudas:
+  single = bolsa de triples (N,k,m) de las vecinas abiertas (lo que hoy puede representar la mosca) · pairs = single + por cada vecina abierta B, cada otra pista A a dos casillas o menos de B: (triple_B, triple_A, dónde está A respecto a B, dónde está B respecto a la casilla), canónico bajo las 8 simetrías.
+Piloto 1, supervisado (experiments/pilot_pair_memory.py, benchmarks/pair-memory-pilot): 1.94 M de casillas etiquetadas de adivinanzas forzadas. Victorias 9×9 / 16×16 (inicio en cascada, 2000 y 320 partidas dev):
+  single 75.7 / 62.2 · heurística a mano 81.7 / 68.8 · pairs 88.3 / 80.0 · solver exacto 89.8 / 83.8. Adivinanzas que salen seguras en 9×9: 87.4 / 90.9 / 93.7%. Pérdida logarítmica 0.492 → 0.375. 33,653 claves de pares en uso.
+Piloto 2, SOLO RESULTADOS (experiments/pilot_pair_online.py, benchmarks/pair-online-pilot): tabla con regla delta que aprende únicamente del calor/azúcar de la casilla que pisa, entrenamiento no letal, 4 semillas. Victorias 9×9 (16×16):
+  5k partidas: single 75.2 (53.5) · pairs 78.7 (60.1) — 20k: 75.5 (53.6) · 81.9 (62.2) — 80k: 77.6 (54.5) · 85.2 (71.6), y pairs sigue subiendo (52,715 claves).
+Lectura: la información de pares recupera casi todo el hueco hasta el solver (88.3 vs 89.8 con supervisión) y la ventaja se conserva aprendiendo solo de resultados (+7.6 pp en 9×9 y +17 pp en 16×16 a 80k partidas), aunque necesita mucha más experiencia que los olfateos sueltos. Es el primer frente donde el techo sube de verdad.
+Límites: (1) aquí la lógica de un solo punto está escrita a mano y el adivinador es una tabla; en la mosca todo se aprende a la vez y las claves pasan por 88 glomérulos y 4,064 Kenyon; (2) el espacio es de decenas de miles de combinaciones: es exactamente el régimen donde la generalización del circuito (×4 en eficiencia muestral, frente 2) podría pagar. Siguiente paso: construir la mosca con memoria de pares.
