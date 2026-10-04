@@ -1,4 +1,36 @@
-# Mosca Fruta: MaleCNS y Buscaminas
+# Mosca Fruta: una mosca que aprende buscaminas
+
+### ▶ Demo en vivo: **https://overfitters.space/proyectos/moscas/buscaminas** · [English](https://overfitters.space/en/proyectos/moscas/buscaminas) · proyecto del [LEIA](https://overfitters.space/proyectos/moscas)
+
+Una mosca simulada, con el cuerpo pedunculado del conectoma MaleCNS (4,064 células de Kenyon, 97 neuronas de salida, dopamina PAM/PPL1), aprende a jugar buscaminas con dos únicas señales: **calor** cuando pisa una mina y **azúcar** cuando pisa una casilla segura. Sin backprop, sin red que piense antes, sin lector entrenado después.
+
+**Estado actual (21 sept 2026).** Una sola mosca gana **81.3%** de las partidas 9×9 con 12 minas (IC95 78.8–83.8, 10 semillas, tableros nunca vistos, inicio estándar con apertura en cascada); una política de "un solo punto" escrita a mano gana 84.8% en esos mismos tableros. 88.3% en 7×7 y 57.3% en 16×16.
+
+- **Sentidos crudos.** Al antenar cada vecina abierta huele tres cantidades: N (la pista), k (cuánto tapado la rodea) y m (cuántas marcas propias la rodean). La arena no divide ni resta nada por ella.
+- **Aprende sola cuándo marcar.** El umbral de "esto es una mina" lo descubre con recompensa retrasada; quedó junto al valor que se había puesto a ojo.
+- **Qué aporta el cerebro:** aprende con ~4× menos experiencia que una tabla sin cerebro. Con experiencia ilimitada la tabla empata.
+- **Qué no aporta:** el cableado concreto de la mosca. Barajarlo da lo mismo; sirve la arquitectura (expansión dispersa + lectura plástica con dopamina).
+
+| Para… | Ver |
+|---|---|
+| El resultado completo, con lo que no funcionó | [`research/REPORTE_FINAL_MOSCA.md`](research/REPORTE_FINAL_MOSCA.md) |
+| Qué es un sentido legítimo y qué es trampa | [`research/ANALISIS_SENTIDOS_MOSCA.md`](research/ANALISIS_SENTIDOS_MOSCA.md) |
+| La bitácora, experimento por experimento | [`ESTADO.md`](ESTADO.md) (se lee por el final) |
+| El código de la mosca | `experiments/mushroom_body.py`, `experiments/fly_senses.py`, `experiments/fly_agents.py` |
+| Cada corrida formal | `runs/fly-*/summary.json` y su protocolo en `research/PROTOCOLO_*.md` |
+| El visor local 3D + 2D | `scene/dist/arena.html` (servir con `scene/serve.py`) |
+
+Los números de corridas distintas usan tableros distintos; las comparaciones limpias son las internas de cada corrida. Es una arquitectura inspirada en el cuerpo pedunculado que usa sus conteos reales de sinapsis (modelo de tasas, sin spikes), no una simulación de una mosca.
+
+Datos: conectoma [MaleCNS v1.0](https://male-cns.janelia.org/download/) (CC-BY). Modelo anatómico: Flybody (Google DeepMind + HHMI Janelia, Apache-2.0).
+
+---
+
+## Historia anterior del repositorio (sept 2026, línea con backprop)
+
+Lo que sigue es el README original de la primera etapa: entrenar por refuerzo y por backprop alrededor del grafo completo. Esa línea llegó a ~9.8% en 9×9 y se abandonó; se conserva como registro.
+
+### Mosca Fruta: MaleCNS y Buscaminas
 
 ## Currículo de 50,000 partidas
 
