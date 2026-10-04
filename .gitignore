@@ -17,3 +17,7 @@ runs/*/*
 !runs/*/source/
 benchmarks/native/
 scene/dist/data/arena.json.bak
+
+# over GitHub 100 MB limit; kept only on disk
+research_assets/realistic/omie/office-cubicle-set.zip
+benchmarks/profile-hybrid/checkpoint.pkl

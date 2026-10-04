@@ -1,6 +1,8 @@
-# Mosca Fruta: una mosca que aprende buscaminas
+# Flomb — una mosca que aprende buscaminas
 
 ### ▶ Demo en vivo: **https://overfitters.space/proyectos/moscas/buscaminas** · [English](https://overfitters.space/en/proyectos/moscas/buscaminas) · proyecto del [LEIA](https://overfitters.space/proyectos/moscas)
+
+*Proyecto de Felipe ([@FelipeJackFox](https://github.com/FelipeJackFox)) dentro del LEIA, donde cada integrante desarrolla el suyo. Nombre de trabajo anterior: "Mosca Fruta".*
 
 Una mosca simulada, con el cuerpo pedunculado del conectoma MaleCNS (4,064 células de Kenyon, 97 neuronas de salida, dopamina PAM/PPL1), aprende a jugar buscaminas con dos únicas señales: **calor** cuando pisa una mina y **azúcar** cuando pisa una casilla segura. Sin backprop, sin red que piense antes, sin lector entrenado después.
 
