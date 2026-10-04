@@ -1,0 +1,232 @@
+./experiments/fly_agents.py:6: RuntimeWarning: overflow encountered in exp
+  def sigmoid(x):return 1/(1+np.exp(-x))
+./experiments/fly_agents.py:6: RuntimeWarning: overflow encountered in exp
+  def sigmoid(x):return 1/(1+np.exp(-x))
+./experiments/fly_agents.py:6: RuntimeWarning: overflow encountered in exp
+  def sigmoid(x):return 1/(1+np.exp(-x))
+./experiments/fly_agents.py:6: RuntimeWarning: overflow encountered in exp
+  def sigmoid(x):return 1/(1+np.exp(-x))
+./experiments/fly_agents.py:6: RuntimeWarning: overflow encountered in exp
+  def sigmoid(x):return 1/(1+np.exp(-x))
+./experiments/fly_agents.py:6: RuntimeWarning: overflow encountered in exp
+  def sigmoid(x):return 1/(1+np.exp(-x))
+./experiments/fly_agents.py:6: RuntimeWarning: overflow encountered in exp
+  def sigmoid(x):return 1/(1+np.exp(-x))
+./experiments/fly_agents.py:6: RuntimeWarning: overflow encountered in exp
+  def sigmoid(x):return 1/(1+np.exp(-x))
+./experiments/fly_agents.py:6: RuntimeWarning: overflow encountered in exp
+  def sigmoid(x):return 1/(1+np.exp(-x))
+done meanown-cap-25
+done meanown-cap-26
+done meanown-cap-24
+done meanown-cap-20
+done meanown-cap-28
+done meanown-cap-21
+done meanown-cap-23
+done meanown-cap-27
+done meanown-cap-22
+done meanown-cap-29
+done meanown-cap-31
+done meanown-cap-33
+done meanown-cap-32
+done meanown-cap-30
+done meanown-cap-37
+done meanown-cap-36
+done meanown-cap-35
+done meanown-cap-34
+done meanown-cap-38
+done meanown-cap-39
+done meanown-cap-46
+done meanown-cap-40
+done meanown-cap-43
+done meanown-cap-41
+done meanown-cap-45
+done meanown-cap-42
+done meanown-cap-44
+done meanown-cap-47
+done meanown-cap-48
+done meanown-cap-49
+done hand
+{
+ "9": {
+  "meanown-cap": {
+   "mean": 78.4,
+   "sd": 3.5,
+   "ci95": [
+    77.1,
+    79.7
+   ],
+   "per_seed": [
+    77.4,
+    79.9,
+    74.4,
+    72.5,
+    81.6,
+    70.8,
+    80.7,
+    81.0,
+    78.3,
+    83.2,
+    75.9,
+    84.0,
+    80.5,
+    75.0,
+    77.7,
+    77.0,
+    77.8,
+    78.5,
+    79.0,
+    73.0,
+    80.0,
+    81.5,
+    81.2,
+    82.5,
+    71.5,
+    77.2,
+    79.5,
+    80.5,
+    83.5,
+    76.5
+   ]
+  },
+  "hand": 81.8,
+  "safe_step_pct": {
+   "meanown-cap": 98.81
+  },
+  "false_marks": {
+   "meanown-cap": 770
+  }
+ },
+ "7": {
+  "meanown-cap": {
+   "mean": 89.1,
+   "sd": 2.2,
+   "ci95": [
+    88.3,
+    89.9
+   ],
+   "per_seed": [
+    90.0,
+    91.4,
+    86.8,
+    86.4,
+    93.0,
+    87.6,
+    89.4,
+    89.8,
+    88.2,
+    92.8,
+    87.4,
+    92.0,
+    90.0,
+    86.8,
+    86.4,
+    89.6,
+    89.4,
+    89.2,
+    89.0,
+    85.6,
+    88.4,
+    91.0,
+    90.2,
+    91.2,
+    85.0,
+    89.6,
+    87.2,
+    91.0,
+    92.2,
+    87.6
+   ]
+  },
+  "hand": 90.0,
+  "safe_step_pct": {
+   "meanown-cap": 98.93
+  },
+  "false_marks": {
+   "meanown-cap": 61
+  }
+ },
+ "16": {
+  "meanown-cap": {
+   "mean": 59.2,
+   "sd": 8.4,
+   "ci95": [
+    56.0,
+    62.3
+   ],
+   "per_seed": [
+    56.0,
+    64.0,
+    50.3,
+    39.3,
+    67.7,
+    35.7,
+    66.0,
+    62.7,
+    65.7,
+    64.7,
+    62.3,
+    66.7,
+    64.0,
+    58.0,
+    60.3,
+    55.0,
+    60.3,
+    60.0,
+    63.0,
+    42.0,
+    63.7,
+    58.7,
+    67.0,
+    67.7,
+    50.7,
+    53.3,
+    60.0,
+    60.3,
+    70.0,
+    60.0
+   ]
+  },
+  "hand": 68.0,
+  "safe_step_pct": {
+   "meanown-cap": 99.38
+  },
+  "false_marks": {
+   "meanown-cap": 435
+  }
+ },
+ "theta": {
+  "meanown-cap": [
+   -3.48,
+   -3.43,
+   -3.19,
+   -4.5,
+   -3.62,
+   -3.24,
+   -3.45,
+   -3.69,
+   -4.75,
+   -4.08,
+   -4.09,
+   -3.57,
+   -3.54,
+   -3.94,
+   -3.57,
+   -3.94,
+   -3.81,
+   -3.4,
+   -4.29,
+   -3.33,
+   -3.26,
+   -3.0,
+   -4.01,
+   -3.38,
+   -3.94,
+   -3.97,
+   -3.59,
+   -3.41,
+   -3.63,
+   -3.87
+  ]
+ }
+}

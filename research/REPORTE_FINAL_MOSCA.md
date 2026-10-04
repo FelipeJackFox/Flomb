@@ -1,5 +1,7 @@
 # La mosca que juega buscaminas — reporte consolidado
 
+> **Número duro (4 oct 2026):** réplica con 30 semillas nuevas y 2,000 tableros (`runs/fly-replica-001`): **78.4%** en 9×9 (IC95 77.1–79.7), 89.1% en 7×7, 59.2% en 16×16; la política a mano saca 81.8 / 90.0 / 68.0 en los mismos tableros. Este es el número que se cita; el 81.3% de abajo salió de un conjunto de tableros más fácil.
+>
 > **Actualización (21 sept, más tarde):** con un cambio en cómo combina sus olfateos (sección 6, primer punto) una mosca llega a **81.3%** en 9×9 (IC95 78.8–83.8; `runs/fly-aggregate-002`, semillas nuevas), a 3.5 pp de la política a mano en los mismos tableros. Las cifras de 73.5% de abajo son de la configuración anterior.
 
 21 sept 2026 · sustituye a `REPORTE_MOSCA_MARCADORA.md` (que describe la primera versión, con sentidos que hoy clasificamos como trampa).

@@ -6,7 +6,7 @@
 
 Una mosca simulada, con el cuerpo pedunculado del conectoma MaleCNS (4,064 células de Kenyon, 97 neuronas de salida, dopamina PAM/PPL1), aprende a jugar buscaminas con dos únicas señales: **calor** cuando pisa una mina y **azúcar** cuando pisa una casilla segura. Sin backprop, sin red que piense antes, sin lector entrenado después.
 
-**Estado actual (21 sept 2026).** Una sola mosca gana **81.3%** de las partidas 9×9 con 12 minas (IC95 78.8–83.8, 10 semillas, tableros nunca vistos, inicio estándar con apertura en cascada); una política de "un solo punto" escrita a mano gana 84.8% en esos mismos tableros. 88.3% en 7×7 y 57.3% en 16×16.
+**Estado actual (4 oct 2026).** Una sola mosca gana **78.4%** de las partidas 9×9 con 12 minas (IC95 77.1–79.7; 30 semillas, 2,000 tableros nunca vistos, inicio estándar con apertura en cascada). Una política de "un solo punto" escrita a mano gana 81.8% en esos mismos tableros. En 7×7 gana 89.1% y en 16×16, 59.2%. Corrida: `runs/fly-replica-001`.
 
 - **Sentidos crudos.** Al antenar cada vecina abierta huele tres cantidades: N (la pista), k (cuánto tapado la rodea) y m (cuántas marcas propias la rodean). La arena no divide ni resta nada por ella.
 - **Aprende sola cuándo marcar.** El umbral de "esto es una mina" lo descubre con recompensa retrasada; quedó junto al valor que se había puesto a ojo.
